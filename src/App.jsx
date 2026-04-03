@@ -300,61 +300,82 @@ function DiagramPortfolioAnatomy() {
 }
 
 function DiagramTwoSpeed() {
+  const bg = "#1a1a1a"; const page = "#fff"; const img = "#c8d5dc"; const txt = "#d0d0d0";
+  const pw = 86; const ph = 118;
   return (
-    <svg viewBox="0 0 420 110" style={{ width: "100%", height: "auto" }}>
+    <svg viewBox="0 0 540 210" style={{ width: "100%", height: "auto", borderRadius: "3px" }}>
+      <rect x="0" y="0" width="540" height="210" fill={bg} rx="3" />
       {/* Left: Skim */}
-      <text x="100" y="12" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted} letterSpacing="0.1em">SKIM</text>
-      <text x="100" y="22" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="500" fill={T.text}>30 seconds</text>
-      {/* Minimal page wireframe — large image dominant */}
-      <rect x="40" y="32" width="120" height="68" fill="none" stroke={T.text} strokeWidth="0.5" />
-      <rect x="48" y="38" width="104" height="40" fill={T.accentLight} stroke={T.border} strokeWidth="0.5" />
-      <text x="100" y="62" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight}>image</text>
-      <rect x="48" y="84" width="40" height="1.5" fill={T.text} rx="0.5" />
-      <rect x="48" y="88" width="60" height="1" fill={T.border} rx="0.5" />
+      <text x="120" y="22" textAnchor="middle" fontSize="8" fontFamily={T.sans} fill="#888" letterSpacing="0.12em">SKIM</text>
+      <text x="120" y="34" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="500" fill={txt}>30 seconds</text>
+      {/* Page spread — image dominant */}
+      <rect x="38" y="46" width={pw} height={ph} fill={page} />
+      <rect x={38 + pw + 2} y="46" width={pw} height={ph} fill={page} />
+      <line x1={38 + pw + 1} y1="46" x2={38 + pw + 1} y2={46 + ph} stroke={bg} strokeWidth="1.5" />
+      {/* Large hero image spanning left page */}
+      <rect x="44" y="52" width={pw - 12} height={ph * 0.55} fill={img} />
+      {/* Small title + text on left */}
+      <rect x="44" y={52 + ph * 0.55 + 8} width="30" height="2.5" fill="#999" rx="0.5" />
+      <rect x="44" y={52 + ph * 0.55 + 14} width="50" height="1.5" fill="#ccc" rx="0.5" />
+      {/* Right page — one big image */}
+      <rect x={38 + pw + 8} y="52" width={pw - 12} height={ph - 12} fill={img} />
+      {/* Label */}
+      <text x="120" y={46 + ph + 18} textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#666">Large images · Clear hierarchy · Minimal text</text>
+
       {/* Divider */}
-      <line x1="210" y1="30" x2="210" y2="102" stroke={T.border} strokeWidth="0.5" strokeDasharray="2,3" />
+      <line x1="270" y1="40" x2="270" y2="190" stroke="#333" strokeWidth="0.5" strokeDasharray="3,4" />
+
       {/* Right: Study */}
-      <text x="320" y="12" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted} letterSpacing="0.1em">STUDY</text>
-      <text x="320" y="22" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="500" fill={T.text}>5 minutes</text>
-      {/* Minimal page wireframe — text + captions + detail */}
-      <rect x="260" y="32" width="120" height="68" fill="none" stroke={T.text} strokeWidth="0.5" />
-      <rect x="268" y="38" width="48" height="30" fill={T.accentLight} stroke={T.border} strokeWidth="0.5" />
-      <rect x="268" y="72" width="48" height="20" fill={T.accentLight} stroke={T.border} strokeWidth="0.5" />
-      {[0,1,2,3,4,5,6,7].map(j => (
-        <rect key={j} x="324" y={39 + j * 5} width="48" height="1" fill={j < 2 ? T.textLight : T.textFaint} rx="0.5" />
+      <text x="408" y="22" textAnchor="middle" fontSize="8" fontFamily={T.sans} fill="#888" letterSpacing="0.12em">STUDY</text>
+      <text x="408" y="34" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="500" fill={txt}>5 minutes</text>
+      {/* Page spread — text + multi-image */}
+      <rect x="326" y="46" width={pw} height={ph} fill={page} />
+      <rect x={326 + pw + 2} y="46" width={pw} height={ph} fill={page} />
+      <line x1={326 + pw + 1} y1="46" x2={326 + pw + 1} y2={46 + ph} stroke={bg} strokeWidth="1.5" />
+      {/* Left page — two images + caption */}
+      <rect x="332" y="52" width={pw - 12} height="36" fill={img} />
+      <rect x="332" y="92" width="34" height="28" fill={img} />
+      <rect x="370" y="92" width="34" height="28" fill={img} />
+      <rect x="332" y="126" width="30" height="1.5" fill="#ccc" rx="0.5" />
+      <rect x="332" y="130" width="24" height="1" fill="#ddd" rx="0.5" />
+      {/* Right page — text-heavy */}
+      <rect x={326 + pw + 8} y="52" width="50" height="2.5" fill="#999" rx="0.5" />
+      {[0,1,2,3,4,5,6,7,8,9,10].map(j => (
+        <rect key={j} x={326 + pw + 8} y={60 + j * 7} width={j % 3 === 0 ? 60 : 52} height="1.5" fill={j < 3 ? "#bbb" : "#ddd"} rx="0.5" />
       ))}
-      <rect x="268" y="96" width="30" height="1" fill={T.textFaint} rx="0.5" />
-      <rect x="324" y="80" width="48" height="1" fill={T.textFaint} rx="0.5" />
-      <rect x="324" y="85" width="40" height="1" fill={T.textFaint} rx="0.5" />
+      <text x="408" y={46 + ph + 18} textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#666">Captions · Process detail · Analytical depth</text>
     </svg>
   );
 }
 
 function DiagramAudienceLens() {
+  const bg = "#1a1a1a"; const txt = "#d0d0d0";
   const audiences = [
     { label: "Academic", signal: "Process depth", sub: "Sketches, iterations, dead ends" },
     { label: "Large Firm", signal: "Technical fluency", sub: "Resolved drawings, BIM, detail" },
     { label: "Boutique", signal: "Design sensibility", sub: "Philosophy, position, craft" },
     { label: "Fellowship", signal: "Research agenda", sub: "Questions, methodology, rigor" },
   ];
+  const colW = 135;
   return (
-    <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+    <svg viewBox="0 0 540 130" style={{ width: "100%", height: "auto", borderRadius: "3px" }}>
+      <rect x="0" y="0" width="540" height="130" fill={bg} rx="3" />
       {/* Vertical dividers */}
       {[1,2,3].map(i => (
-        <line key={i} x1={i * 105} y1="8" x2={i * 105} y2="88" stroke={T.border} strokeWidth="0.5" />
+        <line key={i} x1={i * colW} y1="14" x2={i * colW} y2="100" stroke="#333" strokeWidth="0.5" />
       ))}
       {audiences.map((a, i) => {
-        const cx = i * 105 + 52.5;
+        const cx = i * colW + colW / 2;
         return (
           <g key={i}>
-            <text x={cx} y="18" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="500" fill={T.text} letterSpacing="0.03em">{a.label}</text>
-            <line x1={cx - 16} y1="24" x2={cx + 16} y2="24" stroke={T.text} strokeWidth="0.5" />
-            <text x={cx} y="40" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMid}>{a.signal}</text>
-            <text x={cx} y="56" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill={T.textLight}>{a.sub}</text>
+            <text x={cx} y="30" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="500" fill={txt} letterSpacing="0.04em">{a.label}</text>
+            <line x1={cx - 20} y1="38" x2={cx + 20} y2="38" stroke="#555" strokeWidth="0.5" />
+            <text x={cx} y="58" textAnchor="middle" fontSize="8" fontFamily={T.sans} fill="#999">{a.signal}</text>
+            <text x={cx} y="76" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#666">{a.sub}</text>
           </g>
         );
       })}
-      <text x="210" y="96" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Same portfolio, different emphasis — know the reviewer before you sequence.</text>
+      <text x="270" y="116" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#555" fontStyle="italic">Same portfolio, different emphasis — know the reviewer before you sequence.</text>
     </svg>
   );
 }
@@ -862,15 +883,15 @@ const MODULES = [
     id: 1,
     title: "The Portfolio as Critical Argument",
     part: "Narrative",
-    overview: `A portfolio is not a binder of coursework or a personal design journal. It is a curatorial act and a communication tool — simultaneously a mirror of your growth and a map for your future. Every decision you make about what to include, how to sequence it, and where to place it on the page is an act of design. The portfolio is not separate from your work. It is your work, reframed for an audience.
+    overview: `A portfolio is not a binder of coursework or a personal design journal. It is a curatorial act: a mirror of your growth and a map for your future. Every decision about what to include, how to sequence it, and where to place it on the page is an act of design. The portfolio is not separate from your work. It is your work, reframed for an audience.
 
-A portfolio operates on two tracks simultaneously. At skim speed — thirty seconds — the image hierarchy, cover, and sequencing must tell a story. At read speed — two to five minutes — the project statements, captions, and visual details must deepen that story without contradicting it.
+A portfolio operates on two tracks simultaneously. At skim speed (thirty seconds), the image hierarchy, cover, and sequencing must tell a story. At read speed (two to five minutes), the project statements, captions, and visual details must deepen that story without contradicting it.
 
-Portfolio content should shift based on audience type. An academic reviewer prioritizes sketches, diagrams, and dead ends that reveal process depth. A professional reviewer at a large firm leads with resolved, publication-quality work and technical proficiency. A boutique firm values design sensibility and philosophical alignment. Knowing these roles is the difference between a page that documents and a page that argues.
+Portfolio content should shift based on audience type. An academic reviewer prioritizes sketches, diagrams, and dead ends that reveal process depth. A professional reviewer at a large firm looks for resolved, publication-quality work and technical proficiency. A boutique firm values design sensibility and philosophical alignment. Knowing these roles is the difference between a page that documents and a page that argues.
 
-Before you walk into a review, an interview, or a scholarship committee, your portfolio has already made its case. Reviewers often spend thirty seconds on an initial scan. In that window, the sequencing of images, the hierarchy of information, and the clarity of layout have either earned deeper attention or lost it. The best portfolios tell a story about how you design, not just what you designed.
+Before you walk into a review, an interview, or a scholarship committee, your portfolio has already made its case. Reviewers often spend thirty seconds on an initial scan. In that window, the sequencing of images, the hierarchy of information, and the clarity of layout have either earned deeper attention or lost it. The strongest portfolios tell a story about how you design, not just what you designed.
 
-Every architecture portfolio shares a common anatomy: cover page (identity), table of contents (organization), project spreads (the argument), and supplemental material — resume, skills, contact — to close. Within each project spread, four image types — concept, process, outcome, and context — perform distinct roles. Once you can name each role, you can sequence with purpose rather than habit.`,
+Every architecture portfolio shares a common anatomy: cover page (identity), table of contents (organization), project spreads (the argument), and supplemental material (resume, skills, contact) to close. Within each project spread, four image types (concept, process, outcome, and context) perform distinct roles. Once you can name each role, you can sequence with purpose rather than habit.`,
     keyInsight: `"A portfolio is not an archive. It is an argument."`,
   },
   {
