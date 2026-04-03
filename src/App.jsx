@@ -215,30 +215,112 @@ function DiagramWeakVsStrong() {
   );
 }
 
-function DiagramAudienceMatrix() {
-  const rows = [
-    { audience: "Undergrad Admissions", focus: "Creative potential", criteria: "Curiosity, visual sensitivity" },
-    { audience: "Graduate School", focus: "Research agenda", criteria: "Process depth, methodology" },
-    { audience: "Boutique Firms", focus: "Design sensibility", criteria: "Philosophy alignment" },
-    { audience: "Corporate Firms", focus: "Technical proficiency", criteria: "BIM expertise, specialization" },
+function DiagramPortfolioAnatomy() {
+  const pages = [
+    { label: "Cover", w: 44, h: 62 },
+    { label: "TOC", w: 44, h: 62 },
+    { label: "Project 1", w: 80, h: 62, spread: true },
+    { label: "Project 2", w: 80, h: 62, spread: true },
+    { label: "Project 3", w: 80, h: 62, spread: true },
+    { label: "Suppl.", w: 44, h: 62 },
   ];
+  let x = 12;
   return (
-    <svg viewBox="0 0 420 110" style={{ width: "100%", height: "auto" }}>
-      {["AUDIENCE", "PRIMARY FOCUS", "EVALUATIVE CRITERIA"].map((h, i) => (
-        <text key={i} x={[70, 210, 350][i]} y="14" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fontWeight="600" fill={T.navy} letterSpacing="0.08em">{h}</text>
-      ))}
-      <line x1="8" y1="20" x2="412" y2="20" stroke={T.navy} strokeWidth="1" />
-      {rows.map((r, i) => (
-        <g key={i}>
-          <rect x="8" y={24 + i * 20} width="404" height="19" fill={i % 2 === 0 ? "#f8f8f6" : "transparent"} />
-          <text x="70" y={37 + i * 20} textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="500" fill={T.text}>{r.audience}</text>
-          <text x="210" y={37 + i * 20} textAnchor="middle" fontSize="7" fontFamily={T.sans} fill={T.textLight}>{r.focus}</text>
-          <text x="350" y={37 + i * 20} textAnchor="middle" fontSize="7" fontFamily={T.sans} fill={T.textLight}>{r.criteria}</text>
-        </g>
-      ))}
+    <svg viewBox="0 0 420 104" style={{ width: "100%", height: "auto" }}>
+      {pages.map((p, i) => {
+        const cx = x + p.w / 2;
+        const el = (
+          <g key={i}>
+            <rect x={x} y="16" width={p.w} height={p.h} fill="none" stroke={T.text} strokeWidth="0.5" />
+            {p.spread && <line x1={x + p.w / 2} y1="16" x2={x + p.w / 2} y2="78" stroke={T.border} strokeWidth="0.5" strokeDasharray="1,2" />}
+            {/* Tiny content lines inside */}
+            {i === 0 && <>
+              <rect x={x + 12} y="36" width={p.w - 24} height="3" fill={T.text} rx="0.5" />
+              <rect x={x + 16} y="42" width={p.w - 32} height="1.5" fill={T.border} rx="0.5" />
+            </>}
+            {i === 1 && [0,1,2,3].map(j => (
+              <rect key={j} x={x + 8} y={28 + j * 10} width={p.w - 16} height="1" fill={T.border} rx="0.5" />
+            ))}
+            {p.spread && <>
+              <rect x={x + 4} y="24" width={p.w / 2 - 8} height={p.h / 2 - 4} fill="none" stroke={T.border} strokeWidth="0.5" />
+              <rect x={x + p.w / 2 + 4} y="24" width={p.w / 2 - 8} height="2" fill={T.border} rx="0.5" />
+              <rect x={x + p.w / 2 + 4} y="30" width={p.w / 2 - 14} height="1" fill={T.textFaint} rx="0.5" />
+              <rect x={x + p.w / 2 + 4} y="34" width={p.w / 2 - 12} height="1" fill={T.textFaint} rx="0.5" />
+            </>}
+            <text x={cx} y="92" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight} letterSpacing="0.02em">{p.label}</text>
+            {i < pages.length - 1 && <line x1={x + p.w + 3} y1="47" x2={x + p.w + 7} y2="47" stroke={T.textFaint} strokeWidth="0.5" />}
+          </g>
+        );
+        x += p.w + 10;
+        return el;
+      })}
+      <line x1="84" y1="5" x2="326" y2="5" stroke={T.text} strokeWidth="0.5" />
+      <text x="205" y="4" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill={T.textMuted} letterSpacing="0.1em">THE ARGUMENT</text>
     </svg>
   );
 }
+
+function DiagramTwoSpeed() {
+  return (
+    <svg viewBox="0 0 420 110" style={{ width: "100%", height: "auto" }}>
+      {/* Left: Skim */}
+      <text x="100" y="12" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted} letterSpacing="0.1em">SKIM</text>
+      <text x="100" y="22" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="500" fill={T.text}>30 seconds</text>
+      {/* Minimal page wireframe — large image dominant */}
+      <rect x="40" y="32" width="120" height="68" fill="none" stroke={T.text} strokeWidth="0.5" />
+      <rect x="48" y="38" width="104" height="40" fill={T.accentLight} stroke={T.border} strokeWidth="0.5" />
+      <text x="100" y="62" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight}>image</text>
+      <rect x="48" y="84" width="40" height="1.5" fill={T.text} rx="0.5" />
+      <rect x="48" y="88" width="60" height="1" fill={T.border} rx="0.5" />
+      {/* Divider */}
+      <line x1="210" y1="30" x2="210" y2="102" stroke={T.border} strokeWidth="0.5" strokeDasharray="2,3" />
+      {/* Right: Study */}
+      <text x="320" y="12" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted} letterSpacing="0.1em">STUDY</text>
+      <text x="320" y="22" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="500" fill={T.text}>5 minutes</text>
+      {/* Minimal page wireframe — text + captions + detail */}
+      <rect x="260" y="32" width="120" height="68" fill="none" stroke={T.text} strokeWidth="0.5" />
+      <rect x="268" y="38" width="48" height="30" fill={T.accentLight} stroke={T.border} strokeWidth="0.5" />
+      <rect x="268" y="72" width="48" height="20" fill={T.accentLight} stroke={T.border} strokeWidth="0.5" />
+      {[0,1,2,3,4,5,6,7].map(j => (
+        <rect key={j} x="324" y={39 + j * 5} width="48" height="1" fill={j < 2 ? T.textLight : T.textFaint} rx="0.5" />
+      ))}
+      <rect x="268" y="96" width="30" height="1" fill={T.textFaint} rx="0.5" />
+      <rect x="324" y="80" width="48" height="1" fill={T.textFaint} rx="0.5" />
+      <rect x="324" y="85" width="40" height="1" fill={T.textFaint} rx="0.5" />
+    </svg>
+  );
+}
+
+function DiagramAudienceLens() {
+  const audiences = [
+    { label: "Academic", signal: "Process depth", sub: "Sketches, iterations, dead ends" },
+    { label: "Large Firm", signal: "Technical fluency", sub: "Resolved drawings, BIM, detail" },
+    { label: "Boutique", signal: "Design sensibility", sub: "Philosophy, position, craft" },
+    { label: "Fellowship", signal: "Research agenda", sub: "Questions, methodology, rigor" },
+  ];
+  return (
+    <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+      {/* Vertical dividers */}
+      {[1,2,3].map(i => (
+        <line key={i} x1={i * 105} y1="8" x2={i * 105} y2="88" stroke={T.border} strokeWidth="0.5" />
+      ))}
+      {audiences.map((a, i) => {
+        const cx = i * 105 + 52.5;
+        return (
+          <g key={i}>
+            <text x={cx} y="18" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="500" fill={T.text} letterSpacing="0.03em">{a.label}</text>
+            <line x1={cx - 16} y1="24" x2={cx + 16} y2="24" stroke={T.text} strokeWidth="0.5" />
+            <text x={cx} y="40" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMid}>{a.signal}</text>
+            <text x={cx} y="56" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill={T.textLight}>{a.sub}</text>
+          </g>
+        );
+      })}
+      <text x="210" y="96" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Same portfolio, different emphasis — know the reviewer before you sequence.</text>
+    </svg>
+  );
+}
+
+/* ─── Shared diagrams (used across multiple modules) ─── */
 
 function DiagramTwoTrack() {
   return (
@@ -644,10 +726,9 @@ function DiagramParentPages() {
 /* ─── Diagram map: moduleId → [{component, title}] ─── */
 const DIAGRAM_MAP = {
   1: [
-    { component: DiagramTwoTrack, title: "Two-Track Reading System" },
-    { component: DiagramAudienceMatrix, title: "Audience Matrix" },
-    { image: "diagram-audience-mapping.svg", title: "Audience Evaluation Priorities", alt: "Audience evaluation priorities across four reviewer types" },
-    { image: "diagram-skill-matrix.svg", title: "Project–Skill Coverage Matrix", alt: "Project–skill coverage matrix showing how projects map to different competencies" },
+    { component: DiagramPortfolioAnatomy, title: "Portfolio Anatomy" },
+    { component: DiagramTwoSpeed, title: "Two-Speed Reading" },
+    { component: DiagramAudienceLens, title: "Audience Lens" },
   ],
   2: [
     { component: DiagramNarrativeArc, title: "Three-Act Narrative Arc" },
@@ -728,6 +809,7 @@ const DIAGRAM_MAP = {
   13: [
     { component: DiagramChecklist, title: "Four-Level Audit Framework" },
     { component: DiagramExportStandards, title: "File Export Standards" },
+    { image: "diagram-skill-matrix.svg", title: "Project–Skill Coverage Matrix", alt: "Project–skill coverage matrix showing how projects map to different competencies" },
   ],
   casestudy: [
     { component: DiagramImageMapping, title: "Image Type Mapping Across Spreads" },
