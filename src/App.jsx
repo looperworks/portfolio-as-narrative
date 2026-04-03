@@ -1595,7 +1595,7 @@ export default function PortfolioGuide() {
               <span
                 onClick={() => navigate("#/diagrams/casestudy")}
                 style={{
-                  fontSize: 11, color: T.steel, cursor: "pointer",
+                  fontSize: 12, color: T.steel, cursor: "pointer",
                   borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
                   transition: "color 0.15s ease, border-color 0.15s ease",
                   fontFamily: T.sans, letterSpacing: "0.01em", lineHeight: 1.8,
@@ -1712,7 +1712,7 @@ export default function PortfolioGuide() {
             <span
               onClick={() => navigate(`#/diagrams/${mod.id}`)}
               style={{
-                fontSize: 11, color: T.steel, cursor: "pointer",
+                fontSize: 12, color: T.steel, cursor: "pointer",
                 borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
                 transition: "color 0.15s ease, border-color 0.15s ease",
                 fontFamily: T.sans, letterSpacing: "0.01em", lineHeight: 1.8,
