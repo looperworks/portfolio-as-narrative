@@ -216,46 +216,85 @@ function DiagramWeakVsStrong() {
 }
 
 function DiagramPortfolioAnatomy() {
-  const pages = [
-    { label: "Cover", w: 44, h: 62 },
-    { label: "TOC", w: 44, h: 62 },
-    { label: "Project 1", w: 80, h: 62, spread: true },
-    { label: "Project 2", w: 80, h: 62, spread: true },
-    { label: "Project 3", w: 80, h: 62, spread: true },
-    { label: "Suppl.", w: 44, h: 62 },
+  /* Page dimensions — portrait proportion, consistent with architecture portfolio format */
+  const pw = 32; const ph = 44; const gap = 4; const spreadGap = 1;
+  const bg = "#1a1a1a"; const page = "#fff"; const img = "#c8d5dc"; const txt = "#d0d0d0";
+  /* Row 1 items */
+  const row1 = [
+    { type: "single", label: "Cover", fill: img },
+    { type: "spread", label: "Inside Front Cover / TOC", leftFill: page, rightFill: page, rightContent: "toc" },
+    { type: "spread", label: "Section Divider", leftFill: img, rightFill: img },
+    { type: "spread", label: "Introduction Pages", leftFill: page, rightFill: page, rightContent: "intro" },
   ];
-  let x = 12;
+  /* Row 2 items */
+  const row2 = [
+    { type: "spread", label: "Project Pages (Multiple)", leftFill: page, rightFill: page, leftContent: "multi" },
+    { type: "spread", label: "Project Pages (Full Bleed)", leftFill: img, rightFill: img },
+    { type: "spread", label: "Resume / Inside Back", leftFill: page, rightFill: page, leftContent: "resume" },
+    { type: "single", label: "Back Cover", fill: img },
+  ];
+
+  function renderPage(x, y, fill, content) {
+    return (
+      <g>
+        <rect x={x} y={y} width={pw} height={ph} fill={fill} />
+        {content === "toc" && <>
+          <rect x={x+6} y={y+6} width={20} height={1.5} fill="#999" rx="0.5" />
+          {[0,1,2,3,4,5].map(j => <rect key={j} x={x+6} y={y+11+j*4.5} width={16} height={0.8} fill="#ccc" rx="0.3" />)}
+        </>}
+        {content === "intro" && <>
+          <rect x={x+4} y={y+4} width={24} height={14} fill={img} />
+          <rect x={x+4} y={y+22} width={20} height={1.5} fill="#999" rx="0.5" />
+          {[0,1,2,3].map(j => <rect key={j} x={x+4} y={y+26+j*3.5} width={18} height={0.7} fill="#ccc" rx="0.3" />)}
+        </>}
+        {content === "multi" && <>
+          <rect x={x+3} y={y+3} width={26} height={16} fill={img} />
+          <rect x={x+3} y={y+21} width={12} height={10} fill={img} />
+          <rect x={x+17} y={y+21} width={12} height={10} fill={img} />
+        </>}
+        {content === "resume" && <>
+          <rect x={x+6} y={y+5} width={16} height={1.5} fill="#999" rx="0.5" />
+          {[0,1,2,3,4,5,6,7].map(j => <rect key={j} x={x+4} y={y+10+j*3.8} width={j%2===0 ? 22 : 18} height={0.7} fill="#ccc" rx="0.3" />)}
+        </>}
+      </g>
+    );
+  }
+
+  function renderRow(items, yBase, yLabel) {
+    let x = 16;
+    return items.map((item, i) => {
+      const el = (
+        <g key={i}>
+          {item.type === "single" && <>
+            {renderPage(x, yBase, item.fill)}
+            <text x={x + pw/2} y={yLabel} textAnchor="middle" fontSize="5" fontFamily={T.sans} fill={txt} letterSpacing="0.02em">{item.label}</text>
+          </>}
+          {item.type === "spread" && <>
+            {renderPage(x, yBase, item.leftFill, item.leftContent)}
+            <line x1={x + pw} y1={yBase} x2={x + pw} y2={yBase + ph} stroke={bg} strokeWidth="0.5" />
+            {renderPage(x + pw + spreadGap, yBase, item.rightFill, item.rightContent)}
+            <text x={x + pw + spreadGap/2} y={yLabel} textAnchor="middle" fontSize="5" fontFamily={T.sans} fill={txt} letterSpacing="0.02em">{item.label}</text>
+          </>}
+        </g>
+      );
+      x += (item.type === "spread" ? pw * 2 + spreadGap : pw) + gap + 8;
+      return el;
+    });
+  }
+
   return (
-    <svg viewBox="0 0 420 104" style={{ width: "100%", height: "auto" }}>
-      {pages.map((p, i) => {
-        const cx = x + p.w / 2;
-        const el = (
-          <g key={i}>
-            <rect x={x} y="16" width={p.w} height={p.h} fill="none" stroke={T.text} strokeWidth="0.5" />
-            {p.spread && <line x1={x + p.w / 2} y1="16" x2={x + p.w / 2} y2="78" stroke={T.border} strokeWidth="0.5" strokeDasharray="1,2" />}
-            {/* Tiny content lines inside */}
-            {i === 0 && <>
-              <rect x={x + 12} y="36" width={p.w - 24} height="3" fill={T.text} rx="0.5" />
-              <rect x={x + 16} y="42" width={p.w - 32} height="1.5" fill={T.border} rx="0.5" />
-            </>}
-            {i === 1 && [0,1,2,3].map(j => (
-              <rect key={j} x={x + 8} y={28 + j * 10} width={p.w - 16} height="1" fill={T.border} rx="0.5" />
-            ))}
-            {p.spread && <>
-              <rect x={x + 4} y="24" width={p.w / 2 - 8} height={p.h / 2 - 4} fill="none" stroke={T.border} strokeWidth="0.5" />
-              <rect x={x + p.w / 2 + 4} y="24" width={p.w / 2 - 8} height="2" fill={T.border} rx="0.5" />
-              <rect x={x + p.w / 2 + 4} y="30" width={p.w / 2 - 14} height="1" fill={T.textFaint} rx="0.5" />
-              <rect x={x + p.w / 2 + 4} y="34" width={p.w / 2 - 12} height="1" fill={T.textFaint} rx="0.5" />
-            </>}
-            <text x={cx} y="92" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight} letterSpacing="0.02em">{p.label}</text>
-            {i < pages.length - 1 && <line x1={x + p.w + 3} y1="47" x2={x + p.w + 7} y2="47" stroke={T.textFaint} strokeWidth="0.5" />}
-          </g>
-        );
-        x += p.w + 10;
-        return el;
-      })}
-      <line x1="84" y1="5" x2="326" y2="5" stroke={T.text} strokeWidth="0.5" />
-      <text x="205" y="4" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill={T.textMuted} letterSpacing="0.1em">THE ARGUMENT</text>
+    <svg viewBox="0 0 420 162" style={{ width: "100%", height: "auto", borderRadius: "3px" }}>
+      <rect x="0" y="0" width="420" height="162" fill={bg} rx="3" />
+      {renderRow(row1, 12, 62)}
+      {renderRow(row2, 72, 122)}
+      <text x="210" y="140" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill="#666" letterSpacing="0.08em">PORTFOLIO ANATOMY</text>
+      {/* Bracket spanning project pages */}
+      <line x1="16" y1="150" x2="172" y2="150" stroke="#444" strokeWidth="0.5" />
+      <text x="94" y="157" textAnchor="middle" fontSize="4.5" fontFamily={T.sans} fill="#555" letterSpacing="0.06em">FRONT MATTER</text>
+      <line x1="182" y1="150" x2="340" y2="150" stroke="#444" strokeWidth="0.5" />
+      <text x="261" y="157" textAnchor="middle" fontSize="4.5" fontFamily={T.sans} fill="#555" letterSpacing="0.06em">THE ARGUMENT</text>
+      <line x1="350" y1="150" x2="406" y2="150" stroke="#444" strokeWidth="0.5" />
+      <text x="378" y="157" textAnchor="middle" fontSize="4.5" fontFamily={T.sans} fill="#555" letterSpacing="0.06em">CLOSE</text>
     </svg>
   );
 }
