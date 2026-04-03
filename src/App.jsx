@@ -969,46 +969,107 @@ function InteractiveChecklist({ moduleId }) {
 }
 
 /* ─── Diagram Gallery Item with hover title ─── */
-function DiagramGalleryItem({ diagram, index, total, moduleLabel }) {
+function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
+  const [current, setCurrent] = useState(0);
+  const [fade, setFade] = useState(true);
   const [hovered, setHovered] = useState(false);
-  const DiagramComp = diagram.component;
-  const isImage = !!diagram.image;
   const basePath = import.meta.env.BASE_URL || "/";
+  const total = diagrams.length;
+  const diagram = diagrams[current];
+  const DiagramComp = diagram?.component;
+  const isImage = !!diagram?.image;
+
+  const goTo = (idx) => {
+    if (idx === current || idx < 0 || idx >= total) return;
+    setFade(false);
+    setTimeout(() => { setCurrent(idx); setFade(true); }, 180);
+  };
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); goTo(current < total - 1 ? current + 1 : 0); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); goTo(current > 0 ? current - 1 : total - 1); }
+      if (e.key === "Escape") navigate(backHash);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [current, total, backHash]);
+
+  if (!diagram) return null;
+
   return (
     <div
-      style={{ position: "relative", marginBottom: index < total - 1 ? 64 : 0 }}
+      style={{
+        position: "fixed", inset: 0, background: T.bg, zIndex: 100,
+        display: "flex", flexDirection: "column", fontFamily: T.sans,
+        cursor: current < total - 1 ? "e-resize" : "default",
+      }}
+      onClick={(e) => {
+        if (e.target.closest("button") || e.target.closest("a")) return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        if (x < rect.width * 0.35) goTo(current > 0 ? current - 1 : total - 1);
+        else goTo(current < total - 1 ? current + 1 : 0);
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {isImage ? (
-        <div style={{ transition: "opacity 0.2s ease" }}>
-          <img
-            src={`${basePath}images/${diagram.image}`}
-            alt={diagram.alt || diagram.title}
-            loading="lazy"
-            style={{ width: "100%", height: "auto", display: "block" }}
-          />
-        </div>
-      ) : DiagramComp ? (
-        <div style={{
-          background: T.bgAlt, border: `1px solid ${T.border}`, padding: "32px 24px",
-          transition: "opacity 0.2s ease",
-        }}>
-          <DiagramComp />
-        </div>
-      ) : null}
+      {/* Top bar */}
       <div style={{
-        position: "absolute", bottom: -28, left: 0, right: 0,
         display: "flex", justifyContent: "space-between", alignItems: "baseline",
-        opacity: hovered ? 1 : 0, transition: "opacity 0.25s ease",
-        pointerEvents: "none",
+        padding: "20px 40px", flexShrink: 0,
+        opacity: hovered ? 1 : 0, transition: "opacity 0.3s ease",
       }}>
-        <span style={{ fontSize: 10, color: T.textLight, fontFamily: T.sans, letterSpacing: "0.01em" }}>
+        <button onClick={(e) => { e.stopPropagation(); navigate(backHash); }} style={{
+          background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
+          fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+        }}>← {moduleLabel}</button>
+        <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em" }}>
+          {current + 1} / {total}
+        </span>
+      </div>
+
+      {/* Image area */}
+      <div style={{
+        flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
+        padding: "0 60px", overflow: "hidden", minHeight: 0,
+      }}>
+        <div style={{
+          maxWidth: 720, width: "100%",
+          opacity: fade ? 1 : 0, transition: "opacity 0.18s ease",
+        }}>
+          {isImage ? (
+            <img
+              src={`${basePath}images/${diagram.image}`}
+              alt={diagram.alt || diagram.title}
+              style={{ width: "100%", height: "auto", display: "block", maxHeight: "calc(100vh - 160px)", objectFit: "contain" }}
+            />
+          ) : DiagramComp ? (
+            <div style={{ background: T.bgAlt, border: `1px solid ${T.border}`, padding: "32px 24px" }}>
+              <DiagramComp />
+            </div>
+          ) : null}
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div style={{
+        display: "flex", justifyContent: "space-between", alignItems: "baseline",
+        padding: "20px 40px", flexShrink: 0,
+        opacity: hovered ? 1 : 0, transition: "opacity 0.3s ease",
+      }}>
+        <span style={{ fontSize: 10, color: T.textLight, letterSpacing: "0.01em" }}>
           {diagram.title}
         </span>
-        <span style={{ fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
-          {moduleLabel} — {index + 1} / {total}
-        </span>
+        <div style={{ display: "flex", gap: 6 }}>
+          {diagrams.map((_, i) => (
+            <div key={i} onClick={(e) => { e.stopPropagation(); goTo(i); }} style={{
+              width: i === current ? 16 : 6, height: 1.5,
+              background: i === current ? T.text : T.border,
+              transition: "all 0.2s ease", cursor: "pointer",
+            }} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -1279,55 +1340,15 @@ export default function PortfolioGuide() {
   if (view === "diagrams" && diagramModuleId !== null) {
     const diagrams = DIAGRAM_MAP[diagramModuleId] || [];
     const isCaseStudyDiagrams = diagramModuleId === "casestudy";
-    const parentModule = isCaseStudyDiagrams ? null : MODULES.find(m => m.id === diagramModuleId);
     const backHash = isCaseStudyDiagrams ? "#/casestudy" : `#/module/${diagramModuleId}`;
     const moduleLabel = isCaseStudyDiagrams ? "Case Study" : `Module ${String(diagramModuleId).padStart(2, "0")}`;
-    const pageTitle = isCaseStudyDiagrams ? "Case Study — Erosion" : (parentModule ? parentModule.title : "");
 
     return (
-      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
-        <header style={{
-          padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "baseline",
-          borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50,
-        }}>
-          <button onClick={() => navigate(backHash)} style={{
-            background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
-            fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
-          }}>← {moduleLabel}</button>
-          <div style={{ fontSize: 10, color: T.textFaint, letterSpacing: "0.04em" }}>
-            Diagrams
-          </div>
-        </header>
-
-        <div style={{
-          flex: 1, padding: "56px 40px 80px",
-          maxWidth: 640, width: "100%", margin: "0 auto",
-          opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
-        }}>
-          <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>
-            {moduleLabel}
-          </div>
-          <h1 style={{ fontSize: 16, fontWeight: 500, lineHeight: 1.4, color: T.text, margin: "0 0 20px", letterSpacing: "0.01em" }}>
-            {pageTitle}
-          </h1>
-          <div style={{ width: 24, height: 1, background: T.text, marginBottom: 48 }} />
-
-          {diagrams.map((diagram, i) => (
-            <DiagramGalleryItem
-              key={i}
-              diagram={diagram}
-              index={i}
-              total={diagrams.length}
-              moduleLabel={moduleLabel}
-            />
-          ))}
-        </div>
-
-        <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
-          <span>Kent State University · CAED</span>
-          <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
-        </footer>
-      </div>
+      <DiagramSlideshow
+        diagrams={diagrams}
+        moduleLabel={moduleLabel}
+        backHash={backHash}
+      />
     );
   }
 
