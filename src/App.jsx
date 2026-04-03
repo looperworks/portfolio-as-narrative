@@ -1050,7 +1050,7 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
             >
               {/* Uniform grey card */}
               <div style={{
-                width: "60vh", height: "60vh",
+                width: "75vh", height: "55vh",
                 background: T.bgAlt,
                 display: "flex", alignItems: "center", justifyContent: "center",
                 padding: 32, boxSizing: "border-box",
