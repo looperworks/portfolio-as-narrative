@@ -896,7 +896,7 @@ Every architecture portfolio shares a common anatomy: cover, table of contents, 
   },
   {
     id: 2,
-    title: "The Red Thread: From Description to Position",
+    title: "Finding Your Position",
     part: "Narrative",
     overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position (a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts).
 
@@ -915,7 +915,7 @@ When you can name your lens, you can use it to curate, sequence, and edit with p
   },
   {
     id: 3,
-    title: "Narrative Structure",
+    title: "Structuring the Narrative",
     part: "Narrative",
     overview: `Narrative is a design problem, not a writing task. A portfolio that presents projects in chronological order leaves the reviewer to construct meaning on their own. One that sequences them within a deliberate structure controls what the reviewer understands and when. The three-act framework (opening, development, resolution) is not a formula. It is a pattern of expectations that audiences already carry. Working with that pattern makes the portfolio coherent. Ignoring it makes the portfolio feel scattered, regardless of the quality of the work inside.
 
@@ -930,7 +930,7 @@ Building a narrative takes three steps. First, write a position statement: your 
   },
   {
     id: 4,
-    title: "The Initials-and-Finals Principle",
+    title: "Sequencing for Impact",
     part: "Narrative",
     overview: `The strongest work goes first. The most resonant work goes last. The middle builds complexity.
 
@@ -947,7 +947,7 @@ Precedent study sharpens sequencing instincts. Award-winning portfolios, such as
   },
   {
     id: 5,
-    title: "A Taxonomy of Architectural Images",
+    title: "Four Image Types",
     part: "Narrative",
     overview: `Every image in a portfolio performs one of four roles. Knowing these roles is the difference between a page that documents and a page that argues.
 
@@ -964,7 +964,7 @@ The sequence matters. Concept first. Context second. Process and Outcome weave t
   },
   {
     id: 6,
-    title: "Writing the Architectural Project Statement",
+    title: "The Project Statement",
     part: "Narrative",
     overview: `The project statement is not a description of what you built. It is a declaration of what you investigated and why it matters. Weak statements describe ("This project explores light"). Strong statements declare ("This project tests whether a single aperture can structure an entire domestic sequence").
 
