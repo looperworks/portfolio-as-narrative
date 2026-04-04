@@ -199,6 +199,48 @@ function DiagramCompression() {
   );
 }
 
+function DiagramCompressionWorked() {
+  const steps = [
+    { step: "Step 1", label: "One Paragraph", color: "#fff", border: T.border, textColor: T.text,
+      content: "The design converts a decommissioned Cold War bunker\ninto an Alpine museum by cutting into eroding\nmountainside terrain, creating a continuous path\nthat makes geological time visible as visitors\nmove between landscape and gallery." },
+    { step: "Step 2", label: "One Sentence", color: "#fff", border: T.border, textColor: T.text,
+      content: "An Alpine museum embeds into eroding terrain\nto make climate change a spatial experience." },
+    { step: "Step 3", label: "One Word", color: "#fff", border: T.border, textColor: T.text,
+      content: "Erosion" },
+    { step: "Step 4", label: "Thread Test", color: T.navy, border: T.navy, textColor: "#fff",
+      content: "Erosion → across landscape, structure,\nmateriality, and visitor path" },
+  ];
+  return (
+    <svg viewBox="0 0 460 320" style={{ width: "100%", height: "auto" }}>
+      <text x="230" y="16" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">WORKED EXAMPLE: THE COMPRESSION EXERCISE</text>
+      <text x="230" y="28" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight} fontStyle="italic">Harvard GSD — Advanced Studio — Alpine Museum Project</text>
+      {steps.map((s, i) => {
+        const y = 44 + i * 68;
+        const lines = s.content.split("\n");
+        return (
+          <g key={i}>
+            <rect x="20" y={y} width="60" height="52" rx="3" fill={s.color} stroke={s.border} strokeWidth="1.5" />
+            <text x="50" y={y + 20} textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fontWeight="600" fill={s.step === "Step 4" ? T.textMid : T.textLight}>{s.step}</text>
+            <text x="50" y={y + 32} textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={s.textColor}>{s.label}</text>
+            <rect x="100" y={y} width="340" height="52" rx="3" fill={s.color} stroke={s.border} strokeWidth="1" />
+            {lines.map((line, li) => (
+              <text key={li} x="115" y={y + 16 + li * 11} fontSize={i === 2 ? "10" : "6.5"} fontFamily={T.sans} fill={s.textColor} fontWeight={i === 2 ? "700" : "400"}>{line}</text>
+            ))}
+            {i < 3 && (
+              <g>
+                <line x1="50" y1={y + 52} x2="50" y2={y + 68} stroke={T.textFaint} strokeWidth="1" />
+                <text x="50" y={y + 64} textAnchor="middle" fontSize="10" fill={T.textFaint}>↓</text>
+              </g>
+            )}
+          </g>
+        );
+      })}
+      <line x1="20" y1="310" x2="440" y2="310" stroke={T.coral} strokeWidth="1" strokeDasharray="2,4" />
+      <text x="440" y="318" textAnchor="end" fontSize="6" fontFamily={T.sans} fontWeight="500" fill={T.coral}>COMPRESSION →</text>
+    </svg>
+  );
+}
+
 function DiagramWeakVsStrong() {
   return (
     <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
@@ -794,6 +836,7 @@ const DIAGRAM_MAP = {
   ],
   2: [
     { component: DiagramCompression, title: "The Compression Exercise" },
+    { component: DiagramCompressionWorked, title: "Worked Example: Alpine Museum → Erosion" },
   ],
   3: [
     { component: DiagramNarrativeArc, title: "Three-Act Narrative Arc" },
@@ -912,7 +955,7 @@ Step 4 - The Thread Test: Repeat for every project. When the same word keeps sur
 
 When you can name your lens, you can use it to curate, sequence, and edit with precision. The compression exercise turns a vague sense of what your work is about into a single word you can test against every project in the portfolio.
 
-**Worked example:** A portfolio from Toshiko Mori's Advanced Studio at Harvard GSD. Paragraph: "The design converts a decommissioned military bunker into an Alpine Museum, embedding into the mountainside to create a continuous path between landscape and gallery." Sentence: "The Alpine Museum embeds into eroding terrain to make climate change a spatial experience." Word: Erosion. The case study at the end of Part I shows how that single word governed every image in the portfolio.`,
+**Worked example:** A portfolio from an Advanced Studio at Harvard GSD. Step 1 (Paragraph): "The design converts a decommissioned Cold War bunker into an Alpine museum by cutting into eroding mountainside terrain, creating a continuous path that makes geological time visible as visitors move between landscape and gallery." Step 2 (Sentence): "An Alpine museum embeds into eroding terrain to make climate change a spatial experience." Step 3 (Word): Erosion. Step 4 (Thread Test): erosion recurs across landscape, structure, materiality, and visitor path. The case study at the end of Part I shows how that single word governed every spread in the portfolio. See Diagram 02 for the full compression visualized step by step.`,
     keyInsight: `"If the word is the same across three or more projects, the portfolio has a position. If it scatters, it needs one."`,
   },
   {
