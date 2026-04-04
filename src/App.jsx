@@ -233,33 +233,33 @@ function DiagramCompressionWorked() {
   return (
     <svg viewBox={`0 0 420 ${totalH}`} style={{ width: "100%", height: "auto" }}>
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.1em">WORKED EXAMPLE: COMPRESSION EXERCISE</text>
-      <text x="210" y="26" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight} fontStyle="italic">Harvard GSD — Advanced Studio — Alpine Museum</text>
+      <text x="210" y="26" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight} fontStyle="italic">Harvard GSD, Advanced Studio, Alpine Museum</text>
 
-      {/* Step 1: Paragraph — full width */}
+      {/* Step 1: Paragraph, full width */}
       <rect x={L} y={s1y} width={s1w} height={s1h} rx="3" fill="#fff" stroke={T.border} strokeWidth="0.75" />
-      <text x={L + p} y={s1y + labelY} fontSize="5.5" fontFamily={T.sans} fontWeight="700" fill={T.textLight} letterSpacing="0.06em">STEP 1 — ONE PARAGRAPH</text>
+      <text x={L + p} y={s1y + labelY} fontSize="5.5" fontFamily={T.sans} fontWeight="700" fill={T.textLight} letterSpacing="0.06em">STEP 1: ONE PARAGRAPH</text>
       <text x={L + p} y={s1y + bodyY} fontSize="7" fontFamily={T.sans} fill={T.text}>The design converts a decommissioned Cold War bunker</text>
       <text x={L + p} y={s1y + bodyY + lh} fontSize="7" fontFamily={T.sans} fill={T.text}>into an Alpine museum by cutting into eroding mountainside</text>
       <text x={L + p} y={s1y + bodyY + lh * 2} fontSize="7" fontFamily={T.sans} fill={T.text}>terrain, creating a continuous path that makes geological</text>
       <text x={L + p} y={s1y + bodyY + lh * 3} fontSize="7" fontFamily={T.sans} fill={T.text}>time visible as visitors move between landscape and gallery.</text>
       <Arrow from={s1y + s1h} cx={L + s1w / 2} />
 
-      {/* Step 2: Sentence — narrower */}
+      {/* Step 2: Sentence, narrower */}
       <rect x={L} y={s2y} width={s2w} height={s2h} rx="3" fill="#fff" stroke={T.border} strokeWidth="0.75" />
-      <text x={L + p} y={s2y + labelY} fontSize="5.5" fontFamily={T.sans} fontWeight="700" fill={T.textLight} letterSpacing="0.06em">STEP 2 — ONE SENTENCE</text>
+      <text x={L + p} y={s2y + labelY} fontSize="5.5" fontFamily={T.sans} fontWeight="700" fill={T.textLight} letterSpacing="0.06em">STEP 2: ONE SENTENCE</text>
       <text x={L + p} y={s2y + bodyY} fontSize="7" fontFamily={T.sans} fill={T.text}>An Alpine museum embeds into eroding terrain to</text>
       <text x={L + p} y={s2y + bodyY + lh} fontSize="7" fontFamily={T.sans} fill={T.text}>make climate change a spatial experience.</text>
       <Arrow from={s2y + s2h} cx={L + s2w / 2} />
 
-      {/* Step 3: One Word — narrow, centered text, bold border */}
+      {/* Step 3: One Word, narrow, centered text, bold border */}
       <rect x={L} y={s3y} width={s3w} height={s3h} rx="3" fill="#fff" stroke={T.text} strokeWidth="1.25" />
-      <text x={L + s3w / 2} y={s3y + 14} textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fontWeight="700" fill={T.textLight} letterSpacing="0.06em">STEP 3 — ONE WORD</text>
+      <text x={L + s3w / 2} y={s3y + 14} textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fontWeight="700" fill={T.textLight} letterSpacing="0.06em">STEP 3: ONE WORD</text>
       <text x={L + s3w / 2} y={s3y + 32} textAnchor="middle" fontSize="15" fontFamily={T.sans} fontWeight="700" fill={T.text} letterSpacing="0.04em">Erosion</text>
       <Arrow from={s3y + s3h} cx={L + s3w / 2} />
 
-      {/* Step 4: Thread Test — navy */}
+      {/* Step 4: Thread Test, navy */}
       <rect x={L} y={s4y} width={s4w} height={s4h} rx="3" fill={T.navy} />
-      <text x={L + s4w / 2} y={s4y + labelY} textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fontWeight="700" fill="rgba(255,255,255,0.5)" letterSpacing="0.06em">STEP 4 — THREAD TEST</text>
+      <text x={L + s4w / 2} y={s4y + labelY} textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fontWeight="700" fill="rgba(255,255,255,0.5)" letterSpacing="0.06em">STEP 4: THREAD TEST</text>
       <text x={L + s4w / 2} y={s4y + bodyY} textAnchor="middle" fontSize="7.5" fontFamily={T.sans} fontWeight="600" fill="#fff">Erosion → landscape · structure</text>
       <text x={L + s4w / 2} y={s4y + bodyY + lh} textAnchor="middle" fontSize="7.5" fontFamily={T.sans} fontWeight="600" fill="#fff">materiality · visitor path</text>
 
@@ -289,7 +289,7 @@ function DiagramWeakVsStrong() {
 }
 
 function DiagramPortfolioAnatomy() {
-  /* Page dimensions — portrait proportion, consistent with architecture portfolio format */
+  /* Page dimensions: portrait proportion, consistent with architecture portfolio format */
   const pw = 32; const ph = 44; const gap = 4; const spreadGap = 1;
   const bg = "#1a1a1a"; const page = "#fff"; const img = "#c8d5dc"; const txt = "#d0d0d0";
   /* Row 1 items */
@@ -381,7 +381,7 @@ function DiagramTwoSpeed() {
       {/* Left: Skim */}
       <text x="120" y="22" textAnchor="middle" fontSize="8" fontFamily={T.sans} fill="#888" letterSpacing="0.12em">SKIM</text>
       <text x="120" y="34" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="500" fill={txt}>30 seconds</text>
-      {/* Page spread — image dominant */}
+      {/* Page spread: image dominant */}
       <rect x="38" y="46" width={pw} height={ph} fill={page} />
       <rect x={38 + pw + 2} y="46" width={pw} height={ph} fill={page} />
       <line x1={38 + pw + 1} y1="46" x2={38 + pw + 1} y2={46 + ph} stroke={bg} strokeWidth="1.5" />
@@ -390,7 +390,7 @@ function DiagramTwoSpeed() {
       {/* Small title + text on left */}
       <rect x="44" y={52 + ph * 0.55 + 8} width="30" height="2.5" fill="#999" rx="0.5" />
       <rect x="44" y={52 + ph * 0.55 + 14} width="50" height="1.5" fill="#ccc" rx="0.5" />
-      {/* Right page — one big image */}
+      {/* Right page: one big image */}
       <rect x={38 + pw + 8} y="52" width={pw - 12} height={ph - 12} fill={img} />
       {/* Label */}
       <text x="120" y={46 + ph + 18} textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#666">Large images · Clear hierarchy · Minimal text</text>
@@ -401,17 +401,17 @@ function DiagramTwoSpeed() {
       {/* Right: Study */}
       <text x="408" y="22" textAnchor="middle" fontSize="8" fontFamily={T.sans} fill="#888" letterSpacing="0.12em">STUDY</text>
       <text x="408" y="34" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="500" fill={txt}>5 minutes</text>
-      {/* Page spread — text + multi-image */}
+      {/* Page spread: text + multi-image */}
       <rect x="326" y="46" width={pw} height={ph} fill={page} />
       <rect x={326 + pw + 2} y="46" width={pw} height={ph} fill={page} />
       <line x1={326 + pw + 1} y1="46" x2={326 + pw + 1} y2={46 + ph} stroke={bg} strokeWidth="1.5" />
-      {/* Left page — two images + caption */}
+      {/* Left page: two images + caption */}
       <rect x="332" y="52" width={pw - 12} height="36" fill={img} />
       <rect x="332" y="92" width="34" height="28" fill={img} />
       <rect x="370" y="92" width="34" height="28" fill={img} />
       <rect x="332" y="126" width="30" height="1.5" fill="#ccc" rx="0.5" />
       <rect x="332" y="130" width="24" height="1" fill="#ddd" rx="0.5" />
-      {/* Right page — text-heavy */}
+      {/* Right page: text-heavy */}
       <rect x={326 + pw + 8} y="52" width="50" height="2.5" fill="#999" rx="0.5" />
       {[0,1,2,3,4,5,6,7,8,9,10].map(j => (
         <rect key={j} x={326 + pw + 8} y={60 + j * 7} width={j % 3 === 0 ? 60 : 52} height="1.5" fill={j < 3 ? "#bbb" : "#ddd"} rx="0.5" />
@@ -448,7 +448,7 @@ function DiagramAudienceLens() {
           </g>
         );
       })}
-      <text x="270" y="116" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#555" fontStyle="italic">Same portfolio, different emphasis — know the reviewer before you sequence.</text>
+      <text x="270" y="116" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#555" fontStyle="italic">Same portfolio, different emphasis. Know the reviewer before you sequence.</text>
     </svg>
   );
 }
@@ -612,7 +612,7 @@ function DiagramFourGridTypes() {
 function Diagram12Point() {
   return (
     <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
-      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">DOCUMENT SETUP — 12-POINT SYSTEM</text>
+      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">DOCUMENT SETUP: 12-POINT SYSTEM</text>
       {[
         { param: "Page Size", value: "600 × 840 pt" },
         { param: "Margins (T/B/I/O)", value: "48 / 60 / 48 / 36 pt" },
@@ -767,7 +767,7 @@ function DiagramFiveNarrativeElements() {
           </g>
         );
       })}
-      <text x="210" y="108" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Narrative is a design problem — not a writing task</text>
+      <text x="210" y="108" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Narrative is a design problem, not a writing task</text>
     </svg>
   );
 }
@@ -859,9 +859,9 @@ function DiagramParentPages() {
 /* ─── Diagram map: moduleId → [{component, title}] ─── */
 const DIAGRAM_MAP = {
   1: [
-    { image: "class-pdf/academic-portfolio-example.png", title: "Academic Portfolio Example", alt: "Jiayao Li — Conceptual Box Model spread showing process diagrams, artifact scans, and analytical drawings" },
-    { image: "class-pdf/professional-portfolio-example.png", title: "Professional Portfolio Example", alt: "Nick McIntosh — Generative Housing spread showing rendering, floor plan, and building section" },
-    { image: "class-pdf/class1-portfolio-anatomy.png", title: "Portfolio Anatomy", alt: "Portfolio document structure — Cover, Inside Front Cover, TOC, Section Divider, Introduction Pages, Project Pages, Resume, Back Cover" },
+    { image: "class-pdf/academic-portfolio-example.png", title: "Academic Portfolio Example", alt: "Jiayao Li, Conceptual Box Model spread showing process diagrams, artifact scans, and analytical drawings" },
+    { image: "class-pdf/professional-portfolio-example.png", title: "Professional Portfolio Example", alt: "Nick McIntosh, Generative Housing spread showing rendering, floor plan, and building section" },
+    { image: "class-pdf/class1-portfolio-anatomy.png", title: "Portfolio Anatomy", alt: "Portfolio document structure: Cover, Inside Front Cover, TOC, Section Divider, Introduction Pages, Project Pages, Resume, Back Cover" },
   ],
   "1spreads": [
     { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1", alt: "Terrain model and project abstract" },
@@ -876,78 +876,78 @@ const DIAGRAM_MAP = {
     { component: DiagramWeakVsStrong, title: "Weak vs. Strong Statements" },
   ],
   3: [
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Statement Keywords Mapped", alt: "Terrain model and project abstract", caption: "The concept sentence: 'An Alpine museum embeds into eroding terrain to make climate change a spatial experience.' The terrain model proves 'eroding terrain.' The statement anchors every image that follows." },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Context Keywords", alt: "Aerial site photo and detail terrain model", caption: "Keywords: 'Alpine,' 'terrain.' The aerial photograph proves the Alpine context at scale. The detail model proves the terrain the building must negotiate. Context keywords demand site evidence." },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Intervention Keywords", alt: "Winter renderings and building section", caption: "Keywords: 'embeds into,' 'eroding terrain.' The section proves the embedding — architecture cut into slope. The rendering proves the building survives its environment. Intervention keywords demand design evidence." },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Intervention Keywords", alt: "Model photo, approach rendering, and section", caption: "Keywords: 'embeds,' 'spatial experience.' Physical model proves the massing strategy. Approach rendering proves the spatial sequence. Section proves the structural response. Each keyword accounted for." },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Outcome Keywords", alt: "Gallery interiors and floor plans", caption: "Keywords: 'museum,' 'spatial experience.' Interior views prove inhabitation. Floor plans prove program. The graphic outline is complete — every claim in the concept sentence has been drawn." },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1: Statement Keywords Mapped", alt: "Terrain model and project abstract", caption: "The concept sentence: 'An Alpine museum embeds into eroding terrain to make climate change a spatial experience.' The terrain model proves 'eroding terrain.' The statement anchors every image that follows." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2: Context Keywords", alt: "Aerial site photo and detail terrain model", caption: "Keywords: 'Alpine,' 'terrain.' The aerial photograph proves the Alpine context at scale. The detail model proves the terrain the building must negotiate. Context keywords demand site evidence." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3: Intervention Keywords", alt: "Winter renderings and building section", caption: "Keywords: 'embeds into,' 'eroding terrain.' The section proves the embedding: architecture cut into slope. The rendering proves the building survives its environment. Intervention keywords demand design evidence." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4: Intervention Keywords", alt: "Model photo, approach rendering, and section", caption: "Keywords: 'embeds,' 'spatial experience.' Physical model proves the massing strategy. Approach rendering proves the spatial sequence. Section proves the structural response. Each keyword accounted for." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5: Outcome Keywords", alt: "Gallery interiors and floor plans", caption: "Keywords: 'museum,' 'spatial experience.' Interior views prove inhabitation. Floor plans prove program. The graphic outline is complete; every claim in the concept sentence has been drawn." },
   ],
   4: [
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Act I: Exposition", alt: "Terrain model and project abstract", caption: "The protagonist is the site. The terrain model introduces the world the project inhabits; the statement declares what is at stake. A reviewer knows where we are and why it matters." },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Act II: Rising Action", alt: "Aerial site photo and detail terrain model", caption: "Tension builds. The aerial view shows scale and remoteness; the detail model reveals the eroding terrain that demands intervention. These pages answer: why does this project need to exist?" },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Act III: Climax", alt: "Winter renderings and building section", caption: "The difficulty is visible inside the solution. The section reveals the extreme slope the building must negotiate — the obstacle is embedded in the drawing. The winter rendering shows the conditions the building must endure." },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Act IV: Falling Action", alt: "Model photo, approach rendering, and section", caption: "Tension releases as the design takes shape. The physical model shows massing resolution; the approach rendering shows arrival sequence; the section shows structural logic responding directly to the slope." },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Act V: Resolution", alt: "Gallery interiors and floor plans", caption: "The transformed state. Interior views prove the spatial experience works. Floor plans demonstrate professional resolution. The conflict has been addressed; the thesis has been proven." },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1: Act I: Exposition", alt: "Terrain model and project abstract", caption: "The protagonist is the site. The terrain model introduces the world the project inhabits; the statement declares what is at stake. A reviewer knows where we are and why it matters." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2: Act II: Rising Action", alt: "Aerial site photo and detail terrain model", caption: "Tension builds. The aerial view shows scale and remoteness; the detail model reveals the eroding terrain that demands intervention. These pages answer: why does this project need to exist?" },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3: Act III: Climax", alt: "Winter renderings and building section", caption: "The difficulty is visible inside the solution. The section reveals the extreme slope the building must negotiate; the obstacle is embedded in the drawing. The winter rendering shows the conditions the building must endure." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4: Act IV: Falling Action", alt: "Model photo, approach rendering, and section", caption: "Tension releases as the design takes shape. The physical model shows massing resolution; the approach rendering shows arrival sequence; the section shows structural logic responding directly to the slope." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5: Act V: Resolution", alt: "Gallery interiors and floor plans", caption: "The transformed state. Interior views prove the spatial experience works. Floor plans demonstrate professional resolution. The conflict has been addressed; the thesis has been proven." },
   ],
   5: [
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Concept", alt: "Terrain model and project abstract", caption: "Concept: the terrain model captures the governing idea — erosion as design method. It is the visual form of the project statement, the claim made visible. The written abstract supports but is not itself an image type." },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Context + Process", alt: "Aerial site photo and detail terrain model", caption: "Context: the aerial photograph establishes real-world conditions. Process: the detail terrain model shows how the site was studied and remodeled. Evidence of thinking, not just outcome." },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Outcome + Process", alt: "Winter renderings and building section", caption: "Outcome: the rendering proves the building works in its landscape. Process: the section reveals how the design was developed through cutting and embedding. The two types complete each other." },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Process + Outcome", alt: "Model photo, approach rendering, and section", caption: "Three images, two types. The physical model is process — evidence of how the massing was resolved. The approach rendering is outcome — the spatial experience proven. The section is process — showing the design decision where building meets slope." },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Outcome", alt: "Gallery interiors and floor plans", caption: "Pure outcome. Interior views and floor plans demonstrate professional fluency — the work is resolved, buildable, inhabitable. No concept or process images needed; the argument has already been made." },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1: Concept", alt: "Terrain model and project abstract", caption: "Concept: the terrain model captures the governing idea: erosion as design method. It is the visual form of the project statement, the claim made visible. The written abstract supports but is not itself an image type." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2: Context + Process", alt: "Aerial site photo and detail terrain model", caption: "Context: the aerial photograph establishes real-world conditions. Process: the detail terrain model shows how the site was studied and remodeled. Evidence of thinking, not just outcome." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3: Outcome + Process", alt: "Winter renderings and building section", caption: "Outcome: the rendering proves the building works in its landscape. Process: the section reveals how the design was developed through cutting and embedding. The two types complete each other." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4: Process + Outcome", alt: "Model photo, approach rendering, and section", caption: "Three images, two types. The physical model is process, evidence of how the massing was resolved. The approach rendering is outcome, the spatial experience proven. The section is process, showing the design decision where building meets slope." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5: Outcome", alt: "Gallery interiors and floor plans", caption: "Pure outcome. Interior views and floor plans demonstrate professional fluency: the work is resolved, buildable, inhabitable. No concept or process images needed; the argument has already been made." },
   ],
 
   7: [
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Opening: Concept + Statement", alt: "Terrain model and project abstract", caption: "The storyboard opens with the hero image and project statement. At skim speed (30 seconds), the terrain model carries the argument alone. At study speed, the text deepens it. Both tracks work." },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Development: Context", alt: "Aerial site photo and detail terrain model", caption: "The second spread introduces what the first did not: site scale and analytical method. The skim track reads the aerial photograph; the study track reads the model's erosion logic. No repetition." },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Development: Atmosphere + Logic", alt: "Winter renderings and building section", caption: "Complexity builds. The rendering shows atmosphere; the section shows tectonic logic. Text and image complete each other — the image shows what cannot be said, the text says what cannot be shown." },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Development: Materiality + Sequence", alt: "Model photo, approach rendering, and section", caption: "Each spread advances without repeating. Physical materiality (model), experiential sequence (rendering), and structural response (section) — three new dimensions on one spread." },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Closing: Resolution", alt: "Gallery interiors and floor plans", caption: "The storyboard resolves. Interior views prove inhabitation; plans prove professional fluency. If these five spreads tell the story without the statement, the storyboard is finished." },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1: Opening: Concept + Statement", alt: "Terrain model and project abstract", caption: "The storyboard opens with the hero image and project statement. At skim speed (30 seconds), the terrain model carries the argument alone. At study speed, the text deepens it. Both tracks work." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2: Development: Context", alt: "Aerial site photo and detail terrain model", caption: "The second spread introduces what the first did not: site scale and analytical method. The skim track reads the aerial photograph; the study track reads the model's erosion logic. No repetition." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3: Development: Atmosphere + Logic", alt: "Winter renderings and building section", caption: "Complexity builds. The rendering shows atmosphere; the section shows tectonic logic. Text and image complete each other: the image shows what cannot be said, the text says what cannot be shown." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4: Development: Materiality + Sequence", alt: "Model photo, approach rendering, and section", caption: "Each spread advances without repeating. Physical materiality (model), experiential sequence (rendering), and structural response (section), three new dimensions on one spread." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5: Closing: Resolution", alt: "Gallery interiors and floor plans", caption: "The storyboard resolves. Interior views prove inhabitation; plans prove professional fluency. If these five spreads tell the story without the statement, the storyboard is finished." },
   ],
   10: [
     { component: DiagramTypography, title: "Typography Categories" },
     { component: DiagramSizeHierarchy, title: "Typographic Hierarchy" },
-    { image: "class-pdf/casestudy2-spread-1.jpg", title: "Spread 1 — Full Typographic Hierarchy", alt: "Generative Housing project title page", caption: "Project title, italic subtitle, body text, and credits — four levels of typographic hierarchy on one page. Title weight anchors the spread; body text sits at reading size; credits step down to caption scale. The hero image earns equal weight through scale, not through competing type." },
-    { image: "class-pdf/casestudy2-spread-6.jpg", title: "Spread 6 — Consistent Type System Across Projects", alt: "Flexible Framework project title page", caption: "The second project divider repeats the same typographic system: title weight, subtitle italic, body size, credit format. Consistency across projects proves the type system is a system — not a one-time decision but a rule applied without exception." },
-    { image: "class-pdf/casestudy2-spread-4.jpg", title: "Spread 4 — Caption Placement and Size Hierarchy", alt: "Facade model and building section", caption: "Minimal text, maximum clarity. A small caption block in the upper left provides context without competing with the images. Caption size (eight to ten points) distinguishes it from body text. The type hierarchy works because each level has a defined role and a defined size." },
+    { image: "class-pdf/casestudy2-spread-1.jpg", title: "Spread 1: Full Typographic Hierarchy", alt: "Generative Housing project title page", caption: "Project title, italic subtitle, body text, and credits, establishing four levels of typographic hierarchy on one page. Title weight anchors the spread; body text sits at reading size; credits step down to caption scale. The hero image earns equal weight through scale, not through competing type." },
+    { image: "class-pdf/casestudy2-spread-6.jpg", title: "Spread 6: Consistent Type System Across Projects", alt: "Flexible Framework project title page", caption: "The second project divider repeats the same typographic system: title weight, subtitle italic, body size, credit format. Consistency across projects proves the type system is a system, not a one-time decision but a rule applied without exception." },
+    { image: "class-pdf/casestudy2-spread-4.jpg", title: "Spread 4: Caption Placement and Size Hierarchy", alt: "Facade model and building section", caption: "Minimal text, maximum clarity. A small caption block in the upper left provides context without competing with the images. Caption size (eight to ten points) distinguishes it from body text. The type hierarchy works because each level has a defined role and a defined size." },
   ],
   8: [
     { component: DiagramGridAnatomy, title: "Grid Anatomy Overview" },
     { component: DiagramFourGridTypes, title: "Four Grid Types" },
-    { image: "class-pdf/casestudy2-spread-3.jpg", title: "Spread 3 — Full-Page Floor Plan as Grid", alt: "Residential floor plan filling the spread", caption: "The architectural grid becomes the page grid. Column bays, corridor axes, and unit modules translate directly to the page — the plan's structural logic organizes both the building and the layout. A full-bleed plan needs no decoration; the grid is the content." },
-    { image: "class-pdf/casestudy2-spread-7.jpg", title: "Spread 7 — Modular Grid: Four Views + Rendering", alt: "Four axonometric model views and interior rendering", caption: "Four process models occupy a 2×2 grid on the left page; one large rendering anchors the right. The modular grid accommodates both repeated small images and a single dominant image without changing the underlying structure." },
-    { image: "class-pdf/casestudy2-spread-10.jpg", title: "Spread 10 — Four-Quadrant Layout", alt: "Model photographs and building sections", caption: "Model photographs on top, building sections below — a four-quadrant layout with clear hierarchy zones. The grid assigns each drawing type its own territory. Vertical alignment between model and section reinforces the structural analogy." },
-    { image: "class-pdf/class4-p7-img1.jpeg", title: "Building Plan vs. Page Layout", alt: "Structural column grid compared to modular page grid — same logic of rhythm, structure, and zones" },
-    { image: "class-pdf/class4-p8-img1.jpeg", title: "The Design Analogy: Facade & Structure", alt: "Concrete facade split to reveal underlying grid — primary frame, secondary alignment, content containers, baseline, margins" },
+    { image: "class-pdf/casestudy2-spread-3.jpg", title: "Spread 3: Full-Page Floor Plan as Grid", alt: "Residential floor plan filling the spread", caption: "The architectural grid becomes the page grid. Column bays, corridor axes, and unit modules translate directly to the page; the plan's structural logic organizes both the building and the layout. A full-bleed plan needs no decoration; the grid is the content." },
+    { image: "class-pdf/casestudy2-spread-7.jpg", title: "Spread 7: Modular Grid: Four Views + Rendering", alt: "Four axonometric model views and interior rendering", caption: "Four process models occupy a 2×2 grid on the left page; one large rendering anchors the right. The modular grid accommodates both repeated small images and a single dominant image without changing the underlying structure." },
+    { image: "class-pdf/casestudy2-spread-10.jpg", title: "Spread 10: Four-Quadrant Layout", alt: "Model photographs and building sections", caption: "Model photographs on top, building sections below, forming a four-quadrant layout with clear hierarchy zones. The grid assigns each drawing type its own territory. Vertical alignment between model and section reinforces the structural analogy." },
+    { image: "class-pdf/class4-p7-img1.jpeg", title: "Building Plan vs. Page Layout", alt: "Structural column grid compared to modular page grid, same logic of rhythm, structure, and zones" },
+    { image: "class-pdf/class4-p8-img1.jpeg", title: "The Design Analogy: Facade & Structure", alt: "Concrete facade split to reveal underlying grid: primary frame, secondary alignment, content containers, baseline, margins" },
   ],
   9: [
-    { component: Diagram12Point, title: "Document Setup — 12-Point System" },
+    { component: Diagram12Point, title: "Document Setup: 12-Point System" },
     { component: DiagramLayerArchitecture, title: "InDesign Layer Architecture" },
     { component: DiagramParentPages, title: "Parent Page Architecture" },
-    { image: "class-pdf/casestudy2-spread-2.jpg", title: "Spread 2 — Column Structure and Baseline Alignment", alt: "Rendering and ground floor plan with text", caption: "Rendering snaps to the left column group; the plan fills the right. Caption text aligns to the baseline grid below the rendering. The twelve-point system governs every element — image placement, text position, margin clearance." },
-    { image: "class-pdf/casestudy2-spread-5.jpg", title: "Spread 5 — Modular Placement: Unit Plans + Model", alt: "Three unit floor plans and sectional model photograph", caption: "Three unit plan types occupy precise grid modules on the left, each with a caption aligned to the baseline. The sectional model photograph fills the right page. Forty-eight modules per page, but every image lands in the same structural framework." },
-    { image: "class-pdf/casestudy2-spread-9.jpg", title: "Spread 9 — Complex Content Within Grid Framework", alt: "Interior model photo and two floor plans with legends", caption: "A model interior on the left, two floor plans with color-coded legends on the right. Dense information organized by the same six-column, eight-row grid. The baseline grid keeps plan labels, legends, and captions vertically aligned." },
-    { image: "class-pdf/class4-p11-img1.jpeg", title: "Two Systems, One Goal", alt: "Baseline grid for text precision and modular grid for content organization — combined for rigorous alignment within flexible structure" },
-    { image: "class-pdf/class4-p17-img1.png", title: "Technical Execution: The Atomic Unit", alt: "Four-step InDesign setup — document, baseline grid, margins and columns, modular grid rows — with dialog box reference" },
+    { image: "class-pdf/casestudy2-spread-2.jpg", title: "Spread 2: Column Structure and Baseline Alignment", alt: "Rendering and ground floor plan with text", caption: "Rendering snaps to the left column group; the plan fills the right. Caption text aligns to the baseline grid below the rendering. The twelve-point system governs every element: image placement, text position, margin clearance." },
+    { image: "class-pdf/casestudy2-spread-5.jpg", title: "Spread 5: Modular Placement: Unit Plans + Model", alt: "Three unit floor plans and sectional model photograph", caption: "Three unit plan types occupy precise grid modules on the left, each with a caption aligned to the baseline. The sectional model photograph fills the right page. Forty-eight modules per page, but every image lands in the same structural framework." },
+    { image: "class-pdf/casestudy2-spread-9.jpg", title: "Spread 9: Complex Content Within Grid Framework", alt: "Interior model photo and two floor plans with legends", caption: "A model interior on the left, two floor plans with color-coded legends on the right. Dense information organized by the same six-column, eight-row grid. The baseline grid keeps plan labels, legends, and captions vertically aligned." },
+    { image: "class-pdf/class4-p11-img1.jpeg", title: "Two Systems, One Goal", alt: "Baseline grid for text precision and modular grid for content organization, combined for rigorous alignment within flexible structure" },
+    { image: "class-pdf/class4-p17-img1.png", title: "Technical Execution: The Atomic Unit", alt: "Four-step InDesign setup: document, baseline grid, margins and columns, modular grid rows, with dialog box reference" },
   ],
   11: [
     { component: DiagramCoverTypes, title: "Seven Cover Typologies" },
-    { image: "class-pdf/casestudy2-spread-8.jpg", title: "Spread 8 — Information Density as Architecture", alt: "Four model iterations and labeled site axonometric", caption: "Four process models and a labeled site axonometric on one spread — high information density organized through clear visual hierarchy. The grid prevents chaos: small images align in a 2×2 module, the axon fills the remaining space, and labels stay legible. Information architecture at the spread level." },
-    { image: "class-pdf/casestudy2-spread-11.jpg", title: "Spread 11 — Paired Comparison: Model + Rendering", alt: "Physical model and exterior rendering side by side", caption: "Physical model on the left, digital rendering on the right — the same corner of the building shown in two media. Pairing signals intention: the portfolio argues that model and rendering complete each other. The layout is the argument." },
-    { image: "class-pdf/casestudy2-spread-12.jpg", title: "Spread 12 — Full-Bleed Closing Image", alt: "Interior rendering of building center space", caption: "A full-bleed interior rendering closes the project — no text, no captions, no grid. The break is intentional: after eleven spreads of structured argument, the final image lets the viewer inhabit the space. A closing image is a cover in reverse." },
-    { image: "type01-pure-minimal.jpeg", title: "Cover Type 01 — Pure Minimal", alt: "Text-only composition with asymmetric placement and generous whitespace" },
-    { image: "type02-dark-ground.jpeg", title: "Cover Type 02 — Dark Ground", alt: "Light typography on dark textured surface" },
-    { image: "type03-hero-image.jpeg", title: "Cover Type 03 — Hero Image", alt: "Central architectural rendering with supporting typography" },
-    { image: "type04-bleed-image.jpeg", title: "Cover Type 04 — Bleed + Band", alt: "Rendering bleeding to edges with bold typographic band" },
-    { image: "type05-scattered-collage.jpeg", title: "Cover Type 05 — Collage", alt: "Multiple project thumbnails at varying scales" },
-    { image: "type06-grid-pattern.jpeg", title: "Cover Type 06 — Grid Pattern", alt: "Repeating motif across the page with integrated typography" },
-    { image: "type07-abstract-line.jpeg", title: "Cover Type 07 — Abstract Line", alt: "Sweeping curves and geometric squares with text in quiet zone" },
-    { image: "toc01-illustrated-section-grid.png", title: "TOC — Illustrated Section Grid", alt: "Two-page spread with vignette columns and project metadata" },
-    { image: "toc02-multi-column-text-index.png", title: "TOC — Multi-Column Text Index", alt: "Three-column typographic layout with cascading metadata" },
-    { image: "toc03-thumbnail-gallery-row.png", title: "TOC — Thumbnail Gallery Row", alt: "Horizontal row of equally-sized project thumbnails" },
-    { image: "toc04-literary-chapter-index.png", title: "TOC — Literary Chapter Index", alt: "Oversized serif numerals with letterspaced headings" },
-    { image: "toc05-bold-number-column-cards.png", title: "TOC — Bold Number Column Cards", alt: "Vertical card columns with oversized numbers and thumbnails" },
-    { image: "toc06-narrative-list-hybrid.png", title: "TOC — Narrative + List Hybrid", alt: "Essay spread with drawing paired with structured contents list" },
+    { image: "class-pdf/casestudy2-spread-8.jpg", title: "Spread 8: Information Density as Architecture", alt: "Four model iterations and labeled site axonometric", caption: "Four process models and a labeled site axonometric on one spread, with high information density organized through clear visual hierarchy. The grid prevents chaos: small images align in a 2×2 module, the axon fills the remaining space, and labels stay legible. Information architecture at the spread level." },
+    { image: "class-pdf/casestudy2-spread-11.jpg", title: "Spread 11: Paired Comparison: Model + Rendering", alt: "Physical model and exterior rendering side by side", caption: "Physical model on the left, digital rendering on the right, the same corner of the building shown in two media. Pairing signals intention: the portfolio argues that model and rendering complete each other. The layout is the argument." },
+    { image: "class-pdf/casestudy2-spread-12.jpg", title: "Spread 12: Full-Bleed Closing Image", alt: "Interior rendering of building center space", caption: "A full-bleed interior rendering closes the project: no text, no captions, no grid. The break is intentional: after eleven spreads of structured argument, the final image lets the viewer inhabit the space. A closing image is a cover in reverse." },
+    { image: "type01-pure-minimal.jpeg", title: "Cover Type 01: Pure Minimal", alt: "Text-only composition with asymmetric placement and generous whitespace" },
+    { image: "type02-dark-ground.jpeg", title: "Cover Type 02: Dark Ground", alt: "Light typography on dark textured surface" },
+    { image: "type03-hero-image.jpeg", title: "Cover Type 03: Hero Image", alt: "Central architectural rendering with supporting typography" },
+    { image: "type04-bleed-image.jpeg", title: "Cover Type 04: Bleed + Band", alt: "Rendering bleeding to edges with bold typographic band" },
+    { image: "type05-scattered-collage.jpeg", title: "Cover Type 05: Collage", alt: "Multiple project thumbnails at varying scales" },
+    { image: "type06-grid-pattern.jpeg", title: "Cover Type 06: Grid Pattern", alt: "Repeating motif across the page with integrated typography" },
+    { image: "type07-abstract-line.jpeg", title: "Cover Type 07: Abstract Line", alt: "Sweeping curves and geometric squares with text in quiet zone" },
+    { image: "toc01-illustrated-section-grid.png", title: "TOC: Illustrated Section Grid", alt: "Two-page spread with vignette columns and project metadata" },
+    { image: "toc02-multi-column-text-index.png", title: "TOC: Multi-Column Text Index", alt: "Three-column typographic layout with cascading metadata" },
+    { image: "toc03-thumbnail-gallery-row.png", title: "TOC: Thumbnail Gallery Row", alt: "Horizontal row of equally-sized project thumbnails" },
+    { image: "toc04-literary-chapter-index.png", title: "TOC: Literary Chapter Index", alt: "Oversized serif numerals with letterspaced headings" },
+    { image: "toc05-bold-number-column-cards.png", title: "TOC: Bold Number Column Cards", alt: "Vertical card columns with oversized numbers and thumbnails" },
+    { image: "toc06-narrative-list-hybrid.png", title: "TOC: Narrative + List Hybrid", alt: "Essay spread with drawing paired with structured contents list" },
   ],
   12: [
     { component: DiagramColorPalettes, title: "Three Palette Families" },
@@ -959,11 +959,11 @@ const DIAGRAM_MAP = {
     { image: "diagram-skill-matrix.svg", title: "Project–Skill Coverage Matrix", alt: "Project–skill coverage matrix showing how projects map to different competencies" },
   ],
   casestudy: [
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Exposition", alt: "Terrain model and project abstract", caption: "Keyword: 'eroding terrain.' Act I: exposition. Image type: concept. The terrain model opens the storyboard — at skim speed, a reviewer knows this project is about ground shaped by force." },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Rising Action", alt: "Aerial site photo and detail terrain model", caption: "Keywords: 'Alpine,' 'terrain.' Act II: rising action. Image types: context + process. The aerial photograph establishes scale; the detail model introduces the method of working with erosion." },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Climax", alt: "Winter renderings and building section", caption: "Keywords: 'embeds into,' 'eroding terrain.' Act III: climax. Image types: outcome + process. The section reveals the extreme slope; the rendering shows the environment the design must survive." },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Falling Action", alt: "Model photo, approach rendering, and section", caption: "Keywords: 'embeds,' 'spatial experience.' Act IV: falling action. Image types: process + outcome. Massing, sequence, and structure — each drawing answers a question the portfolio already asked." },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Resolution", alt: "Gallery interiors and floor plans", caption: "Keywords: 'museum,' 'spatial experience.' Act V: resolution. Image type: outcome. Interior views prove inhabitation; plans prove program. Every claim in the statement has been drawn." },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1: Exposition", alt: "Terrain model and project abstract", caption: "Keyword: 'eroding terrain.' Act I: exposition. Image type: concept. The terrain model opens the storyboard; at skim speed, a reviewer knows this project is about ground shaped by force." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2: Rising Action", alt: "Aerial site photo and detail terrain model", caption: "Keywords: 'Alpine,' 'terrain.' Act II: rising action. Image types: context + process. The aerial photograph establishes scale; the detail model introduces the method of working with erosion." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3: Climax", alt: "Winter renderings and building section", caption: "Keywords: 'embeds into,' 'eroding terrain.' Act III: climax. Image types: outcome + process. The section reveals the extreme slope; the rendering shows the environment the design must survive." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4: Falling Action", alt: "Model photo, approach rendering, and section", caption: "Keywords: 'embeds,' 'spatial experience.' Act IV: falling action. Image types: process + outcome. Massing, sequence, and structure. Each drawing answers a question the portfolio already asked." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5: Resolution", alt: "Gallery interiors and floor plans", caption: "Keywords: 'museum,' 'spatial experience.' Act V: resolution. Image type: outcome. Interior views prove inhabitation; plans prove program. Every claim in the statement has been drawn." },
   ],
 };
 
@@ -977,7 +977,7 @@ const MODULES = [
 
 A portfolio is read at two speeds. At skim speed, the cover, image hierarchy, and project sequence must communicate a clear direction. At study speed (two to five minutes per spread), the written statements, captions, and visual details must deepen that direction without contradicting it.
 
-Different audiences read for different evidence. An academic reviewer looks for process: sketches, diagrams, and failed iterations that reveal how you think through a problem. A large firm looks for resolution: polished deliverables and technical range that demonstrate you can produce at a professional standard. A boutique studio looks for alignment: a design sensibility and point of view that signal you would be a collaborator, not just a pair of hands. Knowing what each audience evaluates for is the difference between a page that documents and a page that argues.
+Different audiences read for different evidence. An academic reviewer looks for process: sketches, diagrams, and failed iterations that reveal how you think through a problem. A large firm looks for resolution: polished deliverables and technical range that demonstrate you can produce at a professional standard. A boutique studio looks for alignment: a design sensibility and point of view that signal you would contribute to the studio's discourse, not just execute drawings. Knowing what each audience evaluates for is the difference between a page that documents and a page that argues.
 
 Every architecture portfolio shares a common anatomy: cover, table of contents, project spreads, and supplemental material. Within each project spread, four image types perform distinct roles: concept, context, process, and outcome. Later modules develop these categories and their sequencing in detail. Throughout Part I, we return to a single portfolio (an Alpine Museum project from Harvard GSD) to show how each principle operates in practice. The full case study appears at the end of Part I. Design the reading, not just the work.`,
     keyInsight: `A portfolio is not an archive of everything you have produced. It is an argument.`,
@@ -998,7 +998,7 @@ Every architecture portfolio shares a common anatomy: cover, table of contents, 
 
 When you can name your lens, you can use it to curate, sequence, and edit with precision. The exercise turns a vague sense of what your work is about into a single word you can test against every project. The second diagram shows this exercise applied to the Alpine Museum portfolio from the case study at the end of Part I.
 
-**Writing the Project Statement:** Once the compression exercise has produced your position, write it up in two paragraphs. Paragraph one covers context, intent, and thesis in four to six sentences. Paragraph two covers development and outcome with evidence. Write in clear, active voice — present tense for design intent, past tense for process. The concept sentence is the compressed version: one line a reviewer reads in five seconds. It should distill the position you are testing and make it specific and testable. Weak statements describe ("This project explores light"). Strong statements declare ("This project tests whether a single aperture can structure an entire domestic sequence"). The concept sentence becomes the core claim for the project — the single idea that ties all images to one argument.`,
+**Writing the Project Statement:** Once the compression exercise has produced your position, write it up in two paragraphs. Paragraph one covers context, intent, and thesis in four to six sentences. Paragraph two covers development and outcome with evidence. Write in clear, active voice: present tense for design intent, past tense for process. The concept sentence is the compressed version: one line a reviewer reads in five seconds. It should distill the position you are testing and make it specific and testable. Weak statements describe ("This project explores light"). Strong statements declare ("This project tests whether a single aperture can structure an entire domestic sequence"). The concept sentence becomes the core claim for the project, the single idea that ties all images to one argument.`,
     keyInsight: `A position without a statement is intuition. A statement without a position is description.`,
   },
   {
@@ -1009,7 +1009,7 @@ When you can name your lens, you can use it to curate, sequence, and edit with p
 
 The mapping process works by extraction. Underline the operative keywords in the statement, then sort them into four categories. Context keywords (site, location, existing condition) demand site plans, aerial photographs, and historical mappings. Conflict keywords (problem, tension, constraint) demand analytical diagrams, data overlays, or documentation of existing failure. Intervention keywords (design move, strategy, method) demand massing studies, structural logic, and process diagrams. Outcome keywords (result, transformation, experience) demand renderings, sections, and detail drawings. Each keyword generates a requirement. Each requirement names a drawing.
 
-Arrange those drawings in the order the keywords appear in the statement. The statement already contains a narrative logic — it moves from context to problem to response to result. That sequence becomes the graphic outline: a list of images organized not by when they were produced but by what they argue. The outline is the bridge between writing and layout. Without it, the jump from statement to InDesign fills pages with whatever images happen to be closest at hand.
+Arrange those drawings in the order the keywords appear in the statement. The statement already contains a narrative logic: it moves from context to problem to response to result. That sequence becomes the graphic outline: a list of images organized not by when they were produced but by what they argue. The outline is the bridge between writing and layout. Without it, the jump from statement to InDesign fills pages with whatever images happen to be closest at hand.
 
 Test the outline by reading it without the statement. If a reviewer could reconstruct the argument from images alone, the outline works. If the images feel like a random assortment, return to the statement and find the claims that still lack visual proof.`,
     keyInsight: `The statement writes the outline. The outline demands the drawings.`,
@@ -1018,11 +1018,11 @@ Test the outline by reading it without the statement. If a reviewer could recons
     id: 4,
     title: "Sequencing the Arc",
     part: "Narrative",
-    overview: `A graphic outline is a list. A narrative arc turns that list into a story. The difference is pacing, tension, and resolution — the same principles that make a film hold attention or a building sequence feel inevitable. Architects already understand this: a building reveals itself through a sequence of spatial experiences, from threshold to compression to release. A portfolio must do the same through a sequence of pages.
+    overview: `A graphic outline is a list. A narrative arc turns that list into a story. The difference is pacing, tension, and resolution, the same principles that make a film hold attention or a building sequence feel inevitable. Architects already understand this: a building reveals itself through a sequence of spatial experiences, from threshold to compression to release. A portfolio must do the same through a sequence of pages.
 
-The five-act structure provides the scaffold. Act I (Exposition) introduces the protagonist — in architecture, often the site, the user, or a governing concept. The opening spread places the project statement alongside a hero image that establishes the world the project inhabits. Act II (Rising Action) builds tension by introducing the problem: what condition requires intervention, and what is at stake if nothing changes? Visual evidence shifts from neutral documentation to analytical intensity — site overlays, environmental data, documentation of existing failure. Act III (Climax) presents the irreducible obstacle that makes the solution difficult: structural constraints, environmental extremes, regulatory barriers. This is the most intense part of the argument, proving that the architect navigated real constraints by making the difficulty undeniable before showing any resolution.
+The five-act structure provides the scaffold. Act I (Exposition) introduces the protagonist (in architecture, often the site, the user, or a governing concept). The opening spread places the project statement alongside a hero image that establishes the world the project inhabits. Act II (Rising Action) builds tension by introducing the problem: what condition requires intervention, and what is at stake if nothing changes? Visual evidence shifts from neutral documentation to analytical intensity: site overlays, environmental data, documentation of existing failure. Act III (Climax) presents the irreducible obstacle that makes the solution difficult: structural constraints, environmental extremes, regulatory barriers. This is the most intense part of the argument, proving that the architect navigated real constraints by making the difficulty undeniable before showing any resolution.
 
-Act IV (Falling Action) releases tension as the design response unfolds. Massing evolution, structural logic, environmental systems — each drawing responds directly to a barrier identified in the climax. A structural detail is not just a detail; it is the answer to a span problem raised two spreads earlier. Every image earns its place by resolving a question the portfolio has already asked. Act V (Resolution) shows the transformed state: high-quality renderings, perspective sections, and detail studies that let the viewer inhabit the finished project. The conflict has been addressed, the thesis proven, and the reviewer exits with a clear sense of the designer's position.
+Act IV (Falling Action) releases tension as the design response unfolds. Massing evolution, structural logic, environmental systems. Each drawing responds directly to a barrier identified in the climax. A structural detail is not just a detail; it is the answer to a span problem raised two spreads earlier. Every image earns its place by resolving a question the portfolio has already asked. Act V (Resolution) shows the transformed state: high-quality renderings, perspective sections, and detail studies that let the viewer inhabit the finished project. The conflict has been addressed, the thesis proven, and the reviewer exits with a clear sense of the designer's position.
 
 The arc is not a formula to be followed mechanically. It is a pattern of expectations that audiences already carry. Working with that pattern makes the portfolio persuasive. Ignoring it makes the portfolio feel scattered, regardless of the quality of the work inside.`,
     keyInsight: `A narrative arc is not decoration. It is the structure that makes evidence persuasive.`,
@@ -1033,11 +1033,11 @@ The arc is not a formula to be followed mechanically. It is a pattern of expecta
     part: "Narrative",
     overview: `Every image in a portfolio performs one of four evidentiary roles. Knowing these roles turns a spread from passive display into active proof. It also guards against two patterns that weaken spreads: spreads that repeat the same type of proof, and spreads that accumulate images without advancing the argument.
 
-Concept images capture the governing idea — the parti diagram, the conceptual collage, the governing geometry. They answer the question a reviewer asks first: what were you thinking before you drew any plans? Concept images are the visual form of the project statement, the claim made visible, and they belong early in the sequence. Context images ground the project in reality: site photographs, aerial mappings, historical overlays, existing conditions. Without context, even the most elegant proposal reads as autonomous fantasy. Context typically appears in the opening acts of the narrative arc, establishing the world the project enters and defining what is at stake.
+Concept images capture the governing idea: the parti diagram, the conceptual collage, the governing geometry. They answer the question a reviewer asks first: what were you thinking before you drew any plans? Concept images are the visual form of the project statement, the claim made visible, and they belong early in the sequence. Context images ground the project in reality: site photographs, aerial mappings, historical overlays, existing conditions. Without context, even the most elegant proposal reads as autonomous fantasy. Context typically appears in the opening acts of the narrative arc, establishing the world the project enters and defining what is at stake.
 
-Process images are evidence of thinking — iterations, massing studies, model photographs, analytical diagrams. They show how problems were solved, not just what was produced. This is where academic reviewers and boutique studios spend the most time; process reveals the designer's intelligence, not just skill. Outcome images prove feasibility and demonstrate professional fluency: the final rendering, the technical drawing, the detail section, the interior view. Outcome belongs in the closing acts, where the design responds to conflict and resolves it.
+Process images are evidence of thinking: iterations, massing studies, model photographs, analytical diagrams. They show how problems were solved, not just what was produced. This is where academic reviewers and boutique studios spend the most time; process reveals the designer's intelligence, not just skill. Outcome images prove feasibility and demonstrate professional fluency: the final rendering, the technical drawing, the detail section, the interior view. Outcome belongs in the closing acts, where the design responds to conflict and resolves it.
 
-Return to the graphic outline and label each drawing with its image type. The keyword categories from the outline — context, conflict, intervention, outcome — name what the statement claims; the image types name what role each drawing plays as evidence. A spread heavy on Outcome but missing Concept has skipped the argument. A spread full of Context but lacking Process has set the stage without performing. The ideal sequence within a project moves from Concept to Context to Process to Outcome, but the narrative arc determines exactly where each type lands across the full spread sequence.`,
+Return to the graphic outline and label each drawing with its image type. The keyword categories from the outline (context, conflict, intervention, outcome) name what the statement claims; the image types name what role each drawing plays as evidence. A spread heavy on Outcome but missing Concept has skipped the argument. A spread full of Context but lacking Process has set the stage without performing. The ideal sequence within a project moves from Concept to Context to Process to Outcome, but the narrative arc determines exactly where each type lands across the full spread sequence.`,
     keyInsight: `A portfolio that leads with Outcome is a catalog. One that sequences Concept to Outcome is an argument.`,
   },
   {
@@ -1046,83 +1046,75 @@ Return to the graphic outline and label each drawing with its image type. The ke
     part: "Narrative",
     overview: `The statement generated an outline. The narrative arc gave it structure. The image types classified the evidence. Now the work shifts from planning to page. Storyboarding is the physical act of translating a sequence that exists on paper into a sequence that holds when printed, scrolled, or projected. It is where pacing becomes visible and where problems that looked fine in a list reveal themselves as monotonous, front-loaded, or incomplete.
 
-Print every project image as a small thumbnail — three-by-five or four-by-six inches. Arrange them on a large table or bulletin board. Move them physically, testing different orderings. This kinesthetic approach reveals rhythm problems that are invisible on screen. A sequence that reads logically in a list often feels flat when you see the images at actual relative scale. Look for variety in image size, density, and register across adjacent spreads. If three consecutive spreads show the same type of content at the same scale, the pacing has stalled.
+Print every project image as a small thumbnail, three-by-five or four-by-six inches. Arrange them on a large table or bulletin board. Move them physically, testing different orderings. This kinesthetic approach reveals rhythm problems that are invisible on screen. A sequence that reads logically in a list often feels flat when you see the images at actual relative scale. Look for variety in image size, density, and register across adjacent spreads. If three consecutive spreads show the same type of content at the same scale, the pacing has stalled.
 
-Every spread must work at two speeds simultaneously. At skim speed (thirty to ninety seconds), large images and clear hierarchy carry the argument alone — a reviewer scanning quickly should understand the project's arc from images without reading a word. At study speed (five to fifteen minutes), captions, process documentation, and analytical detail deepen the argument without contradicting what the skim track communicated. Text and image complete each other rather than duplicate. The image shows what cannot be said. The text says what cannot be shown.
+Every spread must work at two speeds simultaneously. At skim speed (thirty to ninety seconds), large images and clear hierarchy carry the argument alone. A reviewer scanning quickly should understand the project's arc from images without reading a word. At study speed (five to fifteen minutes), captions, process documentation, and analytical detail deepen the argument without contradicting what the skim track communicated. Text and image complete each other rather than duplicate. The image shows what cannot be said. The text says what cannot be shown.
 
-Three sequence structures govern how images unfold across spreads: linear narrative (site to concept to development to resolution), comparative narrative (before and after, existing and proposed), and thematic narrative (organized around a design principle rather than chronology). Choose based on what the project argues, not on when the work was produced. The seven-spread exercise tests the storyboard: arrange your strongest project as a complete visual sequence in InDesign — opening spread with concept image and statement, development spreads with process and context, closing spread with outcome. If those seven spreads do not tell a complete story, the problem is in the outline, not the layout.`,
+Three sequence structures govern how images unfold across spreads: linear narrative (site to concept to development to resolution), comparative narrative (before and after, existing and proposed), and thematic narrative (organized around a design principle rather than chronology). Choose based on what the project argues, not on when the work was produced. The seven-spread exercise tests the storyboard: arrange your strongest project as a complete visual sequence in InDesign: opening spread with concept image and statement, development spreads with process and context, closing spread with outcome. If those seven spreads do not tell a complete story, the problem is in the outline, not the layout.`,
     keyInsight: `If the spreads do not tell the story without the statement, the storyboard is not finished.`,
   },
   {
     id: 8,
     title: "Grid Systems: From Structure to Page",
     part: "Grid",
-    overview: `A portfolio grid is not a style choice. It is the structural system beneath every page — the invisible framework that organizes content, establishes hierarchy, and gives meaning room to read. Architects already understand this: grids are among the oldest organizing principles in built form, from the urban plan of Miletus to the Ken module of Japanese timber construction to Le Corbusier's Modulor. The logic that connects a building's structural grid to a page grid is direct. A structural column defines rhythm and load-bearing zones. A page column defines rhythm and content zones. Bays correspond to modules. Beam lines correspond to baselines. A building without a grid is a pile of materials; a portfolio without a grid is a collection of images.
+    overview: `A portfolio grid is not a style choice. It is the structural system beneath every page, the invisible framework that organizes content, establishes hierarchy, and gives meaning room to read. Architects already understand this: grids are among the oldest organizing principles in built form, from the urban plan of Miletus to the Ken module of Japanese timber construction to Le Corbusier's Modulor. The logic that connects a building's structural grid to a page grid is direct. A structural column defines rhythm and load-bearing zones. A page column defines rhythm and content zones. Bays correspond to modules. Beam lines correspond to baselines. A building without a grid is a pile of materials; a portfolio without a grid is a collection of images.
 
-Four grid types serve portfolio design. Manuscript grids use a single text column — the simplest structure, suited for books and theses. Column grids divide the page vertically, standard for editorial layouts. Modular grids add horizontal flowlines to columns, creating the most versatile framework for mixed architectural content — the recommended choice for portfolios. Hierarchical grids arrange content by visual weight rather than geometric rule, suited for websites and experimental formats. The choice is structural, not aesthetic: it determines how the reader navigates the page.
+Four grid types serve portfolio design. Manuscript grids use a single text column, the simplest structure, suited for books and theses. Column grids divide the page vertically, standard for editorial layouts. Modular grids add horizontal flowlines to columns, creating the most versatile framework for mixed architectural content and the recommended choice for portfolios. Hierarchical grids arrange content by visual weight rather than geometric rule, suited for websites and experimental formats. The choice is structural, not aesthetic: it determines how the reader navigates the page.
 
-A modular grid ensures consistency while allowing variation. Every page should derive from the same grid logic, creating coherence across the portfolio without monotony. In Nick McIntosh's Generative Housing spreads, the same six-column grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model — different content, same underlying structure. The grid makes variety legible.
+A modular grid ensures consistency while allowing variation. Every page should derive from the same grid logic, creating coherence across the portfolio without monotony. In Nick McIntosh's Generative Housing spreads, the same six-column grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model. Different content, same underlying structure. The grid makes variety legible.
 
-The grid should be invisible. When it works, a reviewer reads the argument, not the layout. If a reviewer notices the grid, the structure is competing with the content. Intentional breaks are legitimate when they serve the narrative — a full-bleed image, a pull quote crossing a column — but a break should signal emphasis, not confusion. Break the grid for a reason a reviewer can recognize immediately.`,
+The grid should be invisible. When it works, a reviewer reads the argument, not the layout. If a reviewer notices the grid, the structure is competing with the content. Intentional breaks are legitimate when they serve the narrative (a full-bleed image, a pull quote crossing a column), but a break should signal emphasis, not confusion. Break the grid for a reason a reviewer can recognize immediately.`,
     keyInsight: `A portfolio without a grid is a building without a structural system.`,
   },
   {
     id: 9,
     title: "The 12-Point Modular System",
     part: "Grid",
-    overview: `The grid concept becomes a grid system when every measurement derives from a single value. In this course, that value is twelve points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of twelve. Nothing on the page is arbitrary. The document opens at 600 × 840 points — a 5:7 proportion that echoes the Golden Section without forcing it. The baseline grid begins at the top margin and increments every twelve points, locking text to a consistent vertical rhythm across every page.
+    overview: `The grid concept becomes a grid system when every measurement derives from a single value. In this course, that value is twelve points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of twelve. Nothing on the page is arbitrary. The document opens at 600 × 840 points, a 5:7 proportion that echoes the Golden Section without forcing it. The baseline grid begins at the top margin and increments every twelve points, locking text to a consistent vertical rhythm across every page.
 
-The construction sequence moves through four phases. First, reset the InDesign workspace to Essentials and activate the panels you will use daily: Pages, Layers, Links, Paragraph Styles, and Align. Second, build a layer architecture — text above images, guides on a separate locked layer hidden in export. This prevents accidental selection and keeps the file navigable as it grows. Third, create parent page templates: one for project introductions and one for content spreads. Editing a parent once updates every child page, eliminating the repetitive formatting that consumes hours in unstructured files.
+The construction sequence moves through four phases. First, reset the InDesign workspace to Essentials and activate the panels you will use daily: Pages, Layers, Links, Paragraph Styles, and Align. Second, build a layer architecture: text above images, guides on a separate locked layer hidden in export. This prevents accidental selection and keeps the file navigable as it grows. Third, create parent page templates: one for project introductions and one for content spreads. Editing a parent once updates every child page, eliminating the repetitive formatting that consumes hours in unstructured files.
 
-Fourth, build the structural grid itself. Six columns with twelve-point gutters. Eight rows with twelve-point gutters. This produces forty-eight modules per page — enough variation for any spread from a single structural foundation. The modular grid governs placement and proportion. The baseline grid governs the internal rhythm of text. Together, they achieve the alignment that separates a professional portfolio from an assembled one. Nick McIntosh's portfolio demonstrates this: unit plans, renderings, sections, and model photographs all sit within the same modular framework, each spread visually distinct but structurally unified.
+Fourth, build the structural grid itself. Six columns with twelve-point gutters. Eight rows with twelve-point gutters. This produces forty-eight modules per page, enough variation for any spread from a single structural foundation. The modular grid governs placement and proportion. The baseline grid governs the internal rhythm of text. Together, they achieve the alignment that separates a professional portfolio from an assembled one. Nick McIntosh's portfolio demonstrates this: unit plans, renderings, sections, and model photographs all sit within the same modular framework, each spread visually distinct but structurally unified.
 
-The system is not restrictive. It is generative. The tighter the constraint, the more disciplined the solutions within it — the same principle that makes a sonnet more demanding and more rewarding than free verse. Build the grid first. Fill it after.`,
+The system is not restrictive. It is generative. The tighter the constraint, the more disciplined the solutions within it, for the same reason a sonnet is more demanding and more rewarding than free verse. Build the grid first. Fill it after.`,
     keyInsight: `Every measurement is a multiple of twelve. Nothing on the page is arbitrary.`,
   },
   {
     id: 10,
     title: "Typographic Systems & Architectural Voice",
     part: "Grid",
-    overview: `Typography is how your portfolio speaks when you are not in the room. Before a reviewer reads a single word, the typeface, size hierarchy, and spacing have already communicated discipline or disorder. Limit the palette to two — at most three — complementary fonts. A serif paired with a sans-serif, or two weights of a single family, creates contrast without chaos. Mixing multiple serif families or multiple display faces signals indecision, not range. The typeface should reinforce the design position: a minimalist architect chooses restrained, geometric forms; a designer invested in material craft chooses typefaces with history and tactile character.
+    overview: `Typography is how your portfolio speaks when you are not in the room. Before a reviewer reads a single word, the typeface, size hierarchy, and spacing have already communicated discipline or disorder. Limit the palette to two (at most three) complementary fonts. A serif paired with a sans-serif, or two weights of a single family, creates contrast without chaos. Mixing multiple serif families or multiple display faces signals indecision, not range. The typeface should reinforce the design position: a minimalist architect chooses restrained, geometric forms; a designer invested in material craft chooses typefaces with history and tactile character.
 
-Three families cover most architectural portfolios. Modernist workhorses — Helvetica, Futura, DIN, Univers — are proven, neutral, and versatile. Humanist and contemporary faces — Avenir, Söhne, Gill Sans, Circular — feel warmer and more approachable. Editorial faces — Neue Montreal, GT Alpina, Minion Pro — carry personality with restraint. The choice is not about personal taste; it is about alignment between typography and argument.
+Three families cover most architectural portfolios. Modernist workhorses (Helvetica, Futura, DIN, Univers) are proven, neutral, and versatile. Humanist and contemporary faces (Avenir, Söhne, Gill Sans, Circular) feel warmer and more approachable. Editorial faces (Neue Montreal, GT Alpina, Minion Pro) carry personality with restraint. The choice is not about personal taste; it is about alignment between typography and argument.
 
-Size hierarchy makes the page scannable. Titles at twenty-four to thirty points, subtitles at fourteen to eighteen, body text at ten to twelve, captions at eight to ten. These sizes map directly to the twelve-point baseline grid from the previous module — body text leading at twelve points locks every line to the grid, ensuring columns align across the spread. Without baseline alignment, text drifts between increments and the portfolio loses the structural precision that distinguishes professional work. In InDesign, the critical setting is Paragraph Styles with Align to Grid set to All Lines.
+Size hierarchy makes the page scannable. Titles at twenty-four to thirty points, subtitles at fourteen to eighteen, body text at ten to twelve, captions at eight to ten. These sizes map directly to the twelve-point baseline grid from the previous module: body text leading at twelve points locks every line to the grid, ensuring columns align across the spread. Without baseline alignment, text drifts between increments and the portfolio loses the structural precision that distinguishes professional work. In InDesign, the critical setting is Paragraph Styles with Align to Grid set to All Lines.
 
-Line spacing matters more than most students expect. Tight leading works for captions and headlines. Looser leading gives body text room to breathe. The goal is a page that feels open, not dense — a portfolio that invites reading rather than resisting it. Nick McIntosh's title pages demonstrate this: a clear hierarchy from project title to subtitle to body to credits, each level stepping down in size and weight while maintaining baseline alignment across both pages of the spread.`,
+Line spacing matters more than most students expect. Tight leading works for captions and headlines. Looser leading gives body text room to breathe. The goal is a page that feels open, not dense, a portfolio that invites reading rather than resisting it. Nick McIntosh's title pages demonstrate this: a clear hierarchy from project title to subtitle to body to credits, each level stepping down in size and weight while maintaining baseline alignment across both pages of the spread.`,
     keyInsight: `Typography is how your portfolio speaks when you are not in the room.`,
   },
   {
     id: 11,
     title: "The Cover Page & Information Architecture",
     part: "Grid",
-    overview: `The cover is the first design decision a reviewer encounters, and it frames every page that follows. A cover does not decorate; it declares. It announces the portfolio's design position before the first project appears — through typography, image selection, composition, and restraint. Seven cover typologies recur across professional and academic portfolios: Pure Minimal, Dark Ground, Hero Image, Bleed + Band, Collage, Grid Pattern, and Abstract Line. Each suits a different portfolio personality. Pure Minimal signals focus and confidence. Hero Image leads with a single defining moment. Grid Pattern implies systems thinking. The choice should reinforce the same Red Thread that runs through the project sequence.
+    overview: `The cover is the first design decision a reviewer encounters, and it frames every page that follows. A cover does not decorate; it declares. It announces the portfolio's design position before the first project appears through typography, image selection, composition, and restraint. Seven cover typologies recur across professional and academic portfolios: Pure Minimal, Dark Ground, Hero Image, Bleed + Band, Collage, Grid Pattern, and Abstract Line. Each suits a different portfolio personality. Pure Minimal signals focus and confidence. Hero Image leads with a single defining moment. Grid Pattern implies systems thinking. The choice should reinforce the same Red Thread that runs through the project sequence.
 
-The table of contents extends the cover's visual language into informational architecture. How you organize and present the contents signals what you value: visual richness, textual clarity, or a balance of both. Thumbnail formats pair small images with project titles, giving reviewers a visual preview. Text-only formats maintain clean legibility, suited for portfolios exceeding thirty pages. Hybrid formats combine selected images with structured text. The TOC is not filler between cover and content — it is the reader's first act of navigation, and its design teaches the reviewer how to move through your work.
+The table of contents extends the cover's visual language into informational architecture. How you organize and present the contents signals what you value: visual richness, textual clarity, or a balance of both. Thumbnail formats pair small images with project titles, giving reviewers a visual preview. Text-only formats maintain clean legibility, suited for portfolios exceeding thirty pages. Hybrid formats combine selected images with structured text. The TOC is not filler between cover and content; it is the reader's first act of navigation, and its design teaches the reviewer how to move through your work.
 
 Page numbering is a small decision with outsized consequences for consistency. Academic portfolios typically number from the cover onward. Professional portfolios begin numbering after front matter. Roman numerals mark introductory pages; Arabic numerals mark project pages. The format matters less than the commitment to one system applied without exception. Inconsistent numbering signals a portfolio assembled in haste, regardless of the quality of the work inside.
 
-Nick McIntosh's portfolio demonstrates several of these principles at once: a consistent title-page format across both projects, with the same typographic system, image placement, and text structure applied to Generative Housing and Flexible Framework. The repetition is not redundancy — it is information architecture. A reviewer encountering the second project divider already knows where to find the statement, the credits, and the hero image, and can focus entirely on content rather than navigation.`,
+Nick McIntosh's portfolio demonstrates several of these principles at once: a consistent title-page format across both projects, with the same typographic system, image placement, and text structure applied to Generative Housing and Flexible Framework. The repetition is not redundancy; it is information architecture. A reviewer encountering the second project divider already knows where to find the statement, the credits, and the hero image, and can focus entirely on content rather than navigation.`,
     keyInsight: `The cover is the first design decision a reviewer encounters. Make it argue.`,
   },
   {
     id: 12,
     title: "Color Systems & Tonal Unity",
     part: "Production",
-    overview: `Color in a portfolio is a system, not an accent. Three palette families serve architectural portfolios well:
+    overview: `Color in a portfolio is a system, not an accent. Three palette families recur across strong architectural portfolios. Nature-grounded palettes (terracotta, sage, sand, warm gray) tie the work to materiality and suggest craft. Muted contemporary palettes (pale cyan, lavender, coral) create visual interest without competing with project images. Industrial neutrals (deep grays, charcoals, blacks) remain the most common choice because they disappear and let the work speak. The palette should connect to the same design position that governs the portfolio's Red Thread: a project about erosion might favor earth tones; a project about light might favor high-contrast neutrals.
 
-Nature-Grounded: Terracotta, sage, sand, warm gray. These palettes ground the work in materiality and suggest craft.
+Tonal unity across spreads matters more than palette selection. When images from different projects sit side by side, their differences can distract. A consistent color treatment (whether desaturation, unified white balance, or limited tonal palette) binds disparate images into a single visual language. Studio work photographed under different lighting conditions (warm tungsten, cool fluorescent, variable daylight) creates visual discord that undermines the grid's structural coherence. Desaturation as a unifying device helps. Alternatively, apply a consistent color cast in post-production that equalizes temperature variation across all project images.
 
-Muted Contemporary: Pale cyan, lavender, coral. Softer palettes that create visual interest without competing with project images.
-
-Industrial Neutrals: Deep grays, charcoals, blacks. The most common choice (it disappears and lets the work speak).
-
-Tonal unity across spreads matters. When images from different projects sit side by side, their differences can distract. A consistent color treatment (whether desaturation, unified white balance, or limited tonal palette) binds disparate images into a single visual language. Studio work photographed under different lighting conditions (warm tungsten, cool fluorescent, variable daylight) creates visual discord. Desaturation as a unifying device helps. Alternatively, apply a consistent color cast that equalizes temperature variation.
-
-Use color when it advances the argument. Suppress it when it distracts. Every color choice should be deliberate; if you cannot explain why a color is there, remove it. Update images in post-production to ensure consistent color families across projects.
-
-Diagnostic Test: Print your portfolio in grayscale. If the visual hierarchy (emphasis, rhythm, sequencing) still reads clearly without color, then your color is supporting rather than supplanting structure. If the portfolio falls apart in grayscale, the color is doing too much work and structure needs strengthening.`,
-    keyInsight: `Tonal consistency is chromatic unity across the grid.`,
+Use color when it advances the argument. Suppress it when it distracts. Every color choice should be deliberate; if you cannot explain why a color is there, remove it. The diagnostic test is straightforward: print the portfolio in grayscale. If the visual hierarchy (emphasis, rhythm, sequencing) still reads clearly without color, the color is supporting structure. If the portfolio falls apart in grayscale, the color is doing work that belongs to the grid, the typography, or the image hierarchy. Strengthen those systems first, then reintroduce color as reinforcement.`,
+    keyInsight: `Color supports the argument. If it carries the argument, the structure needs work.`,
   },
   {
     id: 13,
@@ -1145,30 +1137,30 @@ Peer Review: Before finalizing, have two to three trusted colleagues or mentors 
     id: 14,
     title: "Spread Composition: The Two-Page Unit",
     part: "Grid",
-    overview: `The spread — not the page — is the fundamental unit of portfolio composition. A reviewer never sees a single page in isolation. Every spread presents a left-right relationship, a visual weight distribution, and a hierarchy of elements that either advances the argument or stalls it. The grid establishes where things can go; spread composition determines what goes where and why.
+    overview: `The spread, not the page, is the fundamental unit of portfolio composition. A reviewer never sees a single page in isolation. Every spread presents a left-right relationship, a visual weight distribution, and a hierarchy of elements that either advances the argument or stalls it. The grid establishes where things can go; spread composition determines what goes where and why.
 
-Three compositional decisions govern every spread. First, the dominant element: which image or drawing anchors the viewer's eye. A spread without a clear dominant reads as a catalogue — equal-weight images competing for attention, none winning. One element should claim at least forty percent of the spread area. The remaining elements are subordinate: they support, explain, or contextualize the dominant. In Nick McIntosh's portfolio, the full-bleed floor plan on Spread 3 is unmistakable — the architectural grid becomes the page grid, and no other element competes.
+Three compositional decisions govern every spread. First, the dominant element: which image or drawing anchors the viewer's eye. A spread without a clear dominant reads as a catalog, with equal-weight images competing for attention, none winning. One element should claim at least forty percent of the spread area. The remaining elements are subordinate: they support, explain, or contextualize the dominant. In Nick McIntosh's portfolio, the full-bleed floor plan on Spread 3 is unmistakable: the architectural grid becomes the page grid, and no other element competes.
 
-Second, the left-right relationship. Western readers enter a spread from the upper left. The left page sets context; the right page delivers the primary content or resolution. Placing a site plan on the left and a building rendering on the right creates a spatial logic the eye follows naturally — from environment to intervention. Reversing this order forces the viewer to work backward. The convention is not rigid, but departing from it should be intentional and legible. A process sequence (sketches left, final model right) or a before-and-after pair (existing conditions left, proposed design right) exploits left-right reading direction as narrative structure.
+Second, the left-right relationship. Western readers enter a spread from the upper left. The left page sets context; the right page delivers the primary content or resolution. Placing a site plan on the left and a building rendering on the right creates a spatial logic the eye follows naturally, from environment to intervention. Reversing this order forces the viewer to work backward. The convention is not rigid, but departing from it should be intentional and legible. A process sequence (sketches left, final model right) or a before-and-after pair (existing conditions left, proposed design right) exploits left-right reading direction as narrative structure.
 
-Third, image scaling. Scale is hierarchy. A full-bleed image declares importance through size alone. An inset image — framed by whitespace or margin — declares importance through isolation and breathing room. A quadrant layout (four images per spread) implies comparison or sequence. The grid modules from the previous units determine which of these strategies are available: a six-column modular grid accommodates a dominant two-thirds / subordinate one-third split, a 50/50 mirror, or a full-bleed with caption overlay. The choice is not aesthetic preference — it is an argument about what matters most on that spread.
+Third, image scaling. Scale is hierarchy. A full-bleed image declares importance through size alone. An inset image, framed by whitespace or margin, declares importance through isolation and breathing room. A quadrant layout (four images per spread) implies comparison or sequence. The grid modules from the previous units determine which of these strategies are available: a six-column modular grid accommodates a dominant two-thirds/subordinate one-third split, a 50/50 mirror, or a full-bleed with caption overlay. The choice is not aesthetic preference; it is an argument about what matters most on that spread.
 
-Whitespace is not leftover space. Active whitespace — margins, gutters, and deliberate voids — creates the visual breathing room that separates a considered portfolio from a packed one. Samara describes margins as elements that establish tension, focus attention, and act as resting places for the eye. In an architecture portfolio, whitespace around a section drawing gives the drawing room to be read as architecture rather than as a graphic element. Crowding images to the margins signals anxiety about content; letting them breathe signals confidence that each image earns its place.`,
+Whitespace is not leftover space. Active whitespace (margins, gutters, and deliberate voids) creates the visual breathing room that separates a considered portfolio from a packed one. Margins establish tension between content and edge, focus attention inward, and provide resting places for the eye. In an architecture portfolio, whitespace around a section drawing gives the drawing room to be read as architecture rather than as a graphic element. Crowding images to the margins weakens each drawing's legibility; letting them breathe gives the viewer room to read the architecture on its own terms.`,
     keyInsight: `The spread is the unit of argument. Every left-right pair should advance a single claim.`,
   },
   {
     id: 15,
     title: "Variation, Pacing & Breaking the Grid",
     part: "Grid",
-    overview: `A grid is only successful if the designer uses it to create a dynamic visual narrative rather than a uniform sequence of identical layouts. Samara's principle is direct: once the grid is in place, sort the material spread by spread, storyboard the sequence, and test whether the rhythm of dark and light, dense and open, creates a reading experience that sustains attention across the full portfolio. A grid that produces the same layout on every page is not disciplined — it is monotonous.
+    overview: `A grid is only successful if the designer uses it to create a dynamic visual narrative rather than a uniform sequence of identical layouts. Once the grid is in place, sort the material spread by spread, storyboard the sequence, and test whether the rhythm of dark and light, dense and open, creates a reading experience that holds across the full portfolio. A grid that produces the same layout on every page is not disciplined; it is monotonous.
 
-Pacing is the rhythm of density across sequential spreads. A portfolio that opens with five consecutive image-heavy spreads exhausts the viewer before the argument lands. Alternation is the solution: a dense technical spread (plans, sections, details filling the grid modules) followed by a spread with a single dominant image and generous whitespace. The storyboard test makes this visible — print thumbnail spreads and pin them to the wall. If the sequence reads as a flat gray band of equal density, the pacing needs work. If it reads as a rhythm of compression and release, tension and resolution, the grid is doing its narrative job.
+Pacing is the rhythm of density across sequential spreads. A portfolio that opens with five consecutive image-heavy spreads exhausts the viewer before the argument lands. Alternation is the solution: a dense technical spread (plans, sections, details filling the grid modules) followed by a spread with a single dominant image and generous whitespace. The storyboard test makes this visible: print thumbnail spreads and pin them to the wall. If the sequence reads as a flat gray band of equal density, the pacing needs work. If it reads as a rhythm of compression and release, tension and resolution, the grid is doing its narrative job.
 
-Three types of intentional grid breaks serve architecture portfolios. The full-bleed image breaks every grid rule at once — no margins, no columns, no modules. It works as punctuation: a section divider, a project opener, or a closing image that lets the viewer inhabit the space after eleven spreads of structured argument. Nick McIntosh's Spread 12 — a full-bleed interior rendering with no text, no captions, no grid — demonstrates this: the break is earned because every preceding spread obeyed the grid. A full-bleed on the first spread is not a break; it is an absence of structure.
+Three types of intentional grid breaks serve architecture portfolios. The full-bleed image breaks every grid rule at once: no margins, no columns, no modules. It works as punctuation: a section divider, a project opener, or a closing image that lets the viewer inhabit the space after eleven spreads of structured argument. Nick McIntosh's Spread 12, a full-bleed interior rendering with no text, no captions, no grid, demonstrates this: the break is earned because every preceding spread obeyed the grid. A full-bleed on the first spread is not a break; it is an absence of structure.
 
-The oversized element crosses column or module boundaries to signal hierarchy. A rendering that spans four of six columns while text occupies two is not a grid violation — it is a grid interpretation. The element still aligns to column edges; it simply occupies more modules than its neighbors. This is variation within the grid, not departure from it. The Princeton Architecture lecture poster in Samara's collection shows this at the extreme: column remnants remain visible even as elements overlap and shift, maintaining structural memory while creating compositional energy.
+The oversized element crosses column or module boundaries to signal hierarchy. A rendering that spans four of six columns while text occupies two is not a grid violation; it is a grid interpretation. The element still aligns to column edges; it simply occupies more modules than its neighbors. This is variation within the grid, not departure from it. The Princeton Architecture lecture poster illustrates this at the extreme: column remnants remain visible even as elements overlap and shift, maintaining the structural logic of the grid while generating visual tension across the composition.
 
-The third type is the deliberate void — a spread or half-spread left intentionally empty or minimal. A project title page with only a name, a one-line statement, and a single image uses the grid's full capacity by choosing to fill only a fraction of it. Restraint is the most difficult grid decision because it requires confidence that less content communicates more authority. Every grid break should pass a simple test: can a reviewer see that the break is intentional? If it looks like an accident — an image that drifts off the baseline, a caption that floats between columns — the break undermines rather than reinforces the argument. Break the grid for a reason the viewer can name.`,
+The third type is the deliberate void: a spread or half-spread left intentionally empty or minimal. A project title page with only a name, a one-line statement, and a single image uses the grid's full capacity by choosing to fill only a fraction of it. Restraint is the most difficult grid decision because it requires confidence that less content communicates more authority. Every grid break should pass a simple test: can a reviewer see that the break is intentional? If it looks like an accident (an image that drifts off the baseline, a caption that floats between columns), the break undermines rather than reinforces the argument. Break the grid for a reason the viewer can name.`,
     keyInsight: `A grid that produces the same layout on every page is not disciplined. It is monotonous.`,
   },
 ];
@@ -1179,13 +1171,13 @@ const CASE_STUDY = {
   part: "Part I Conclusion",
   overview: `This portfolio, from an Advanced Studio at Harvard GSD, proposes converting a decommissioned Cold War bunker at Col du Pillon into an Alpine Museum in Les Diablerets, Switzerland. Five spreads present the project. What follows is a reading of those spreads through the six modules of Part I, showing how each principle operates in practice.
 
-**The Portfolio as Constructed Argument.** This is not documentation of a studio assignment. Every spread advances a single claim: that architecture can make an invisible environmental process — glacial retreat, alpine erosion — into a spatial experience a visitor moves through. Spread 1 opens with a terrain model and the project abstract; Spread 5 closes with inhabited gallery interiors and floor plans. The sequence is not chronological. It is argumentative: ground first, then intervention, then inhabitation. The portfolio builds a case.
+**The Portfolio as Constructed Argument.** This is not documentation of a studio assignment. Every spread advances a single claim: that architecture can make an invisible environmental process (glacial retreat, alpine erosion) into a spatial experience a visitor moves through. Spread 1 opens with a terrain model and the project abstract; Spread 5 closes with inhabited gallery interiors and floor plans. The sequence is not chronological. It is argumentative: ground first, then intervention, then inhabitation. The portfolio builds a case.
 
-**Position and Statement.** The compression exercise applied to this project. Paragraph: "The design converts a decommissioned Cold War bunker into an Alpine museum by cutting into eroding mountainside terrain, creating a continuous path that makes geological time visible as visitors move between landscape and gallery." Sentence: "An Alpine museum embeds into eroding terrain to make climate change a spatial experience." Word: Erosion. Thread test: erosion recurs across every spread — terrain models shaped by geological force, sections carved into slope, galleries embedded in eroded ground, visitor paths that descend into the earth. The word is not a label. It is the lens that governs every image. The original abstract begins with description: it credits the instructor, uses passive voice, and offers no position. The compressed version declares a testable claim. Every image in the portfolio can be measured against it.
+**Position and Statement.** The compression exercise applied to this project. Paragraph: "The design converts a decommissioned Cold War bunker into an Alpine museum by cutting into eroding mountainside terrain, creating a continuous path that makes geological time visible as visitors move between landscape and gallery." Sentence: "An Alpine museum embeds into eroding terrain to make climate change a spatial experience." Word: Erosion. Thread test: erosion recurs across every spread: terrain models shaped by geological force, sections carved into slope, galleries embedded in eroded ground, visitor paths that descend into the earth. The word is not a label. It is the lens that governs every image. The original abstract begins with description: it credits the instructor, uses passive voice, and offers no position. The compressed version declares a testable claim. Every image in the portfolio can be measured against it.
 
 **From Statement to Outline.** The concept sentence contains five operative keywords: Alpine, museum, embeds, eroding terrain, spatial experience. Each keyword demands specific visual evidence. "Alpine" demands the aerial site photograph (Spread 2). "Embeds" and "eroding terrain" demand the terrain model (Spread 1), the detail model (Spread 2), and the building sections (Spreads 3 and 4). "Spatial experience" demands the interior gallery renderings (Spread 5). "Museum" demands the floor plans (Spread 5). The graphic outline writes itself: every claim in the statement has a corresponding drawing. Nothing is included without a reason.
 
-**Sequencing the Arc.** The five spreads follow a five-act structure. Act I — Exposition (Spread 1): the terrain model, photographed in dramatic raking light, introduces the protagonist — ground shaped by erosive force. Act II — Rising Action (Spread 2): the aerial site photograph and detail model establish the alpine context and reveal what is at stake — a landscape undergoing visible erosion. Act III — Climax (Spread 3): winter renderings and a building section make the difficulty undeniable — how does architecture embed into an actively eroding slope in an extreme alpine environment? Act IV — Falling Action (Spread 4): the physical model, approach rendering, and section show the design response — massing resolved, arrival sequence established, structural logic responding directly to slope. Act V — Resolution (Spread 5): interior gallery renderings and floor plans prove the spatial experience works. The conflict has been addressed. The thesis has been proven.
+**Sequencing the Arc.** The five spreads follow a five-act structure. Act I, Exposition (Spread 1): the terrain model, photographed in dramatic raking light, introduces the protagonist, ground shaped by erosive force. Act II, Rising Action (Spread 2): the aerial site photograph and detail model establish the alpine context and reveal what is at stake, a landscape undergoing visible erosion. Act III, Climax (Spread 3): winter renderings and a building section make the difficulty undeniable: how does architecture embed into an actively eroding slope in an extreme alpine environment? Act IV, Falling Action (Spread 4): the physical model, approach rendering, and section show the design response: massing resolved, arrival sequence established, structural logic responding directly to slope. Act V, Resolution (Spread 5): interior gallery renderings and floor plans prove the spatial experience works. The conflict has been addressed. The thesis has been proven.
 
 **Image Types as Evidence.** Concept: the terrain model (Spread 1), establishing erosion as the governing idea before any building appears. Context: the aerial site photograph (Spread 2), grounding the project in the glaciated alpine landscape between Gstaad and Les Diablerets. Process: the detail terrain model (Spread 2) showing the architectural incision, the building sections (Spreads 3 and 4) showing ramped circulation descending into slope, and the physical model (Spread 4) with the roof emerging as a geometric cut in the snow. Outcome: the interior gallery renderings and floor plans (Spread 5), demonstrating the resolved spatial experience of inhabiting eroded ground. Each type appears where it belongs in the narrative arc.
 
@@ -1212,7 +1204,7 @@ function navigate(hash) {
 /* ─── About content ─── */
 const ABOUT_TEXT = [
   "Portfolio as Narrative is the companion resource for ARCH 66995: Portfolio, a studio-style course at Kent State University's College of Architecture and Environmental Design. The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
-  "The guide covers thirteen modules across three parts: content curation, visual storytelling, and narrative structure (Narrative); grid systems, typography, and composition strategies (Grid); and color systems, technical production, and self-editing protocols (Production). Each module pairs pedagogical text with reference diagrams drawn from real student portfolios and professional practice.",
+  "The guide covers fourteen modules across three parts: content curation, visual storytelling, and narrative structure (Narrative); grid systems, typography, and composition strategies (Grid); and color systems, technical production, and self-editing protocols (Production). Each module pairs pedagogical text with reference diagrams drawn from real student portfolios and professional practice.",
   "The course follows a fifteen-week cumulative structure, from portfolio foundations and audience analysis through storyboarding, grid application, and typographic systems, to final production, peer critique, and portfolio presentation. Assignments build progressively toward a fully resolved academic portfolio.",
   "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument, and this guide shows you how to build one.",
 ];
@@ -1345,7 +1337,7 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
           fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
         }}>← {moduleLabel}</button>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em" }}>
-          {moduleLabel} — {total} diagram{total !== 1 ? "s" : ""}
+          {moduleLabel}: {total} diagram{total !== 1 ? "s" : ""}
         </span>
       </div>
 
@@ -1679,7 +1671,7 @@ export default function PortfolioGuide() {
                 onMouseEnter={(e) => { e.currentTarget.style.color = T.steelLight; e.currentTarget.style.borderColor = `${T.steelLight}`; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
               >
-                Diagram — {diagrams.map((d, i) => d.title).join(", ")}
+                Diagram: {diagrams.map((d, i) => d.title).join(", ")}
               </span>
             </div>
           )}
@@ -1690,13 +1682,13 @@ export default function PortfolioGuide() {
               background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "left", letterSpacing: "0.02em",
             }}>
               <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Previous</span>
-              {String(MODULES[MODULES.length - 1].id).padStart(2, "0")} — {MODULES[MODULES.length - 1].title}
+              {String(MODULES[MODULES.length - 1].id).padStart(2, "0")}: {MODULES[MODULES.length - 1].title}
             </button>
             <button onClick={() => handleNavClick(MODULES[0])} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "right", letterSpacing: "0.02em",
             }}>
               <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Next</span>
-              {String(MODULES[0].id).padStart(2, "0")} — {MODULES[0].title}
+              {String(MODULES[0].id).padStart(2, "0")}: {MODULES[0].title}
             </button>
           </div>
         </div>
@@ -1803,11 +1795,11 @@ export default function PortfolioGuide() {
               onMouseEnter={(e) => { e.currentTarget.style.color = T.steelLight; e.currentTarget.style.borderColor = `${T.steelLight}`; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
             >
-              Diagram {String(mod.id).padStart(2, "0")} — {diagrams.map((d) => d.title).join(", ")}
+              Diagram {String(mod.id).padStart(2, "0")}: {diagrams.map((d) => d.title).join(", ")}
             </span>
           </div>
         )}
-        {/* Case Study Spreads link — shows on modules 1 and 2 */}
+        {/* Case Study Spreads link: shows on modules 1 and 2 */}
         {(mod.id === 1) && DIAGRAM_MAP["1spreads"] && (
           <div style={{ marginTop: diagrams.length > 0 ? 10 : 32 }}>
             <span
@@ -1821,7 +1813,7 @@ export default function PortfolioGuide() {
               onMouseEnter={(e) => { e.currentTarget.style.color = T.steelLight; e.currentTarget.style.borderColor = `${T.steelLight}`; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
             >
-              Case Study — Erosion Portfolio (5 Spreads)
+              Case Study: Erosion Portfolio (5 Spreads)
             </span>
           </div>
         )}
@@ -1840,13 +1832,13 @@ export default function PortfolioGuide() {
                 background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "left", letterSpacing: "0.02em",
               }}>
                 <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Previous</span>
-                {String(prevMod.id).padStart(2, "0")} — {prevMod.title}
+                {String(prevMod.id).padStart(2, "0")}: {prevMod.title}
               </button>
               <button onClick={() => handleNavClick(nextMod)} style={{
                 background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "right", letterSpacing: "0.02em",
               }}>
                 <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Next</span>
-                {String(nextMod.id).padStart(2, "0")} — {nextMod.title}
+                {String(nextMod.id).padStart(2, "0")}: {nextMod.title}
               </button>
             </div>
           );
