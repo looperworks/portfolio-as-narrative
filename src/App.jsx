@@ -855,11 +855,13 @@ const DIAGRAM_MAP = {
     { image: "class-pdf/academic-portfolio-example.png", title: "Academic Portfolio Example", alt: "Jiayao Li — Conceptual Box Model spread showing process diagrams, artifact scans, and analytical drawings" },
     { image: "class-pdf/professional-portfolio-example.png", title: "Professional Portfolio Example", alt: "Nick McIntosh — Generative Housing spread showing rendering, floor plan, and building section" },
     { image: "class-pdf/class1-portfolio-anatomy.png", title: "Portfolio Anatomy", alt: "Portfolio document structure — Cover, Inside Front Cover, TOC, Section Divider, Introduction Pages, Project Pages, Resume, Back Cover" },
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Case Study: Spread 1 — Terrain Model + Abstract", alt: "Opening spread: terrain model photographed in dramatic light alongside project abstract and site aerial" },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Case Study: Spread 2 — Site + Incision", alt: "Aerial site photograph of alpine landscape paired with detail terrain model showing ramped cut into slope" },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Case Study: Spread 3 — Renderings + Section", alt: "Winter approach rendering, night entry rendering as glowing slit in terrain, and full building section below grade" },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Case Study: Spread 4 — Model + Section", alt: "Roof emerging as geometric cut in snow, visitors on ramped descent, and second building section" },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Case Study: Spread 5 — Galleries + Plans", alt: "Interior gallery renderings showing visitors in exhibition spaces, with first and second floor plans" },
+  ],
+  "1spreads": [
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Terrain Model + Abstract", alt: "Opening spread: terrain model photographed in dramatic light alongside project abstract and site aerial" },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Site + Incision", alt: "Aerial site photograph of alpine landscape paired with detail terrain model showing ramped cut into slope" },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Renderings + Section", alt: "Winter approach rendering, night entry rendering as glowing slit in terrain, and full building section below grade" },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Model + Section", alt: "Roof emerging as geometric cut in snow, visitors on ramped descent, and second building section" },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Galleries + Plans", alt: "Interior gallery renderings showing visitors in exhibition spaces, with first and second floor plans" },
   ],
   2: [
     { component: DiagramCompression, title: "The Compression Exercise" },
@@ -1453,7 +1455,7 @@ export default function PortfolioGuide() {
     isCaseStudy = true;
   } else if (route.startsWith("#/diagrams/")) {
     const rawId = route.split("/")[2];
-    diagramModuleId = rawId === "casestudy" ? "casestudy" : parseInt(rawId, 10);
+    diagramModuleId = (rawId === "casestudy" || isNaN(parseInt(rawId, 10))) ? rawId : parseInt(rawId, 10);
     view = "diagrams";
   } else if (route.startsWith("#/module/")) {
     const id = parseInt(route.split("/")[2], 10);
@@ -1704,8 +1706,9 @@ export default function PortfolioGuide() {
   if (view === "diagrams" && diagramModuleId !== null) {
     const diagrams = DIAGRAM_MAP[diagramModuleId] || [];
     const isCaseStudyDiagrams = diagramModuleId === "casestudy";
-    const backHash = isCaseStudyDiagrams ? "#/casestudy" : `#/module/${diagramModuleId}`;
-    const moduleLabel = isCaseStudyDiagrams ? "Case Study" : `Module ${String(diagramModuleId).padStart(2, "0")}`;
+    const isSpreads = diagramModuleId === "1spreads";
+    const backHash = isCaseStudyDiagrams ? "#/casestudy" : isSpreads ? "#/module/1" : `#/module/${diagramModuleId}`;
+    const moduleLabel = isCaseStudyDiagrams ? "Case Study" : isSpreads ? "Case Study Spreads" : `Module ${String(diagramModuleId).padStart(2, "0")}`;
 
     return (
       <DiagramSlideshow
@@ -1793,6 +1796,24 @@ export default function PortfolioGuide() {
               onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
             >
               Diagram {String(mod.id).padStart(2, "0")} — {diagrams.map((d) => d.title).join(", ")}
+            </span>
+          </div>
+        )}
+        {/* Case Study Spreads link — shows on modules 1 and 2 */}
+        {(mod.id === 1 || mod.id === 2) && DIAGRAM_MAP["1spreads"] && (
+          <div style={{ marginTop: diagrams.length > 0 ? 10 : 32 }}>
+            <span
+              onClick={() => navigate("#/diagrams/1spreads")}
+              style={{
+                fontSize: 12, color: T.steel, cursor: "pointer",
+                borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
+                transition: "color 0.15s ease, border-color 0.15s ease",
+                fontFamily: T.sans, letterSpacing: "0.01em", lineHeight: 1.8,
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = T.steelLight; e.currentTarget.style.borderColor = `${T.steelLight}`; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
+            >
+              Case Study Spreads — {DIAGRAM_MAP["1spreads"].map((d) => d.title).join(", ")}
             </span>
           </div>
         )}
