@@ -964,27 +964,23 @@ A portfolio is read at two speeds. At skim speed, the cover, image hierarchy, an
 Different audiences read for different evidence. An academic reviewer looks for process: sketches, diagrams, and failed iterations that reveal how you think through a problem. A large firm looks for resolution: polished deliverables and technical range that demonstrate you can produce at a professional standard. A boutique studio looks for alignment: a design sensibility and point of view that signal you would be a collaborator, not just a pair of hands. Knowing what each audience evaluates for is the difference between a page that documents and a page that argues.
 
 Every architecture portfolio shares a common anatomy: cover, table of contents, project spreads, and supplemental material. Within each project spread, four image types perform distinct roles: concept, process, outcome, and context. Later modules develop these categories and their sequencing in detail. Throughout Part I, we return to a single portfolio (an Alpine Museum project from Harvard GSD) to show how each principle operates in practice. The full case study appears at the end of Part I. Design the reading, not just the work.`,
-    keyInsight: null,
+    keyInsight: `"A portfolio is not an archive of everything you have produced. It is an argument."`,
   },
   {
     id: 2,
     title: "Finding Your Position",
     part: "Narrative",
-    overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position (a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts).
+    overview: `The Red Thread is the single organizing idea that connects all your projects into one argument. It is not a style. It is not a medium. It is a design position: a recurring question, preoccupation, or methodology that surfaces across different projects, scales, and contexts. Most second-year students can talk about their projects at length. They cannot yet say, in one sentence, what their work is about. The Compression Exercise uses progressive reduction to move from description to position.
 
-The Compression Exercise uses progressive compression to move from description to position:
+**One Paragraph:** Write a project statement of four to six sentences covering what you explored, what problem you responded to, what method you used, and what you discovered. Do not describe the building. Describe the thinking.
 
-Step 1 - One Paragraph: Write a project statement of four to six sentences covering what you explored, what problem you responded to, what method you used, and what you discovered.
+**One Sentence:** Compress that paragraph into a single claim. What survives? A weak sentence describes ("I designed an Alpine museum"). A strong sentence declares ("An Alpine museum embeds into eroding terrain to make climate change a spatial experience"). The difference is between reporting and arguing.
 
-Step 2 - One Sentence: Compress that paragraph. What survives? A weak sentence describes. A strong sentence declares.
+**One Word:** Threshold. Tension. Porosity. Absence. Erosion. The word is not a label; it is a lens. It names the design position that recurs across your projects. If you cannot find it, the project may not yet have a clear position.
 
-Step 3 - One Word: Threshold. Tension. Porosity. Absence. Erosion. The word is not a label; it is a lens. It describes the design position that recurs across projects.
+**The Thread Test:** Repeat the exercise for every project in the portfolio. Write the core words side by side. When the same word keeps surfacing, you have found your Red Thread. When the words scatter, the portfolio lacks a unifying position and needs one.
 
-Step 4 - The Thread Test: Repeat for every project. When the same word keeps surfacing, you have found your Red Thread.
-
-When you can name your lens, you can use it to curate, sequence, and edit with precision. The compression exercise turns a vague sense of what your work is about into a single word you can test against every project in the portfolio.
-
-**Worked example:** A portfolio from an Advanced Studio at Harvard GSD (analyzed in full in the Case Study at the end of Part I). Step 1 (Paragraph): "The design converts a decommissioned Cold War bunker into an Alpine museum by cutting into eroding mountainside terrain, creating a continuous path that makes geological time visible as visitors move between landscape and gallery." Step 2 (Sentence): "An Alpine museum embeds into eroding terrain to make climate change a spatial experience." Step 3 (Word): Erosion. Step 4 (Thread Test): erosion recurs across every spread — terrain models shaped by geological force, sections carved into slope, galleries embedded in eroded ground, visitor paths that descend into the earth. See Diagram 02 for the full compression visualized step by step.`,
+When you can name your lens, you can use it to curate, sequence, and edit with precision. The exercise turns a vague sense of what your work is about into a single word you can test against every project. See Diagram 02 for a worked example applying this exercise to the Alpine Museum portfolio analyzed in the Case Study at the end of Part I.`,
     keyInsight: `"If the word is the same across three or more projects, the portfolio has a position. If it scatters, it needs one."`,
   },
   {
