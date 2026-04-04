@@ -876,24 +876,33 @@ const DIAGRAM_MAP = {
     { component: DiagramWeakVsStrong, title: "Weak vs. Strong Statements" },
   ],
   3: [
-    { component: DiagramNarrativeArc, title: "Three-Act Narrative Arc" },
-    { component: DiagramChronVsNarrative, title: "Chronological vs. Narrative" },
-    { component: DiagramNarrativeConstruction, title: "Narrative Construction Process" },
-
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Act I: Opening", alt: "Terrain model and project abstract", caption: "The opening spread establishes the thesis immediately: terrain model as concept image, project abstract as position statement. A reviewer knows what this portfolio is about within seconds." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Act II: Context", alt: "Aerial site photo and detail terrain model", caption: "The second spread grounds the project in site and scale. Aerial photography provides context; the detail model introduces the method of working with eroded terrain." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Act II: Development", alt: "Winter renderings and building section", caption: "Complexity builds. Renderings show the building in its landscape; the section reveals how architecture embeds into slope. The argument deepens without repeating the opening." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Act II: Evidence", alt: "Model photo, approach rendering, and section", caption: "Range expands: physical model, experiential rendering, and technical section demonstrate the project across multiple registers. Each image adds a new dimension." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Act III: Resolution", alt: "Gallery interiors and floor plans", caption: "The closing spread resolves the argument. Interior views prove the spatial experience works. Floor plans demonstrate professional fluency. A reviewer leaves with a clear sense of direction." },
   ],
   4: [
-    { component: DiagramNarrativeFailures, title: "Diagnosing Narrative Failure" },
-    { component: DiagramInitialsAndFinals, title: "Initials-and-Finals Sequence" },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — The Initial Statement", alt: "Terrain model and project abstract", caption: "The strongest work goes first. This spread leads with the terrain model — the single most powerful image in the portfolio. It telegraphs the design position before any text is read." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Building Context", alt: "Aerial site photo and detail terrain model", caption: "The second position introduces site and scale. This is not the strongest image, but it provides the context that makes everything after it legible." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Expanding Range", alt: "Winter renderings and building section", caption: "The middle builds complexity. Renderings and sections demonstrate a different register — atmospheric and technical — without repeating the opening's strength." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Deepening Evidence", alt: "Model photo, approach rendering, and section", caption: "Each spread adds a new dimension. Physical model, experiential view, and analytical drawing show the project cannot be reduced to a single medium." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — The Final Statement", alt: "Gallery interiors and floor plans", caption: "The most resonant work goes last. Interior views and plans prove the spatial argument holds at the scale of inhabitation. A reviewer exits thinking: erosion as architecture." },
   ],
   5: [
-    { component: DiagramFourImageTypes, title: "Four Image Types" },
-    { component: DiagramImageMapping, title: "Image Type Mapping Across Spreads" },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Concept + Context", alt: "Terrain model and project abstract", caption: "Concept: the terrain model captures the governing idea — erosion as design method. Context: the abstract grounds the project in site, program, and intent. Two image types, one spread." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Context + Process", alt: "Aerial site photo and detail terrain model", caption: "Context: the aerial photograph establishes real-world conditions. Process: the detail terrain model shows how the site was studied and remodeled. Evidence of thinking, not just outcome." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Outcome + Process", alt: "Winter renderings and building section", caption: "Outcome: the rendering proves the building works in its landscape. Process: the section reveals how the design was developed through cutting and embedding. The two types complete each other." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Process + Outcome + Context", alt: "Model photo, approach rendering, and section", caption: "Three types on one spread. The physical model is process. The approach rendering is outcome. The section is context for how the building meets the ground. Density without clutter." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Outcome", alt: "Gallery interiors and floor plans", caption: "Pure outcome. Interior views and floor plans demonstrate professional fluency — the work is resolved, buildable, inhabitable. No concept or process images needed; the argument has already been made." },
   ],
 
   7: [
-    { component: DiagramSequenceStructures, title: "Sequence Structures" },
-    { component: DiagramTwoTrack, title: "Two-Track Reading System" },
-    { image: "diagram-storyboard-patterns.svg", title: "Storyboard Sequencing Patterns", alt: "Three portfolio sequencing patterns: Strong Open, Process Arc, Scale Shift" },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Linear Narrative: Site → Concept", alt: "Terrain model and project abstract", caption: "The opening spread follows a linear narrative structure. The terrain model introduces the site; the abstract declares the concept. Each element prepares the reader for what follows." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Track 1: Skim Reading", alt: "Aerial site photo and detail terrain model", caption: "At skim speed (30 seconds), the large aerial photo and model carry the argument alone. No text needed. Track 1 works: a reviewer understands site and method from images only." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Track 2: Study Reading", alt: "Winter renderings and building section", caption: "At study speed (5 minutes), the section rewards close reading. The rendering shows atmosphere; the section shows logic. Text and image complete each other — neither duplicates." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Advancing the Argument", alt: "Model photo, approach rendering, and section", caption: "Each spread must introduce something the previous one did not. Here: physical materiality (model), experiential sequence (rendering), and tectonic logic (section). No repetition." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Resolution Spread", alt: "Gallery interiors and floor plans", caption: "The final spread proves the project is resolved. Interior views show inhabited space; plans demonstrate professional precision. The storyboard arrives where it promised to go." },
   ],
   10: [
     { component: DiagramTypography, title: "Typography Categories" },
@@ -1399,13 +1408,26 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
                   </div>
                 ) : null}
               </div>
-              {/* Title on hover */}
+              {/* Title + caption */}
               <div style={{
-                marginTop: 12, fontSize: 10, color: T.textLight, letterSpacing: "0.01em",
-                textAlign: "center", whiteSpace: "nowrap",
-                opacity: isHovered ? 1 : 0, transition: "opacity 0.2s ease",
+                marginTop: 12, maxWidth: "85vh", textAlign: "center",
               }}>
-                {diagram.title}
+                <div style={{
+                  fontSize: 10, color: T.textLight, letterSpacing: "0.01em",
+                  whiteSpace: "nowrap",
+                  opacity: isHovered || diagram.caption ? 1 : 0, transition: "opacity 0.2s ease",
+                }}>
+                  {diagram.title}
+                </div>
+                {diagram.caption && (
+                  <div style={{
+                    marginTop: 6, fontSize: 11, lineHeight: 1.6, color: T.textMid,
+                    letterSpacing: "0.01em", whiteSpace: "normal",
+                    maxWidth: 480, margin: "6px auto 0",
+                  }}>
+                    {diagram.caption}
+                  </div>
+                )}
               </div>
             </div>
           );
