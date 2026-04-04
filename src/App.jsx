@@ -971,7 +971,7 @@ const DIAGRAM_MAP = {
 const MODULES = [
   {
     id: 1,
-    title: "The Portfolio as Constructed Argument",
+    title: "Portfolio as Argument",
     part: "Narrative",
     overview: `A portfolio is not a collection of coursework. It is a constructed argument. Every decision about what to include, how to sequence it, and where to place it on the page is an act of design. The portfolio is not separate from your work; it is your work, reframed for an audience. It speaks before you do: before you enter a review, an interview, or a committee, the layout has already made your case or lost it. Reviewers typically spend thirty seconds on an initial scan. In that window, you have either earned a closer reading or you have not.
 
@@ -1003,7 +1003,7 @@ When you can name your lens, you can use it to curate, sequence, and edit with p
   },
   {
     id: 3,
-    title: "From Statement to Outline",
+    title: "Statement to Outline",
     part: "Narrative",
     overview: `A project statement is not just text on a page. It is a generative engine. Every operative keyword in a well-written statement points to a specific drawing the portfolio must include. If the statement claims "eroding terrain," the portfolio must show terrain. If it promises "climate change as spatial experience," the portfolio must prove that promise with images of spatial sequence, material weathering, or environmental data. A statement without visual evidence is an empty claim. A portfolio without a statement is a collection without a thesis.
 
@@ -1016,7 +1016,7 @@ Test the outline by reading it without the statement. If a reviewer could recons
   },
   {
     id: 4,
-    title: "Sequencing the Arc",
+    title: "The Narrative Arc",
     part: "Narrative",
     overview: `A graphic outline is a list. A narrative arc turns that list into a story. The difference is pacing, tension, and resolution, the same principles that make a film hold attention or a building sequence feel inevitable. Architects already understand this: a building reveals itself through a sequence of spatial experiences, from threshold to compression to release. A portfolio must do the same through a sequence of pages.
 
@@ -1055,7 +1055,7 @@ Three sequence structures govern how images unfold across spreads: linear narrat
   },
   {
     id: 8,
-    title: "Grid Systems: From Structure to Page",
+    title: "Grid Systems",
     part: "Grid",
     overview: `A portfolio grid is not a style choice. It is the structural system beneath every page, the invisible framework that organizes content, establishes hierarchy, and gives meaning room to read. Architects already understand this: grids are among the oldest organizing principles in built form, from the urban plan of Miletus to the Ken module of Japanese timber construction to Le Corbusier's Modulor. The logic that connects a building's structural grid to a page grid is direct. A structural column defines rhythm and load-bearing zones. A page column defines rhythm and content zones. Bays correspond to modules. Beam lines correspond to baselines. A building without a grid is a pile of materials; a portfolio without a grid is a collection of images.
 
@@ -1068,7 +1068,7 @@ The grid should be invisible. When it works, a reviewer reads the argument, not 
   },
   {
     id: 9,
-    title: "The 12-Point Modular System",
+    title: "The 12-Point Module",
     part: "Grid",
     overview: `The grid concept becomes a grid system when every measurement derives from a single value. In this course, that value is twelve points. Margins, gutters, column widths, row heights, and baseline increments are all multiples of twelve. Nothing on the page is arbitrary. The document opens at 600 × 840 points, a 5:7 proportion that echoes the Golden Section without forcing it. The baseline grid begins at the top margin and increments every twelve points, locking text to a consistent vertical rhythm across every page.
 
@@ -1081,7 +1081,7 @@ The system is not restrictive. It is generative. The tighter the constraint, the
   },
   {
     id: 10,
-    title: "Typographic Systems & Architectural Voice",
+    title: "Typographic Systems",
     part: "Grid",
     overview: `Typography is how your portfolio speaks when you are not in the room. Before a reviewer reads a single word, the typeface, size hierarchy, and spacing have already communicated discipline or disorder. Limit the palette to two (at most three) complementary fonts. A serif paired with a sans-serif, or two weights of a single family, creates contrast without chaos. Mixing multiple serif families or multiple display faces signals indecision, not range. The typeface should reinforce the design position: a minimalist architect chooses restrained, geometric forms; a designer invested in material craft chooses typefaces with history and tactile character.
 
@@ -1094,7 +1094,7 @@ Line spacing matters more than most students expect. Tight leading works for cap
   },
   {
     id: 11,
-    title: "The Cover Page & Information Architecture",
+    title: "Cover and Information Architecture",
     part: "Grid",
     overview: `The cover is the first design decision a reviewer encounters, and it frames every page that follows. A cover does not decorate; it declares. It announces the portfolio's design position before the first project appears through typography, image selection, composition, and restraint. Seven cover typologies recur across professional and academic portfolios: Pure Minimal, Dark Ground, Hero Image, Bleed + Band, Collage, Grid Pattern, and Abstract Line. Each suits a different portfolio personality. Pure Minimal signals focus and confidence. Hero Image leads with a single defining moment. Grid Pattern implies systems thinking. The choice should reinforce the same Red Thread that runs through the project sequence.
 
@@ -1107,7 +1107,7 @@ Nick McIntosh's portfolio demonstrates several of these principles at once: a co
   },
   {
     id: 12,
-    title: "Color Systems & Tonal Unity",
+    title: "Color and Tonal Unity",
     part: "Production",
     overview: `Color in a portfolio is a system, not an accent. Three palette families recur across strong architectural portfolios. Nature-grounded palettes (terracotta, sage, sand, warm gray) tie the work to materiality and suggest craft. Muted contemporary palettes (pale cyan, lavender, coral) create visual interest without competing with project images. Industrial neutrals (deep grays, charcoals, blacks) remain the most common choice because they disappear and let the work speak. The palette should connect to the same design position that governs the portfolio's Red Thread: a project about erosion might favor earth tones; a project about light might favor high-contrast neutrals.
 
@@ -1118,7 +1118,7 @@ Use color when it advances the argument. Suppress it when it distracts. Every co
   },
   {
     id: 13,
-    title: "The Final Audit: Self-Editing Protocol",
+    title: "The Self-Editing Audit",
     part: "Production",
     overview: `Before submission, audit your portfolio at four levels. Use this checklist to catch oversights and strengthen weak areas.
 
@@ -1135,7 +1135,7 @@ Peer Review: Before finalizing, have two to three trusted colleagues or mentors 
   },
   {
     id: 14,
-    title: "Spread Composition: The Two-Page Unit",
+    title: "Spread Composition",
     part: "Grid",
     overview: `The spread, not the page, is the fundamental unit of portfolio composition. A reviewer never sees a single page in isolation. Every spread presents a left-right relationship, a visual weight distribution, and a hierarchy of elements that either advances the argument or stalls it. The grid establishes where things can go; spread composition determines what goes where and why.
 
@@ -1150,7 +1150,7 @@ Whitespace is not leftover space. Active whitespace (margins, gutters, and delib
   },
   {
     id: 15,
-    title: "Variation, Pacing & Breaking the Grid",
+    title: "Variation and Pacing",
     part: "Grid",
     overview: `A grid is only successful if the designer uses it to create a dynamic visual narrative rather than a uniform sequence of identical layouts. Once the grid is in place, sort the material spread by spread, storyboard the sequence, and test whether the rhythm of dark and light, dense and open, creates a reading experience that holds across the full portfolio. A grid that produces the same layout on every page is not disciplined; it is monotonous.
 
