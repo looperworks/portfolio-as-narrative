@@ -876,18 +876,18 @@ const DIAGRAM_MAP = {
     { component: DiagramWeakVsStrong, title: "Weak vs. Strong Statements" },
   ],
   3: [
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Act I: Opening", alt: "Terrain model and project abstract", caption: "The opening spread establishes the thesis immediately: terrain model as concept image, project abstract as position statement. A reviewer knows what this portfolio is about within seconds." },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Act II: Context", alt: "Aerial site photo and detail terrain model", caption: "The second spread grounds the project in site and scale. Aerial photography provides context; the detail model introduces the method of working with eroded terrain." },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Act II: Development", alt: "Winter renderings and building section", caption: "Complexity builds. Renderings show the building in its landscape; the section reveals how architecture embeds into slope. The argument deepens without repeating the opening." },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Act II: Evidence", alt: "Model photo, approach rendering, and section", caption: "Range expands: physical model, experiential rendering, and technical section demonstrate the project across multiple registers. Each image adds a new dimension." },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Act III: Resolution", alt: "Gallery interiors and floor plans", caption: "The closing spread resolves the argument. Interior views prove the spatial experience works. Floor plans demonstrate professional fluency. A reviewer leaves with a clear sense of direction." },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Statement Keywords Mapped", alt: "Terrain model and project abstract", caption: "The statement claims 'eroding terrain' and 'spatial experience.' The terrain model proves the first claim; the abstract provides the conceptual anchor. Every keyword has a corresponding image." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Context Keywords", alt: "Aerial site photo and detail terrain model", caption: "Keywords: 'Alpine,' 'decommissioned bunker,' 'mountainside.' The aerial photograph and detail model are the visual evidence these keywords demand. Without them, the statement is unverified." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Intervention Keywords", alt: "Winter renderings and building section", caption: "Keywords: 'cutting into,' 'continuous path,' 'geological time visible.' The section proves the cutting; the rendering proves the path. The outline demands exactly these drawing types." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Method Keywords", alt: "Model photo, approach rendering, and section", caption: "Keywords: 'embeds,' 'eroding,' 'landscape and gallery.' Physical model, approach view, and section each prove a different keyword. The outline leaves nothing unaccounted for." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Outcome Keywords", alt: "Gallery interiors and floor plans", caption: "Keywords: 'museum,' 'spatial experience.' Interior views prove inhabitation; floor plans prove program. The graphic outline is complete — every claim in the statement has been drawn." },
   ],
   4: [
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — The Initial Statement", alt: "Terrain model and project abstract", caption: "The strongest work goes first. This spread leads with the terrain model — the single most powerful image in the portfolio. It telegraphs the design position before any text is read." },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Building Context", alt: "Aerial site photo and detail terrain model", caption: "The second position introduces site and scale. This is not the strongest image, but it provides the context that makes everything after it legible." },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Expanding Range", alt: "Winter renderings and building section", caption: "The middle builds complexity. Renderings and sections demonstrate a different register — atmospheric and technical — without repeating the opening's strength." },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Deepening Evidence", alt: "Model photo, approach rendering, and section", caption: "Each spread adds a new dimension. Physical model, experiential view, and analytical drawing show the project cannot be reduced to a single medium." },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — The Final Statement", alt: "Gallery interiors and floor plans", caption: "The most resonant work goes last. Interior views and plans prove the spatial argument holds at the scale of inhabitation. A reviewer exits thinking: erosion as architecture." },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Act I: Exposition", alt: "Terrain model and project abstract", caption: "The protagonist is the site. The terrain model introduces the world the project inhabits; the statement declares what is at stake. A reviewer knows where we are and why it matters." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Act II: Rising Action", alt: "Aerial site photo and detail terrain model", caption: "Tension builds. The aerial view shows scale and remoteness; the detail model reveals the eroding terrain that demands intervention. These pages answer: why does this project need to exist?" },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Act III: Climax", alt: "Winter renderings and building section", caption: "The measurable obstacle: how does architecture embed into an actively eroding slope? The section makes the difficulty undeniable. The rendering shows the harsh winter environment the design must survive." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Act IV: Falling Action", alt: "Model photo, approach rendering, and section", caption: "Tension releases as the design response unfolds. The physical model shows massing resolution; the approach rendering shows arrival sequence; the section shows structural logic responding directly to the slope." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Act V: Resolution", alt: "Gallery interiors and floor plans", caption: "The transformed state. Interior views prove the spatial experience works. Floor plans demonstrate professional resolution. The conflict has been addressed; the thesis has been proven." },
   ],
   5: [
     { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Concept + Context", alt: "Terrain model and project abstract", caption: "Concept: the terrain model captures the governing idea — erosion as design method. Context: the abstract grounds the project in site, program, and intent. Two image types, one spread." },
@@ -898,11 +898,11 @@ const DIAGRAM_MAP = {
   ],
 
   7: [
-    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Linear Narrative: Site → Concept", alt: "Terrain model and project abstract", caption: "The opening spread follows a linear narrative structure. The terrain model introduces the site; the abstract declares the concept. Each element prepares the reader for what follows." },
-    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Track 1: Skim Reading", alt: "Aerial site photo and detail terrain model", caption: "At skim speed (30 seconds), the large aerial photo and model carry the argument alone. No text needed. Track 1 works: a reviewer understands site and method from images only." },
-    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Track 2: Study Reading", alt: "Winter renderings and building section", caption: "At study speed (5 minutes), the section rewards close reading. The rendering shows atmosphere; the section shows logic. Text and image complete each other — neither duplicates." },
-    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Advancing the Argument", alt: "Model photo, approach rendering, and section", caption: "Each spread must introduce something the previous one did not. Here: physical materiality (model), experiential sequence (rendering), and tectonic logic (section). No repetition." },
-    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Resolution Spread", alt: "Gallery interiors and floor plans", caption: "The final spread proves the project is resolved. Interior views show inhabited space; plans demonstrate professional precision. The storyboard arrives where it promised to go." },
+    { image: "class-pdf/casestudy-spread-1.jpg", title: "Spread 1 — Opening: Concept + Statement", alt: "Terrain model and project abstract", caption: "The storyboard opens with the hero image and project statement. At skim speed (30 seconds), the terrain model carries the argument alone. At study speed, the text deepens it. Both tracks work." },
+    { image: "class-pdf/casestudy-spread-2.jpg", title: "Spread 2 — Development: Context", alt: "Aerial site photo and detail terrain model", caption: "The second spread introduces what the first did not: site scale and analytical method. The skim track reads the aerial photograph; the study track reads the model's erosion logic. No repetition." },
+    { image: "class-pdf/casestudy-spread-3.jpg", title: "Spread 3 — Development: Atmosphere + Logic", alt: "Winter renderings and building section", caption: "Complexity builds. The rendering shows atmosphere; the section shows tectonic logic. Text and image complete each other — the image shows what cannot be said, the text says what cannot be shown." },
+    { image: "class-pdf/casestudy-spread-4.jpg", title: "Spread 4 — Development: Materiality + Sequence", alt: "Model photo, approach rendering, and section", caption: "Each spread advances without repeating. Physical materiality (model), experiential sequence (rendering), and structural response (section) — three new dimensions on one spread." },
+    { image: "class-pdf/casestudy-spread-5.jpg", title: "Spread 5 — Closing: Resolution", alt: "Gallery interiors and floor plans", caption: "The storyboard resolves. Interior views prove inhabitation; plans prove professional fluency. If these five spreads tell the story without the statement, the storyboard is finished." },
   ],
   10: [
     { component: DiagramTypography, title: "Typography Categories" },
@@ -1001,74 +1001,65 @@ When you can name your lens, you can use it to curate, sequence, and edit with p
   },
   {
     id: 3,
-    title: "Structuring the Narrative",
+    title: "From Statement to Outline",
     part: "Narrative",
-    overview: `Narrative is a design problem, not a writing task. A portfolio that presents projects in chronological order leaves the reviewer to construct meaning on their own. One that sequences them within a deliberate structure controls what the reviewer understands and when. The three-act framework (opening, development, resolution) is not a formula. It is a pattern of expectations that audiences already carry. Working with that pattern makes the portfolio coherent. Ignoring it makes the portfolio feel scattered, regardless of the quality of the work inside.
+    overview: `The project statement is not just text. It is a generative engine. Every keyword in a well-written statement points to a specific drawing type that the portfolio must include. If the statement mentions "eroding terrain," the portfolio must show terrain. If it claims "climate change as spatial experience," the portfolio must prove that claim with images of spatial sequence, material weathering, or environmental data. A statement without visual evidence is an empty promise. A portfolio without a statement is a collection without a thesis.
 
-**Opening:** the first project establishes who you are as a designer, what problems your work engages, and what questions drive it. A strong opening creates a lens through which a reviewer reads everything that follows. If it is vague, every subsequent project must fight to establish context on its own.
+**The Mapping Process:** Underline every operative keyword in your project statement. For each keyword, identify what type of visual evidence would prove that claim to a skeptical reviewer. Context keywords (site, location, existing condition) require site plans, aerial photographs, and historical mappings. Conflict keywords (problem, tension, constraint) require analytical diagrams, data overlays, or documentation of existing failure. Intervention keywords (design move, strategy, method) require massing studies, structural logic, and process diagrams. Outcome keywords (result, transformation, experience) require renderings, sections, and detail drawings.
 
-**Development:** the middle projects build your case. Each one should introduce a new dimension of your thinking: a new scale, method, or constraint. Repeating the same strength without adding complexity signals a limited range.
+**Building the Graphic Outline:** Arrange these required images in the order they appear in the statement. The statement already contains a narrative logic: it moves from context to problem to response to result. That sequence becomes the graphic outline — a list of drawings organized not by when they were produced but by what they argue. The outline is the bridge between writing and layout. Without it, students jump from statement to InDesign and fill pages with whatever images are closest at hand.
 
-**Resolution:** the closing projects demonstrate that your thinking has arrived somewhere. The work should feel resolved: technically precise, professionally aware, and intentionally positioned. A reviewer should leave the final spread with a clear sense of your direction, not just your skill.
-
-Building a narrative takes three steps. First, write a position statement: your design point of view in one sentence. Second, map your projects to the arc, deciding which opens, which develops complexity, and which resolves. Third, sequence images within each project so they advance the argument spread by spread. The result is an explicit, editable structure you can test, revise, and defend.`,
-    keyInsight: `Sequence is not chronology. It is rhetoric.`,
+**Testing the Outline:** Read the graphic outline without the statement. Does the image sequence alone tell the story? If a reviewer could reconstruct your argument from the drawings alone, the outline works. If the drawings feel like a random assortment, return to the statement and identify which claims lack visual proof.`,
+    keyInsight: `The statement writes the outline. The outline demands the drawings.`,
   },
   {
     id: 4,
-    title: "Sequencing for Impact",
+    title: "The Narrative Arc",
     part: "Narrative",
-    overview: `The strongest work goes first. The most resonant work goes last. The middle builds complexity.
+    overview: `A graphic outline is a list. A narrative arc turns that list into a story. The difference is pacing, tension, and resolution — the same principles that make a film compelling or a building sequence legible. Architects already understand this intuitively: a building reveals itself through a sequence of spatial experiences. A portfolio must do the same through a sequence of pages.
 
-This violates chronological thinking, which is why so many portfolios fail. Chronological portfolios place the earliest, weakest studio exercise first and bury the thesis project at page twenty. That arrangement is a buried lede (a journalism term for burying the most newsworthy information below the fold).
+**Act I — Exposition:** The opening spread introduces the protagonist of the project. In architecture, the protagonist is often the site, the user, or a governing concept. This is where the project statement appears alongside a hero image — typically a concept diagram, site photograph, or terrain model — that establishes the world the project inhabits. A strong opening answers: where are we, and why does it matter?
 
-The Initials-and-Finals principle reorders work to maximize impact. The opening project should be the strongest single demonstration of your design thinking. Not your most technically accomplished work, but the work that most clearly telegraphs your position. This is the initial statement.
+**Act II — Rising Action:** The next spreads build tension by introducing the problem the project addresses. What condition requires intervention? What is at stake if nothing changes? Visual evidence shifts from neutral documentation to emotive representation: site analysis overlays, environmental data, documentation of existing failure. These pages answer the critical question: why does this project need to exist?
 
-The middle projects build case through evidence, complexity, and range. Each advances the argument without repeating it.
+**Act III — Climax:** The climax is the measurable obstacle — the technical, environmental, or social reality that makes the solution difficult. This is the most intense part of the argument: rigorous site analysis, structural constraints, regulatory barriers. The climax proves the architect's problem-solving capacity by making the difficulty undeniable before showing the resolution.
 
-The closing project should be the most resonant (the piece that makes viewers feel that the entire portfolio was leading to that moment). This is the final statement. A reviewer should exit the portfolio thinking "I understand what this designer cares about," not "That was a nice project."
+**Act IV — Falling Action:** Tension releases as the design response unfolds. Massing evolution, structural logic, environmental systems — each drawing responds directly to a barrier identified in the climax. A specific structural detail is not just a detail; it is the solution to a span problem identified two spreads earlier. Every image earns its place by answering a question the portfolio has already asked.
 
-Precedent study sharpens sequencing instincts. Award-winning portfolios, such as those recognized by the RIBA President's Medals, reveal how experienced designers apply the initials-and-finals principle intuitively. In small-group critique, examine published portfolios for narrative structure, visual consistency, project sequencing, and clarity of intent. Note which sequencing decisions land and why. That editorial eye is what you bring back to your own work.`,
-    keyInsight: `The first impression sets the frame. The last impression sets the memory.`,
+**Act V — Resolution:** The final spreads show the transformed state. High-quality renderings, perspective sections, and detail studies allow the viewer to inhabit the finished project. The resolution provides closure: the conflict has been addressed, the architecture proves the thesis, and the reviewer exits with a clear sense of the designer's position.`,
+    keyInsight: `A narrative arc is not decoration. It is the structure that makes evidence persuasive.`,
   },
   {
     id: 5,
-    title: "Four Image Types",
+    title: "Image Types as Evidence",
     part: "Narrative",
-    overview: `Every image in a portfolio performs one of four roles. Knowing these roles is the difference between a page that documents and a page that argues.
+    overview: `Every image in a portfolio performs one of four evidentiary roles. Knowing these roles prevents two common failures: pages that repeat the same type of proof, and pages that document without arguing.
 
-Concept: The diagram, collage, or sketch that captures the governing idea. It tells a reviewer what you were thinking before you started drawing plans. Concept images belong early in a project sequence.
+**Concept:** The diagram, collage, or sketch that captures the governing idea. Concept images answer the question "what were you thinking?" before any plan was drawn. Parti diagrams, conceptual collages, and governing geometry belong here. They are the visual form of the project statement — the claim made visible.
 
-Process: Iterations, massing studies, model photographs. Process images are evidence of thinking, tested, reconsidered, and refined.
+**Context:** The site photograph, aerial mapping, historical overlay, or existing condition. Context images ground the project in reality and establish the world the design inhabits. Without context, even the most elegant proposal reads as autonomous fantasy. Context images typically appear in Acts I and II of the narrative arc, setting the stage and defining what is at stake.
 
-Outcome: The final rendering, the technical drawing, the detail section. Outcome images prove feasibility and demonstrate professional fluency.
+**Process:** Iterations, massing studies, model photographs, analytical diagrams. Process images are evidence of thinking — tested, reconsidered, and refined. They show a reviewer how you solve problems, not just what you produce. Process is where academic and boutique-studio reviewers spend the most time; it reveals the designer's intelligence, not just their skill.
 
-Context: The site photograph, the street elevation, the existing condition. Context images ground the work in real-world constraints and opportunities. Without context, even the most elegant proposal reads as autonomous fancy.
+**Outcome:** The final rendering, technical drawing, detail section, or interior view. Outcome images prove feasibility and demonstrate professional fluency. They belong in Acts IV and V of the narrative arc, where the design responds to conflict and resolves it.
 
-The sequence matters. Concept first. Context second. Process and Outcome weave together based on the project's narrative logic. A portfolio that leads with Outcome is a catalog. A portfolio that sequences concept → context → process → outcome is an argument.`,
-    keyInsight: `Every image should earn its place. If you cannot articulate what it communicates, remove it.`,
+**Mapping Images to the Arc:** Return to your graphic outline and label each drawing with its image type. A spread heavy on Outcome but missing Concept has skipped the argument. A spread full of Context but lacking Process has set the stage without performing. The ideal sequence within a project moves from Concept to Context to Process to Outcome — but the narrative arc determines where each type lands across the full spread sequence.`,
+    keyInsight: `A portfolio that leads with Outcome is a catalog. One that sequences Concept to Outcome is an argument.`,
   },
-
   {
     id: 7,
-    title: "Storyboarding & Spread Sequencing",
+    title: "Storyboarding the Spreads",
     part: "Narrative",
-    overview: `Now that narrative decisions are made (argument, structure, image taxonomy, and red thread), the work shifts from idea to page. Storyboarding translates project-level sequencing decisions into page-level compositions. Each spread must show what the previous one established and prepare for what comes next.
+    overview: `The statement generated an outline. The arc gave it structure. The image types classified the evidence. Now the work shifts from planning to page. Storyboarding is the physical act of arranging spreads into a sequence that holds when printed, scrolled, or projected.
 
-Each image must introduce a new dimension of the project without repeating what the opening already established. Three project-level sequence structures govern how images unfold:
+**The Storyboard Method:** Print every project image as a small thumbnail (3×5 or 4×6 inches). Arrange them on a large table or bulletin board. Move them physically, testing different orderings. This kinesthetic approach reveals rhythm and pacing problems that are invisible on screen. A sequence that looks logical in a list often feels monotonous or front-loaded when you see the images at actual relative scale.
 
-Linear Narrative: Site → concept → development → resolution. The most common structure, following design process chronologically but with editorial selection.
+**Two-Track Reading:** Every spread must work at two speeds simultaneously. Track 1 (skim, 30–90 seconds): large images, clear hierarchy, minimal text. A reviewer scanning quickly should understand the project's arc from images alone. Track 2 (study, 5–15 minutes): captions, process documentation, analytical detail. A reviewer reading closely should find evidence that deepens the argument without contradicting what the skim track communicated. Text and image complete each other. The image shows what cannot be said. The text says what cannot be shown.
 
-Comparative Narrative: Before and after, existing and proposed. This structure works when the transformation is the argument.
+**Sequence Structures:** Three approaches govern how images unfold across spreads. Linear Narrative (site → concept → development → resolution) follows the design process with editorial selection. Comparative Narrative (before/after, existing/proposed) works when the transformation is the argument. Thematic Narrative organizes around a design principle rather than chronology — best for projects where the governing idea matters more than the timeline.
 
-Thematic Narrative: Organized around a design principle rather than chronology. Best for projects where the governing idea matters more than the timeline.
-
-Storyboarding Method: Print all project images as small thumbnails (3×5 or 4×6 inch prints). Arrange them on a large table or bulletin board. Move them around physically, testing different sequence orders. This kinesthetic approach reveals rhythm and pacing before any page layout is drafted.
-
-The Two-Track Reading System ensures the portfolio works at both speeds. Track 1 - Skim (30–90 seconds): Large images, clear hierarchy, minimal text. Track 2 - Study (5–15 minutes): Captions, process, analytical detail. Text and image should complete each other rather than duplicate. The image shows what cannot be said. The text says what cannot be shown.
-
-The constructing narrative exercise puts this into practice. Working with seven spreads in InDesign, arrange your strongest project as a complete visual sequence: opening spread with concept image, two to three development spreads with process and context images, and a closing spread with outcome images. This is the proof-of-concept (testing whether your storyboard holds on real pages before committing to full portfolio production).`,
-    keyInsight: `A sequence is not a collection. Each image should advance, not repeat.`,
+**The Seven-Spread Exercise:** Working in InDesign, arrange your strongest project as a complete visual sequence: opening spread with concept image and statement, two to three development spreads with process and context images building complexity, and a closing spread with outcome images that resolve the argument. This is the proof-of-concept — testing whether your storyboard holds on real pages before committing to full portfolio production. If the seven spreads do not tell a complete story, the problem is in the outline, not the layout.`,
+    keyInsight: `If the spreads do not tell the story without the statement, the storyboard is not finished.`,
   },
   {
     id: 8,
