@@ -1796,7 +1796,7 @@ export default function PortfolioGuide() {
           </div>
         )}
         {/* Case Study Spreads link — shows on modules 1 and 2 */}
-        {(mod.id === 1 || mod.id === 2) && DIAGRAM_MAP["1spreads"] && (
+        {(mod.id === 1) && DIAGRAM_MAP["1spreads"] && (
           <div style={{ marginTop: diagrams.length > 0 ? 10 : 32 }}>
             <span
               onClick={() => navigate("#/diagrams/1spreads")}
