@@ -910,7 +910,9 @@ Step 3 - One Word: Threshold. Tension. Porosity. Absence. Erosion. The word is n
 
 Step 4 - The Thread Test: Repeat for every project. When the same word keeps surfacing, you have found your Red Thread.
 
-When you can name your lens, you can use it to curate, sequence, and edit with precision. The compression exercise turns a vague sense of what your work is about into a single word you can test against every project in the portfolio.`,
+When you can name your lens, you can use it to curate, sequence, and edit with precision. The compression exercise turns a vague sense of what your work is about into a single word you can test against every project in the portfolio.
+
+**Worked example:** A portfolio from Toshiko Mori's Advanced Studio at Harvard GSD. Paragraph: "The design converts a decommissioned military bunker into an Alpine Museum, embedding into the mountainside to create a continuous path between landscape and gallery." Sentence: "The Alpine Museum embeds into eroding terrain to make climate change a spatial experience." Word: Erosion. The case study at the end of Part I shows how that single word governed every image in the portfolio.`,
     keyInsight: `"If the word is the same across three or more projects, the portfolio has a position. If it scatters, it needs one."`,
   },
   {
@@ -1095,7 +1097,7 @@ Portfolio-Level: Demonstrates range without losing coherence · Clear logic gove
 
 Visual and Production Quality: 300 DPI minimum for print · Typography consistency · Cohesive color palette · Spelling and proofreading complete.
 
-Final Production: Separate optimized PDFs (print at 300 DPI, CMYK and digital at 150 DPI, RGB, under 10 MB) · All fonts embedded · Website portfolio live and updated · File naming: Lastname_Portfolio_Year.pdf (e.g., DiLeo_Portfolio_2025.pdf).
+Final Production: Separate optimized PDFs (print at 300 DPI, CMYK and digital at 150 DPI, RGB, under 10 MB) · All fonts embedded · Website portfolio live and updated · File naming: Lastname_Portfolio_Year.pdf (e.g., Lastname_Portfolio_2025.pdf).
 
 Peer Review: Before finalizing, have two to three trusted colleagues or mentors review the portfolio. Ask them to spend thirty seconds on an initial scan, then take five minutes for deeper reading. Ask: "What story do you think this designer cares about?" Their answer should match your intended position. If not, the portfolio is not yet communicating clearly. Revise and test again.`,
     keyInsight: `"The audit is not the last step. It is the first honest reading of your own work."`,
@@ -1106,7 +1108,7 @@ const CASE_STUDY = {
   id: "casestudy",
   title: "Case Study: Erosion",
   part: "Part I Conclusion",
-  overview: `Stefan DiLeo's Apres Ski project, completed in Toshiko Mori's Advanced Studio at Harvard GSD, proposes converting a decommissioned military bunker at Col du Pillon into an Alpine Museum in Les Diablerets, Switzerland. Five spreads present the project. What follows is a reading of those spreads through the six modules of Part I, showing how each principle operates in practice.
+  overview: `This portfolio, completed in Toshiko Mori's Advanced Studio at Harvard GSD, proposes converting a decommissioned military bunker at Col du Pillon into an Alpine Museum in Les Diablerets, Switzerland. Five spreads present the project. What follows is a reading of those spreads through the six modules of Part I, showing how each principle operates in practice.
 
 **Module 1: The Portfolio as Constructed Argument.** This is not documentation of a studio assignment. Every spread advances a single claim: that architecture can make an invisible environmental process (glacial retreat, alpine erosion) into a spatial experience a visitor moves through. The spreads are not arranged to show what was produced. They are arranged to build a case.
 
