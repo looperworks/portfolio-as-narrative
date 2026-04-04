@@ -47,134 +47,6 @@ Object.values(PARTS).forEach(part => {
 
 /* ─── Inline Diagram Components ─── */
 
-function DiagramNarrativeArc() {
-  const acts = [
-    { label: "ACT I", sub: "Setup", x: 60, y: 140, color: T.accent },
-    { label: "ACT II", sub: "Confrontation", x: 200, y: 50, color: T.navy },
-    { label: "ACT III", sub: "Synthesis", x: 340, y: 110, color: T.coral },
-  ];
-  return (
-    <svg viewBox="0 0 420 180" style={{ width: "100%", height: "auto" }}>
-      <path d="M 40 150 Q 120 140 200 50 Q 280 -20 380 120" fill="none" stroke={T.border} strokeWidth="2" />
-      <path d="M 40 150 Q 120 140 200 50" fill="none" stroke={T.accent} strokeWidth="2.5" />
-      <path d="M 200 50 Q 250 10 290 40" fill="none" stroke={T.navy} strokeWidth="2.5" />
-      <path d="M 290 40 Q 340 70 380 120" fill="none" stroke={T.coral} strokeWidth="2.5" />
-      {acts.map((a, i) => (
-        <g key={i}>
-          <circle cx={a.x} cy={a.y} r="5" fill={a.color} />
-          <text x={a.x} y={a.y + 22} textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="600" fill={a.color} letterSpacing="0.08em">{a.label}</text>
-          <text x={a.x} y={a.y + 34} textAnchor="middle" fontSize="8" fontFamily={T.sans} fill={T.textLight}>{a.sub}</text>
-        </g>
-      ))}
-      <text x="200" y="16" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill={T.textMuted} letterSpacing="0.1em">PEAK COMPLEXITY</text>
-    </svg>
-  );
-}
-
-function DiagramChronVsNarrative() {
-  const boxStyle = (bg) => ({ fill: bg, rx: 3 });
-  return (
-    <svg viewBox="0 0 420 140" style={{ width: "100%", height: "auto" }}>
-      {/* Chronological */}
-      <text x="105" y="14" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.08em">CHRONOLOGICAL</text>
-      {["Studio 1", "Studio 2", "Studio 3", "Studio 4"].map((s, i) => (
-        <g key={i}>
-          <rect x={20 + i * 48} y={22} width="40" height="28" {...boxStyle("#e8e8e6")} />
-          <text x={40 + i * 48} y={40} textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{s}</text>
-        </g>
-      ))}
-      <text x="105" y="68" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted}>No throughline · Generic descriptions</text>
-      {/* Narrative */}
-      <text x="315" y="14" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.navy} letterSpacing="0.08em">NARRATIVE</text>
-      {["Strongest", "Context", "Develop", "Resolve"].map((s, i) => (
-        <g key={i}>
-          <rect x={230 + i * 48} y={22} width="40" height="28" {...boxStyle(i === 0 ? T.accentLight : "#f5f5f3")} stroke={i === 0 ? T.accent : T.border} strokeWidth="1" />
-          <text x={250 + i * 48} y={40} textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={i === 0 ? T.accent : T.textLight}>{s}</text>
-        </g>
-      ))}
-      <line x1="230" y1="56" x2="418" y2="56" stroke={T.coral} strokeWidth="1.5" strokeDasharray="3,3" />
-      <text x="324" y="64" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.coral} fontWeight="500">RED THREAD</text>
-      <text x="315" y="78" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted}>Position-driven · Argument-ordered</text>
-      {/* VS */}
-      <text x="210" y="42" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="600" fill={T.textFaint}>vs.</text>
-    </svg>
-  );
-}
-
-function DiagramFourImageTypes() {
-  const types = [
-    { name: "CONCEPT", desc: "Anchors idea", color: T.accent, icon: "◇" },
-    { name: "PROCESS", desc: "Shows refinement", color: T.navy, icon: "↻" },
-    { name: "OUTCOME", desc: "Proves resolution", color: T.coral, icon: "■" },
-    { name: "CONTEXT", desc: "Grounds work", color: T.gold, icon: "◎" },
-  ];
-  return (
-    <svg viewBox="0 0 420 90" style={{ width: "100%", height: "auto" }}>
-      {types.map((t, i) => (
-        <g key={i}>
-          <rect x={8 + i * 103} y="8" width="95" height="60" rx="3" fill="#fff" stroke={t.color} strokeWidth="1.5" />
-          <text x={55 + i * 103} y="30" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={t.color} letterSpacing="0.1em">{t.name}</text>
-          <text x={55 + i * 103} y="44" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill={T.textLight}>{t.desc}</text>
-          <text x={55 + i * 103} y="58" textAnchor="middle" fontSize="10" fill={t.color}>{t.icon}</text>
-        </g>
-      ))}
-      <text x="210" y="84" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Sequence: Concept first → Outcome last</text>
-    </svg>
-  );
-}
-
-function DiagramImageMapping() {
-  const rows = [
-    { spread: "1 (Setup)", image: "Terrain model", type: "Concept", thread: "Landscape as raw material" },
-    { spread: "2", image: "Site map + detail", type: "Context", thread: "Alpine erosion at macro scale" },
-    { spread: "3 (Confront.)", image: "Section drawing", type: "Process", thread: "Building carves into ground" },
-    { spread: "4", image: "Ramp + snow", type: "Outcome", thread: "Erosion made accessible" },
-    { spread: "5 (Synthesis)", image: "Gallery interior", type: "Outcome", thread: "Erosion made inhabitable" },
-  ];
-  const typeColor = { Concept: T.accent, Process: T.navy, Outcome: T.coral, Context: T.gold };
-  return (
-    <svg viewBox="0 0 420 130" style={{ width: "100%", height: "auto" }}>
-      <text x="210" y="12" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">IMAGE TYPE MAPPING ACROSS SPREADS</text>
-      {["SPREAD", "IMAGE", "TYPE", "RED THREAD"].map((h, i) => (
-        <text key={i} x={[30, 130, 240, 350][i]} y="30" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fontWeight="600" fill={T.navy} letterSpacing="0.08em">{h}</text>
-      ))}
-      <line x1="8" y1="34" x2="412" y2="34" stroke={T.navy} strokeWidth="1" />
-      {rows.map((r, i) => (
-        <g key={i}>
-          <rect x="8" y={38 + i * 17} width="404" height="16" fill={i % 2 === 0 ? "#f8f8f6" : "transparent"} />
-          <text x="30" y={49 + i * 17} textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMid}>{r.spread}</text>
-          <text x="130" y={49 + i * 17} textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{r.image}</text>
-          <text x="240" y={49 + i * 17} textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fontWeight="500" fill={typeColor[r.type]}>{r.type}</text>
-          <text x="350" y={49 + i * 17} textAnchor="middle" fontSize="6.5" fontFamily={T.serif} fontStyle="italic" fill={T.textLight}>{r.thread}</text>
-        </g>
-      ))}
-    </svg>
-  );
-}
-
-function DiagramNarrativeFailures() {
-  const fails = [
-    { name: "The Beautiful Mute", symptom: "Beauty without argument", fix: "Find the position", icon: "✕", color: T.coral },
-    { name: "The Buried Lede", symptom: "Strong work hidden at back", fix: "Lead with strength", icon: "↕", color: T.gold },
-    { name: "The Greatest Hits", symptom: "Strong parts, no throughline", fix: "Find the Red Thread", icon: "≡", color: T.navy },
-  ];
-  return (
-    <svg viewBox="0 0 420 110" style={{ width: "100%", height: "auto" }}>
-      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">DIAGNOSING NARRATIVE FAILURE</text>
-      {fails.map((f, i) => (
-        <g key={i}>
-          <rect x={8 + i * 138} y="24" width="130" height="72" rx="3" fill="#fff" stroke={f.color} strokeWidth="1.5" />
-          <text x={73 + i * 138} y="42" textAnchor="middle" fontSize="14" fill={f.color}>{f.icon}</text>
-          <text x={73 + i * 138} y="56" textAnchor="middle" fontSize="7.5" fontFamily={T.sans} fontWeight="600" fill={T.text}>{f.name}</text>
-          <text x={73 + i * 138} y="68" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{f.symptom}</text>
-          <line x1={28 + i * 138} y1="74" x2={118 + i * 138} y2="74" stroke={T.border} strokeWidth="0.5" />
-          <text x={73 + i * 138} y="86" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fontWeight="500" fill={f.color}>FIX: {f.fix}</text>
-        </g>
-      ))}
-    </svg>
-  );
-}
-
 function DiagramCompression() {
   const steps = [
     { label: "Paragraph", sub: "4–6 sentences", w: 100 },
@@ -288,210 +160,7 @@ function DiagramWeakVsStrong() {
   );
 }
 
-function DiagramPortfolioAnatomy() {
-  /* Page dimensions: portrait proportion, consistent with architecture portfolio format */
-  const pw = 32; const ph = 44; const gap = 4; const spreadGap = 1;
-  const bg = "#1a1a1a"; const page = "#fff"; const img = "#c8d5dc"; const txt = "#d0d0d0";
-  /* Row 1 items */
-  const row1 = [
-    { type: "single", label: "Cover", fill: img },
-    { type: "spread", label: "Inside Front Cover / TOC", leftFill: page, rightFill: page, rightContent: "toc" },
-    { type: "spread", label: "Section Divider", leftFill: img, rightFill: img },
-    { type: "spread", label: "Introduction Pages", leftFill: page, rightFill: page, rightContent: "intro" },
-  ];
-  /* Row 2 items */
-  const row2 = [
-    { type: "spread", label: "Project Pages (Multiple)", leftFill: page, rightFill: page, leftContent: "multi" },
-    { type: "spread", label: "Project Pages (Full Bleed)", leftFill: img, rightFill: img },
-    { type: "spread", label: "Resume / Inside Back", leftFill: page, rightFill: page, leftContent: "resume" },
-    { type: "single", label: "Back Cover", fill: img },
-  ];
-
-  function renderPage(x, y, fill, content) {
-    return (
-      <g>
-        <rect x={x} y={y} width={pw} height={ph} fill={fill} />
-        {content === "toc" && <>
-          <rect x={x+6} y={y+6} width={20} height={1.5} fill="#999" rx="0.5" />
-          {[0,1,2,3,4,5].map(j => <rect key={j} x={x+6} y={y+11+j*4.5} width={16} height={0.8} fill="#ccc" rx="0.3" />)}
-        </>}
-        {content === "intro" && <>
-          <rect x={x+4} y={y+4} width={24} height={14} fill={img} />
-          <rect x={x+4} y={y+22} width={20} height={1.5} fill="#999" rx="0.5" />
-          {[0,1,2,3].map(j => <rect key={j} x={x+4} y={y+26+j*3.5} width={18} height={0.7} fill="#ccc" rx="0.3" />)}
-        </>}
-        {content === "multi" && <>
-          <rect x={x+3} y={y+3} width={26} height={16} fill={img} />
-          <rect x={x+3} y={y+21} width={12} height={10} fill={img} />
-          <rect x={x+17} y={y+21} width={12} height={10} fill={img} />
-        </>}
-        {content === "resume" && <>
-          <rect x={x+6} y={y+5} width={16} height={1.5} fill="#999" rx="0.5" />
-          {[0,1,2,3,4,5,6,7].map(j => <rect key={j} x={x+4} y={y+10+j*3.8} width={j%2===0 ? 22 : 18} height={0.7} fill="#ccc" rx="0.3" />)}
-        </>}
-      </g>
-    );
-  }
-
-  function renderRow(items, yBase, yLabel) {
-    let x = 16;
-    return items.map((item, i) => {
-      const el = (
-        <g key={i}>
-          {item.type === "single" && <>
-            {renderPage(x, yBase, item.fill)}
-            <text x={x + pw/2} y={yLabel} textAnchor="middle" fontSize="5" fontFamily={T.sans} fill={txt} letterSpacing="0.02em">{item.label}</text>
-          </>}
-          {item.type === "spread" && <>
-            {renderPage(x, yBase, item.leftFill, item.leftContent)}
-            <line x1={x + pw} y1={yBase} x2={x + pw} y2={yBase + ph} stroke={bg} strokeWidth="0.5" />
-            {renderPage(x + pw + spreadGap, yBase, item.rightFill, item.rightContent)}
-            <text x={x + pw + spreadGap/2} y={yLabel} textAnchor="middle" fontSize="5" fontFamily={T.sans} fill={txt} letterSpacing="0.02em">{item.label}</text>
-          </>}
-        </g>
-      );
-      x += (item.type === "spread" ? pw * 2 + spreadGap : pw) + gap + 8;
-      return el;
-    });
-  }
-
-  return (
-    <svg viewBox="0 0 420 162" style={{ width: "100%", height: "auto", borderRadius: "3px" }}>
-      <rect x="0" y="0" width="420" height="162" fill={bg} rx="3" />
-      {renderRow(row1, 12, 62)}
-      {renderRow(row2, 72, 122)}
-      <text x="210" y="140" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill="#666" letterSpacing="0.08em">PORTFOLIO ANATOMY</text>
-      {/* Bracket spanning project pages */}
-      <line x1="16" y1="150" x2="172" y2="150" stroke="#444" strokeWidth="0.5" />
-      <text x="94" y="157" textAnchor="middle" fontSize="4.5" fontFamily={T.sans} fill="#555" letterSpacing="0.06em">FRONT MATTER</text>
-      <line x1="182" y1="150" x2="340" y2="150" stroke="#444" strokeWidth="0.5" />
-      <text x="261" y="157" textAnchor="middle" fontSize="4.5" fontFamily={T.sans} fill="#555" letterSpacing="0.06em">THE ARGUMENT</text>
-      <line x1="350" y1="150" x2="406" y2="150" stroke="#444" strokeWidth="0.5" />
-      <text x="378" y="157" textAnchor="middle" fontSize="4.5" fontFamily={T.sans} fill="#555" letterSpacing="0.06em">CLOSE</text>
-    </svg>
-  );
-}
-
-function DiagramTwoSpeed() {
-  const bg = "#1a1a1a"; const page = "#fff"; const img = "#c8d5dc"; const txt = "#d0d0d0";
-  const pw = 86; const ph = 118;
-  return (
-    <svg viewBox="0 0 540 210" style={{ width: "100%", height: "auto", borderRadius: "3px" }}>
-      <rect x="0" y="0" width="540" height="210" fill={bg} rx="3" />
-      {/* Left: Skim */}
-      <text x="120" y="22" textAnchor="middle" fontSize="8" fontFamily={T.sans} fill="#888" letterSpacing="0.12em">SKIM</text>
-      <text x="120" y="34" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="500" fill={txt}>30 seconds</text>
-      {/* Page spread: image dominant */}
-      <rect x="38" y="46" width={pw} height={ph} fill={page} />
-      <rect x={38 + pw + 2} y="46" width={pw} height={ph} fill={page} />
-      <line x1={38 + pw + 1} y1="46" x2={38 + pw + 1} y2={46 + ph} stroke={bg} strokeWidth="1.5" />
-      {/* Large hero image spanning left page */}
-      <rect x="44" y="52" width={pw - 12} height={ph * 0.55} fill={img} />
-      {/* Small title + text on left */}
-      <rect x="44" y={52 + ph * 0.55 + 8} width="30" height="2.5" fill="#999" rx="0.5" />
-      <rect x="44" y={52 + ph * 0.55 + 14} width="50" height="1.5" fill="#ccc" rx="0.5" />
-      {/* Right page: one big image */}
-      <rect x={38 + pw + 8} y="52" width={pw - 12} height={ph - 12} fill={img} />
-      {/* Label */}
-      <text x="120" y={46 + ph + 18} textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#666">Large images · Clear hierarchy · Minimal text</text>
-
-      {/* Divider */}
-      <line x1="270" y1="40" x2="270" y2="190" stroke="#333" strokeWidth="0.5" strokeDasharray="3,4" />
-
-      {/* Right: Study */}
-      <text x="408" y="22" textAnchor="middle" fontSize="8" fontFamily={T.sans} fill="#888" letterSpacing="0.12em">STUDY</text>
-      <text x="408" y="34" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="500" fill={txt}>5 minutes</text>
-      {/* Page spread: text + multi-image */}
-      <rect x="326" y="46" width={pw} height={ph} fill={page} />
-      <rect x={326 + pw + 2} y="46" width={pw} height={ph} fill={page} />
-      <line x1={326 + pw + 1} y1="46" x2={326 + pw + 1} y2={46 + ph} stroke={bg} strokeWidth="1.5" />
-      {/* Left page: two images + caption */}
-      <rect x="332" y="52" width={pw - 12} height="36" fill={img} />
-      <rect x="332" y="92" width="34" height="28" fill={img} />
-      <rect x="370" y="92" width="34" height="28" fill={img} />
-      <rect x="332" y="126" width="30" height="1.5" fill="#ccc" rx="0.5" />
-      <rect x="332" y="130" width="24" height="1" fill="#ddd" rx="0.5" />
-      {/* Right page: text-heavy */}
-      <rect x={326 + pw + 8} y="52" width="50" height="2.5" fill="#999" rx="0.5" />
-      {[0,1,2,3,4,5,6,7,8,9,10].map(j => (
-        <rect key={j} x={326 + pw + 8} y={60 + j * 7} width={j % 3 === 0 ? 60 : 52} height="1.5" fill={j < 3 ? "#bbb" : "#ddd"} rx="0.5" />
-      ))}
-      <text x="408" y={46 + ph + 18} textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#666">Captions · Process detail · Analytical depth</text>
-    </svg>
-  );
-}
-
-function DiagramAudienceLens() {
-  const bg = "#1a1a1a"; const txt = "#d0d0d0";
-  const audiences = [
-    { label: "Academic", signal: "Process depth", sub: "Sketches, iterations, dead ends" },
-    { label: "Large Firm", signal: "Technical fluency", sub: "Resolved drawings, BIM, detail" },
-    { label: "Boutique", signal: "Design sensibility", sub: "Philosophy, position, craft" },
-    { label: "Fellowship", signal: "Research agenda", sub: "Questions, methodology, rigor" },
-  ];
-  const colW = 135;
-  return (
-    <svg viewBox="0 0 540 130" style={{ width: "100%", height: "auto", borderRadius: "3px" }}>
-      <rect x="0" y="0" width="540" height="130" fill={bg} rx="3" />
-      {/* Vertical dividers */}
-      {[1,2,3].map(i => (
-        <line key={i} x1={i * colW} y1="14" x2={i * colW} y2="100" stroke="#333" strokeWidth="0.5" />
-      ))}
-      {audiences.map((a, i) => {
-        const cx = i * colW + colW / 2;
-        return (
-          <g key={i}>
-            <text x={cx} y="30" textAnchor="middle" fontSize="9" fontFamily={T.sans} fontWeight="500" fill={txt} letterSpacing="0.04em">{a.label}</text>
-            <line x1={cx - 20} y1="38" x2={cx + 20} y2="38" stroke="#555" strokeWidth="0.5" />
-            <text x={cx} y="58" textAnchor="middle" fontSize="8" fontFamily={T.sans} fill="#999">{a.signal}</text>
-            <text x={cx} y="76" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#666">{a.sub}</text>
-          </g>
-        );
-      })}
-      <text x="270" y="116" textAnchor="middle" fontSize="7" fontFamily={T.sans} fill="#555" fontStyle="italic">Same portfolio, different emphasis. Know the reviewer before you sequence.</text>
-    </svg>
-  );
-}
-
 /* ─── Shared diagrams (used across multiple modules) ─── */
-
-function DiagramTwoTrack() {
-  return (
-    <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
-      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">TWO-TRACK READING SYSTEM</text>
-      <rect x="10" y="24" width="195" height="60" rx="3" fill="#fff" stroke={T.navy} strokeWidth="1.5" />
-      <rect x="215" y="24" width="195" height="60" rx="3" fill="#fff" stroke={T.accent} strokeWidth="1.5" />
-      <text x="107" y="40" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.navy}>Track 1: Skim</text>
-      <text x="107" y="52" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>30–90 seconds</text>
-      <text x="107" y="64" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Large images · Clear hierarchy</text>
-      <text x="107" y="74" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Minimal text</text>
-      <text x="312" y="40" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.accent}>Track 2: Study</text>
-      <text x="312" y="52" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>5–15 minutes</text>
-      <text x="312" y="64" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Captions · Process detail</text>
-      <text x="312" y="74" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Analytical depth</text>
-    </svg>
-  );
-}
-
-function DiagramSequenceStructures() {
-  const structures = [
-    { name: "Linear", desc: "Site → Concept → Dev → Resolution", color: T.navy },
-    { name: "Comparative", desc: "Before/After · Existing/Proposed", color: T.accent },
-    { name: "Thematic", desc: "Organized around a design principle", color: T.coral },
-  ];
-  return (
-    <svg viewBox="0 0 440 94" style={{ width: "100%", height: "auto" }}>
-      {structures.map((s, i) => (
-        <g key={i}>
-          <rect x={6 + i * 145} y="8" width="138" height="56" rx="3" fill="#fff" stroke={s.color} strokeWidth="1.5" />
-          <text x={75 + i * 145} y="30" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={s.color}>{s.name}</text>
-          <text x={75 + i * 145} y="44" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{s.desc}</text>
-        </g>
-      ))}
-      <text x="220" y="84" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Text and image should complete each other rather than duplicate.</text>
-    </svg>
-  );
-}
 
 function DiagramTypography() {
   const categories = [
@@ -614,21 +283,22 @@ function DiagramCoverTypes() {
 
 function DiagramChecklist() {
   const levels = [
-    { name: "Project-Level", items: "Statement · Sequencing · Image function · Captions", color: T.accent },
-    { name: "Portfolio-Level", items: "Range · Logic · Transitions · Skim + Study", color: T.navy },
-    { name: "Visual / Production", items: "300 DPI · Typography · Color · Proofread", color: T.coral },
-    { name: "Narrative / Content", items: "Context · Concept · Development · Resolution", color: T.gold },
+    { name: "InDesign Setup", items: "Panels · Baseline · Margins · Layers · Styles", color: T.accent },
+    { name: "Narrative Design", items: "Beginning/Middle/End · One idea per spread · Logical sequence", color: T.navy },
+    { name: "Grid Compliance", items: "Baseline lock · Module snap · Consistent margins · Intentional breaks", color: T.coral },
+    { name: "Visual Hierarchy", items: "Focal point · Size contrast · Tonal contrast · Consistent hierarchy", color: T.gold },
+    { name: "Typography", items: "Two typefaces · Personality fit · Legibility · Refined spacing", color: T.steel || "#5a7a8a" },
   ];
   return (
     <svg viewBox="0 0 420 110" style={{ width: "100%", height: "auto" }}>
-      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">FOUR-LEVEL AUDIT FRAMEWORK</text>
+      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">FIVE-CATEGORY AUDIT FRAMEWORK</text>
       {levels.map((l, i) => (
         <g key={i}>
-          <rect x={8 + i * 103} y="24" width="95" height="62" rx="3" fill="#fff" stroke={l.color} strokeWidth="1.5" />
-          <rect x={8 + i * 103} y="24" width="95" height="18" rx="3" fill={l.color} opacity="0.1" />
-          <text x={55 + i * 103} y="37" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={l.color}>{l.name}</text>
+          <rect x={4 + i * 83} y="24" width="79" height="72" rx="3" fill="#fff" stroke={l.color} strokeWidth="1.5" />
+          <rect x={4 + i * 83} y="24" width="79" height="18" rx="3" fill={l.color} opacity="0.1" />
+          <text x={43 + i * 83} y="37" textAnchor="middle" fontSize="6" fontFamily={T.sans} fontWeight="600" fill={l.color}>{l.name}</text>
           {l.items.split(" · ").map((item, j) => (
-            <text key={j} x={55 + i * 103} y={52 + j * 10} textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight}>{item}</text>
+            <text key={j} x={43 + i * 83} y={50 + j * 9} textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fill={T.textLight}>{item}</text>
           ))}
         </g>
       ))}
@@ -653,80 +323,6 @@ function DiagramExportStandards() {
           <text x="78" y={36 + i * 24} fontSize="6.5" fontFamily={T.sans} fill={s.c} fontWeight="500">{s.dpi} · {s.color} · {s.size}</text>
         </g>
       ))}
-    </svg>
-  );
-}
-
-function DiagramInitialsAndFinals() {
-  return (
-    <svg viewBox="0 0 420 70" style={{ width: "100%", height: "auto" }}>
-      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">THE INITIALS-AND-FINALS SEQUENCE</text>
-      {/* Timeline */}
-      <line x1="40" y1="40" x2="380" y2="40" stroke={T.border} strokeWidth="1.5" />
-      <circle cx="40" cy="40" r="8" fill={T.accent} />
-      <text x="40" y="43" textAnchor="middle" fontSize="6" fontFamily={T.sans} fontWeight="600" fill="#fff">1</text>
-      <text x="40" y="58" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.accent} fontWeight="500">Strongest</text>
-      <circle cx="210" cy="40" r="5" fill={T.border} />
-      <text x="210" y="58" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Builds complexity</text>
-      <circle cx="380" cy="40" r="8" fill={T.coral} />
-      <text x="380" y="43" textAnchor="middle" fontSize="6" fontFamily={T.sans} fontWeight="600" fill="#fff">N</text>
-      <text x="380" y="58" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.coral} fontWeight="500">Most resonant</text>
-      {/* Arrows */}
-      <polygon points="370,40 365,37 365,43" fill={T.coral} />
-    </svg>
-  );
-}
-
-function DiagramFiveNarrativeElements() {
-  const elements = [
-    { label: "Focus", subtitle: "One idea, not many", color: T.navy },
-    { label: "Structure", subtitle: "Intentional order", color: T.accent },
-    { label: "Curation", subtitle: "Every image earns its place", color: T.coral },
-    { label: "Lens", subtitle: "A point of view, not a summary", color: T.gold },
-    { label: "Closure", subtitle: "Resolution, not just ending", color: T.textMid },
-  ];
-  return (
-    <svg viewBox="0 0 420 120" style={{ width: "100%", height: "auto" }}>
-      {elements.map((e, i) => {
-        const x = 8 + i * 82;
-        return (
-          <g key={i}>
-            <rect x={x} y="8" width="78" height="78" rx="3" fill="#fff" stroke={e.color} strokeWidth="1.5" />
-            <text x={x + 39} y="35" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={e.color} letterSpacing="0.08em">{e.label}</text>
-            <text x={x + 39} y="55" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{e.subtitle}</text>
-          </g>
-        );
-      })}
-      <text x="210" y="108" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Narrative is a design problem, not a writing task</text>
-    </svg>
-  );
-}
-
-function DiagramNarrativeConstruction() {
-  const steps = [
-    { num: "1", label: "Statement", desc: "Write your design position in one sentence" },
-    { num: "2", label: "Outline", desc: "Map projects to narrative arc" },
-    { num: "3", label: "Organize", desc: "Sequence images to support argument" },
-  ];
-  let x = 30;
-  return (
-    <svg viewBox="0 0 420 120" style={{ width: "100%", height: "auto" }}>
-      {steps.map((s, i) => {
-        const cx = x + 70;
-        const el = (
-          <g key={i}>
-            <rect x={x} y="20" width="140" height="60" rx="3" fill="#fff" stroke={T.navy} strokeWidth="1.5" />
-            <circle cx={x + 20} cy="32" r="8" fill={T.navy} />
-            <text x={x + 20} y="37" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill="#fff">{s.num}</text>
-            <text x={cx} y="42" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.navy}>{s.label}</text>
-            <text x={cx} y="60" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{s.desc}</text>
-            {i < 2 && <text x={x + 150} y="52" textAnchor="middle" fontSize="14" fill={T.textFaint}>→</text>}
-          </g>
-        );
-        x += 170;
-        return el;
-      })}
-      <text x="30" y="102" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">From intuition to intentional structure</text>
     </svg>
   );
 }
@@ -919,7 +515,7 @@ const DIAGRAM_MAP = {
     { image: "class-pdf/casestudy2-spread-11.jpg", title: "Tonal Unity: Model vs. Rendering", alt: "Physical model and exterior rendering side by side", caption: "Physical model on the left, digital rendering on the right. Different media, but the color temperature is managed: the rendering's palette does not fight the model photograph's warmth. When model photos and renderings sit on the same spread, unified tonal treatment prevents visual discord." },
   ],
   13: [
-    { component: DiagramChecklist, title: "Four-Level Audit Framework" },
+    { component: DiagramChecklist, title: "Five-Category Audit Framework" },
     { component: DiagramExportStandards, title: "File Export Standards" },
     { image: "diagram-skill-matrix.svg", title: "Project–Skill Coverage Matrix", alt: "Project–skill coverage matrix showing how projects map to different competencies", caption: "Map each project against the skills it demonstrates: design development, technical resolution, digital fabrication, hand drawing, research, and writing. If one skill column is empty, either add a project that covers it or acknowledge the gap. The matrix reveals what the portfolio argues about your range." },
   ],
@@ -954,7 +550,7 @@ const MODULES = [
     part: "Narrative",
     overview: `A portfolio is not a collection of coursework. It is a constructed argument. Every decision about what to include, how to sequence it, and where to place it on the page is an act of design. The portfolio is not separate from your work; it is your work, reframed for an audience. It speaks before you do: before you enter a review, an interview, or a committee, the layout has already made your case or lost it. Reviewers typically spend thirty seconds on an initial scan. In that window, you have either earned a closer reading or you have not.
 
-A portfolio is read at two speeds. At skim speed, the cover, image hierarchy, and project sequence must communicate a clear direction. At study speed (two to five minutes per spread), the written statements, captions, and visual details must deepen that direction without contradicting it.
+A portfolio is read at two speeds. At skim speed, the cover, image hierarchy, and project sequence must communicate a clear direction. At study speed (five to fifteen minutes per project), the written statements, captions, and visual details must deepen that direction without contradicting it.
 
 Different audiences read for different evidence. An academic reviewer looks for process: sketches, diagrams, and failed iterations that reveal how you think through a problem. A large firm looks for resolution: polished deliverables and technical range that demonstrate you can produce at a professional standard. A boutique studio looks for alignment: a design sensibility and point of view that signal you would contribute to the studio's discourse, not just execute drawings. Knowing what each audience evaluates for is the difference between a page that documents and a page that argues.
 
@@ -1068,7 +664,7 @@ The Case Study 2 portfolio demonstrates these concepts in practice. Unit plans, 
 
 Three families cover most architectural portfolios. Modernist workhorses (Helvetica, Futura, DIN, Univers) are proven, neutral, and versatile. Humanist and contemporary faces (Avenir, Söhne, Gill Sans, Circular) feel warmer and more approachable. Editorial faces (Neue Montreal, GT Alpina, Minion Pro) carry personality without distraction. The choice is not about personal taste; it is about alignment between typography and argument.
 
-Size hierarchy makes the page scannable. Titles at twenty-four to thirty points, subtitles at fourteen to eighteen, body text at ten to twelve, captions at eight to ten. These sizes map directly to the twelve-point baseline grid from the previous module: body text leading at twelve points locks every line to the grid, ensuring columns align across the spread. Without baseline alignment, text drifts between increments and the portfolio loses the structural precision that distinguishes professional work. In InDesign, the critical setting is Paragraph Styles with Align to Grid set to All Lines.
+Size hierarchy makes the page scannable. Titles at twenty-four to forty-eight points, subtitles at fourteen to twenty, body text at nine to eleven, captions at seven to eight. These sizes map directly to the twelve-point baseline grid from the previous module: body text leading at twelve points locks every line to the grid, ensuring columns align across the spread. Without baseline alignment, text drifts between increments and the portfolio loses the structural precision that distinguishes professional work. In InDesign, the critical setting is Paragraph Styles with Align to Grid set to All Lines.
 
 Line spacing matters more than most students expect. Tight leading works for captions and headlines. Looser leading gives body text room to breathe. The goal is a page that feels open, not dense — a portfolio the reviewer wants to keep reading. The Case Study 2 title pages demonstrate this: a clear hierarchy from project title to subtitle to body to credits, each level stepping down in size and weight while maintaining baseline alignment across both pages of the spread.`,
     keyInsight: `Typography is how your portfolio speaks when you are not in the room.`,
@@ -1154,7 +750,7 @@ The fourth is whitespace. Whitespace is not leftover space. It is a designed ele
     id: 15,
     title: "Variation and Pacing",
     part: "Grid",
-    overview: `A grid that produces the same layout on every page is not disciplined. It is monotonous. Module 14 taught how to compose a single spread. This module teaches how to sequence spreads across the portfolio so the rhythm of dense and open, compressed and released, sustains attention from first page to last.
+    overview: `A grid that produces the same layout on every page is not disciplined. It is monotonous. The Spread Composition module taught how to compose a single spread. This module teaches how to sequence spreads across the portfolio so the rhythm of dense and open, compressed and released, sustains attention from first page to last.
 
 **Pacing.** Pacing is the alternation of density across sequential spreads. Five consecutive image-heavy spreads exhaust the viewer before the argument lands. The fix is alternation: a dense technical spread (plans, sections, details filling the grid) followed by a spread with a single image and generous whitespace. In Case Study 2, Spread 7 compresses: four axonometric views plus one large rendering, every grid module occupied. Spread 1, the project opener that follows, releases: one title, one hero image, mostly empty grid. That compression-release pair is pacing in action. Test it by printing thumbnail spreads and pinning them to the wall. If the sequence reads as a flat gray band of equal density, the pacing needs work. If it reads as a rhythm of tension and release, the grid is doing its job.
 
