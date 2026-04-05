@@ -40,9 +40,10 @@ const PARTS = {
 
 /* ─── Sequential position map: mod.id → display number ─── */
 const MODULE_POSITION = {};
+const POSITION_TO_ID = {};
 let _pos = 1;
 Object.values(PARTS).forEach(part => {
-  part.modules.forEach(modId => { MODULE_POSITION[modId] = _pos++; });
+  part.modules.forEach(modId => { MODULE_POSITION[modId] = _pos; POSITION_TO_ID[_pos] = modId; _pos++; });
 });
 
 /* ─── Inline Diagram Components ─── */
@@ -1155,12 +1156,20 @@ export default function PortfolioGuide() {
     isCaseStudy2 = true;
   } else if (route.startsWith("#/diagrams/")) {
     const rawId = route.split("/")[2];
-    diagramModuleId = /^\d+$/.test(rawId) ? parseInt(rawId, 10) : rawId;
+    if (/^\d+$/.test(rawId)) {
+      const pos = parseInt(rawId, 10);
+      diagramModuleId = POSITION_TO_ID[pos] !== undefined ? POSITION_TO_ID[pos] : pos;
+    } else {
+      diagramModuleId = rawId;
+    }
     view = "diagrams";
   } else if (route.startsWith("#/module/")) {
-    const id = parseInt(route.split("/")[2], 10);
-    activeModule = MODULES.find(m => m.id === id) || null;
-    if (activeModule) view = "module";
+    const pos = parseInt(route.split("/")[2], 10);
+    const modId = POSITION_TO_ID[pos];
+    if (modId !== undefined) {
+      activeModule = MODULES.find(m => m.id === modId) || null;
+      if (activeModule) view = "module";
+    }
   }
 
   // Fade transition on route change
@@ -1173,10 +1182,10 @@ export default function PortfolioGuide() {
     }
   }, [route]);
 
-  const handleModuleClick = (mod) => navigate(`#/module/${mod.id}`);
+  const handleModuleClick = (mod) => navigate(`#/module/${MODULE_POSITION[mod.id]}`);
   const handleBack = () => navigate("#/");
   const handleNavClick = (mod) => {
-    navigate(`#/module/${mod.id}`);
+    navigate(`#/module/${MODULE_POSITION[mod.id]}`);
   };
 
   // ─── Landing ───
@@ -1403,13 +1412,13 @@ export default function PortfolioGuide() {
 
           {/* Prev / Next */}
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 48, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
-            <button onClick={() => navigate(`#/module/${PARTS.part1.modules[PARTS.part1.modules.length - 1]}`)} style={{
+            <button onClick={() => navigate(`#/module/${MODULE_POSITION[PARTS.part1.modules[PARTS.part1.modules.length - 1]]}`)} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "left", letterSpacing: "0.02em",
             }}>
               <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Previous</span>
               {String(MODULE_POSITION[PARTS.part1.modules[PARTS.part1.modules.length - 1]]).padStart(2, "0")}: {MODULES.find(m => m.id === PARTS.part1.modules[PARTS.part1.modules.length - 1])?.title}
             </button>
-            <button onClick={() => navigate(`#/module/${PARTS.part2.modules[0]}`)} style={{
+            <button onClick={() => navigate(`#/module/${MODULE_POSITION[PARTS.part2.modules[0]]}`)} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "right", letterSpacing: "0.02em",
             }}>
               <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Next</span>
@@ -1507,13 +1516,13 @@ export default function PortfolioGuide() {
 
           {/* Prev / Next */}
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 48, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
-            <button onClick={() => navigate(`#/module/${PARTS.part2.modules[PARTS.part2.modules.length - 1]}`)} style={{
+            <button onClick={() => navigate(`#/module/${MODULE_POSITION[PARTS.part2.modules[PARTS.part2.modules.length - 1]]}`)} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "left", letterSpacing: "0.02em",
             }}>
               <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Previous</span>
               {String(MODULE_POSITION[PARTS.part2.modules[PARTS.part2.modules.length - 1]]).padStart(2, "0")}: {MODULES.find(m => m.id === PARTS.part2.modules[PARTS.part2.modules.length - 1])?.title}
             </button>
-            <button onClick={() => navigate(`#/module/${PARTS.part3.modules[0]}`)} style={{
+            <button onClick={() => navigate(`#/module/${MODULE_POSITION[PARTS.part3.modules[0]]}`)} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, padding: 0, textAlign: "right", letterSpacing: "0.02em",
             }}>
               <span style={{ display: "block", fontSize: 8, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 3, color: T.textFaint }}>Next</span>
@@ -1537,7 +1546,7 @@ export default function PortfolioGuide() {
     const isCaseStudyDiagrams = diagramModuleId === "casestudy";
     const isCaseStudy2Diagrams = diagramModuleId === "casestudy2";
     const isSpreads = diagramModuleId === "1spreads";
-    const backHash = isCaseStudyDiagrams ? "#/casestudy" : isCaseStudy2Diagrams ? "#/casestudy2" : isSpreads ? "#/module/1" : `#/module/${diagramModuleId}`;
+    const backHash = isCaseStudyDiagrams ? "#/casestudy" : isCaseStudy2Diagrams ? "#/casestudy2" : isSpreads ? "#/module/1" : `#/module/${MODULE_POSITION[diagramModuleId] || diagramModuleId}`;
     const moduleLabel = isCaseStudyDiagrams ? "Case Study" : isCaseStudy2Diagrams ? "Case Study 2" : isSpreads ? "Case Study Spreads" : `Module ${String(MODULE_POSITION[diagramModuleId] || diagramModuleId).padStart(2, "0")}`;
 
     return (
@@ -1615,7 +1624,7 @@ export default function PortfolioGuide() {
         {diagrams.length > 0 && (
           <div style={{ marginTop: 32 }}>
             <span
-              onClick={() => navigate(`#/diagrams/${mod.id}`)}
+              onClick={() => navigate(`#/diagrams/${MODULE_POSITION[mod.id]}`)}
               style={{
                 fontSize: 12, color: T.steel, cursor: "pointer",
                 borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
