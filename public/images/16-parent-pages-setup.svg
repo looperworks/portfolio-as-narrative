@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 415" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      text { fill: #333; }
+      .label { font-size: 11px; fill: #777; }
+      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
+      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      .white-text { font-size: 11px; fill: #FFF; font-weight: 600; }
+      .accent-blue { fill: #3B7DD8; }
+      .accent-red { fill: #E85D3A; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2000" height="2000" fill="white"/>
+
+  <text x="400" y="36" text-anchor="middle" class="title">Parent Page Architecture</text>
+  <line x1="30" y1="48" x2="770" y2="48" stroke="#D0D0D0" stroke-width="0.5"/>
+
+  <!-- Panel A: A-Intro Parent -->
+  <rect x="20" y="60" width="235" height="300" fill="white" stroke="#D0D0D0" stroke-width="1.5" rx="5"/>
+  <rect x="20" y="60" width="235" height="28" fill="#333" rx="5"/>
+  <rect x="20" y="76" width="235" height="12" fill="#333"/>
+  <text x="36" y="82" class="white-text">A-Intro (Splash Page)</text>
+
+  <!-- Page representation -->
+  <rect x="45" y="100" width="185" height="215" fill="#FAFAFA" stroke="#D0D0D0" rx="2"/>
+
+  <!-- Margins (dashed) -->
+  <rect x="60" y="115" width="155" height="185" fill="none" stroke="#BBB" stroke-width="0.75" stroke-dasharray="4,3"/>
+
+  <!-- Title area -->
+  <rect x="75" y="155" width="125" height="50" fill="#F0F4FA" stroke="#3B7DD8" stroke-width="1" rx="3"/>
+  <rect x="85" y="168" width="80" height="8" fill="#333" rx="1"/>
+  <rect x="85" y="182" width="60" height="5" fill="#BBB" rx="1"/>
+  <text x="138" y="145" text-anchor="middle" class="label" fill="#3B7DD8" font-weight="600">Title Area</text>
+
+  <!-- Date / Location -->
+  <rect x="75" y="215" width="80" height="12" fill="none" stroke="#D0D0D0" rx="2"/>
+  <rect x="83" y="219" width="50" height="4" fill="#D0D0D0" rx="1"/>
+  <text x="170" y="224" class="label" fill="#999">Date / Location</text>
+
+  <!-- Page number -->
+  <rect x="190" y="280" width="18" height="14" fill="none" stroke="#E85D3A" stroke-width="1" rx="2"/>
+  <text x="199" y="291" text-anchor="middle" style="font-size:9px;fill:#E85D3A;font-weight:600;">#</text>
+  <text x="175" y="305" class="label" fill="#E85D3A">Page #</text>
+
+  <!-- Callouts -->
+  <text x="55" y="338" class="label" fill="#E85D3A" font-weight="600">Elements:</text>
+  <text x="55" y="350" class="label">Title area, date, page number</text>
+
+  <text x="138" y="382" text-anchor="middle" class="label-bold">A</text>
+  <text x="138" y="396" text-anchor="middle" class="label">A-Intro Parent</text>
+
+  <!-- Arrow A to B -->
+  <line x1="265" y1="200" x2="285" y2="200" stroke="#3B7DD8" stroke-width="1"/>
+  <polygon points="285,195 295,200 285,205" fill="#3B7DD8"/>
+
+  <!-- Panel B: B-Project Parent -->
+  <rect x="305" y="60" width="235" height="300" fill="white" stroke="#D0D0D0" stroke-width="1.5" rx="5"/>
+  <rect x="305" y="60" width="235" height="28" fill="#333" rx="5"/>
+  <rect x="305" y="76" width="235" height="12" fill="#333"/>
+  <text x="321" y="82" class="white-text">B-Project (Content Page)</text>
+
+  <!-- Page representation -->
+  <rect x="330" y="100" width="185" height="215" fill="#FAFAFA" stroke="#D0D0D0" rx="2"/>
+
+  <!-- Margins (dashed) -->
+  <rect x="345" y="115" width="155" height="185" fill="none" stroke="#BBB" stroke-width="0.75" stroke-dasharray="4,3"/>
+
+  <!-- Running header -->
+  <rect x="345" y="118" width="100" height="10" fill="none" stroke="#3B7DD8" stroke-width="0.75" rx="1"/>
+  <rect x="350" y="121" width="60" height="4" fill="#3B7DD8" opacity="0.4" rx="1"/>
+  <text x="455" y="126" class="label" fill="#3B7DD8" font-weight="600">Header</text>
+
+  <!-- Grid columns (faint) -->
+  <g opacity="0.2">
+    <line x1="357" y1="135" x2="357" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="370" y1="135" x2="370" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="383" y1="135" x2="383" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="396" y1="135" x2="396" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="409" y1="135" x2="409" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="422" y1="135" x2="422" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="435" y1="135" x2="435" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="448" y1="135" x2="448" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="461" y1="135" x2="461" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="474" y1="135" x2="474" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+    <line x1="487" y1="135" x2="487" y2="285" stroke="#3B7DD8" stroke-width="0.5"/>
+  </g>
+
+  <!-- Content placeholder blocks -->
+  <rect x="350" y="140" width="145" height="60" fill="#E8E8E8" stroke="#D0D0D0" rx="2"/>
+  <line x1="350" y1="140" x2="495" y2="200" stroke="#D0D0D0" stroke-width="0.5"/>
+  <line x1="495" y1="140" x2="350" y2="200" stroke="#D0D0D0" stroke-width="0.5"/>
+
+  <rect x="350" y="210" width="145" height="4" fill="#D0D0D0" rx="1"/>
+  <rect x="350" y="218" width="145" height="4" fill="#D0D0D0" rx="1"/>
+  <rect x="350" y="226" width="100" height="4" fill="#D0D0D0" rx="1"/>
+
+  <!-- Project title placeholder -->
+  <rect x="345" y="252" width="80" height="16" fill="#F0F4FA" stroke="#3B7DD8" stroke-width="0.75" rx="2"/>
+  <rect x="350" y="258" width="50" height="5" fill="#3B7DD8" opacity="0.4" rx="1"/>
+  <text x="435" y="264" class="label" fill="#3B7DD8" font-weight="600">Project Title</text>
+
+  <!-- Page number -->
+  <rect x="480" y="280" width="18" height="14" fill="none" stroke="#E85D3A" stroke-width="1" rx="2"/>
+  <text x="489" y="291" text-anchor="middle" style="font-size:9px;fill:#E85D3A;font-weight:600;">#</text>
+
+  <!-- Binding margin callout -->
+  <line x1="335" y1="110" x2="335" y2="310" stroke="#E85D3A" stroke-width="0.75" stroke-dasharray="3,3"/>
+  <text x="320" y="210" class="label" fill="#E85D3A" font-weight="600" text-anchor="end" transform="rotate(-90,320,210)">Binding &#xBD;&#x2033;</text>
+
+  <text x="333" y="338" class="label" fill="#E85D3A" font-weight="600">Elements:</text>
+  <text x="333" y="350" class="label">Header, page #, grid guides, project title</text>
+
+  <text x="423" y="382" text-anchor="middle" class="label-bold">B</text>
+  <text x="423" y="396" text-anchor="middle" class="label">B-Project Parent</text>
+
+  <!-- Arrow B to C -->
+  <line x1="550" y1="200" x2="570" y2="200" stroke="#3B7DD8" stroke-width="1"/>
+  <polygon points="570,195 580,200 570,205" fill="#3B7DD8"/>
+
+  <!-- Panel C: Child Pages Result -->
+  <rect x="590" y="60" width="190" height="300" fill="white" stroke="#333" stroke-width="1" rx="3"/>
+
+  <!-- Pages panel representation -->
+  <text x="605" y="82" class="label" fill="#E85D3A" font-weight="600">Pages Panel:</text>
+
+  <!-- Parent indicators -->
+  <rect x="605" y="90" width="80" height="22" fill="#333" rx="3"/>
+  <text x="615" y="105" class="white-text">A-Intro</text>
+  <rect x="695" y="90" width="80" height="22" fill="#333" rx="3"/>
+  <text x="705" y="105" class="white-text">B-Project</text>
+
+  <!-- Arrows down from parents -->
+  <line x1="645" y1="112" x2="645" y2="125" stroke="#3B7DD8" stroke-width="1"/>
+  <polygon points="642,125 648,125 645,131" fill="#3B7DD8"/>
+  <line x1="735" y1="112" x2="735" y2="125" stroke="#3B7DD8" stroke-width="1"/>
+  <polygon points="732,125 738,125 735,131" fill="#3B7DD8"/>
+
+  <!-- Child pages - A children -->
+  <rect x="605" y="135" width="35" height="45" fill="#F0F4FA" stroke="#3B7DD8" stroke-width="0.75" rx="2"/>
+  <text x="623" y="154" text-anchor="middle" style="font-size:9px;fill:#3B7DD8;">A</text>
+  <text x="623" y="168" text-anchor="middle" class="label">1</text>
+
+  <rect x="648" y="135" width="35" height="45" fill="#F0F4FA" stroke="#3B7DD8" stroke-width="0.75" rx="2"/>
+  <text x="666" y="154" text-anchor="middle" style="font-size:9px;fill:#3B7DD8;">A</text>
+  <text x="666" y="168" text-anchor="middle" class="label">2</text>
+
+  <!-- Child pages - B children -->
+  <rect x="695" y="135" width="35" height="45" fill="#F0F4FA" stroke="#E85D3A" stroke-width="0.75" rx="2"/>
+  <text x="713" y="154" text-anchor="middle" style="font-size:9px;fill:#E85D3A;">B</text>
+  <text x="713" y="168" text-anchor="middle" class="label">3</text>
+
+  <rect x="738" y="135" width="35" height="45" fill="#F0F4FA" stroke="#E85D3A" stroke-width="0.75" rx="2"/>
+  <text x="756" y="154" text-anchor="middle" style="font-size:9px;fill:#E85D3A;">B</text>
+  <text x="756" y="168" text-anchor="middle" class="label">4</text>
+
+  <!-- Explanation -->
+  <line x1="605" y1="195" x2="770" y2="195" stroke="#D0D0D0" stroke-width="0.5"/>
+
+  <text x="605" y="215" class="label" fill="#E85D3A" font-weight="600">How It Works:</text>
+  <text x="605" y="232" class="label-bold">Change parent once &#x2192;</text>
+  <text x="605" y="246" class="label">All child pages update</text>
+  <text x="605" y="260" class="label">automatically</text>
+
+  <line x1="605" y1="270" x2="770" y2="270" stroke="#D0D0D0" stroke-width="0.5"/>
+
+  <text x="605" y="290" class="label" fill="#E85D3A" font-weight="600">Page Number:</text>
+  <text x="605" y="307" class="label">Type &#x203A; Insert Special</text>
+  <text x="605" y="321" class="label">Character &#x203A; Markers &#x203A;</text>
+  <text x="605" y="335" class="label-bold">Current Page Number</text>
+
+  <text x="685" y="382" text-anchor="middle" class="label-bold">C</text>
+  <text x="685" y="396" text-anchor="middle" class="label">Child Pages</text>
+
+</svg>
