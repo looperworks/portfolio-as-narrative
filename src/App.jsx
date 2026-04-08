@@ -1296,7 +1296,8 @@ function WorksheetView({ visible, handleBack }) {
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Exercise</div>
           <h1 style={{ fontSize: 16, fontWeight: 500, lineHeight: 1.4, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>From Thread to Spread</h1>
-          <p style={{ fontSize: 12, color: T.textLight, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.6 }}>Work through each step to turn one studio project into a portfolio-ready outline.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise walks you through turning one studio project into a portfolio-ready spread — from finding your red thread to mapping out a page-by-page outline.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Grab a pen and some scratch paper before you start. Sketch thumbnails, diagram your narrative arc, jot down keywords — the messier the better. Hand-drawn thinking helps you see connections that typing alone won't. Use the form below to capture your final answers, then download everything as a spreadsheet when you're done.</p>
           <div style={{ width: 24, height: 1, background: T.text, marginBottom: 24 }} />
           <div>
             <span style={labelStyle}>Your Name</span>
