@@ -1211,7 +1211,7 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
 }
 
 /* ─── Worksheet View ─── */
-function WorksheetView({ visible, handleBack }) {
+function WorksheetView({ visible, handleBack, backLabel }) {
   const [form, setForm] = useState({
     studentName: "", projectTitle: "", projectDesc: "", fullStatement: "",
     oneSentence: "", oneWord: "",
@@ -1303,7 +1303,7 @@ function WorksheetView({ visible, handleBack }) {
   return (
     <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
       <header style={{ padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
-        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← {backTarget.label}</button>
+        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← {backLabel}</button>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase" }}>Exercise</span>
       </header>
 
@@ -1411,7 +1411,7 @@ function WorksheetView({ visible, handleBack }) {
 }
 
 /* ─── Exercise 02: Build Your Grid ─── */
-function Exercise02View({ visible, handleBack }) {
+function Exercise02View({ visible, handleBack, backLabel }) {
   const [checks, setChecks] = useState({});
   const toggle = (id) => setChecks(c => ({ ...c, [id]: !c[id] }));
 
@@ -1453,7 +1453,7 @@ function Exercise02View({ visible, handleBack }) {
   return (
     <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
       <header style={{ padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
-        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← {backTarget.label}</button>
+        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← {backLabel}</button>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase" }}>Exercise</span>
       </header>
 
@@ -1813,12 +1813,12 @@ export default function PortfolioGuide() {
 
   // ─── Exercise 01 ───
   if (view === "exercise") {
-    return <WorksheetView visible={visible} handleBack={handleBack} />;
+    return <WorksheetView visible={visible} handleBack={handleBack} backLabel={backTarget.label} />;
   }
 
   // ─── Exercise 02 ───
   if (view === "exercise2") {
-    return <Exercise02View visible={visible} handleBack={handleBack} />;
+    return <Exercise02View visible={visible} handleBack={handleBack} backLabel={backTarget.label} />;
   }
 
   // ─── About ───
