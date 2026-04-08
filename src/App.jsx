@@ -1296,8 +1296,8 @@ function WorksheetView({ visible, handleBack }) {
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Exercise</div>
           <h1 style={{ fontSize: 16, fontWeight: 500, lineHeight: 1.4, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>From Thread to Spread</h1>
-          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise walks you through turning one studio project into a portfolio-ready spread — from finding your red thread to mapping out a page-by-page outline.</p>
-          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Grab a pen and some scratch paper before you start. Sketch thumbnails, diagram your narrative arc, jot down keywords — the messier the better. Hand-drawn thinking helps you see connections that typing alone won't. Use the form below to capture your final answers, then download everything as a spreadsheet when you're done.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise walks you through turning one studio project into a portfolio-ready spread. You start by finding your red thread and end with a page-by-page outline.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Grab a pen and some scratch paper before you start. Sketch thumbnails, diagram your narrative arc, jot down keywords. The messier the better. Sketching by hand surfaces connections that typing misses. Use the form below to capture your final answers, then download everything as a spreadsheet.</p>
           <div style={{ width: 24, height: 1, background: T.text, marginBottom: 24 }} />
           <div>
             <span style={labelStyle}>Your Name</span>
@@ -1315,7 +1315,7 @@ function WorksheetView({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={2} title="Write the Full Statement" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Now look at your description above. Cross out every noun that names a building element. What's left is closer to what you were actually investigating. Write that as one paragraph — the question behind the project, not the project itself.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Now look at your description above. Cross out every noun that names a building element. What's left is closer to what you were actually investigating. Write that as one paragraph: the question behind the project, not the project itself.</p>
           <Example label="Case Study 1"><em>"This project investigated how existing alpine infrastructure can be repurposed to make the effects of climate change visible and publicly accessible. Situated between Gstaad and Les Diablerets in the Swiss Alps, the design converts a decommissioned military bunker at Col du Pillon into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to create a continuous path between the landscape above and gallery spaces below."</em></Example>
           <span style={labelStyle}>Your project statement (one paragraph)</span>
           <textarea value={form.fullStatement} onChange={set("fullStatement")} placeholder="This project investigated how..." style={taStyle} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
@@ -1323,7 +1323,7 @@ function WorksheetView({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={3} title="Compress to One Sentence, One Word" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>This is the compression exercise from the workshop (<a href="#/module/4" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 04</a>). Crush your paragraph down to one sentence that argues something — not describes something. Then find the one word that keeps showing up across your projects. That's your red thread.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>This is the compression exercise from the workshop (<a href="#/module/4" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 04</a>). Crush your paragraph to one sentence that argues something, not describes something. Then find the one word that keeps showing up across your projects. That's your red thread.</p>
           <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>One sentence:</strong> <em>"The Alpine Museum embeds into eroding terrain to make the invisible trajectory of climate change a spatial experience visitors move through."</em><br /><strong style={{ color: T.text, fontWeight: 600 }}>One word:</strong> <em>Erosion.</em></Example>
           <div style={{ marginBottom: 12 }}><span style={labelStyle}>Concept sentence</span><textarea value={form.oneSentence} onChange={set("oneSentence")} placeholder="Not 'This project explores light.' Instead: 'The pavilion uses directed apertures to...'" style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
           <div><span style={labelStyle}>One word (your Red Thread)</span><input type="text" value={form.oneWord} onChange={set("oneWord")} placeholder="e.g., Erosion, Threshold, Porosity" style={{ ...inputStyle, maxWidth: 240 }} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
@@ -1331,7 +1331,7 @@ function WorksheetView({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={4} title="From Keywords to Outline" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Go back to your concept sentence. Identify every keyword — each one points to a drawing you'll need in the portfolio. Map them below, and tag each with an image type (<a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>).</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Go back to your concept sentence. Identify every keyword. Each one points to a drawing you'll need in the portfolio. Map them below, and tag each with an image type (<a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>).</p>
           <Example label="Case Study 1"><em>"embeds into eroding terrain"</em> → terrain models, site sections<br /><em>"Alpine"</em> → site context photos, aerial views<br /><em>"climate change"</em> → environmental overlays, seasonal renderings<br /><em>"spatial experience"</em> → interior renderings, circulation diagrams</Example>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0 8px" }}>
             <thead><tr>{["Keyword", "Drawing / Image Needed", "Image Type"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
@@ -1342,8 +1342,8 @@ function WorksheetView({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={5} title="Image Type Audit" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Look at the image types you just assigned in the table above. Count them up. A portfolio heavy on Outcome images but light on Process is a common gap — and for academic review, Process is where reviewers spend the most time. Not sure what these types mean? See <a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>.</p>
-          <Example label="Case Study 1"><em>Concept: 1 · Context: 2 · Process: 2 · Outcome: 2</em> — balanced, with Process and Context supporting the argument.</Example>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Look at the image types you just assigned in the table above. Count them up. A portfolio heavy on Outcome images but light on Process is a common gap. For academic review, Process is where reviewers spend the most time. Not sure what these types mean? See <a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>.</p>
+          <Example label="Case Study 1"><em>Concept: 1 · Context: 2 · Process: 2 · Outcome: 2.</em> Balanced, with Process and Context supporting the argument.</Example>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0" }}>
             <thead><tr>{["Image Type", "Count", "Which Images?"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
             <tbody>{["Concept", "Context", "Process", "Outcome"].map(t => (<tr key={t} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontWeight: 500, fontFamily: T.sans, width: 90 }}>{t}</td><td style={{ width: 50 }}><input type="text" value={form[`count${t}`]} onChange={set(`count${t}`)} placeholder="0" style={{ ...cellInput, textAlign: "center" }} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><input type="text" value={form[`list${t}`]} onChange={set(`list${t}`)} placeholder={`e.g., ${t === "Concept" ? "site model, diagram" : t === "Context" ? "aerial, site plan" : t === "Process" ? "section, iteration models" : "rendering, final plan"}`} style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
@@ -1376,7 +1376,7 @@ function WorksheetView({ visible, handleBack }) {
       </div>
 
       <div style={{ position: "sticky", bottom: 0, background: T.navy, padding: "14px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 40 }}>
-        <span style={{ fontSize: 11, color: T.textLight, fontFamily: T.sans, letterSpacing: "0.02em" }}>Save your work — download all answers as a spreadsheet.</span>
+        <span style={{ fontSize: 11, color: T.textLight, fontFamily: T.sans, letterSpacing: "0.02em" }}>Save your work: download all answers as a spreadsheet.</span>
         <button onClick={downloadExcel} disabled={exporting} style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 500, letterSpacing: "0.04em", color: T.navy, background: "#fff", border: "none", padding: "8px 20px", borderRadius: 2, cursor: "pointer" }}>{exporting ? "Exporting..." : "Download .xlsx"}</button>
       </div>
 
