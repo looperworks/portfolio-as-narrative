@@ -1303,7 +1303,7 @@ function WorksheetView({ visible, handleBack }) {
   return (
     <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
       <header style={{ padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
-        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← Portfolio Workshop</button>
+        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← {backTarget.label}</button>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase" }}>Exercise</span>
       </header>
 
@@ -1453,7 +1453,7 @@ function Exercise02View({ visible, handleBack }) {
   return (
     <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
       <header style={{ padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
-        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← Portfolio Workshop</button>
+        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← {backTarget.label}</button>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase" }}>Exercise</span>
       </header>
 
@@ -1636,9 +1636,13 @@ export default function PortfolioGuide() {
     }
   }
 
+  // Track navigation source for context-aware back button
+  const sourceRoute = useRef("#/");
+
   // Fade transition on route change
   useEffect(() => {
     if (prevRoute.current !== route) {
+      sourceRoute.current = prevRoute.current;
       setVisible(false);
       const t = setTimeout(() => setVisible(true), 220);
       prevRoute.current = route;
@@ -1646,8 +1650,26 @@ export default function PortfolioGuide() {
     }
   }, [route]);
 
+  // Context-aware back navigation
+  const getBackTarget = () => {
+    const src = sourceRoute.current;
+    if (src.startsWith("#/exercise2")) return { hash: "#/exercise2", label: "Exercise 02" };
+    if (src.startsWith("#/exercise")) return { hash: "#/exercise", label: "Exercise 01" };
+    if (src.startsWith("#/casestudy2")) return { hash: "#/casestudy2", label: "Case Study 02" };
+    if (src.startsWith("#/casestudy") && !src.startsWith("#/casestudy2")) return { hash: "#/casestudy", label: "Case Study 01" };
+    if (src.startsWith("#/module/")) {
+      const pos = src.replace("#/module/", "");
+      return { hash: src, label: `Module ${pos.padStart(2, "0")}` };
+    }
+    if (src.startsWith("#/about")) return { hash: "#/about", label: "About" };
+    return { hash: "#/", label: "Portfolio Workshop" };
+  };
+
+  const backTarget = getBackTarget();
+  const handleBack = () => navigate(backTarget.hash);
+  const cameFromExercise = sourceRoute.current.startsWith("#/exercise");
+
   const handleModuleClick = (mod) => navigate(`#/module/${MODULE_POSITION[mod.id]}`);
-  const handleBack = () => navigate("#/");
   const handleNavClick = (mod) => {
     navigate(`#/module/${MODULE_POSITION[mod.id]}`);
   };
@@ -1807,7 +1829,7 @@ export default function PortfolioGuide() {
           <button onClick={handleBack} style={{
             background: "none", border: "none", fontSize: 10, color: T.textMuted,
             cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
-          }}>← Portfolio Workshop</button>
+          }}>← {backTarget.label}</button>
           <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.04em" }}>About</div>
         </header>
 
@@ -1858,7 +1880,7 @@ export default function PortfolioGuide() {
           <button onClick={handleBack} style={{
             background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
             fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
-          }}>← Portfolio Workshop</button>
+          }}>← {backTarget.label}</button>
           <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end" }}>
             {MODULES.map((m) => (
               <button key={m.id} onClick={() => handleNavClick(m)} style={{
@@ -1933,6 +1955,20 @@ export default function PortfolioGuide() {
               {String(MODULE_POSITION[PARTS.part2.modules[0]]).padStart(2, "0")}: {MODULES.find(m => m.id === PARTS.part2.modules[0])?.title}
             </button>
           </div>
+
+          {/* Return to Exercise — shown when user navigated here from an exercise */}
+          {cameFromExercise && (
+            <div style={{ textAlign: "center", marginTop: 32, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
+              <button onClick={handleBack} style={{
+                background: "none", border: "none", fontSize: 10, color: T.steel, cursor: "pointer",
+                fontFamily: T.sans, letterSpacing: "0.04em", padding: "8px 16px",
+                transition: "color 0.15s ease",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = T.text; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; }}
+              >← Return to {backTarget.label}</button>
+            </div>
+          )}
         </div>
 
       <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
@@ -1958,7 +1994,7 @@ export default function PortfolioGuide() {
           <button onClick={handleBack} style={{
             background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
             fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
-          }}>← Portfolio Workshop</button>
+          }}>← {backTarget.label}</button>
           <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end" }}>
             {MODULES.map((m) => (
               <button key={m.id} onClick={() => handleNavClick(m)} style={{
@@ -2033,6 +2069,20 @@ export default function PortfolioGuide() {
               {String(MODULE_POSITION[PARTS.part3.modules[0]]).padStart(2, "0")}: {MODULES.find(m => m.id === PARTS.part3.modules[0])?.title}
             </button>
           </div>
+
+          {/* Return to Exercise — shown when user navigated here from an exercise */}
+          {cameFromExercise && (
+            <div style={{ textAlign: "center", marginTop: 32, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
+              <button onClick={handleBack} style={{
+                background: "none", border: "none", fontSize: 10, color: T.steel, cursor: "pointer",
+                fontFamily: T.sans, letterSpacing: "0.04em", padding: "8px 16px",
+                transition: "color 0.15s ease",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = T.text; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; }}
+              >← Return to {backTarget.label}</button>
+            </div>
+          )}
         </div>
 
       <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
@@ -2051,7 +2101,7 @@ export default function PortfolioGuide() {
     const isCaseStudy2Diagrams = diagramModuleId === "casestudy2";
     const isSpreads = diagramModuleId === "1spreads";
     const backHash = isCaseStudyDiagrams ? "#/casestudy" : isCaseStudy2Diagrams ? "#/casestudy2" : isSpreads ? "#/module/1" : `#/module/${MODULE_POSITION[diagramModuleId] || diagramModuleId}`;
-    const moduleLabel = isCaseStudyDiagrams ? "Case Study" : isCaseStudy2Diagrams ? "Case Study 02" : isSpreads ? "Case Study Spreads" : `Module ${String(MODULE_POSITION[diagramModuleId] || diagramModuleId).padStart(2, "0")}`;
+    const moduleLabel = isCaseStudyDiagrams ? "Case Study 01" : isCaseStudy2Diagrams ? "Case Study 02" : isSpreads ? "Case Study Spreads" : `Module ${String(MODULE_POSITION[diagramModuleId] || diagramModuleId).padStart(2, "0")}`;
 
     return (
       <DiagramSlideshow
@@ -2076,7 +2126,7 @@ export default function PortfolioGuide() {
         <button onClick={handleBack} style={{
           background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
           fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
-        }}>← Portfolio Workshop</button>
+        }}>← {backTarget.label}</button>
         <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end" }}>
           {MODULES.map((m) => (
             <button key={m.id} onClick={() => handleNavClick(m)} style={{
@@ -2182,6 +2232,20 @@ export default function PortfolioGuide() {
             </div>
           );
         })()}
+
+        {/* Return to Exercise — shown when user navigated here from an exercise */}
+        {cameFromExercise && (
+          <div style={{ textAlign: "center", marginTop: 32, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
+            <button onClick={handleBack} style={{
+              background: "none", border: "none", fontSize: 10, color: T.steel, cursor: "pointer",
+              fontFamily: T.sans, letterSpacing: "0.04em", padding: "8px 16px",
+              transition: "color 0.15s ease",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = T.text; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; }}
+            >← Return to {backTarget.label}</button>
+          </div>
+        )}
       </div>
 
       <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
