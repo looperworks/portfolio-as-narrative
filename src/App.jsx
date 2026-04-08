@@ -1312,8 +1312,8 @@ function WorksheetView({ visible, handleBack }) {
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Exercise</div>
           <h1 style={{ fontSize: 16, fontWeight: 500, lineHeight: 1.4, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>From Thread to Spread</h1>
-          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise walks you through turning one studio project into a portfolio-ready spread. You start by finding your red thread and end with a page-by-page outline.</p>
-          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Grab a pen and some scratch paper before you start. Sketch thumbnails, diagram your narrative arc, jot down keywords. The messier the better. Sketching by hand surfaces connections that typing misses. Use the form below to capture your final answers, then download everything as a spreadsheet.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise turns one studio project into a portfolio-ready spread. You start by finding your red thread and end with a page-by-page outline. When you finish, you will have a concept sentence, a keyword-driven image list, and a seven-spread outline for one project.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Grab a pen and some scratch paper before you start. Sketch thumbnails, diagram your narrative arc, jot down keywords. The messier the better. Sketching by hand surfaces connections that typing misses. Use the form below to capture your final answers, then download everything as a spreadsheet. Your answers are not saved between sessions, so download before closing.</p>
           <div style={{ width: 24, height: 1, background: T.text, marginBottom: 24 }} />
           <div>
             <span style={labelStyle}>Your Name</span>
@@ -1331,7 +1331,7 @@ function WorksheetView({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={2} title="Write the Full Statement" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Now look at your description above. Cross out every noun that names a building element. What's left is closer to what you were actually investigating. Write that as one paragraph: the question behind the project, not the project itself.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Now look at your description above. Cross out every noun that names a building element: walls, ramps, galleries, roofs. What's left is closer to what you were actually investigating. Write that as one paragraph: the question behind the project, not the project itself.</p>
           <Example label="Case Study 1"><em>"This project investigated how existing alpine infrastructure can be repurposed to make the effects of climate change visible and publicly accessible. Situated between Gstaad and Les Diablerets in the Swiss Alps, the design converts a decommissioned military bunker at Col du Pillon into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to create a continuous path between the landscape above and gallery spaces below."</em></Example>
           <span style={labelStyle}>Your project statement (one paragraph)</span>
           <textarea value={form.fullStatement} onChange={set("fullStatement")} placeholder="This project investigated how..." style={taStyle} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
@@ -1340,7 +1340,7 @@ function WorksheetView({ visible, handleBack }) {
         <WSection>
           <StepHeader num={3} title="Compress to One Sentence, One Word" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>This is the compression exercise from the workshop (<a href="#/module/4" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 04</a>). Crush your paragraph to one sentence that argues something, not describes something. Then find the one word that keeps showing up across your projects. That's your red thread.</p>
-          <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>One sentence:</strong> <em>"The Alpine Museum embeds into eroding terrain to make the invisible trajectory of climate change a spatial experience visitors move through."</em><br /><strong style={{ color: T.text, fontWeight: 600 }}>One word:</strong> <em>Erosion.</em></Example>
+          <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>Weak:</strong> <em>"This project explores how a bunker can become a museum."</em> (Describes. Does not argue.)<br /><strong style={{ color: T.text, fontWeight: 600 }}>Strong:</strong> <em>"The Alpine Museum embeds into eroding terrain to make the invisible trajectory of climate change a spatial experience visitors move through."</em> (Argues. Every word earns its place.)<br /><strong style={{ color: T.text, fontWeight: 600 }}>One word:</strong> <em>Erosion.</em></Example>
           <div style={{ marginBottom: 12 }}><span style={labelStyle}>Concept sentence</span><textarea value={form.oneSentence} onChange={set("oneSentence")} placeholder="Not 'This project explores light.' Instead: 'The pavilion uses directed apertures to...'" style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
           <div><span style={labelStyle}>One word (your Red Thread)</span><input type="text" value={form.oneWord} onChange={set("oneWord")} placeholder="e.g., Erosion, Threshold, Porosity" style={{ ...inputStyle, maxWidth: 240 }} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
         </WSection>
@@ -1366,11 +1366,12 @@ function WorksheetView({ visible, handleBack }) {
           </table>
           <span style={labelStyle}>What's missing?</span>
           <textarea value={form.missingImages} onChange={set("missingImages")} placeholder="e.g., I have no Process images — need to add iteration models." style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
+          <p style={{ fontSize: 11, lineHeight: 1.7, color: T.textLight, margin: "12px 0 0", letterSpacing: "0.01em" }}>If a type is missing, return to Step 4 and add a keyword row for it.</p>
         </WSection>
 
         <WSection>
           <StepHeader num={6} title="Sequence the Narrative Arc" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Now arrange your images using the three-act arc (<a href="#/module/7" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 07</a>). What should someone feel flipping through this?</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>The arc tells you what order. Step 7 will tell you what fits on each page. For now, assign your images to acts based on what they argue, not where they were produced. See <a href="#/module/7" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 07</a>.</p>
           <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>Act I:</strong> Terrain model (Concept). Landscape as raw material.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act II:</strong> Aerial (Context) + erosion detail + winter rendering + section. Tension builds.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act III:</strong> Summer rendering (Outcome) + plan (Process). Building inhabits landscape.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Technical Proof:</strong> Details, material specs, structural logic.</Example>
           {[["Act I — Setup", "actI", "What images open your project? What world are you establishing?"],
             ["Act II — Confrontation", "actII", "What makes the problem feel real? Where does tension build?"],
@@ -1381,13 +1382,18 @@ function WorksheetView({ visible, handleBack }) {
 
         <WSection last>
           <StepHeader num={7} title="Seven-Spread Outline" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>If this project gets seven spreads, what goes on each one? Each spread does one job. For layout thinking, see <a href="#/module/8" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 08</a>.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>The arc from Step 6 set the narrative order. Now assign images to physical pages. Each spread does one job.</p>
           <Example label="Case Study 1"><strong style={{ color: T.text, fontWeight: 600 }}>1 (Setup):</strong> Terrain model — landscape as raw material<br /><strong style={{ color: T.text, fontWeight: 600 }}>2:</strong> Site map + erosion detail — alpine erosion at scale<br /><strong style={{ color: T.text, fontWeight: 600 }}>3 (Confrontation):</strong> Section + winter photo + rendering — building carves in<br /><strong style={{ color: T.text, fontWeight: 600 }}>4:</strong> Full-width embedded section — erosion made accessible<br /><strong style={{ color: T.text, fontWeight: 600 }}>5 (Resolution):</strong> Interior gallery + floor plans — erosion made inhabitable</Example>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0" }}>
             <thead><tr><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "center", borderBottom: `1px solid ${T.text}`, width: 36 }}>#</th><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}`, width: 110 }}>Arc Beat</th><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>Images + Narrative Job</th></tr></thead>
             <tbody>{spreadRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontFamily: T.sans, textAlign: "center", color: T.textLight }}>{row.num}</td><td><select defaultValue="" onChange={setSpread(i, "beat")} style={selectStyle}><option value="">—</option><option>Setup</option><option>Confrontation</option><option>Turning Point</option><option>Resolution</option><option>Technical Proof</option></select></td><td><input type="text" defaultValue="" onChange={setSpread(i, "content")} placeholder="What images? What story beat?" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
           </table>
         </WSection>
+
+        <div style={{ marginTop: 48, paddingTop: 32, borderTop: `1px solid ${T.border}` }}>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 12px", letterSpacing: "0.01em" }}><strong style={{ color: T.text, fontWeight: 600 }}>Self-check:</strong> Read your seven spreads without looking at your statement. Could a reviewer reconstruct your argument from images alone? If not, the outline needs revision.</p>
+          <p style={{ fontSize: 12, lineHeight: 1.7, color: T.textMid, margin: "0", letterSpacing: "0.01em" }}>Ready to build the grid? Continue to <a href="#/exercise2" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 02: Build Your Grid</a>.</p>
+        </div>
 
       </div>
 
@@ -1442,7 +1448,7 @@ function Exercise02View({ visible, handleBack }) {
   );
 
   const totalChecks = Object.keys(checks).length > 0 ? Object.values(checks).filter(Boolean).length : 0;
-  const totalItems = 33;
+  const totalItems = 35;
 
   return (
     <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
@@ -1456,8 +1462,8 @@ function Exercise02View({ visible, handleBack }) {
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Exercise</div>
           <h1 style={{ fontSize: 16, fontWeight: 500, lineHeight: 1.4, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>Build Your Grid</h1>
-          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise is a step-by-step setup for your InDesign file. When you finish, your file will have a working modular grid, layer architecture, parent pages, and paragraph styles.</p>
-          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Open InDesign and work through each step with the application in front of you. Check off each item as you complete it. If you need to revisit the concepts behind any step, the module links point to the relevant content.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise is a step-by-step setup for your InDesign file. When you finish, your file will have a working modular grid, layer architecture, parent pages, and four paragraph styles. That file is what you will use to lay out the spreads from <a href="#/exercise" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 01</a>.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Open InDesign and work through each step with the application in front of you. Check off each item as you complete it. If you need to revisit the concepts behind any step, the module links point to the relevant content. Your checkboxes are not saved between sessions.</p>
           <div style={{ width: 24, height: 1, background: T.text, marginBottom: 24 }} />
           <div style={{ fontSize: 11, color: T.textMid, fontFamily: T.sans, letterSpacing: "0.01em" }}>
             Progress: <strong style={{ color: T.text }}>{totalChecks}</strong> / {totalItems} steps complete
@@ -1491,7 +1497,7 @@ function Exercise02View({ visible, handleBack }) {
 
         <WSection>
           <StepHeader num={3} title="Columns and Rows" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Columns divide the page vertically. Rows (flowlines) divide it horizontally. Together they create modules: the smallest rectangular unit where content is placed. The more modules per page, the more layout options the grid supports. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Columns divide the page vertically. Rows (flowlines) divide it horizontally. Together they create modules: the smallest rectangular unit where content is placed. Six columns give you 1/6, 1/3, 1/2, and 2/3 splits. Eight rows give enough vertical zones to separate header, body, and footnote areas. The more modules per page, the more layout options the grid supports.</p>
           <Example label="Case Study 2"><em>6 columns, 12 pt gutters. 8 rows, 12 pt gutters.</em> This produces 48 modules per page. The same grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model.</Example>
           <div style={{ margin: "16px 0" }}>
             <Check id="col-count">Set 6 columns in Layout → Margins and Columns</Check>
@@ -1500,6 +1506,7 @@ function Exercise02View({ visible, handleBack }) {
             <Check id="row-gutter">Set row gutter to 12 pt</Check>
             <Check id="grid-toggle">Toggle baseline grid on (Cmd + Alt + ') to verify alignment</Check>
           </div>
+          <p style={{ fontSize: 11, lineHeight: 1.7, color: T.textLight, margin: "12px 0 0", letterSpacing: "0.01em" }}>Pause here. Every column edge and row line should sit on a 12 pt increment. If anything is off, fix it before moving on.</p>
         </WSection>
 
         <WSection>
@@ -1532,6 +1539,11 @@ function Exercise02View({ visible, handleBack }) {
           <StepHeader num={6} title="Paragraph Styles" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Four styles cover the full type hierarchy. The critical setting: Align to Grid must be set to All Lines for every style. This locks text to the 12-point baseline. Without it, columns drift out of alignment by the bottom of the spread. See <Ref mod={9} label="Module 09: Typography" />.</p>
           <Example label="Case Study 2"><em>Title: 24/30 pt. Subtitle: 14/18 pt. Body Text: 10/12 pt. Captions: 8/10 pt.</em> Two typefaces max. Serif for body, sans-serif for headings, or two weights of one family.</Example>
+          <div style={{ margin: "16px 0 24px" }}>
+            <span style={labelStyle}>Your Typeface Choices</span>
+            <Check id="style-font-heading">Heading typeface chosen: _______________</Check>
+            <Check id="style-font-body">Body typeface chosen: _______________</Check>
+          </div>
           <div style={{ margin: "16px 0" }}>
             <span style={labelStyle}>Title Style</span>
             <Check id="style-title">Create Paragraph Style "Title" at 24 pt / 30 pt leading</Check>
@@ -1552,6 +1564,7 @@ function Exercise02View({ visible, handleBack }) {
             <Check id="style-caption">Create Paragraph Style "Captions" at 8 pt / 10 pt leading</Check>
             <Check id="style-caption-grid">Set Align to Grid → All Lines</Check>
           </div>
+          <p style={{ fontSize: 11, lineHeight: 1.7, color: T.textLight, margin: "12px 0 0", letterSpacing: "0.01em" }}>Test now: place a text frame, apply each style, and confirm every line snaps to the baseline grid.</p>
         </WSection>
 
         <WSection last>
@@ -1567,7 +1580,7 @@ function Exercise02View({ visible, handleBack }) {
             <Check id="verify-layers">All content is on the correct layer</Check>
             <Check id="verify-parents">Parent page elements appear on child pages</Check>
           </div>
-          <p style={{ fontSize: 12, lineHeight: 1.7, color: T.textMid, margin: "16px 0 0", letterSpacing: "0.01em" }}>When every item is confirmed, your file is ready for layout. Return to <a href="#/exercise" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 01</a> for your spread outline, then start placing content.</p>
+          <p style={{ fontSize: 12, lineHeight: 1.7, color: T.textMid, margin: "16px 0 0", letterSpacing: "0.01em" }}>When every item is confirmed, your file is ready for layout. You built a seven-spread outline in <a href="#/exercise" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 01</a>. Now you have the grid to lay it out. Open your spread plan and start placing content.</p>
         </WSection>
 
       </div>
