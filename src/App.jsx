@@ -923,6 +923,17 @@ function navigate(hash) {
   window.scrollTo(0, 0);
 }
 
+/* ─── Global interceptor: scroll to top on internal hash-link clicks ─── */
+if (typeof window !== "undefined") {
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#/"]');
+    if (a) {
+      e.preventDefault();
+      navigate(a.getAttribute("href"));
+    }
+  });
+}
+
 /* ─── About content ─── */
 const ABOUT_TEXT = [
   "Portfolio as Narrative is the companion resource for ARCH 66995: Portfolio, a studio-style course at Kent State University's College of Architecture and Environmental Design. The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
