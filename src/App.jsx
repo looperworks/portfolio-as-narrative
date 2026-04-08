@@ -1404,6 +1404,182 @@ function WorksheetView({ visible, handleBack }) {
   );
 }
 
+/* ─── Exercise 02: Build Your Grid ─── */
+function Exercise02View({ visible, handleBack }) {
+  const [checks, setChecks] = useState({});
+  const toggle = (id) => setChecks(c => ({ ...c, [id]: !c[id] }));
+
+  const labelStyle = { fontSize: 9, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textMuted, fontWeight: 500, fontFamily: T.sans, display: "block", marginBottom: 6 };
+
+  const StepHeader = ({ num, title }) => (
+    <div style={{ marginBottom: 6 }}>
+      <span style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, fontFamily: T.sans }}>Step {String(num).padStart(2, "0")}</span>
+      <h2 style={{ fontSize: 16, fontWeight: 500, color: T.text, margin: "6px 0 0", letterSpacing: "0.01em", fontFamily: T.sans }}>{title}</h2>
+      <div style={{ width: 24, height: 1, background: T.text, marginTop: 12, marginBottom: 20 }} />
+    </div>
+  );
+
+  const Ref = ({ mod, label }) => (
+    <a href={`#/module/${mod}`} style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2, fontSize: 11, fontFamily: T.sans, letterSpacing: "0.01em" }}>{label || `Module ${String(mod).padStart(2, "0")}`}</a>
+  );
+
+  const Check = ({ id, children }) => (
+    <label style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "8px 0", cursor: "pointer", borderBottom: `1px solid ${T.border}` }}>
+      <input type="checkbox" checked={!!checks[id]} onChange={() => toggle(id)} style={{ marginTop: 3, accentColor: T.text }} />
+      <span style={{ fontSize: 12, lineHeight: 1.7, color: checks[id] ? T.textLight : T.textMid, fontFamily: T.sans, letterSpacing: "0.01em", textDecoration: checks[id] ? "line-through" : "none" }}>{children}</span>
+    </label>
+  );
+
+  const Example = ({ label, children }) => (
+    <div style={{ borderLeft: `2px solid ${T.text}`, paddingLeft: 16, margin: "20px 0" }}>
+      <div style={{ fontSize: 8, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontWeight: 600, fontFamily: T.sans, marginBottom: 6 }}>Example — {label}</div>
+      <div style={{ fontSize: 12, lineHeight: 1.8, color: T.textMid, fontFamily: T.sans, letterSpacing: "0.01em" }}>{children}</div>
+    </div>
+  );
+
+  const WSection = ({ children, last }) => (
+    <div style={{ marginBottom: last ? 0 : 48, paddingBottom: last ? 0 : 48, borderBottom: last ? "none" : `1px solid ${T.border}` }}>{children}</div>
+  );
+
+  const totalChecks = Object.keys(checks).length > 0 ? Object.values(checks).filter(Boolean).length : 0;
+  const totalItems = 33;
+
+  return (
+    <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+      <header style={{ padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
+        <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← Portfolio Workshop</button>
+        <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase" }}>Exercise</span>
+      </header>
+
+      <div style={{ flex: 1, padding: "56px 40px 80px", maxWidth: 520, width: "100%", margin: "0 auto", boxSizing: "border-box", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
+
+        <div style={{ marginBottom: 40 }}>
+          <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Exercise</div>
+          <h1 style={{ fontSize: 16, fontWeight: 500, lineHeight: 1.4, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>Build Your Grid</h1>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 14px", letterSpacing: "0.01em", lineHeight: 1.7 }}>This exercise walks you through setting up your InDesign file from scratch. By the end, you will have a working modular grid, layer architecture, parent pages, and paragraph styles ready for layout.</p>
+          <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em", lineHeight: 1.7 }}>Open InDesign and work through each step with the application in front of you. Check off each item as you complete it. If you need to revisit the concepts behind any step, the module links will take you there and back.</p>
+          <div style={{ width: 24, height: 1, background: T.text, marginBottom: 24 }} />
+          <div style={{ fontSize: 11, color: T.textMid, fontFamily: T.sans, letterSpacing: "0.01em" }}>
+            Progress: <strong style={{ color: T.text }}>{totalChecks}</strong> / {totalItems} steps complete
+          </div>
+        </div>
+
+        <WSection>
+          <StepHeader num={1} title="Document Setup" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Create a new document. The page proportion is 5:7, which echoes the Golden Section. All measurements derive from a single value: 12 points. See <Ref mod={8} label="Module 08: Building the Grid" />.</p>
+          <Example label="Case Study 2"><em>600 × 840 pt.</em> Facing pages on. Intent: Print. 840 ÷ 12 = 70 baseline units per page. Every margin, gutter, and row height is a multiple of 12.</Example>
+          <div style={{ margin: "16px 0" }}>
+            <Check id="doc-size">Set page size to 600 × 840 points (or your chosen 5:7 proportion)</Check>
+            <Check id="doc-facing">Turn on Facing Pages</Check>
+            <Check id="doc-baseline">Set baseline grid to start at 0 pt, increment every 12 pt (Preferences → Grids)</Check>
+            <Check id="doc-units">Set document units to Points (Preferences → Units & Increments)</Check>
+          </div>
+        </WSection>
+
+        <WSection>
+          <StepHeader num={2} title="Margins" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Margins define the breathing room between content and page edge. Every value is a multiple of 12. The bottom margin is larger than the top to anchor content visually. See <Ref mod={8} label="Module 08" />.</p>
+          <Example label="Case Study 2"><em>Top: 36 pt (3 × 12). Bottom: 48 pt (4 × 12). Inside: 36 pt. Outside: 36 pt.</em> The inside margin accounts for binding. The bottom margin is heavier to ground the content.</Example>
+          <div style={{ margin: "16px 0" }}>
+            <Check id="margin-top">Top margin: 36 pt</Check>
+            <Check id="margin-bottom">Bottom margin: 48 pt</Check>
+            <Check id="margin-inside">Inside margin: 36 pt</Check>
+            <Check id="margin-outside">Outside margin: 36 pt</Check>
+            <Check id="margin-verify">Verify all margin values divide evenly by 12</Check>
+          </div>
+        </WSection>
+
+        <WSection>
+          <StepHeader num={3} title="Columns and Rows" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Columns divide the page vertically. Rows (flowlines) divide it horizontally. Together they create modules: the smallest rectangular unit where content is placed. More modules means more layout variation. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <Example label="Case Study 2"><em>6 columns, 12 pt gutters. 8 rows, 12 pt gutters.</em> This produces 48 modules per page. The same grid accommodates a full-bleed floor plan, a rendering paired with a site plan, and a set of unit types beside a sectional model.</Example>
+          <div style={{ margin: "16px 0" }}>
+            <Check id="col-count">Set 6 columns in Layout → Margins and Columns</Check>
+            <Check id="col-gutter">Set column gutter to 12 pt</Check>
+            <Check id="row-count">Add 8 rows via Layout → Create Guides</Check>
+            <Check id="row-gutter">Set row gutter to 12 pt</Check>
+            <Check id="grid-toggle">Toggle baseline grid on (Cmd + Alt + ') to verify alignment</Check>
+          </div>
+        </WSection>
+
+        <WSection>
+          <StepHeader num={4} title="Layer Architecture" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Layers separate content types so you never accidentally select an image when editing text. Three layers, strict stacking order. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <Example label="Case Study 2"><em>01_Text (top). 02_Images (middle). 03_Guides (bottom, locked, non-printing).</em> The guides layer holds placeholder frames and alignment aids that never appear in the exported PDF.</Example>
+          <div style={{ margin: "16px 0" }}>
+            <Check id="layer-text">Create layer: 01_Text (topmost)</Check>
+            <Check id="layer-images">Create layer: 02_Images (middle)</Check>
+            <Check id="layer-guides">Create layer: 03_Guides (bottom)</Check>
+            <Check id="layer-lock">Lock the 03_Guides layer</Check>
+            <Check id="layer-print">Uncheck "Print Layer" for 03_Guides (Layer Options)</Check>
+            <Check id="layer-order">Verify stacking order: Text above Images above Guides</Check>
+          </div>
+        </WSection>
+
+        <WSection>
+          <StepHeader num={5} title="Parent Pages" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>A parent page is a master layout that applies to every child page assigned to it. Build two: one for splash pages, one for content spreads. When you edit a parent, every child page updates instantly. See <Ref mod={13} label="Module 13: InDesign Setup" />.</p>
+          <Example label="Case Study 2"><em>A-Intro:</em> title area, date, page number. Used for project openers and section dividers.<br /><em>B-Project:</em> running header, column grid guides, project title placeholder, binding margin. Used for all content spreads.</Example>
+          <div style={{ margin: "16px 0" }}>
+            <Check id="parent-intro">Create parent page A-Intro (title area, date, page number)</Check>
+            <Check id="parent-project">Create parent page B-Project (running header, grid guides, title placeholder)</Check>
+            <Check id="parent-pagenum">Insert automatic page number: Type → Insert Special Character → Markers → Current Page Number</Check>
+            <Check id="parent-assign">Assign parent pages to child pages in the Pages panel</Check>
+          </div>
+        </WSection>
+
+        <WSection>
+          <StepHeader num={6} title="Paragraph Styles" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Four styles cover the full type hierarchy. The critical setting: Align to Grid must be set to All Lines for every style. This locks text to the 12-point baseline. Without it, columns drift out of alignment by the bottom of the spread. See <Ref mod={9} label="Module 09: Typography" />.</p>
+          <Example label="Case Study 2"><em>Title: 24/30 pt. Subtitle: 14/18 pt. Body Text: 10/12 pt. Captions: 8/10 pt.</em> Two typefaces max. Serif for body, sans-serif for headings, or two weights of one family.</Example>
+          <div style={{ margin: "16px 0" }}>
+            <span style={labelStyle}>Title Style</span>
+            <Check id="style-title">Create Paragraph Style "Title" at 24 pt / 30 pt leading</Check>
+            <Check id="style-title-grid">Set Align to Grid → All Lines (Indents and Spacing)</Check>
+          </div>
+          <div style={{ margin: "16px 0" }}>
+            <span style={labelStyle}>Subtitle Style</span>
+            <Check id="style-subtitle">Create Paragraph Style "Subtitle" at 14 pt / 18 pt leading</Check>
+            <Check id="style-subtitle-grid">Set Align to Grid → All Lines</Check>
+          </div>
+          <div style={{ margin: "16px 0" }}>
+            <span style={labelStyle}>Body Text Style</span>
+            <Check id="style-body">Create Paragraph Style "Body Text" at 10 pt / 12 pt leading</Check>
+            <Check id="style-body-grid">Set Align to Grid → All Lines</Check>
+          </div>
+          <div style={{ margin: "16px 0" }}>
+            <span style={labelStyle}>Caption Style</span>
+            <Check id="style-caption">Create Paragraph Style "Captions" at 8 pt / 10 pt leading</Check>
+            <Check id="style-caption-grid">Set Align to Grid → All Lines</Check>
+          </div>
+        </WSection>
+
+        <WSection last>
+          <StepHeader num={7} title="Verify Everything" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Before placing any content, confirm the grid is airtight. Every measurement should resolve as a whole-number multiple of 12. If anything is off, the error will cascade through every spread. See <Ref mod={15} label="Module 15: Pacing and Grid Breaks" /> for when to break the grid intentionally.</p>
+          <div style={{ margin: "16px 0" }}>
+            <Check id="verify-baseline">Baseline grid is visible (Cmd + Alt + ')</Check>
+            <Check id="verify-guides">Guides are visible (Cmd + ;)</Check>
+            <Check id="verify-snap">Snap to Guides is on (Cmd + Shift + ;)</Check>
+            <Check id="verify-margins">All margins align to 12 pt increments</Check>
+            <Check id="verify-text">Place test text in Body style. Confirm it snaps to baseline.</Check>
+            <Check id="verify-overset">No overset text (no red + icons)</Check>
+            <Check id="verify-layers">All content is on the correct layer</Check>
+            <Check id="verify-parents">Parent page elements appear on child pages</Check>
+          </div>
+          <p style={{ fontSize: 12, lineHeight: 1.7, color: T.textMid, margin: "16px 0 0", letterSpacing: "0.01em" }}>Once everything checks out, your file is ready for layout. Return to <a href="#/exercise" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 01</a> for your spread outline, then start placing content.</p>
+        </WSection>
+
+      </div>
+
+      <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+        <span>Kent State University · CAED</span>
+        <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
+      </footer>
+    </div>
+  );
+}
+
 /* ─── Main App ─── */
 export default function PortfolioGuide() {
   const route = useHashRoute();
@@ -1421,6 +1597,8 @@ export default function PortfolioGuide() {
     view = "about";
   } else if (route === "#/exercise") {
     view = "exercise";
+  } else if (route === "#/exercise2") {
+    view = "exercise2";
   } else if (route === "#/casestudy") {
     view = "casestudy";
     isCaseStudy = true;
@@ -1546,8 +1724,9 @@ export default function PortfolioGuide() {
                   </div>
                   </>
                 )}
-                {/* Case Study 2 after Part II */}
+                {/* Case Study 2 + Exercise 02 after Part II */}
                 {partKey === "part2" && (
+                  <>
                   <div
                     onClick={() => navigate("#/casestudy2")}
                     style={{
@@ -1564,6 +1743,23 @@ export default function PortfolioGuide() {
                       {CASE_STUDY_2.title}
                     </span>
                   </div>
+                  <div
+                    onClick={() => navigate("#/exercise2")}
+                    style={{
+                      display: "flex", alignItems: "baseline", gap: 14,
+                      padding: "9px 0", borderBottom: `1px solid ${T.border}`,
+                      cursor: "pointer", transition: "opacity 0.2s ease",
+                      fontStyle: "italic",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.5"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+                  >
+                    <span style={{ fontSize: 10, color: T.textFaint, minWidth: 20, fontWeight: 400, letterSpacing: "0.02em" }}></span>
+                    <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
+                      Exercise 02: Build Your Grid
+                    </span>
+                  </div>
+                  </>
                 )}
               </div>
             ))}
@@ -1580,9 +1776,14 @@ export default function PortfolioGuide() {
     );
   }
 
-  // ─── Worksheet ───
+  // ─── Exercise 01 ───
   if (view === "exercise") {
     return <WorksheetView visible={visible} handleBack={handleBack} />;
+  }
+
+  // ─── Exercise 02 ───
+  if (view === "exercise2") {
+    return <Exercise02View visible={visible} handleBack={handleBack} />;
   }
 
   // ─── About ───
