@@ -189,9 +189,29 @@ Module 5 contains a bridging sentence explaining how the two systems are complem
 
 ## Pending / Future Work
 
-1. **Black spine line fix** on 12 Case Study 2 spread images (decision needed: re-export vs programmatic crop)
-2. **Accessibility audit** of the React app (alt text is in place for all diagrams)
-3. **Mobile responsiveness** refinements if needed
+All three items below were completed in Session 4 (2026-07-26). See that section for detail. Nothing outstanding from this list currently.
+
+---
+
+### Session 4 (2026-07-26)
+
+- **Black spine line fix**: only 4 of the 12 Case Study 2 spread images actually had the defect (spreads 3, 5, 6, 9 — a 1-2px line, not the ~3-5px originally guessed). Measured pixel-by-pixel with PIL, cropped 3px from the left edge of just those 4 files. The other 8 were already clean.
+- **Accessibility audit**: fixed real WCAG issues found via code read + independent agent audit:
+  - `index.html` had malformed/duplicated closing tags after `</html>` — cleaned up.
+  - Landing-page module list, case study/exercise links, and "Diagram: ..." links were `<div onClick>`/`<span onClick>` with no keyboard support — converted to real `<a href="#/...">` (matches the existing `renderText()` link pattern and the global hash-click interceptor already in the code).
+  - Added `<main id="main-content">` landmarks and a "Skip to content" link to all 7 page views (landing, module detail, case study 1 & 2, exercise 1 & 2, about).
+  - Checklist heading was `<h3>` under an `<h1>` with no `<h2>` — changed to `<h2>`; Part I/II/III labels on the landing page changed from `<div>` to `<h2>`.
+  - 11 inline SVG diagram components got `aria-hidden="true"` (each already has a visible title/caption in `DiagramSlideshow`, so the SVG is redundant to screen readers — 2 more diagram components, `DiagramLayerArchitecture` and `DiagramParentPages`, are dead code, never wired into `DIAGRAM_MAP`, left untouched).
+  - Removed `outline: "none"` from the Exercise form's text inputs/select with no replacement — added a site-wide `:focus-visible` outline rule in `index.css` instead (steel blue, matches `T.steel`).
+  - Color tokens `T.textLight`/`T.textMuted`/`T.textFaint` were `#888`/`#aaa`/`#ccc` (3.5:1 / 2.3:1 / 1.6:1 against white — all fail WCAG AA). Darkened to `#5f5f5f`/`#6b6b6b`/`#757575` (6.4:1 / 5.3:1 / 4.6:1), preserving the relative hierarchy.
+  - Added a per-route `document.title` update (was static for the whole SPA).
+- **Mobile responsiveness**: fixed at 375px viewport:
+  - All `40px` horizontal padding (headers/footers/content) replaced with `clamp(16px, 6vw, 40px)` — was overflowing on narrow screens.
+  - Header back-button + module-number-pills row was wrapping to two lines and colliding (e.g. "MODULE 03" running into "06" with no gap) — added `whiteSpace: nowrap`/`flexShrink: 0` to the back button, `minWidth: 0` to the pills scroller, and an explicit `gap: 12` between them.
+  - The diagram gallery/lightbox (`DiagramSlideshow`) used `85vh`-wide cards and `calc(50vw - 240px)` centering padding — both assume desktop landscape and overflowed badly on mobile portrait (card ran off-screen, caption text got clipped). Changed to `min(85vh, 88vw)` and `max(16px, calc(50vw - 240px))`, and let the diagram title wrap instead of `nowrap`.
+  - Verified: landing, module detail, case study 1 & 2, exercise 1 & 2, about, and the diagram gallery all render correctly at 375px and at desktop width, no regressions.
+
+Known non-blocking follow-up not done this session: decorative SVG accent colors (`T.coral`, `T.gold` — also `#888`) still fail contrast, but they're inside `aria-hidden` diagrams that already have a full-text caption alongside — lower priority than the main token fix.
 
 ---
 

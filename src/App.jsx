@@ -9,9 +9,9 @@ const T = {
   border: "#e8e8e8",
   text: "#222",
   textMid: "#555",
-  textLight: "#888",
-  textMuted: "#aaa",
-  textFaint: "#ccc",
+  textLight: "#5f5f5f",
+  textMuted: "#6b6b6b",
+  textFaint: "#757575",
   accent: "#222",
   accentLight: "#f4f4f4",
   coral: "#888",
@@ -73,7 +73,7 @@ function DiagramCompression() {
   ];
   let x = 30;
   return (
-    <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">THE COMPRESSION EXERCISE</text>
       {steps.map((s, i) => {
         const cx = x + s.w / 2;
@@ -120,7 +120,7 @@ function DiagramCompressionWorked() {
   </g>);
 
   return (
-    <svg viewBox={`0 0 420 ${totalH}`} style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox={`0 0 420 ${totalH}`} style={{ width: "100%", height: "auto" }}>
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.1em">WORKED EXAMPLE: COMPRESSION EXERCISE</text>
       <text x="210" y="26" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textLight} fontStyle="italic">Harvard GSD, Advanced Studio, Alpine Museum</text>
 
@@ -161,7 +161,7 @@ function DiagramCompressionWorked() {
 
 function DiagramWeakVsStrong() {
   return (
-    <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
       <text x="105" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.coral} letterSpacing="0.08em">WEAK</text>
       <text x="315" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.accent} letterSpacing="0.08em">STRONG</text>
       <rect x="10" y="22" width="190" height="60" rx="3" fill="#fff" stroke={T.coral} strokeWidth="1" />
@@ -186,7 +186,7 @@ function DiagramSequenceStructures() {
     { name: "Thematic", desc: "Organized by principle", steps: ["Threshold", "Threshold", "Threshold", "Threshold"], arrows: false, labels: ["Project A", "Project B", "Project C", "Project D"] },
   ];
   return (
-    <svg viewBox="0 0 420 140" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 140" style={{ width: "100%", height: "auto" }}>
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">THREE SEQUENCE STRUCTURES</text>
       {structures.map((s, si) => {
         const gx = 10 + si * 140;
@@ -227,7 +227,7 @@ function DiagramTypography() {
     { cat: "Editorial", fonts: "Neue Montreal · GT Alpina · Minion Pro", use: "Personality with restraint" },
   ];
   return (
-    <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
       {categories.map((c, i) => (
         <g key={i}>
           <rect x={8 + i * 138} y="8" width="130" height="68" rx="3" fill="#fff" stroke={T.border} strokeWidth="1" />
@@ -250,7 +250,7 @@ function DiagramSizeHierarchy() {
     { level: "Caption", pt: "7–8pt", h: 7, color: T.textLight },
   ];
   return (
-    <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">TYPOGRAPHIC HIERARCHY</text>
       {sizes.map((s, i) => {
         const y = 30 + i * 18;
@@ -268,7 +268,7 @@ function DiagramSizeHierarchy() {
 
 function Diagram12Point() {
   return (
-    <svg viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">DOCUMENT SETUP: 12-POINT SYSTEM</text>
       {[
         { param: "Page Size", value: "600 × 840 pt" },
@@ -295,7 +295,7 @@ function DiagramColorPalettes() {
     { name: "Industrial Neutrals", colors: ["#444444", "#666666", "#888888", "#111111"], desc: "Work speaks" },
   ];
   return (
-    <svg viewBox="0 0 420 90" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 90" style={{ width: "100%", height: "auto" }}>
       {palettes.map((p, i) => {
         const ox = 8 + i * 140;
         return (
@@ -323,7 +323,7 @@ function DiagramCoverTypes() {
     { num: "07", name: "Abstract Line" },
   ];
   return (
-    <svg viewBox="0 0 420 80" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 80" style={{ width: "100%", height: "auto" }}>
       <text x="210" y="12" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">SEVEN COVER TYPOLOGIES</text>
       {types.map((t, i) => {
         const ox = 8 + i * 59;
@@ -349,7 +349,7 @@ function DiagramChecklist() {
     { name: "Skill Coverage", items: "Design dev · Technical · Fabrication · Drawing · Research · Writing", color: T.steelLight || "#6d8d9d" },
   ];
   return (
-    <svg viewBox="0 0 500 110" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 500 110" style={{ width: "100%", height: "auto" }}>
       <text x="250" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">SIX-CATEGORY AUDIT FRAMEWORK</text>
       {levels.map((l, i) => (
         <g key={i}>
@@ -372,7 +372,7 @@ function DiagramExportStandards() {
     { target: "Web", dpi: "72 DPI", color: "RGB", size: "2–5 MB", barW: 70, c: T.coral },
   ];
   return (
-    <svg viewBox="0 0 420 90" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 90" style={{ width: "100%", height: "auto" }}>
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">FILE EXPORT STANDARDS</text>
       {specs.map((s, i) => (
         <g key={i}>
@@ -1029,7 +1029,7 @@ function InteractiveChecklist({ moduleId }) {
   return (
     <div style={{ marginTop: 40 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-        <h3 style={{ fontSize: 13, fontWeight: 600, color: T.text, margin: 0 }}>Self-Editing Audit</h3>
+        <h2 style={{ fontSize: 13, fontWeight: 600, color: T.text, margin: 0 }}>Self-Editing Audit</h2>
         <span style={{ fontSize: 11, color: T.textLight }}>{checkedCount} of {totalItems} checked</span>
       </div>
 
@@ -1114,7 +1114,7 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
       <div style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 101,
         display: "flex", justifyContent: "space-between", alignItems: "baseline",
-        padding: "20px 40px",
+        padding: "20px clamp(16px, 6vw, 40px)",
       }}>
         <button onClick={() => navigate(backHash)} style={{
           background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
@@ -1134,7 +1134,7 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
           WebkitOverflowScrolling: "touch",
           display: "flex", alignItems: "center",
           gap: 60,
-          padding: "0 calc(50vw - 240px)",
+          padding: "0 max(16px, calc(50vw - 240px))",
           scrollBehavior: "smooth",
           scrollbarWidth: "none",
           cursor: "grab",
@@ -1156,7 +1156,7 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
             >
               {/* Uniform grey card */}
               <div style={{
-                width: "85vh", height: "65vh",
+                width: "min(85vh, 88vw)", height: "65vh",
                 background: T.bgAlt,
                 display: "flex", alignItems: "center", justifyContent: "center",
                 padding: 24, boxSizing: "border-box",
@@ -1182,11 +1182,11 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
               </div>
               {/* Title + caption */}
               <div style={{
-                marginTop: 12, maxWidth: "85vh", textAlign: "center",
+                marginTop: 12, maxWidth: "min(85vh, 88vw)", textAlign: "center",
               }}>
                 <div style={{
                   fontSize: 10, color: T.textLight, letterSpacing: "0.01em",
-                  whiteSpace: "nowrap",
+                  whiteSpace: "normal",
                   opacity: isHovered || diagram.caption ? 1 : 0, transition: "opacity 0.2s ease",
                 }}>
                   {diagram.title}
@@ -1205,13 +1205,13 @@ function DiagramSlideshow({ diagrams, moduleLabel, backHash }) {
           );
         })}
         {/* End spacer */}
-        <div style={{ flexShrink: 0, width: "calc(50vw - 240px)" }} />
+        <div style={{ flexShrink: 0, width: "max(16px, calc(50vw - 240px))" }} />
       </div>
 
       {/* Fixed bottom bar */}
       <div style={{
         position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 101,
-        display: "flex", justifyContent: "center", padding: "20px 40px",
+        display: "flex", justifyContent: "center", padding: "20px clamp(16px, 6vw, 40px)",
       }}>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.04em" }}>
           Scroll to browse
@@ -1265,11 +1265,11 @@ function WorksheetView({ visible, handleBack, backLabel }) {
   const setKw = (i, k) => (e) => setKwRows(r => r.map((row, j) => j === i ? { ...row, [k]: e.target.value } : row));
   const setSpread = (i, k) => (e) => setSpreadRows(r => r.map((row, j) => j === i ? { ...row, [k]: e.target.value } : row));
 
-  const inputStyle = { fontFamily: T.sans, fontSize: 13, color: T.text, background: T.bg, border: `1px solid ${T.border}`, borderRadius: 2, padding: "10px 12px", width: "100%", boxSizing: "border-box", outline: "none" };
+  const inputStyle = { fontFamily: T.sans, fontSize: 13, color: T.text, background: T.bg, border: `1px solid ${T.border}`, borderRadius: 2, padding: "10px 12px", width: "100%", boxSizing: "border-box" };
   const taStyle = { ...inputStyle, resize: "vertical", minHeight: 80 };
   const taShort = { ...taStyle, minHeight: 56 };
   const labelStyle = { fontSize: 9, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textMuted, fontWeight: 500, fontFamily: T.sans, display: "block", marginBottom: 6 };
-  const cellInput = { fontFamily: T.sans, fontSize: 12, color: T.text, background: "transparent", border: "none", padding: "9px 8px", width: "100%", boxSizing: "border-box", outline: "none" };
+  const cellInput = { fontFamily: T.sans, fontSize: 12, color: T.text, background: "transparent", border: "none", padding: "9px 8px", width: "100%", boxSizing: "border-box" };
 
   const downloadExcel = async () => {
     setExporting(true);
@@ -1310,16 +1310,17 @@ function WorksheetView({ visible, handleBack, backLabel }) {
     setExporting(false);
   };
 
-  const selectStyle = { fontFamily: T.sans, fontSize: 11, color: T.text, background: "transparent", border: "none", padding: "9px 4px", width: "100%", cursor: "pointer", outline: "none" };
+  const selectStyle = { fontFamily: T.sans, fontSize: 11, color: T.text, background: "transparent", border: "none", padding: "9px 4px", width: "100%", cursor: "pointer" };
 
   return (
     <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
-      <header style={{ padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
+      <a href="#main-content" className="skip-link">Skip to content</a>
+      <header style={{ padding: "20px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
         <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← {backLabel}</button>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase" }}>Exercise</span>
       </header>
 
-      <div style={{ flex: 1, padding: "56px 40px 120px", maxWidth: 520, width: "100%", margin: "0 auto", boxSizing: "border-box", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
+      <main id="main-content" style={{ flex: 1, padding: "56px clamp(16px, 6vw, 40px) 120px", maxWidth: 520, width: "100%", margin: "0 auto", boxSizing: "border-box", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
 
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Exercise</div>
@@ -1407,14 +1408,14 @@ function WorksheetView({ visible, handleBack, backLabel }) {
           <p style={{ fontSize: 12, lineHeight: 1.7, color: T.textMid, margin: "0", letterSpacing: "0.01em" }}>Ready to build the grid? Continue to <a href="#/exercise2" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 02: Build Your Grid</a>.</p>
         </div>
 
-      </div>
+      </main>
 
-      <div style={{ position: "sticky", bottom: 0, background: T.navy, padding: "14px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 40 }}>
+      <div style={{ position: "sticky", bottom: 0, background: T.navy, padding: "14px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 40 }}>
         <span style={{ fontSize: 11, color: T.textLight, fontFamily: T.sans, letterSpacing: "0.02em" }}>Save your work: download all answers as a spreadsheet.</span>
         <button onClick={downloadExcel} disabled={exporting} style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 500, letterSpacing: "0.04em", color: T.navy, background: "#fff", border: "none", padding: "8px 20px", borderRadius: 2, cursor: "pointer" }}>{exporting ? "Exporting..." : "Download .xlsx"}</button>
       </div>
 
-      <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+      <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
         <span>Kent State University · CAED</span>
         <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
       </footer>
@@ -1445,12 +1446,13 @@ function Exercise02View({ visible, handleBack, backLabel }) {
 
   return (
     <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
-      <header style={{ padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
+      <a href="#main-content" className="skip-link">Skip to content</a>
+      <header style={{ padding: "20px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50 }}>
         <button onClick={handleBack} style={{ background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0 }}>← {backLabel}</button>
         <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase" }}>Exercise</span>
       </header>
 
-      <div style={{ flex: 1, padding: "56px 40px 80px", maxWidth: 520, width: "100%", margin: "0 auto", boxSizing: "border-box", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
+      <main id="main-content" style={{ flex: 1, padding: "56px clamp(16px, 6vw, 40px) 80px", maxWidth: 520, width: "100%", margin: "0 auto", boxSizing: "border-box", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
 
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textFaint, fontWeight: 400, marginBottom: 10 }}>Exercise</div>
@@ -1576,9 +1578,9 @@ function Exercise02View({ visible, handleBack, backLabel }) {
           <p style={{ fontSize: 12, lineHeight: 1.7, color: T.textMid, margin: "16px 0 0", letterSpacing: "0.01em" }}>When every item is confirmed, your file is ready for layout. You built a seven-spread outline in <a href="#/exercise" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Exercise 01</a>. Now you have the grid to lay it out. Open your spread plan and start placing content.</p>
         </WSection>
 
-      </div>
+      </main>
 
-      <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+      <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
         <span>Kent State University · CAED</span>
         <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
       </footer>
@@ -1629,6 +1631,20 @@ export default function PortfolioGuide() {
     }
   }
 
+  // Update document title per route (screen readers announce it on SPA navigation)
+  useEffect(() => {
+    const base = "Portfolio as Narrative";
+    let title = base;
+    if (view === "module" && activeModule) title = `${activeModule.title} — ${base}`;
+    else if (view === "casestudy") title = `Case Study 01: Erosion — ${base}`;
+    else if (view === "casestudy2") title = `Case Study 02: Grid Systems in Practice — ${base}`;
+    else if (view === "exercise") title = `Exercise 01: From Thread to Spread — ${base}`;
+    else if (view === "exercise2") title = `Exercise 02: Build Your Grid — ${base}`;
+    else if (view === "about") title = `About — ${base}`;
+    else if (view === "diagrams") title = `Diagrams — ${base}`;
+    document.title = title;
+  }, [route, view, activeModule]);
+
   // Track navigation source for context-aware back button
   const sourceRoute = useRef("#/");
 
@@ -1662,7 +1678,6 @@ export default function PortfolioGuide() {
   const handleBack = () => navigate(backTarget.hash);
   const cameFromExercise = sourceRoute.current.startsWith("#/exercise");
 
-  const handleModuleClick = (mod) => navigate(`#/module/${MODULE_POSITION[mod.id]}`);
   const handleNavClick = (mod) => {
     navigate(`#/module/${MODULE_POSITION[mod.id]}`);
   };
@@ -1671,7 +1686,8 @@ export default function PortfolioGuide() {
   if (view === "landing") {
     return (
       <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
-        <header style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
           <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textMuted, fontWeight: 400 }}>
             Portfolio Workshop
           </div>
@@ -1681,23 +1697,23 @@ export default function PortfolioGuide() {
           }}>About</button>
         </header>
 
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 40px" }}>
-          <div style={{ width: "100%", maxWidth: 400, opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
+        <main id="main-content" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 clamp(16px, 6vw, 40px)" }}>
+          <nav aria-label="Course modules" style={{ width: "100%", maxWidth: 400, opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
             {Object.entries(PARTS).map(([partKey, part]) => (
               <div key={partKey}>
-                <div style={{
+                <h2 style={{
                   fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase",
                   color: T.textFaint, fontWeight: 500, marginTop: partKey === "part1" ? 0 : 28,
                   marginBottom: 10,
                 }}>
                   Part {partKey === "part1" ? "I" : partKey === "part2" ? "II" : "III"}: {part.title}
-                </div>
+                </h2>
                 {part.modules.map((modId) => {
                   const mod = MODULES.find(m => m.id === modId);
                   return (
-                    <div
+                    <a
                       key={mod.id}
-                      onClick={() => handleModuleClick(mod)}
+                      href={`#/module/${MODULE_POSITION[mod.id]}`}
                       style={{
                         display: "flex", alignItems: "baseline", gap: 14,
                         padding: "9px 0", borderBottom: `1px solid ${T.border}`,
@@ -1712,14 +1728,14 @@ export default function PortfolioGuide() {
                       <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
                         {mod.title}
                       </span>
-                    </div>
+                    </a>
                   );
                 })}
                 {/* Case Study after Part I */}
                 {partKey === "part1" && (
                   <>
-                  <div
-                    onClick={() => navigate("#/casestudy")}
+                  <a
+                    href="#/casestudy"
                     style={{
                       display: "flex", alignItems: "baseline", gap: 14,
                       padding: "9px 0", borderBottom: `1px solid ${T.border}`,
@@ -1733,9 +1749,9 @@ export default function PortfolioGuide() {
                     <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
                       {CASE_STUDY.title}
                     </span>
-                  </div>
-                  <div
-                    onClick={() => navigate("#/exercise")}
+                  </a>
+                  <a
+                    href="#/exercise"
                     style={{
                       display: "flex", alignItems: "baseline", gap: 14,
                       padding: "9px 0", borderBottom: `1px solid ${T.border}`,
@@ -1749,14 +1765,14 @@ export default function PortfolioGuide() {
                     <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
                       Exercise 01: From Thread to Spread
                     </span>
-                  </div>
+                  </a>
                   </>
                 )}
                 {/* Case Study 02 + Exercise 02 after Part II */}
                 {partKey === "part2" && (
                   <>
-                  <div
-                    onClick={() => navigate("#/casestudy2")}
+                  <a
+                    href="#/casestudy2"
                     style={{
                       display: "flex", alignItems: "baseline", gap: 14,
                       padding: "9px 0", borderBottom: `1px solid ${T.border}`,
@@ -1770,9 +1786,9 @@ export default function PortfolioGuide() {
                     <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
                       {CASE_STUDY_2.title}
                     </span>
-                  </div>
-                  <div
-                    onClick={() => navigate("#/exercise2")}
+                  </a>
+                  <a
+                    href="#/exercise2"
                     style={{
                       display: "flex", alignItems: "baseline", gap: 14,
                       padding: "9px 0", borderBottom: `1px solid ${T.border}`,
@@ -1786,17 +1802,17 @@ export default function PortfolioGuide() {
                     <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
                       Exercise 02: Build Your Grid
                     </span>
-                  </div>
+                  </a>
                   </>
                 )}
               </div>
             ))}
 
 
-          </div>
-        </div>
+          </nav>
+        </main>
 
-        <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+        <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
           <span>Kent State University · CAED</span>
           <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
         </footer>
@@ -1818,7 +1834,8 @@ export default function PortfolioGuide() {
   if (view === "about") {
     return (
       <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
-        <header style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
           <button onClick={handleBack} style={{
             background: "none", border: "none", fontSize: 10, color: T.textMuted,
             cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
@@ -1826,9 +1843,9 @@ export default function PortfolioGuide() {
           <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.04em" }}>About</div>
         </header>
 
-        <div style={{
+        <main id="main-content" style={{
           flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center",
-          padding: "0 40px", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
+          padding: "0 clamp(16px, 6vw, 40px)", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
         }}>
           <div style={{ width: "100%", maxWidth: 440 }}>
             <h1 style={{ fontSize: 16, fontWeight: 500, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>
@@ -1849,9 +1866,9 @@ export default function PortfolioGuide() {
               </p>
             </div>
           </div>
-        </div>
+        </main>
 
-        <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+        <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
           <span>Kent State University · CAED</span>
           <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
         </footer>
@@ -1866,15 +1883,16 @@ export default function PortfolioGuide() {
 
     return (
       <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <header style={{
-          padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center",
+          padding: "20px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12,
           borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50,
         }}>
           <button onClick={handleBack} style={{
             background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
-            fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+            fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0, whiteSpace: "nowrap", flexShrink: 0,
           }}>← {backTarget.label}</button>
-          <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end" }}>
+          <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end", minWidth: 0 }}>
             {MODULES.map((m) => (
               <button key={m.id} onClick={() => handleNavClick(m)} style={{
                 width: 24, height: 24, display: "flex", alignItems: "center", justifyContent: "center",
@@ -1889,8 +1907,8 @@ export default function PortfolioGuide() {
           </div>
         </header>
 
-        <div style={{
-          flex: 1, padding: "56px 40px 80px",
+        <main id="main-content" style={{
+          flex: 1, padding: "56px clamp(16px, 6vw, 40px) 80px",
           maxWidth: 520, width: "100%", margin: "0 auto",
           opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
         }}>
@@ -1917,9 +1935,10 @@ export default function PortfolioGuide() {
           {/* Diagram hyperlinks */}
           {diagrams.length > 0 && (
             <div style={{ marginTop: 32 }}>
-              <span
-                onClick={() => navigate("#/diagrams/casestudy")}
+              <a
+                href="#/diagrams/casestudy"
                 style={{
+                  display: "inline-block",
                   fontSize: 12, color: T.steel, cursor: "pointer",
                   borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
                   transition: "color 0.15s ease, border-color 0.15s ease",
@@ -1929,7 +1948,7 @@ export default function PortfolioGuide() {
                 onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
               >
                 Diagram: {diagrams.map((d, i) => d.title).join(", ")}
-              </span>
+              </a>
             </div>
           )}
 
@@ -1962,9 +1981,9 @@ export default function PortfolioGuide() {
               >← Return to {backTarget.label}</button>
             </div>
           )}
-        </div>
+        </main>
 
-      <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+      <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
         <span>Kent State University · CAED</span>
         <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
       </footer>
@@ -1980,15 +1999,16 @@ export default function PortfolioGuide() {
 
     return (
       <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <header style={{
-          padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center",
+          padding: "20px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12,
           borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50,
         }}>
           <button onClick={handleBack} style={{
             background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
-            fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+            fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0, whiteSpace: "nowrap", flexShrink: 0,
           }}>← {backTarget.label}</button>
-          <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end" }}>
+          <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end", minWidth: 0 }}>
             {MODULES.map((m) => (
               <button key={m.id} onClick={() => handleNavClick(m)} style={{
                 width: 24, height: 24, display: "flex", alignItems: "center", justifyContent: "center",
@@ -2003,8 +2023,8 @@ export default function PortfolioGuide() {
           </div>
         </header>
 
-        <div style={{
-          flex: 1, padding: "56px 40px 80px",
+        <main id="main-content" style={{
+          flex: 1, padding: "56px clamp(16px, 6vw, 40px) 80px",
           maxWidth: 520, width: "100%", margin: "0 auto",
           opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
         }}>
@@ -2031,9 +2051,10 @@ export default function PortfolioGuide() {
           {/* Diagram hyperlinks */}
           {diagrams.length > 0 && (
             <div style={{ marginTop: 32 }}>
-              <span
-                onClick={() => navigate("#/diagrams/casestudy2")}
+              <a
+                href="#/diagrams/casestudy2"
                 style={{
+                  display: "inline-block",
                   fontSize: 12, color: T.steel, cursor: "pointer",
                   borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
                   transition: "color 0.15s ease, border-color 0.15s ease",
@@ -2043,7 +2064,7 @@ export default function PortfolioGuide() {
                 onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
               >
                 View all 12 spreads
-              </span>
+              </a>
             </div>
           )}
 
@@ -2076,9 +2097,9 @@ export default function PortfolioGuide() {
               >← Return to {backTarget.label}</button>
             </div>
           )}
-        </div>
+        </main>
 
-      <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+      <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
         <span>Kent State University · CAED</span>
         <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
       </footer>
@@ -2112,15 +2133,16 @@ export default function PortfolioGuide() {
 
   return (
     <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <header style={{
-        padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center",
+        padding: "20px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12,
         borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 50,
       }}>
         <button onClick={handleBack} style={{
           background: "none", border: "none", fontSize: 10, color: T.textMuted, cursor: "pointer",
-          fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+          fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0, whiteSpace: "nowrap", flexShrink: 0,
         }}>← {backTarget.label}</button>
-        <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end" }}>
+        <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", overflowX: "auto", justifyContent: "flex-end", minWidth: 0 }}>
           {MODULES.map((m) => (
             <button key={m.id} onClick={() => handleNavClick(m)} style={{
               width: 24, height: 24, display: "flex", alignItems: "center", justifyContent: "center",
@@ -2138,8 +2160,8 @@ export default function PortfolioGuide() {
         </div>
       </header>
 
-      <div style={{
-        flex: 1, padding: "56px 40px 80px",
+      <main id="main-content" style={{
+        flex: 1, padding: "56px clamp(16px, 6vw, 40px) 80px",
         maxWidth: 520, width: "100%", margin: "0 auto",
         opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
       }}>
@@ -2166,9 +2188,10 @@ export default function PortfolioGuide() {
         {/* Diagram hyperlinks */}
         {diagrams.length > 0 && (
           <div style={{ marginTop: 32 }}>
-            <span
-              onClick={() => navigate(`#/diagrams/${MODULE_POSITION[mod.id]}`)}
+            <a
+              href={`#/diagrams/${MODULE_POSITION[mod.id]}`}
               style={{
+                display: "inline-block",
                 fontSize: 12, color: T.steel, cursor: "pointer",
                 borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
                 transition: "color 0.15s ease, border-color 0.15s ease",
@@ -2178,15 +2201,16 @@ export default function PortfolioGuide() {
               onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
             >
               Diagram {String(MODULE_POSITION[mod.id]).padStart(2, "0")}: {diagrams.map((d) => d.title).join(", ")}
-            </span>
+            </a>
           </div>
         )}
         {/* Case Study Spreads link: shows on modules 1 and 2 */}
         {(mod.id === 1) && DIAGRAM_MAP["1spreads"] && (
           <div style={{ marginTop: diagrams.length > 0 ? 10 : 32 }}>
-            <span
-              onClick={() => navigate("#/diagrams/1spreads")}
+            <a
+              href="#/diagrams/1spreads"
               style={{
+                display: "inline-block",
                 fontSize: 12, color: T.steel, cursor: "pointer",
                 borderBottom: `1px solid ${T.steel}40`, paddingBottom: 2,
                 transition: "color 0.15s ease, border-color 0.15s ease",
@@ -2196,7 +2220,7 @@ export default function PortfolioGuide() {
               onMouseLeave={(e) => { e.currentTarget.style.color = T.steel; e.currentTarget.style.borderColor = `${T.steel}40`; }}
             >
               Case Study: Erosion Portfolio (5 Spreads)
-            </span>
+            </a>
           </div>
         )}
 
@@ -2239,9 +2263,9 @@ export default function PortfolioGuide() {
             >← Return to {backTarget.label}</button>
           </div>
         )}
-      </div>
+      </main>
 
-      <footer style={{ padding: "28px 40px", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+      <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
         <span>Kent State University · CAED</span>
         <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
       </footer>
