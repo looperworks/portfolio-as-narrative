@@ -1519,14 +1519,17 @@ function navigate(hash) {
   window.scrollTo(0, 0);
 }
 
-/* ─── Global interceptor: scroll to top on internal hash-link clicks ─── */
+/* ─── Global interceptor: scroll to top on internal hash-link clicks ───
+   Skips links explicitly opened in a new tab/window, and respects the usual
+   modifier-key / middle-click conventions for opening links elsewhere. */
 if (typeof window !== "undefined") {
   document.addEventListener("click", (e) => {
     const a = e.target.closest('a[href^="#/"]');
-    if (a) {
-      e.preventDefault();
-      navigate(a.getAttribute("href"));
-    }
+    if (!a) return;
+    if (a.target && a.target !== "_self") return;
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    navigate(a.getAttribute("href"));
   });
 }
 
