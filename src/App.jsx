@@ -40,7 +40,17 @@ function renderText(text) {
     const linkMatch = seg.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (linkMatch) {
       const [, label, href] = linkMatch;
-      return <a key={j} href={href} style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>{label}</a>;
+      const newTab = href === "#/resources";
+      return (
+        <a
+          key={j}
+          href={href}
+          {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}
+        >
+          {label}
+        </a>
+      );
     }
     return seg;
   });
