@@ -1003,7 +1003,7 @@ const SESSIONS = [
       ],
     },
     lectures: {
-      fileUrl: "https://drive.google.com/file/d/1bFGB2WzgcqnuDRtBUbIxojvdXA6DHyo3/view?usp=sharing",
+      fileUrl: "https://drive.google.com/file/d/19UedUDTG6RufRwB2PCctz-jkjX2a6EYh/view?usp=sharing",
       fileLabel: "Session 01 Lecture Slides",
       items: [
         "Class Google Drive Setup + Folder Structure",
