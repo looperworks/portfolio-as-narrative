@@ -20,6 +20,14 @@ const T = {
   steelLight: "#6d8d9d",
   sans: "'Inter', 'Helvetica Neue', Arial, sans-serif",
   serif: "'Inter', 'Helvetica Neue', Arial, sans-serif",
+  /* Session-board accent system — content-type tags only. Everything else stays monochrome. */
+  tagLecture: "#5a7a8a",     /* steel blue */
+  tagDiscussion: "#a15c3f",  /* muted terracotta */
+  tagAssignment: "#8a7c3d",  /* muted olive */
+  tagReading: "#6b4c7a",     /* muted plum */
+  tagActivity: "#3d7a6b",    /* muted teal */
+  delivered: "#3d6b4a",      /* muted green */
+  proposed: "#a17a2e",       /* muted amber */
 };
 
 /* ─── Text renderer: handles **bold** and [link](#/path) ─── */
@@ -907,6 +915,584 @@ const CASE_STUDY_2 = {
   keyInsight: null,
 };
 
+/* ─── Class Meeting Link ─── */
+const TEAMS_MEETING_LINK = "https://teams.microsoft.com/meet/282019528907220?p=hberIJSYSGjPG4H2Mb";
+
+function TeamsJoinButton({ compact }) {
+  return (
+    <a
+      href={TEAMS_MEETING_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        fontSize: compact ? 10 : 12, color: T.tagLecture, fontWeight: 500,
+        textDecoration: "underline", textUnderlineOffset: 2, letterSpacing: "0.01em",
+      }}
+    >
+      Join on Microsoft Teams
+    </a>
+  );
+}
+
+function LinkPill({ href, label }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "block", fontSize: 12, color: T.text, fontWeight: 500,
+        textDecoration: "underline", textUnderlineOffset: 2, letterSpacing: "0.01em",
+        marginBottom: 6,
+      }}
+    >
+      {label}
+    </a>
+  );
+}
+
+function CollapsibleSection({ num, minutes, title, defaultOpen, children }) {
+  const [open, setOpen] = useState(!!defaultOpen);
+  return (
+    <div style={{ borderBottom: `1px solid ${T.border}` }}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
+        style={{
+          width: "100%", display: "flex", alignItems: "baseline", justifyContent: "space-between",
+          gap: 12, background: "none", border: "none", cursor: "pointer", padding: "14px 0",
+          textAlign: "left", fontFamily: T.sans, color: T.text,
+        }}
+      >
+        <span style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+          <span style={{ fontSize: 11, fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{num}</span>
+          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.01em" }}>{title}</span>
+          {minutes && (
+            <span style={{ fontSize: 10.5, color: T.textFaint, fontWeight: 400 }}>{minutes} min</span>
+          )}
+        </span>
+        <span style={{ fontSize: 16, fontWeight: 300, color: T.text, lineHeight: 1, flexShrink: 0 }}>{open ? "–" : "+"}</span>
+      </button>
+      {open && <div style={{ paddingBottom: 20 }}>{children}</div>}
+    </div>
+  );
+}
+
+/* ─── Ten-Session Schedule (Fall 2026) ───
+   Two cross-listed cohorts meet in the same room at the same time:
+   ARCH-Portfolio 44611/002 (undergraduate) and ARCH-ST:Portfolio 56995/006 (graduate).
+   Undergrad students typically don't yet have a fully resolved studio project to draw
+   from, so several sessions carry a trackNote distinguishing what each cohort works from.
+   Every session includes a 20-minute breakout: the two cohorts discuss separately. */
+const SESSIONS = [
+  {
+    num: 1, title: "What Is a Portfolio? Foundations and Critical Observation",
+    moduleRefs: [1],
+    status: "delivered", date: "Thu, Aug 27, 2026",
+    tagline: "Portfolio vs. documentation, and learning to read a portfolio before you build one.",
+    tags: ["Lecture", "Activity", "Discussion", "Reading"],
+    warmUp: {
+      links: [
+        { label: "Portfolio Skills & Understanding Survey", url: "https://docs.google.com/forms/d/e/1FAIpQLSfUL3IgswFVWoTjOOPm1ektQeFPPj_T9U9BwB6svqeOV2Ib2A/viewform?usp=publish-editor" },
+      ],
+      items: [
+        {
+          text: "Introduction — go around the room, each student answers:",
+          children: ["Name", "Year / Program", "Why Architecture", "Favorite Architectural Work You've Visited"],
+        },
+      ],
+    },
+    lectures: {
+      fileUrl: "https://drive.google.com/file/d/1bFGB2WzgcqnuDRtBUbIxojvdXA6DHyo3/view?usp=sharing",
+      fileLabel: "Session 01 Lecture Slides",
+      items: [
+        "Class Google Drive Setup + Folder Structure",
+        "Personal Journal vs. Architect's Portfolio",
+        "Designing for Your Audience: Academic vs. Professional Reviewers",
+        "Anatomy of a Portfolio: Six Core Components",
+        "Eight Core Image Types in Architecture Portfolios",
+        "Portfolio as Visual Narrative",
+        "[Resources](#/resources)",
+      ],
+    },
+    activityIntro: "The instructor shares a set of portfolios from former students in the course. Individually, review the portfolios and record three takeaways on the shared class worksheet, one row per student.",
+    activityLinks: [
+      { label: "Takeaways Worksheet", url: "https://docs.google.com/spreadsheets/d/16yJ5Hx7qdcpqb_EhSba-7OvOcxPYJLCu/edit?usp=sharing&ouid=112629692034766988042&rtpof=true&sd=true" },
+      { label: "Grad Portfolio Examples (56995)", url: "https://drive.google.com/drive/folders/1Xve0scYm2bqQcwcvreqD5Vl6nfNF3LVj?usp=sharing" },
+      { label: "Undergrad Portfolio Examples (44611)", url: "https://drive.google.com/drive/folders/1heoZC1nI6-oEogJmboKqU9RQtqVg8yK9?usp=sharing" },
+    ],
+    discussionIntro: "In small groups, compare individual takeaways from the activity.",
+    reading: {
+      title: "Every Designer Has a Story",
+      estMinutes: 7,
+      paragraphs: [
+        "For a long time I did not regard my own portfolio as a story. It functioned instead as an archive: a growing collection of projects sorted first by course, then by employer, then by client, stored in whatever platform happened to be convenient at the time. This understanding changed gradually, over a career that began at Dartmouth College and continued through practice in St. Louis, Boston, and New York, followed by a period devoted to design education across Asia, the Middle East, and the American Midwest. Having reviewed several thousand student portfolios in the course of that career, and having revised my own more times than I can easily count, I arrived at a different definition. A portfolio is not, in this view, primarily a record of completed work, but rather an argument about the designer one is in the process of becoming.",
+        "This claim underlies the reading assigned for tonight's session and merits some elaboration before we turn to matters of layout and image selection. A portfolio operates simultaneously as a mirror and as a map. It functions as a mirror in the sense that its construction requires the designer to examine prior work honestly and to ask what that work actually communicates: not what the designer intended to communicate, but what an unfamiliar reader, encountering it without context, would conclude. It functions as a map in the sense that, like a well-conceived building, an effective portfolio depends on structure, hierarchy, and deliberate intention. Once a designer can see a personal trajectory clearly, the portfolio ceases to function as an obligation and begins instead to indicate a direction for future work.",
+        "Nearly every designer already maintains something resembling a private journal: a sketchbook, a folder of unfinished process work, an accumulation of iterations that no one else has seen. That journal remains private by design, exploratory and unedited in character. A portfolio represents the public counterpart to that same impulse. It converts a private record of thinking into a structured, visual account intended for a specific reader, whether an admissions committee, a hiring manager, or a scholarship panel. The underlying material may be similar in both cases, but the audience is not, and this distinction determines what belongs on the page and what does not.",
+        "Architecture portfolios are typically constructed for one of two audiences, and each reads the work differently. Academic reviewers, meaning admissions committees evaluating candidates for graduate study, generally look for evidence of curiosity and critical thinking. They are interested in process: sketches, early attempts that did not succeed, and diagrams that reveal how a design idea developed before reaching resolution. Professional firms tend instead to look for evidence of readiness: technical competence, capacity for collaboration, and a clearly articulated point of view that could plausibly be presented to a client. An academic portfolio therefore emphasizes research and iteration, while a professional portfolio emphasizes resolution and craft. Neither approach is more truthful than the other; each simply answers a different question. Before placing a single image on a page, a designer should determine which question is being answered, and for whom.",
+        "Once the intended audience has been established, the portfolio requires a structure. Nearly every successful architectural portfolio proceeds through six recurring components, generally in the same sequence: a cover page, which sets a tone before any text is read; a curriculum vitae or résumé, which provides the factual frame; a table of contents, which allows a reviewer to navigate the document independently; section dividers, which establish rhythm between individual projects; a brief introductory page for each project, stating its intent and the designer's role within it; and, finally, the detailed project pages themselves, where process, drawings, and outcome are actually argued. None of these six components functions as decorative filler. Each performs a distinct task, and a portfolio that omits one, most often the table of contents or the section dividers, tends to read as unfinished even when the underlying project work is strong.",
+        "Within individual project pages, the selection of visual material carries most of the argument. Architectural portfolios draw on eight recurring categories of image, each of which demonstrates something distinct. Process sketches and models document early ideation. Technical drawings establish spatial precision. Conceptual diagrams reveal the logic behind a design decision. Renderings convey atmosphere and material quality. Physical models demonstrate three-dimensional understanding. Site analysis mappings indicate the designer's capacity to read context. Built work and technical documentation demonstrate realized precision. Collages permit a freer exploration of thematic material than a conventional drawing allows. A page composed of only one category, a sequence of renderings unaccompanied by process work, for instance, communicates only part of the intended argument. These categories are best combined deliberately, in the manner of editing a film: process establishes the premise, and resolution completes it.",
+        "Structure and image selection become a portfolio only once they are sequenced, and sequencing is where narrative actually resides. Each project should read as a coherent, self-contained progression from concept, through process, to resolution: not simply a display of finished work, but a sequence a reader can follow with some sense of direction. Consistency in layout, spacing, and typography sustains a steady visual rhythm across the document. Hierarchy, meaning the relative visual weight assigned to titles, subtitles, captions, and image scale, indicates to the reader where attention should be directed first, second, and third. Transitions between projects matter as much as the projects themselves; a portfolio that shifts abruptly from one visual voice to another tends to read as a compilation of unrelated samples rather than a coherent body of work produced by a single designer.",
+        "None of the preceding depends on work completed the week before a deadline; it depends instead on habits established over the course of a semester. Photograph completed work after every review, including with a phone camera if nothing more suitable is available. Organize files by semester, course, and project as the work is produced, rather than searching for it later. Document process, not only final presentation boards, since process is precisely what an academic reviewer will look for. Careful documentation is not incidental to portfolio work; it constitutes the material from which every future portfolio will eventually be constructed, and students who establish this habit early in the term consistently produce the strongest portfolios by the semester's end.",
+        "A portfolio, finally, is not an assignment due at the conclusion of the semester. It is an account of how a designer developed, one that began the first time a given student picked up a pencil in a studio setting. Tonight's session marks the point at which that account begins to be constructed with intention.",
+      ],
+    },
+    breakout: {
+      shared: "As a group, compare your takeaways and agree on five specific qualities that make a portfolio stronger.",
+    },
+    dueToday: "— (first session, nothing due)",
+    homework: "Upload current resume + portfolio (PDF, ≤10MB) to your Class 1 folder in the shared Class Google Drive, named FirstName_LastName_Resume / FirstName_LastName_Portfolio",
+    readingAssignment: "Read [“Every Designer Has a Story”](#/reading/1) before Session 02.",
+  },
+  {
+    num: 2, title: "Designing Portfolio Narratives: Organizing Visual Content as a System",
+    moduleRefs: [2, 3, 4, 5, 7],
+    status: "delivered", date: "Thu, Sep 3, 2026",
+    tagline: "Narrative is a design problem, not a writing problem.",
+    tags: ["Lecture", "Discussion", "Assignment"],
+    agenda: [
+      "Case Study: The Shawshank Redemption as Narrative Structure",
+      "Five Principles of Narrative: Focus, Structure, Curation, Lens, Closure",
+      "Project Statement Framework: Set the Scene / Explain the Idea / Show How It Comes Together",
+      "Worked Example: Flexible Framework (National Building Arts Center)",
+      "Group Exercise: Build a 7-Spread Sequence Live in InDesign",
+    ],
+    breakout: {
+      undergrad: "Your project may not have been designed to have a “red thread.” Practice finding one anyway — what's the most interesting decision you made, even in an unfinished studio exercise?",
+      grad: "Apply the five principles directly to your thesis or studio project. What's your Closure — the moment the project actually resolves?",
+    },
+    dueToday: "Precedent Write-Up (3 President's Medal Projects)",
+    homework: "“Narrative Foundations” — project statement, narrative outline, planned images uploaded",
+    trackNote: "Undergrad: base this on your strongest available studio exercise or the provided practice project, not a fully resolved thesis. Grad: use your own current studio/thesis work.",
+    references: "Case Study — Stefan DiLeo, Harvard GSD (critic: Toshiko Mori), Alpine Museum thesis — from the Portfolio as Narrative manual",
+  },
+  {
+    num: 3, title: "Grid Systems and Structural Logic",
+    moduleRefs: [8],
+    status: "delivered", date: "Thu, Sep 10, 2026",
+    tagline: "Grids are among the oldest organizing principles in architecture — now apply that logic to the page.",
+    tags: ["Lecture", "Discussion"],
+    agenda: [
+      "Grid Theory via Architectural Column-Grid Analogy",
+      "Baseline vs. Modular Grids",
+      "Four Grid Types: Manuscript, Column, Modular, Hierarchical",
+      "Group Discussion: Identify the Grid in a Published Portfolio",
+    ],
+    breakout: {
+      undergrad: "Find the grid in a portfolio you admire — can you tell if it's column, modular, or hierarchical? What would you keep from that logic for your own pages?",
+      grad: "Does a strict modular grid serve your project's argument, or would a looser hierarchical grid fit your work better? Defend your answer.",
+    },
+    dueToday: "Narrative Foundations (Project Statement + Outline + Images)",
+    homework: "Identify and annotate the grid type (manuscript, column, modular, or hierarchical) in 2 published portfolios; bring for discussion next session",
+    references: "Threshold Portfolio Guide — Grid Systems & Layout",
+  },
+  {
+    num: 4, title: "Building the Grid: The 12-Point System",
+    moduleRefs: [9, 16],
+    status: "delivered", date: "Thu, Sep 17, 2026",
+    tagline: "The 12-point atomic unit — one measurement that governs every margin, gutter, and module.",
+    tags: ["Lecture", "Assignment"],
+    agenda: [
+      "The 12-Point Atomic Unit System",
+      "InDesign Setup: Document Specs, Panels, Guides",
+      "Parent Pages Setup: Intro Splash / Project Content",
+      "Three-Layer Hierarchy: Text / Images / Guides",
+      "Four Paragraph Styles: Title, Subtitle, Body, Caption",
+    ],
+    breakout: {
+      undergrad: "Walk your neighbor through your parent-page setup. Where are you still fighting the grid instead of using it?",
+      grad: "Same exercise — then discuss: which of your four paragraph styles is doing the least work, and could be cut?",
+    },
+    dueToday: "Grid Type Annotations (2 Published Portfolios)",
+    homework: "InDesign file with 12-point baseline grid, margins, columns, rows, parent pages, and paragraph styles set up — structure only, no content yet",
+    references: "Threshold Portfolio Guide — Grid Systems & Layout (technical setup)",
+  },
+  {
+    num: 5, title: "Spread Composition and Grid Breaks",
+    moduleRefs: [14, 15],
+    status: "delivered", date: "Thu, Sep 24, 2026",
+    tagline: "Five decisions govern every spread — and when it's earned, breaking the grid is one of them.",
+    tags: ["Lecture", "Discussion", "Assignment"],
+    agenda: [
+      "12-Column, 6–8-Row Modular Grid at 12pt Baseline (Applied)",
+      "Five Spread Decisions: Dominance, Left-Right, Scaling, Whitespace, Composite Logic",
+      "Pacing Across Spreads: Dense vs. Open",
+      "Intentional Grid Breaks: Full-Bleed, Oversized Element, Deliberate Void",
+      "8-Item Grid-Compliance Checklist",
+      "Group Activity: Apply Grid to Your Own Narrative Sequence",
+    ],
+    breakout: {
+      undergrad: "Which of your process images actually show your thinking, rather than just your outcome? A strong grid can't fix a weak image selection.",
+      grad: "Does your grid serve your project's real argument, or does it just look clean? Where would you break it on purpose?",
+    },
+    dueToday: "Empty Grid Structure (.indd, No Content)",
+    homework: "Submit .indd + PDF export, 7 fully grid-aligned spreads",
+    references: "Threshold Portfolio Guide — Grid Systems & Layout (composition and pacing)",
+  },
+  {
+    num: 6, title: "Typography as Architectural Voice",
+    moduleRefs: [10],
+    status: "proposed", date: "Thu, Oct 1, 2026",
+    tagline: "Type is the last decision that still reads as a design decision.",
+    tags: ["Lecture", "Discussion", "Assignment"],
+    agenda: [
+      "Four Typeface Categories: Modernist, Humanist & Contemporary, Editorial & Stylistic, Functional & Display",
+      "Pairing Principles + Size Hierarchy",
+      "Licensing and Student-Discount Resources",
+      "In-Class: Assign a Typeface Pairing, Test on One Spread",
+    ],
+    breakout: {
+      undergrad: "Test your pairing on placeholder text and a resume/CV page, not just project spreads — does the system hold up outside the project content?",
+      grad: "Test your pairing directly on your real title and section pages. Does it match the tone of the Red Thread from Session 3?",
+    },
+    dueToday: "7 Grid-Aligned Spreads (.indd + PDF)",
+    homework: "Typefaces applied across all spreads; bring 2 candidate title-page treatments",
+    references: "Threshold Resources — Typography & Type Foundries (Klim, Commercial Type, Colophon, Grilli Type, Pangram Pangram)",
+  },
+  {
+    num: 7, title: "Color, Representation & the Photographed Model",
+    moduleRefs: [12],
+    status: "proposed", date: "Thu, Oct 15, 2026",
+    dateNote: "Skips Thu, Oct 8 — Kent State Fall Break",
+    tagline: "One accent color, or none. How physical work gets photographed and drawn to argue at the same level as the page around it.",
+    tags: ["Lecture", "Discussion"],
+    agenda: [
+      "The One-Accent-Color Rule (Or None)",
+      "Renders vs. Drawings vs. Photography of Physical Models",
+      "Non-Destructive Photo Editing: Lighting, Cropping, Batch Consistency",
+      "In-Class Color Audit of Your Own Spreads",
+    ],
+    breakout: {
+      undergrad: "You likely have hand drawings or pinned-up physical models rather than polished renders. How do you photograph and represent that work with confidence, not apology?",
+      grad: "Your studio work spans multiple original media across projects. How do you keep color and representation consistent across all of them?",
+    },
+    dueToday: "Typeface System Applied (2 Title-Page Candidates)",
+    homework: "Revise/replace any inconsistent images; finalize color treatment",
+    references: "Threshold Resources — Graphic Design & Visual Culture",
+  },
+  {
+    num: 8, title: "Production Standards, Digital Presence & the Self-Editing Framework",
+    moduleRefs: [13],
+    status: "proposed", date: "Thu, Oct 22, 2026",
+    tagline: "File specs, where your portfolio lives online, and the checklist you'll run before Session 9.",
+    tags: ["Lecture", "Discussion", "Assignment"],
+    agenda: [
+      "Export Standards: Resolution, File Size, PDF Compression",
+      "Print vs. Digital Delivery; Where Your Portfolio Lives Online",
+      "Appropriate Use of AI Tools in Production",
+      "Introduce 5-Category Self-Editing Audit: Narrative, Grid, Hierarchy, Typography, Technical Setup",
+      "Group Audit of One Spread",
+    ],
+    breakout: {
+      undergrad: "Is it okay to submit a “structure-complete, content-partial” checkpoint — real cover and grid mechanics, with a placeholder spread and a note on what's coming? Discuss what that minimum should look like.",
+      grad: "Run the full 5-category audit on your most finished spread right now. Where does it actually fall short of job-ready?",
+    },
+    dueToday: "Finalized Color Treatment",
+    homework: "Full self-audit of your own portfolio using the checklist",
+    trackNote: "Undergrad checkpoints may mix real and placeholder spreads at this stage; grad checkpoints are held to a job-ready standard.",
+    references: "Threshold Resources — Jobs & Career Boards; Technical Standards & Production module",
+  },
+  {
+    num: 9, title: "Cover Typologies",
+    moduleRefs: [11],
+    status: "delivered", date: "Thu, Oct 29, 2026",
+    tagline: "Seven compositional patterns, and what each signals before anyone opens the book.",
+    tags: ["Lecture", "Discussion", "Assignment"],
+    agenda: [
+      "Seven Cover Typologies: Pure Minimal, Dark Ground, Hero Image, Bleed + Type Band, Scattered Collage, Grid/Pattern, Abstract Line",
+      "Synthesis Matrix: Rigid ↔ Freeform, Typographic ↔ Image-Driven",
+      "Structured Peer Review (5-Minute Presentations, Scored Checklist)",
+      "Self-Evaluation: Technical Setup + Design Categories + Typography",
+    ],
+    breakout: {
+      undergrad: "Does your cover need to admit you're a student, or is it fine that it doesn't? Discuss what an entry-level cover should signal.",
+      grad: "Does your cover read as a working designer's, not a student's? What one change would make it read more senior?",
+    },
+    dueToday: "Completed Self-Audit",
+    homework: "Bring 2–3 distinct cover directions built on your interior grid",
+    references: "Threshold Portfolio Guide — Portfolio Identity, Cover & Table of Contents",
+  },
+  {
+    num: 10, title: "Table of Contents Design & the Portfolio Checkpoint",
+    moduleRefs: [],
+    status: "delivered", date: "Thu, Nov 5, 2026",
+    dateNote: "Final Session",
+    tagline: "The TOC is part of the narrative arc, not an index — and your first fully assembled submission.",
+    tags: ["Lecture", "Discussion", "Assignment"],
+    agenda: [
+      "Debrief: Session 9 Peer-Review Data Shown Directly to the Class",
+      "Six TOC Typologies: Illustrated Section Grid, Multi-Column Index, Thumbnail Gallery, Literary Chapter Index, Bold Number Cards, Narrative + List Hybrid",
+      "Comparison Matrix: Image vs. Text, Density, Conventional vs. Expressive",
+      "Paired Peer Cover-Review Activity",
+    ],
+    breakout: {
+      undergrad: "What's the minimum viable complete portfolio for someone entering the field for the first time? Peer-review each other against that bar, not a professional's.",
+      grad: "Is this ready to send to an employer tomorrow? If not, name the single blocking issue.",
+    },
+    dueToday: "2–3 Cover Directions",
+    homework: null,
+    finalDeliverable: "Portfolio Checkpoint — final cover + chosen TOC + two fully laid-out project spreads, submitted as PDF and .indd",
+    references: "Threshold Portfolio Guide — Portfolio Identity, Cover & TOC; Threshold Resources — 10 Sites to Follow",
+  },
+];
+
+const SESSION_STATUS_LABEL = { delivered: "Delivered", proposed: "Proposed" };
+const TAG_COLOR = { Lecture: T.tagLecture, Discussion: T.tagDiscussion, Assignment: T.tagAssignment, Reading: T.tagReading, Activity: T.tagActivity };
+
+function TagChip({ label }) {
+  const color = TAG_COLOR[label] || T.textFaint;
+  return (
+    <span style={{
+      display: "inline-flex", alignItems: "center", gap: 5,
+      fontSize: 9, letterSpacing: "0.04em", color,
+      border: `1px solid ${color}55`, borderRadius: 3, padding: "2px 6px",
+    }}>
+      <span style={{ width: 5, height: 5, borderRadius: "50%", background: color, display: "inline-block" }} />
+      {label}
+    </span>
+  );
+}
+
+/* ─── Session Kanban Board (landing) ─── */
+function SessionBoard({ visible }) {
+  return (
+    <nav aria-label="Ten-session schedule" style={{
+      width: "100%", maxWidth: 1120, opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
+    }}>
+      <div style={{
+        display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: 14,
+      }}>
+        {SESSIONS.map((s, i) => {
+          const statusColor = s.status === "delivered" ? T.delivered : T.proposed;
+          const locked = s.num !== 1;
+          const CardTag = locked ? "div" : "a";
+          return (
+            <CardTag
+              key={s.num}
+              {...(locked ? {} : { href: `#/session/${s.num}` })}
+              className="session-card"
+              aria-disabled={locked || undefined}
+              title={locked ? "Locked — not yet available" : undefined}
+              style={{
+                display: "flex", flexDirection: "column", gap: 10,
+                border: `1px solid ${T.border}`, borderRadius: 6, padding: "16px 16px 14px",
+                background: T.bg, cursor: locked ? "not-allowed" : "pointer", textDecoration: "none",
+                opacity: locked ? 0.45 : 1,
+                animation: "cardIn 0.4s ease backwards",
+                animationDelay: `${i * 45}ms`,
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <span style={{ fontSize: 22, fontWeight: 300, color: T.text, fontVariantNumeric: "tabular-nums", letterSpacing: "-0.02em" }}>
+                  {String(s.num).padStart(2, "0")}
+                </span>
+                {locked ? (
+                  <span style={{ fontSize: 9, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 6 }}>
+                    Locked
+                  </span>
+                ) : (
+                  <span title={SESSION_STATUS_LABEL[s.status]} style={{
+                    width: 7, height: 7, borderRadius: "50%", background: statusColor, marginTop: 6,
+                  }} />
+                )}
+              </div>
+              <div style={{ fontSize: 12.5, color: T.text, fontWeight: 500, lineHeight: 1.35, minHeight: 34 }}>
+                {s.title}
+              </div>
+              <p style={{ fontSize: 11, color: T.textMid, fontStyle: "italic", lineHeight: 1.5, minHeight: 48, margin: 0 }}>
+                {s.tagline}
+              </p>
+              <div style={{ fontSize: 9.5, color: T.textFaint, letterSpacing: "0.02em" }}>
+                {s.date}
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginTop: "auto", paddingTop: 4 }}>
+                {s.tags.map(t => <TagChip key={t} label={t} />)}
+              </div>
+            </CardTag>
+          );
+        })}
+      </div>
+    </nav>
+  );
+}
+
+/* ─── Session Detail ─── */
+/* ─── Deep-dive module content, migrated in full from the original 15-module workshop ─── */
+function SessionDetail({ session }) {
+  const s = session;
+  let secN = 0;
+  const secNum = () => String(++secN).padStart(2, "0");
+  const numWarmUp = s.warmUp ? secNum() : null;
+  const numLectures = secNum();
+  const numActivity = s.activityIntro ? secNum() : null;
+  const numDiscussion = secNum();
+  const numAssignment = secNum();
+  return (
+    <div style={{ width: "100%", maxWidth: 640, opacity: 1 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+        <span style={{ fontSize: 13, color: T.textFaint, fontVariantNumeric: "tabular-nums" }}>
+          Session {String(s.num).padStart(2, "0")}
+        </span>
+        <span style={{
+          fontSize: 9, letterSpacing: "0.06em", textTransform: "uppercase",
+          color: s.status === "delivered" ? T.delivered : T.proposed,
+        }}>
+          {SESSION_STATUS_LABEL[s.status]}
+        </span>
+      </div>
+      <h1 style={{ fontSize: 24, fontWeight: 500, color: T.text, lineHeight: 1.25, marginBottom: 8, letterSpacing: "-0.01em" }}>
+        {s.title}
+      </h1>
+      <div style={{ fontSize: 12, color: T.textFaint, marginBottom: 4 }}>
+        {s.date}{s.dateNote ? ` — ${s.dateNote}` : ""}
+      </div>
+      <p style={{ fontSize: 13, color: T.textMid, fontStyle: "italic", lineHeight: 1.5, marginBottom: 18 }}>
+        {s.tagline}
+      </p>
+
+      <div style={{ marginBottom: 26 }}>
+        <TeamsJoinButton />
+      </div>
+
+      <div style={{ borderTop: `1px solid ${T.border}`, marginBottom: 26 }}>
+        {s.warmUp && (
+          <CollapsibleSection num={numWarmUp} minutes={20} title="Warm Up">
+            {s.warmUp.links && s.warmUp.links.map((l, i) => (
+              <div key={`wl${i}`}><LinkPill href={l.url} label={l.label} /></div>
+            ))}
+            {s.warmUp.items && s.warmUp.items.length > 0 && (
+              <ul style={{ listStyle: "none", margin: "4px 0 0" }}>
+                {s.warmUp.items.map((it, i) => {
+                  const text = typeof it === "string" ? it : it.text;
+                  const children = typeof it === "string" ? null : it.children;
+                  return (
+                    <li key={i}>
+                      <div style={{ display: "flex", gap: 10, fontSize: 12.5, color: T.text, lineHeight: 1.6, marginBottom: 6 }}>
+                        <span style={{ color: T.textFaint, flexShrink: 0 }}>–</span>
+                        <span>{renderText(text)}</span>
+                      </div>
+                      {children && children.length > 0 && (
+                        <ul style={{ listStyle: "none", margin: "0 0 6px", paddingLeft: 20 }}>
+                          {children.map((c, ci) => (
+                            <li key={ci} style={{ display: "flex", gap: 8, fontSize: 12, color: T.textMid, lineHeight: 1.6, marginBottom: 4 }}>
+                              <span style={{ color: T.textFaint, flexShrink: 0 }}>·</span>
+                              <span>{renderText(c)}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </CollapsibleSection>
+        )}
+
+        <CollapsibleSection num={numLectures} minutes={20} title="Lectures">
+          {s.lectures && s.lectures.fileUrl && (
+            <div><LinkPill href={s.lectures.fileUrl} label={s.lectures.fileLabel || "Lecture Slides"} /></div>
+          )}
+          <ul style={{ listStyle: "none", margin: "4px 0 0" }}>
+            {(s.lectures ? s.lectures.items : s.agenda).map((a, i) => (
+              <li key={i} style={{ display: "flex", gap: 10, fontSize: 12.5, color: T.text, lineHeight: 1.6, marginBottom: 6 }}>
+                <span style={{ color: T.textFaint, flexShrink: 0 }}>–</span>
+                <span>{renderText(a)}</span>
+              </li>
+            ))}
+          </ul>
+        </CollapsibleSection>
+
+        {s.activityIntro && (
+          <CollapsibleSection num={numActivity} minutes={20} title="Activity">
+            <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
+              Individual — review in advance of group discussion
+            </div>
+            <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: s.activityLinks ? "0 0 10px" : 0 }}>{renderText(s.activityIntro)}</p>
+            {s.activityLinks && s.activityLinks.map((l, i) => (
+              <LinkPill key={i} href={l.url} label={l.label} />
+            ))}
+          </CollapsibleSection>
+        )}
+
+        <CollapsibleSection num={numDiscussion} minutes={15} title="Discussion">
+          <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
+            10 min small groups (breakout rooms){s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)
+          </div>
+          {s.discussionIntro && (
+            <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.6, margin: "0 0 14px" }}>{renderText(s.discussionIntro)}</p>
+          )}
+          {s.breakout.shared ? (
+            <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.shared}</p>
+          ) : (
+            <div className="breakout-grid" style={{ display: "grid", gap: 16 }}>
+              <div>
+                <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
+                  Undergrad (44611)
+                </div>
+                <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.undergrad}</p>
+              </div>
+              <div>
+                <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
+                  Grad (56995)
+                </div>
+                <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.grad}</p>
+              </div>
+            </div>
+          )}
+        </CollapsibleSection>
+
+        <CollapsibleSection num={numAssignment} minutes={5} title="Assignment">
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
+              <strong style={{ color: T.text }}>Due Today: </strong>{s.dueToday}
+            </div>
+            {s.homework && (
+              <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
+                <strong style={{ color: T.text }}>Homework: </strong>{s.homework}
+              </div>
+            )}
+            {s.readingAssignment && (
+              <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
+                <strong style={{ color: T.text }}>Reading: </strong>{renderText(s.readingAssignment)}
+              </div>
+            )}
+            {s.finalDeliverable && (
+              <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
+                <strong style={{ color: T.text }}>Final Deliverable: </strong>{s.finalDeliverable}
+              </div>
+            )}
+          </div>
+
+          {s.reading && (
+            <div style={{ marginTop: 18, paddingTop: 16, borderTop: `1px solid ${T.border}` }}>
+              <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 8 }}>
+                ~{s.reading.estMinutes} min read · read whenever you like
+              </div>
+              <a href={`#/reading/${s.num}`} style={{ fontSize: 14, fontWeight: 500, color: T.text, lineHeight: 1.4, textDecoration: "underline", textUnderlineOffset: 3 }}>
+                {s.reading.title} →
+              </a>
+            </div>
+          )}
+        </CollapsibleSection>
+      </div>
+
+      {s.trackNote && (
+        <p style={{ fontSize: 11, color: T.textMuted, fontStyle: "italic", lineHeight: 1.55, marginBottom: 22 }}>
+          {s.trackNote}
+        </p>
+      )}
+
+      {s.references && (
+        <div style={{ fontSize: 10.5, color: T.textFaint, fontStyle: "italic", borderTop: `1px solid ${T.border}`, paddingTop: 14 }}>
+          References: {s.references}
+        </div>
+      )}
+
+    </div>
+  );
+}
+
 /* ─── Hash routing ─── */
 function useHashRoute() {
   const [route, setRoute] = useState(window.location.hash || "#/");
@@ -935,11 +1521,54 @@ if (typeof window !== "undefined") {
 }
 
 /* ─── About content ─── */
+const SYLLABUS_LINK = "https://kent.simplesyllabus.com/doc/12jhn4bvv/Fall-2026-ARCH-44611-002-PORTFOLIO?mode=view";
+const SYLLABUS_PDF_UNDERGRAD = `${import.meta.env.BASE_URL}syllabus/ARCH_Portfolio_44611_Syllabus.pdf`;
+const SYLLABUS_PDF_GRAD = `${import.meta.env.BASE_URL}syllabus/ARCH_ST_Portfolio_56995_Syllabus.pdf`;
+
 const ABOUT_TEXT = [
-  "Portfolio as Narrative is the companion resource for ARCH 66995: Portfolio, a studio-style course at Kent State University's College of Architecture and Environmental Design. The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
-  "The guide covers fifteen modules across three parts. [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/12) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
-  "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course follows a fifteen-week cumulative structure, from portfolio foundations and audience analysis through storyboarding, grid application, and typographic systems, to final production, peer critique, and portfolio presentation. Assignments build progressively toward a fully resolved academic portfolio.",
+  "Portfolio as Narrative is the companion resource for ARCH-Portfolio (44611/002) and ARCH-ST:Portfolio (56995/006), a studio-style course at Kent State University's College of Architecture and Environmental Design, taught by Seth Looper (M.Arch, Rhode Island School of Design). The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
+  "The guide covers fifteen modules across three parts, organized into the term's [ten class sessions](#/). [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/12) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
+  "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course meets once weekly for ten sessions in Fall 2026, from portfolio foundations and critical observation through narrative, grid systems, typography, and color, to final production, cover and table-of-contents design, and the portfolio checkpoint. Assignments build progressively toward a fully resolved academic portfolio.",
   "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument, and this guide shows you how to build one.",
+  `For grading, attendance, and university policies, see the official course syllabus: [undergraduate, 44611](${SYLLABUS_PDF_UNDERGRAD}) (also on [SimpleSyllabus](${SYLLABUS_LINK})) or [graduate, 56995](${SYLLABUS_PDF_GRAD}).`,
+];
+
+/* ─── Resources: sites, studios, and foundries referenced across class sessions ───
+   Grows over the term as new sessions bring in new material — currently sourced from Session 1. */
+const RESOURCES = [
+  {
+    group: "Architectural Representation",
+    desc: "How established practices document process, material, and site, where representation choices carry as much argument as the design itself.",
+    items: [
+      { name: "Presidents Medals", url: "https://www.presidentsmedals.com/", note: "Annual award archive of student thesis and studio work worldwide; a fast way to calibrate what a genuinely strong project (and its portfolio pages) look like." },
+      { name: "LCLA Office", url: "https://luiscallejas.com/", note: "Luis Callejas's landscape and architecture practice; strong reference for hand-drawn sections, topographic diagrams, and landscape-scale representation." },
+      { name: "Smout Allen", url: "http://www.smoutallen.com", note: "London studio working through speculative, research-driven prototypes; useful for diagrammatic and process-forward presentation over polished renders." },
+      { name: "Concept Model", url: "https://conceptmodel.tumblr.com/", note: "Running archive of architectural study and concept models; good reference for photographing physical models and using abstraction early in a project." },
+      { name: "MIR", url: "https://mir.no", note: "Oslo visualization studio known for atmospheric, cinematic renderings; a benchmark for mood and material quality rather than technical rendering accuracy." },
+    ],
+  },
+  {
+    group: "Graphic Design",
+    desc: "Layout, typography, and editorial thinking from outside architecture, since a portfolio borrows its structural logic from published design work.",
+    items: [
+      { name: "Fonts in Use", url: "https://fontsinuse.com/", note: "Typefaces shown in real editorial, packaging, and identity work; more useful for studying pairing and hierarchy than browsing fonts in the abstract." },
+      { name: "It's Nice That", url: "https://www.itsnicethat.com/", note: "Daily coverage of contemporary graphic design and illustration; a way to keep current on layout and typographic trends outside the studio." },
+      { name: "AIGA Eye on Design", url: "https://eyeondesign.aiga.org/", note: "AIGA's editorial platform on design culture and process; pushes toward thinking critically about a design decision, not just collecting images of it." },
+      { name: "Pinterest", url: "https://www.pinterest.com/", note: "Fast visual search for layout and mood references; treat it as a starting point, not a primary source, since attribution is usually lost." },
+      { name: "ISSUU", url: "https://issuu.com/", note: "Full digital portfolios and magazines uploaded spread by spread; useful for studying pacing across an entire document, not just single pages." },
+    ],
+  },
+  {
+    group: "Type Foundries",
+    desc: "Where to license or download a portfolio typeface once a system font stops being enough.",
+    items: [
+      { name: "Adobe Fonts", url: "https://fonts.adobe.com/", note: "Included with a Creative Cloud login; the fastest way to activate a portfolio typeface with no separate purchase." },
+      { name: "Colophon", url: "https://www.myfonts.com", note: "Independent foundry based in Los Angeles and London, sold through its MyFonts storefront; refined, editorial faces well suited to portfolio titling." },
+      { name: "Commercial Type", url: "https://commercialtype.com/", note: "New York and London foundry behind serif and sans families widely used in architecture and design publishing; a strong candidate for a portfolio's primary typeface." },
+      { name: "Klim Type Foundry", url: "https://klim.co.nz/fonts/", note: "New Zealand foundry with versatile, well-documented text and display families, each page explaining its intended use case." },
+      { name: "Pangram Pangram", url: "https://pangrampangram.com/collections/fonts", note: "Large library offered free for personal and student use; the practical option when licensing budget is a constraint." },
+    ],
+  },
 ];
 
 /* ─── Interactive Checklist ─── */
@@ -1595,14 +2224,27 @@ export default function PortfolioGuide() {
   const prevRoute = useRef(route);
 
   // Determine view from hash
-  let view = "landing";
+  let view = "sessions";
   let activeModule = null;
+  let activeSession = null;
   let isCaseStudy = false;
   let isCaseStudy2 = false;
   let diagramModuleId = null;
 
-  if (route === "#/about") {
+  if (route === "#/modules") {
+    view = "modules";
+  } else if (route.startsWith("#/session/")) {
+    const num = parseInt(route.split("/")[2], 10);
+    activeSession = SESSIONS.find(s => s.num === num) || null;
+    if (activeSession) view = "session";
+  } else if (route.startsWith("#/reading/")) {
+    const num = parseInt(route.split("/")[2], 10);
+    activeSession = SESSIONS.find(s => s.num === num && s.reading) || null;
+    if (activeSession) view = "reading";
+  } else if (route === "#/about") {
     view = "about";
+  } else if (route === "#/resources") {
+    view = "resources";
   } else if (route === "#/exercise") {
     view = "exercise";
   } else if (route === "#/exercise2") {
@@ -1636,14 +2278,18 @@ export default function PortfolioGuide() {
     const base = "Portfolio as Narrative";
     let title = base;
     if (view === "module" && activeModule) title = `${activeModule.title} — ${base}`;
+    else if (view === "session" && activeSession) title = `Session ${String(activeSession.num).padStart(2, "0")}: ${activeSession.title} — ${base}`;
+    else if (view === "reading" && activeSession) title = `${activeSession.reading.title} — ${base}`;
+    else if (view === "modules") title = `All Modules — ${base}`;
     else if (view === "casestudy") title = `Case Study 01: Erosion — ${base}`;
     else if (view === "casestudy2") title = `Case Study 02: Grid Systems in Practice — ${base}`;
     else if (view === "exercise") title = `Exercise 01: From Thread to Spread — ${base}`;
     else if (view === "exercise2") title = `Exercise 02: Build Your Grid — ${base}`;
     else if (view === "about") title = `About — ${base}`;
+    else if (view === "resources") title = `Resources — ${base}`;
     else if (view === "diagrams") title = `Diagrams — ${base}`;
     document.title = title;
-  }, [route, view, activeModule]);
+  }, [route, view, activeModule, activeSession]);
 
   // Track navigation source for context-aware back button
   const sourceRoute = useRef("#/");
@@ -1670,8 +2316,14 @@ export default function PortfolioGuide() {
       const pos = src.replace("#/module/", "");
       return { hash: src, label: `Module ${pos.padStart(2, "0")}` };
     }
+    if (src.startsWith("#/session/")) {
+      const num = src.replace("#/session/", "");
+      return { hash: src, label: `Session ${num.padStart(2, "0")}` };
+    }
+    if (src.startsWith("#/modules")) return { hash: "#/modules", label: "All Modules" };
     if (src.startsWith("#/about")) return { hash: "#/about", label: "About" };
-    return { hash: "#/", label: "Portfolio Workshop" };
+    if (src.startsWith("#/resources")) return { hash: "#/resources", label: "Resources" };
+    return { hash: "#/", label: "Sessions" };
   };
 
   const backTarget = getBackTarget();
@@ -1682,15 +2334,16 @@ export default function PortfolioGuide() {
     navigate(`#/module/${MODULE_POSITION[mod.id]}`);
   };
 
-  // ─── Landing ───
-  if (view === "landing") {
+  // ─── All Modules (deep-dive index) ───
+  if (view === "modules") {
     return (
       <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
         <a href="#main-content" className="skip-link">Skip to content</a>
         <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-          <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textMuted, fontWeight: 400 }}>
-            Portfolio Workshop
-          </div>
+          <button onClick={() => navigate("#/")} style={{
+            background: "none", border: "none", fontSize: 10, color: T.textMuted,
+            cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+          }}>← Sessions</button>
           <button onClick={() => navigate("#/about")} style={{
             background: "none", border: "none", fontSize: 10, color: T.textMuted,
             cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
@@ -1698,17 +2351,27 @@ export default function PortfolioGuide() {
         </header>
 
         <main id="main-content" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 clamp(16px, 6vw, 40px)" }}>
-          <nav aria-label="Course modules" style={{ width: "100%", maxWidth: 400, opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
-            {Object.entries(PARTS).map(([partKey, part]) => (
-              <div key={partKey}>
+          <nav aria-label="Modules by session" style={{ width: "100%", maxWidth: 440, opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
+            {SESSIONS.map((s) => (
+              <div key={s.num}>
                 <h2 style={{
                   fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase",
-                  color: T.textFaint, fontWeight: 500, marginTop: partKey === "part1" ? 0 : 28,
-                  marginBottom: 10,
+                  color: T.textFaint, fontWeight: 500, marginTop: s.num === 1 ? 0 : 28,
+                  marginBottom: 10, display: "flex", alignItems: "baseline", gap: 8,
                 }}>
-                  Part {partKey === "part1" ? "I" : partKey === "part2" ? "II" : "III"}: {part.title}
+                  <a href={`#/session/${s.num}`} style={{ color: T.textFaint }}>
+                    Session {String(s.num).padStart(2, "0")}
+                  </a>
+                  <span style={{ textTransform: "none", fontWeight: 400, fontSize: 9, color: T.textFaint }}>
+                    {s.title}
+                  </span>
                 </h2>
-                {part.modules.map((modId) => {
+                {s.moduleRefs.length === 0 && (
+                  <div style={{ fontSize: 11, color: T.textFaint, fontStyle: "italic", padding: "9px 0", borderBottom: `1px solid ${T.border}` }}>
+                    No standalone module — see Session {String(s.num).padStart(2, "0")} for lecture content.
+                  </div>
+                )}
+                {s.moduleRefs.map((modId) => {
                   const mod = MODULES.find(m => m.id === modId);
                   return (
                     <a
@@ -1731,8 +2394,8 @@ export default function PortfolioGuide() {
                     </a>
                   );
                 })}
-                {/* Case Study after Part I */}
-                {partKey === "part1" && (
+                {/* Case Study 1 + Exercise 1: narrative modules live in Session 2 */}
+                {s.num === 2 && (
                   <>
                   <a
                     href="#/casestudy"
@@ -1768,25 +2431,8 @@ export default function PortfolioGuide() {
                   </a>
                   </>
                 )}
-                {/* Case Study 02 + Exercise 02 after Part II */}
-                {partKey === "part2" && (
-                  <>
-                  <a
-                    href="#/casestudy2"
-                    style={{
-                      display: "flex", alignItems: "baseline", gap: 14,
-                      padding: "9px 0", borderBottom: `1px solid ${T.border}`,
-                      cursor: "pointer", transition: "opacity 0.2s ease",
-                      fontStyle: "italic",
-                    }}
-                    onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.5"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
-                  >
-                    <span style={{ fontSize: 10, color: T.textFaint, minWidth: 20, fontWeight: 400, letterSpacing: "0.02em" }}></span>
-                    <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
-                      {CASE_STUDY_2.title}
-                    </span>
-                  </a>
+                {/* Exercise 2: hands-on grid construction lives in Session 4 */}
+                {s.num === 4 && (
                   <a
                     href="#/exercise2"
                     style={{
@@ -1803,13 +2449,112 @@ export default function PortfolioGuide() {
                       Exercise 02: Build Your Grid
                     </span>
                   </a>
-                  </>
+                )}
+                {/* Case Study 2: full applied grid system lives in Session 5 */}
+                {s.num === 5 && (
+                  <a
+                    href="#/casestudy2"
+                    style={{
+                      display: "flex", alignItems: "baseline", gap: 14,
+                      padding: "9px 0", borderBottom: `1px solid ${T.border}`,
+                      cursor: "pointer", transition: "opacity 0.2s ease",
+                      fontStyle: "italic",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.5"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+                  >
+                    <span style={{ fontSize: 10, color: T.textFaint, minWidth: 20, fontWeight: 400, letterSpacing: "0.02em" }}></span>
+                    <span style={{ fontSize: 12, color: T.text, fontWeight: 400, letterSpacing: "0.01em" }}>
+                      {CASE_STUDY_2.title}
+                    </span>
+                  </a>
                 )}
               </div>
             ))}
 
 
           </nav>
+        </main>
+
+        <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+          <span>Kent State University · CAED</span>
+          <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
+        </footer>
+      </div>
+    );
+  }
+
+  // ─── Sessions (Kanban landing) ───
+  if (view === "sessions") {
+    return (
+      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+          <div>
+            <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textMuted, fontWeight: 400 }}>
+              Portfolio Workshop
+            </div>
+            <div style={{ fontSize: 9, color: T.textFaint, marginTop: 3, letterSpacing: "0.02em" }}>
+              Fall 2026 · 10 Sessions · Thursdays 6:35–7:55 PM
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+            <TeamsJoinButton compact />
+            <button onClick={() => navigate("#/modules")} style={{
+              background: "none", border: "none", fontSize: 10, color: T.textMuted,
+              cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
+            }}>All Modules</button>
+            <button onClick={() => navigate("#/resources")} style={{
+              background: "none", border: "none", fontSize: 10, color: T.textMuted,
+              cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
+            }}>Resources</button>
+            <button onClick={() => navigate("#/about")} style={{
+              background: "none", border: "none", fontSize: 10, color: T.textMuted,
+              cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
+            }}>About</button>
+          </div>
+        </header>
+
+        <main id="main-content" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "24px clamp(16px, 6vw, 40px)" }}>
+          <SessionBoard visible={visible} />
+        </main>
+
+        <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+          <span>Kent State University · CAED</span>
+          <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
+        </footer>
+      </div>
+    );
+  }
+
+  // ─── Session Detail ───
+  if (view === "session" && activeSession) {
+    return (
+      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16 }}>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 18 }}>
+            <button onClick={() => navigate("#/")} style={{
+              background: "none", border: "none", fontSize: 10, color: T.text, fontWeight: 500,
+              cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+            }}>← Sessions</button>
+            {backTarget.hash !== "#/" && (
+              <button onClick={handleBack} style={{
+                background: "none", border: "none", fontSize: 10, color: T.textFaint,
+                cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
+              }}>(back to {backTarget.label})</button>
+            )}
+          </div>
+          <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.04em" }}>
+            Session {String(activeSession.num).padStart(2, "0")} / 10
+          </div>
+        </header>
+
+        <main id="main-content" style={{
+          flex: 1, display: "flex", flexDirection: "column", alignItems: "center",
+          padding: "24px clamp(16px, 6vw, 40px) 60px", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
+        }}>
+          <SessionDetail session={activeSession} />
         </main>
 
         <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
@@ -1866,6 +2611,118 @@ export default function PortfolioGuide() {
               </p>
             </div>
           </div>
+        </main>
+
+        <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+          <span>Kent State University · CAED</span>
+          <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
+        </footer>
+      </div>
+    );
+  }
+
+  // ─── Resources ───
+  if (view === "resources") {
+    return (
+      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+          <button onClick={handleBack} style={{
+            background: "none", border: "none", fontSize: 10, color: T.textMuted,
+            cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+          }}>← {backTarget.label}</button>
+          <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.04em" }}>Resources</div>
+        </header>
+
+        <main id="main-content" style={{
+          flex: 1, display: "flex", flexDirection: "column", alignItems: "center",
+          padding: "0 clamp(16px, 6vw, 40px) 60px", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
+        }}>
+          <div style={{ width: "100%", maxWidth: 520 }}>
+            <h1 style={{ fontSize: 16, fontWeight: 500, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>
+              Resources
+            </h1>
+            <p style={{ fontSize: 11, color: T.textLight, margin: "0 0 28px", letterSpacing: "0.02em" }}>
+              Sites, studios, and foundries referenced in class. Grows as the term goes on.
+            </p>
+            <div style={{ width: 24, height: 1, background: T.text, marginBottom: 28 }} />
+            {RESOURCES.map((group, gi) => (
+              <div key={gi} style={{ marginBottom: 28 }}>
+                <div style={{ fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, fontWeight: 500, marginBottom: 6 }}>
+                  {group.group}
+                </div>
+                {group.desc && (
+                  <p style={{ fontSize: 11.5, color: T.textMuted, fontStyle: "italic", lineHeight: 1.55, margin: "0 0 12px" }}>
+                    {group.desc}
+                  </p>
+                )}
+                <ul style={{ listStyle: "none", margin: 0 }}>
+                  {group.items.map((item, ii) => (
+                    <li key={ii} style={{ fontSize: 12.5, lineHeight: 1.7, color: T.textMid, marginBottom: 8 }}>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: T.text, fontWeight: 500, textDecoration: "underline", textUnderlineOffset: 2 }}
+                      >
+                        {item.name}
+                      </a>
+                      {item.note ? <span> — {item.note}</span> : null}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </main>
+
+        <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+          <span>Kent State University · CAED</span>
+          <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
+        </footer>
+      </div>
+    );
+  }
+
+  // ─── Reading (distraction-free article view) ───
+  if (view === "reading" && activeSession) {
+    const r = activeSession.reading;
+    return (
+      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+          <a href={`#/session/${activeSession.num}`} style={{
+            fontSize: 10, color: T.textMuted, fontWeight: 500,
+            fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none",
+          }}>← Session {String(activeSession.num).padStart(2, "0")}</a>
+          <div style={{ fontSize: 10, color: T.textFaint, letterSpacing: "0.04em" }}>Reading</div>
+        </header>
+
+        <main id="main-content" style={{
+          flex: 1, display: "flex", flexDirection: "column", alignItems: "center",
+          padding: "24px clamp(16px, 6vw, 40px) 80px", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
+        }}>
+          <article style={{ width: "100%", maxWidth: 600 }}>
+            <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 14 }}>
+              ~{r.estMinutes} min read
+            </div>
+            <h1 style={{ fontSize: 30, fontWeight: 500, color: T.text, lineHeight: 1.25, letterSpacing: "-0.01em", margin: "0 0 12px" }}>
+              {r.title}
+            </h1>
+            <div style={{ fontSize: 12.5, color: T.textFaint, marginBottom: 40, paddingBottom: 24, borderBottom: `1px solid ${T.border}` }}>
+              Seth Looper · Session {String(activeSession.num).padStart(2, "0")}, {activeSession.title}
+            </div>
+            {r.paragraphs.map((p, i) => (
+              <p key={i} style={{ fontSize: 15, lineHeight: 1.85, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em" }}>
+                {renderText(p)}
+              </p>
+            ))}
+            <div style={{ marginTop: 40, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
+              <a href={`#/session/${activeSession.num}`} style={{ fontSize: 12, color: T.textMuted, letterSpacing: "0.02em" }}>
+                ← Back to Session {String(activeSession.num).padStart(2, "0")}
+              </a>
+            </div>
+          </article>
         </main>
 
         <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
