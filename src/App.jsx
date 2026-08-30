@@ -1689,6 +1689,10 @@ const SURVEY_RESULTS = {
     },
   ],
   takeaway: "Students rate their confidence in verbal explanation and in receiving critique well above their confidence that a portfolio submitted today would satisfy faculty or employer expectations: no respondent placed either of the first two measures below a 3, while readiness to submit clusters at 2 to 4. This is a measurable gap between command of the work and the current state of its presentation, distinct from a lack of self-assurance. Comprehension of grid systems is strong across the cohort (22 of 25 answered the knowledge-check item correctly), though three students indicate no working understanding of the term. Session 03 should address this directly rather than assume it resolved.",
+  response: [
+    "Office hours this term will prioritize individual conversation over general review, pairing each student with direct, personal feedback aimed at closing the gap between measured portfolio strength and self-reported confidence.",
+    "Course sessions will draw on an expanded set of precedent portfolios and professional reference work, developing the critical judgment required to assess one's own portfolio against an established professional standard.",
+  ],
   themes: [
     {
       title: "Curation, not production, is the central difficulty",
@@ -2907,6 +2911,17 @@ export default function PortfolioGuide() {
               </div>
               <p style={{ fontSize: 12.5, color: T.text, lineHeight: 1.65, margin: 0 }}>{sr.takeaway}</p>
             </div>
+
+            {sr.response && sr.response.length > 0 && (
+              <div style={{ marginBottom: 40 }}>
+                <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, fontWeight: 500, marginBottom: 10 }}>
+                  How This Shapes the Course
+                </div>
+                {sr.response.map((p, pi) => (
+                  <p key={pi} style={{ fontSize: 12.5, color: T.textMid, lineHeight: 1.65, margin: pi < sr.response.length - 1 ? "0 0 12px" : 0 }}>{p}</p>
+                ))}
+              </div>
+            )}
 
             <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, fontWeight: 500, marginBottom: 16 }}>
               What Students Said
