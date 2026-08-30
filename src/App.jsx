@@ -1590,8 +1590,8 @@ const RESOURCES = [
    Source: Portfolio Skills & Understanding Survey, 25 of 25 active students responded (Aug 27, 2026). */
 const SURVEY_RESULTS = {
   respondentCount: 25,
-  respondentNote: "All 25 active students responded; the survey was administered during the Session 01 Warm Up.",
-  caveat: "One item on the survey instrument, a Likert-scale battery addressing portfolio learning outcomes, failed to render correctly in the live form: every respondent encountered a single unlabeled option in place of the intended twelve-statement scale, an artifact consistent with an edit made to the form during administration. The item is omitted from the results below. Every remaining question returned a complete response set from all twenty-five participants.",
+  respondentNote: "Administered Thursday, August 27, 2026, during the Session 01 Warm Up. All 25 active students responded.",
+  caveat: "This page summarizes results from the Portfolio Skills & Understanding Survey, a baseline check on portfolio confidence, skills, and understanding at the start of the course. The same survey will be given again at the end of the semester to measure growth over the term. Each chart below reports the number of students who selected a given answer, out of 25 total respondents, unless noted otherwise. Where a question allowed more than one selection, totals exceed 25. Scale questions show the distribution of responses from 1 to 5.",
   bar: [
     {
       title: "Current Portfolio Status",
@@ -2886,10 +2886,10 @@ export default function PortfolioGuide() {
               Session 01 Survey Results
             </h1>
             <p style={{ fontSize: 11, color: T.textLight, margin: "0 0 8px", letterSpacing: "0.02em" }}>
-              Portfolio Skills &amp; Understanding Survey — {sr.respondentNote}
+              Portfolio Skills &amp; Understanding Survey. {sr.respondentNote}
             </p>
             <div style={{ width: 24, height: 1, background: T.text, margin: "12px 0 20px" }} />
-            <p style={{ fontSize: 11, color: T.textMuted, fontStyle: "italic", lineHeight: 1.6, marginBottom: 34 }}>
+            <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.7, marginBottom: 34 }}>
               {sr.caveat}
             </p>
 
