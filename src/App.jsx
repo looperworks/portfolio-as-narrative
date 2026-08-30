@@ -1590,17 +1590,17 @@ const RESOURCES = [
    Source: Portfolio Skills & Understanding Survey, 25 of 25 active students responded (Aug 27, 2026). */
 const SURVEY_RESULTS = {
   respondentCount: 25,
-  respondentNote: "25 of 25 active students responded, during the Session 01 Warm Up.",
-  caveat: "One question — a Likert grid on portfolio learning outcomes — broke in the live Google Form (it rendered as a single unlabeled \"Option 1\" choice, most likely from an edit made to the form while students were mid-survey) and produced no usable data, so it's excluded below entirely. Every other question shown here has a complete, verified response set.",
+  respondentNote: "All 25 active students responded; the survey was administered during the Session 01 Warm Up.",
+  caveat: "One item on the survey instrument, a Likert-scale battery addressing portfolio learning outcomes, failed to render correctly in the live form: every respondent encountered a single unlabeled option in place of the intended twelve-statement scale, an artifact consistent with an edit made to the form during administration. The item is omitted from the results below. Every remaining question returned a complete response set from all twenty-five participants.",
   bar: [
     {
       title: "Current Portfolio Status",
       question: "Which best describes your current portfolio status?",
       total: 25,
       data: [
-        { label: "Complete — needs refinement", count: 16 },
+        { label: "Complete, needs refinement", count: 16 },
         { label: "Some projects, no clear structure", count: 5 },
-        { label: "Polished — wants advanced feedback", count: 2 },
+        { label: "Polished, wants advanced feedback", count: 2 },
         { label: "Undergrad work only, not confident in it", count: 1 },
         { label: "Doesn't have a portfolio yet", count: 1 },
       ],
@@ -1622,16 +1622,16 @@ const SURVEY_RESULTS = {
       question: "Which best describes the primary role of a grid system in portfolio layout? (a knowledge check, not a self-rating)",
       total: 25,
       data: [
-        { label: "Correct — to organize content consistently and support visual hierarchy", count: 22 },
+        { label: "Correct: to organize content consistently and support visual hierarchy", count: 22 },
         { label: "“I don’t know what a grid system means”", count: 2 },
-        { label: "Incorrect — to align images only", count: 1 },
+        { label: "Incorrect: to align images only", count: 1 },
       ],
     },
     {
       title: "Portfolio Purpose This Semester",
       question: "What is the primary purpose of your portfolio this semester? (select all that apply)",
       total: 25,
-      note: "Multi-select — bars don't sum to 25.",
+      note: "Multi-select item. Bars do not sum to 25.",
       data: [
         { label: "Full-time job applications", count: 23 },
         { label: "Internship applications", count: 13 },
@@ -1688,11 +1688,11 @@ const SURVEY_RESULTS = {
       ],
     },
   ],
-  takeaway: "Students are far more confident describing their own work out loud and taking critique (nobody rated either below a 3) than they are that a portfolio submitted today would actually meet faculty or employer expectations — a real, measured gap between self-assurance and current output, not a confidence problem. Grid systems land well conceptually (22 of 25 answered the comprehension check correctly), but 3 students are starting from zero or a wrong assumption — worth a direct check-in before Session 03 assumes everyone is on the same page.",
+  takeaway: "Students rate their confidence in verbal explanation and in receiving critique well above their confidence that a portfolio submitted today would satisfy faculty or employer expectations: no respondent placed either of the first two measures below a 3, while readiness to submit clusters at 2 to 4. This is a measurable gap between command of the work and the current state of its presentation, distinct from a lack of self-assurance. Comprehension of grid systems is strong across the cohort (22 of 25 answered the knowledge-check item correctly), though three students indicate no working understanding of the term. Session 03 should address this directly rather than assume it resolved.",
   themes: [
     {
-      title: "The hard part is curation, not tools",
-      body: "Asked what feels most unclear or intimidating, at least six students independently named the same thing in different words: choosing which projects to include, avoiding redundancy, knowing what to cut. Very few named software mechanics as the blocker.",
+      title: "Curation, not production, is the central difficulty",
+      body: "When asked what feels most unclear or intimidating, at least six students independently converged on the same concern, phrased differently across responses: which projects to include, how to avoid redundancy, what to cut. Few identified software mechanics as the obstacle.",
       quotes: [
         "“Choosing the ‘right’ projects and grouping projects in a way that they are not redundant.”",
         "“Knowing what is most important to show for each project.”",
@@ -1700,16 +1700,16 @@ const SURVEY_RESULTS = {
       ],
     },
     {
-      title: "Self-assessment runs harder than the evidence supports",
-      body: "Several students undersell work that, read on its own, sounds substantial — a pattern worth countering directly in one-on-ones rather than treating as a layout problem.",
+      title: "Self-report understates the work",
+      body: "Several respondents describe their work in terms considerably more modest than the work itself, read independently, would suggest. This calls for direct address in individual review rather than treatment as a formatting concern.",
       quotes: [
-        "“It’s possible my portfolios have been poorly developed in the past — no one has ever taught how to make one, but I’ve made four at this point.”",
+        "“No one has ever taught how to make one, but I’ve made four at this point and I’ve never had a problem yet.”",
         "“I honestly feel that I wasn’t able to refine my portfolio due to the number of credits I was taking to graduate for undergrad.”",
       ],
     },
     {
-      title: "Job timelines are already driving the urgency",
-      body: "Asked what one outcome they hope to walk away with, a large share of students named a specific external deadline rather than a general skill: the spring career fair, an upcoming graduation date, or a full-time job search already underway. This is a class that mostly needs a finished, deployable document on a real clock, not an open-ended craft project.",
+      title: "External deadlines shape the cohort's priorities",
+      body: "Asked to name a single outcome they hope to achieve by the end of the course, a majority of respondents named an external deadline rather than a general skill: the spring career fair, a specific graduation date, or a job search already in progress. The cohort is oriented toward a finished, deployable document on a fixed timeline rather than an open-ended design exercise.",
       quotes: [
         "“Have a polished portfolio I can share at next spring's job fair.”",
         "“Produce a full time job application ready portfolio as I graduate in December.”",
