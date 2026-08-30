@@ -26,6 +26,7 @@ const T = {
   tagAssignment: "#8a7c3d",  /* muted olive */
   tagReading: "#6b4c7a",     /* muted plum */
   tagActivity: "#3d7a6b",    /* muted teal */
+  tagSurveyResults: "#b23a3a", /* muted red, deliberately distinct — flags new content */
   delivered: "#3d6b4a",      /* muted green */
   proposed: "#a17a2e",       /* muted amber */
 };
@@ -944,14 +945,14 @@ function TeamsJoinButton({ compact }) {
   );
 }
 
-function LinkPill({ href, label }) {
+function LinkPill({ href, label, color = T.text }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       style={{
-        display: "block", fontSize: 12, color: T.text, fontWeight: 500,
+        display: "block", fontSize: 12, color, fontWeight: 500,
         textDecoration: "underline", textUnderlineOffset: 2, letterSpacing: "0.01em",
         marginBottom: 6,
       }}
@@ -1004,6 +1005,7 @@ const SESSIONS = [
     warmUp: {
       links: [
         { label: "Portfolio Skills & Understanding Survey", url: "https://docs.google.com/forms/d/e/1FAIpQLSfUL3IgswFVWoTjOOPm1ektQeFPPj_T9U9BwB6svqeOV2Ib2A/viewform?usp=publish-editor" },
+        { label: "→ See the Class Survey Results", url: "#/survey-results", color: T.tagSurveyResults },
       ],
       items: [
         {
@@ -1368,7 +1370,7 @@ function SessionDetail({ session }) {
         {s.warmUp && (
           <CollapsibleSection num={numWarmUp} minutes={20} title="Warm Up">
             {s.warmUp.links && s.warmUp.links.map((l, i) => (
-              <div key={`wl${i}`}><LinkPill href={l.url} label={l.label} /></div>
+              <div key={`wl${i}`}><LinkPill href={l.url} label={l.label} color={l.color} /></div>
             ))}
             {s.warmUp.items && s.warmUp.items.length > 0 && (
               <ul style={{ listStyle: "none", margin: "4px 0 0" }}>
@@ -1583,6 +1585,166 @@ const RESOURCES = [
     ],
   },
 ];
+
+/* ─── Session 1 survey results: anonymized, aggregate only ───
+   Source: Portfolio Skills & Understanding Survey, 25 of 25 active students responded (Aug 27, 2026). */
+const SURVEY_RESULTS = {
+  respondentCount: 25,
+  respondentNote: "25 of 25 active students responded, during the Session 01 Warm Up.",
+  caveat: "One question — a Likert grid on portfolio learning outcomes — broke in the live Google Form (it rendered as a single unlabeled \"Option 1\" choice, most likely from an edit made to the form while students were mid-survey) and produced no usable data, so it's excluded below entirely. Every other question shown here has a complete, verified response set.",
+  bar: [
+    {
+      title: "Current Portfolio Status",
+      question: "Which best describes your current portfolio status?",
+      total: 25,
+      data: [
+        { label: "Complete — needs refinement", count: 16 },
+        { label: "Some projects, no clear structure", count: 5 },
+        { label: "Polished — wants advanced feedback", count: 2 },
+        { label: "Undergrad work only, not confident in it", count: 1 },
+        { label: "Doesn't have a portfolio yet", count: 1 },
+      ],
+    },
+    {
+      title: "Software & Technical Skills",
+      question: "Rate your current level of experience with common software tools and technical skills used in portfolio development.",
+      total: 25,
+      data: [
+        { label: "Confident", count: 10 },
+        { label: "Somewhat comfortable", count: 7 },
+        { label: "Very confident", count: 4 },
+        { label: "Basic familiarity", count: 3 },
+        { label: "Never used", count: 1 },
+      ],
+    },
+    {
+      title: "Grid System Comprehension",
+      question: "Which best describes the primary role of a grid system in portfolio layout? (a knowledge check, not a self-rating)",
+      total: 25,
+      data: [
+        { label: "Correct — to organize content consistently and support visual hierarchy", count: 22 },
+        { label: "“I don’t know what a grid system means”", count: 2 },
+        { label: "Incorrect — to align images only", count: 1 },
+      ],
+    },
+    {
+      title: "Portfolio Purpose This Semester",
+      question: "What is the primary purpose of your portfolio this semester? (select all that apply)",
+      total: 25,
+      note: "Multi-select — bars don't sum to 25.",
+      data: [
+        { label: "Full-time job applications", count: 23 },
+        { label: "Internship applications", count: 13 },
+        { label: "Personal documentation", count: 9 },
+        { label: "Graduate school applications", count: 1 },
+      ],
+    },
+    {
+      title: "Confidence Right Now",
+      question: "How confident do you feel about your portfolio right now? (1–5)",
+      total: 25,
+      data: [
+        { label: "4", count: 11 },
+        { label: "3", count: 10 },
+        { label: "2", count: 3 },
+        { label: "1", count: 1 },
+        { label: "5", count: 0 },
+      ],
+    },
+    {
+      title: "Explaining Your Work Verbally",
+      question: "How confident are you explaining your design work to someone outside architecture? (1–5)",
+      total: 25,
+      data: [
+        { label: "4", count: 11 },
+        { label: "5", count: 6 },
+        { label: "3", count: 8 },
+        { label: "2", count: 0 },
+        { label: "1", count: 0 },
+      ],
+    },
+    {
+      title: "Comfort Receiving Critique",
+      question: "How comfortable are you receiving critique and revising your work? (1–5)",
+      total: 25,
+      data: [
+        { label: "5", count: 16 },
+        { label: "4", count: 8 },
+        { label: "3", count: 1 },
+        { label: "2", count: 0 },
+        { label: "1", count: 0 },
+      ],
+    },
+    {
+      title: "Meets Faculty / Employer Expectations Today",
+      question: "If you had to submit your portfolio today, how confident are you that it meets expectations? (1–5)",
+      total: 25,
+      data: [
+        { label: "3", count: 11 },
+        { label: "4", count: 7 },
+        { label: "2", count: 4 },
+        { label: "1", count: 2 },
+        { label: "5", count: 1 },
+      ],
+    },
+  ],
+  takeaway: "Students are far more confident describing their own work out loud and taking critique (nobody rated either below a 3) than they are that a portfolio submitted today would actually meet faculty or employer expectations — a real, measured gap between self-assurance and current output, not a confidence problem. Grid systems land well conceptually (22 of 25 answered the comprehension check correctly), but 3 students are starting from zero or a wrong assumption — worth a direct check-in before Session 03 assumes everyone is on the same page.",
+  themes: [
+    {
+      title: "The hard part is curation, not tools",
+      body: "Asked what feels most unclear or intimidating, at least six students independently named the same thing in different words: choosing which projects to include, avoiding redundancy, knowing what to cut. Very few named software mechanics as the blocker.",
+      quotes: [
+        "“Choosing the ‘right’ projects and grouping projects in a way that they are not redundant.”",
+        "“Knowing what is most important to show for each project.”",
+        "“I feel like my portfolios are often very long and may even have too many projects.”",
+      ],
+    },
+    {
+      title: "Self-assessment runs harder than the evidence supports",
+      body: "Several students undersell work that, read on its own, sounds substantial — a pattern worth countering directly in one-on-ones rather than treating as a layout problem.",
+      quotes: [
+        "“It’s possible my portfolios have been poorly developed in the past — no one has ever taught how to make one, but I’ve made four at this point.”",
+        "“I honestly feel that I wasn’t able to refine my portfolio due to the number of credits I was taking to graduate for undergrad.”",
+      ],
+    },
+    {
+      title: "Job timelines are already driving the urgency",
+      body: "Asked what one outcome they hope to walk away with, a large share of students named a specific external deadline rather than a general skill: the spring career fair, an upcoming graduation date, or a full-time job search already underway. This is a class that mostly needs a finished, deployable document on a real clock, not an open-ended craft project.",
+      quotes: [
+        "“Have a polished portfolio I can share at next spring's job fair.”",
+        "“Produce a full time job application ready portfolio as I graduate in December.”",
+        "“I hope to refine my portfolio with guidance through the semester to be ready for applying to jobs by the end.”",
+      ],
+    },
+  ],
+};
+
+function SurveyBarChart({ data, total, note }) {
+  const max = Math.max(...data.map(d => d.count), 1);
+  return (
+    <div>
+      {note && (
+        <div style={{ fontSize: 10.5, color: T.textFaint, fontStyle: "italic", marginBottom: 10 }}>{note}</div>
+      )}
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {data.map((d, i) => (
+          <div key={i}>
+            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12, color: T.text, marginBottom: 4 }}>
+              <span>{d.label}</span>
+              <span style={{ color: T.textFaint, fontVariantNumeric: "tabular-nums", flexShrink: 0, marginLeft: 10 }}>{d.count}/{total}</span>
+            </div>
+            <div style={{ height: 7, background: T.bgAlt, borderRadius: 2 }}>
+              <div style={{
+                height: "100%", width: `${max ? (d.count / max) * 100 : 0}%`,
+                background: T.text, borderRadius: 2, transition: "width 0.4s ease",
+              }} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 /* ─── Interactive Checklist ─── */
 function InteractiveChecklist({ moduleId }) {
@@ -2258,6 +2420,8 @@ export default function PortfolioGuide() {
     view = "about";
   } else if (route === "#/resources") {
     view = "resources";
+  } else if (route === "#/survey-results") {
+    view = "survey-results";
   } else if (route === "#/exercise") {
     view = "exercise";
   } else if (route === "#/exercise2") {
@@ -2300,6 +2464,7 @@ export default function PortfolioGuide() {
     else if (view === "exercise2") title = `Exercise 02: Build Your Grid — ${base}`;
     else if (view === "about") title = `About — ${base}`;
     else if (view === "resources") title = `Resources — ${base}`;
+    else if (view === "survey-results") title = `Session 01 Survey Results — ${base}`;
     else if (view === "diagrams") title = `Diagrams — ${base}`;
     document.title = title;
   }, [route, view, activeModule, activeSession]);
@@ -2336,6 +2501,7 @@ export default function PortfolioGuide() {
     if (src.startsWith("#/modules")) return { hash: "#/modules", label: "All Modules" };
     if (src.startsWith("#/about")) return { hash: "#/about", label: "About" };
     if (src.startsWith("#/resources")) return { hash: "#/resources", label: "Resources" };
+    if (src.startsWith("#/survey-results")) return { hash: "#/survey-results", label: "Survey Results" };
     return { hash: "#/", label: "Sessions" };
   };
 
@@ -2684,6 +2850,77 @@ export default function PortfolioGuide() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+        </main>
+
+        <footer style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", fontSize: 9, color: T.textFaint, fontFamily: T.sans, letterSpacing: "0.04em" }}>
+          <span>Kent State University · CAED</span>
+          <a href="https://thresholdarch.com" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: "none" }}>thresholdarch.com</a>
+        </footer>
+      </div>
+    );
+  }
+
+  // ─── Survey Results ───
+  if (view === "survey-results") {
+    const sr = SURVEY_RESULTS;
+    return (
+      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+          <button onClick={handleBack} style={{
+            background: "none", border: "none", fontSize: 10, color: T.textMuted,
+            cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.06em", textTransform: "uppercase", padding: 0,
+          }}>← {backTarget.label}</button>
+          <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.04em" }}>Survey Results</div>
+        </header>
+
+        <main id="main-content" style={{
+          flex: 1, display: "flex", flexDirection: "column", alignItems: "center",
+          padding: "0 clamp(16px, 6vw, 40px) 60px", opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
+        }}>
+          <div style={{ width: "100%", maxWidth: 620 }}>
+            <h1 style={{ fontSize: 16, fontWeight: 500, color: T.text, margin: "0 0 8px", letterSpacing: "0.01em" }}>
+              Session 01 Survey Results
+            </h1>
+            <p style={{ fontSize: 11, color: T.textLight, margin: "0 0 8px", letterSpacing: "0.02em" }}>
+              Portfolio Skills &amp; Understanding Survey — {sr.respondentNote}
+            </p>
+            <div style={{ width: 24, height: 1, background: T.text, margin: "12px 0 20px" }} />
+            <p style={{ fontSize: 11, color: T.textMuted, fontStyle: "italic", lineHeight: 1.6, marginBottom: 34 }}>
+              {sr.caveat}
+            </p>
+
+            {sr.bar.map((section, si) => (
+              <div key={si} style={{ marginBottom: 30, paddingBottom: 30, borderBottom: si < sr.bar.length - 1 ? `1px solid ${T.border}` : "none" }}>
+                <h2 style={{ fontSize: 13, fontWeight: 700, color: T.text, margin: "0 0 4px" }}>{section.title}</h2>
+                <p style={{ fontSize: 11.5, color: T.textMuted, margin: "0 0 14px", lineHeight: 1.5 }}>{section.question}</p>
+                <SurveyBarChart data={section.data} total={section.total} note={section.note} />
+              </div>
+            ))}
+
+            <div style={{ marginBottom: 40, padding: 18, borderRadius: 6, border: `1px solid ${T.border}`, background: T.bgAlt }}>
+              <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, fontWeight: 500, marginBottom: 8 }}>
+                Takeaway
+              </div>
+              <p style={{ fontSize: 12.5, color: T.text, lineHeight: 1.65, margin: 0 }}>{sr.takeaway}</p>
+            </div>
+
+            <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, fontWeight: 500, marginBottom: 16 }}>
+              What Students Said
+            </div>
+            {sr.themes.map((theme, ti) => (
+              <div key={ti} style={{ marginBottom: 26 }}>
+                <h3 style={{ fontSize: 13, fontWeight: 700, color: T.text, margin: "0 0 6px" }}>{theme.title}</h3>
+                <p style={{ fontSize: 12.5, color: T.textMid, lineHeight: 1.65, margin: "0 0 12px" }}>{theme.body}</p>
+                {theme.quotes.map((q, qi) => (
+                  <p key={qi} style={{
+                    fontSize: 12, color: T.textMuted, fontStyle: "italic", lineHeight: 1.6,
+                    margin: "0 0 8px", paddingLeft: 14, borderLeft: `2px solid ${T.border}`,
+                  }}>{q}</p>
+                ))}
               </div>
             ))}
           </div>
