@@ -1404,7 +1404,8 @@ const SESSIONS = [
       },
       "Keep each note to a sentence: a precise sentence beats a paragraph of hedging. Leave the last 5 minutes of class to finish up and submit, not to keep taking notes.",
     ],
-    homework: "Create a Class 2 folder inside your individual folder in the shared Class Google Drive, the same way you created Class 1 last week, and submit your completed Precedent Review Notes (the filled-in template, all 11 projects) there by 8:00 PM Thursday.",
+    dueBy: "8:00 PM ET, Thursday, September 3",
+    homework: "Create a Class 2 folder inside your individual folder in the shared Class Google Drive, the same way you created Class 1 last week, and submit your completed Precedent Review Notes there (the filled-in template, all 11 projects).",
     reading: {
       title: "Why We Look Before We Build",
       estMinutes: 7,
@@ -1847,6 +1848,11 @@ function SessionDetail({ session }) {
 
         <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title="Assignment" defaultOpen={s.sectionsDefaultOpen}>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {s.dueBy && (
+              <div style={{ fontSize: 13, color: T.text, lineHeight: 1.5, fontWeight: 600 }}>
+                Due: {s.dueBy}
+              </div>
+            )}
             {s.dueToday && (
               <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
                 <strong style={{ color: T.text }}>Due Today: </strong>{s.dueToday}
