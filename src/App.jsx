@@ -1094,6 +1094,7 @@ const SESSIONS = [
     tags: ["Reading", "Activity", "Assignment"],
     noLecture: true,
     noDiscussion: true,
+    activityMinutes: 55,
     warmUp: {
       links: [
         { label: "Read first: “Why We Look Before We Build”", url: "#/reading/2" },
@@ -1110,10 +1111,10 @@ const SESSIONS = [
       url: `${import.meta.env.BASE_URL}templates/precedent-review-notes-template.docx`,
     },
     activityItems: [
-      "10 years × 2 projects = 20 projects total by the end of class. Keep each note to a sentence: a precise sentence beats a paragraph of hedging.",
+      "10 years × 2 projects = 20 projects total. Keep each note to a sentence: a precise sentence beats a paragraph of hedging. Leave the last 5 minutes of class to finish up and submit, not to keep taking notes.",
     ],
     dueToday: "Resume + Portfolio Upload (assigned Session 01)",
-    homework: "Submit your completed Precedent Review Notes (the filled-in template, all 20 projects) to your Class 2 folder in the shared Class Google Drive before you log off tonight.",
+    homework: "Submit your completed Precedent Review Notes (the filled-in template, all 20 projects) to your Class 2 folder in the shared Class Google Drive by 8:00 PM Thursday.",
     reading: {
       title: "Why We Look Before We Build",
       estMinutes: 7,
@@ -1448,7 +1449,7 @@ function SessionDetail({ session }) {
 
       <div style={{ borderTop: `1px solid ${T.border}`, marginBottom: 26 }}>
         {s.warmUp && (
-          <CollapsibleSection num={numWarmUp} minutes={20} title="Warm Up">
+          <CollapsibleSection num={numWarmUp} minutes={s.warmUpMinutes || 20} title="Warm Up">
             {s.warmUp.links && s.warmUp.links.map((l, i) => (
               <div key={`wl${i}`}><LinkPill href={l.url} label={l.label} color={l.color} /></div>
             ))}
@@ -1457,7 +1458,7 @@ function SessionDetail({ session }) {
         )}
 
         {!s.noLecture && (
-          <CollapsibleSection num={numLectures} minutes={20} title="Lectures">
+          <CollapsibleSection num={numLectures} minutes={s.lecturesMinutes || 20} title="Lectures">
             {s.lectures && s.lectures.fileUrl && (
               <div><LinkPill href={s.lectures.fileUrl} label={s.lectures.fileLabel || "Lecture Slides"} /></div>
             )}
@@ -1466,7 +1467,7 @@ function SessionDetail({ session }) {
         )}
 
         {s.activityIntro && (
-          <CollapsibleSection num={numActivity} minutes={20} title="Activity">
+          <CollapsibleSection num={numActivity} minutes={s.activityMinutes || 20} title="Activity">
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
               {s.noDiscussion ? "Individual" : "Individual — review in advance of group discussion"}
             </div>
@@ -1485,7 +1486,7 @@ function SessionDetail({ session }) {
         )}
 
         {!s.noDiscussion && (
-          <CollapsibleSection num={numDiscussion} minutes={15} title="Discussion">
+          <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title="Discussion">
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
               {s.soloWork
                 ? "Independent — reflect and write on your own"
@@ -1515,7 +1516,7 @@ function SessionDetail({ session }) {
           </CollapsibleSection>
         )}
 
-        <CollapsibleSection num={numAssignment} minutes={5} title="Assignment">
+        <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title="Assignment">
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
               <strong style={{ color: T.text }}>Due Today: </strong>{s.dueToday}
