@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Fragment } from "react";
 
 /* ─── Design tokens ─── */
 const T = {
@@ -192,6 +192,124 @@ function DiagramWeakVsStrong() {
       <text x="315" y="49" textAnchor="middle" fontSize="7" fontFamily={T.serif} fontStyle="italic" fill={T.textMid}>single aperture can structure an</text>
       <text x="315" y="60" textAnchor="middle" fontSize="7" fontFamily={T.serif} fontStyle="italic" fill={T.textMid}>entire domestic sequence."</text>
       <text x="315" y="72" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.accent}>Specific, testable, declares position</text>
+    </svg>
+  );
+}
+
+/* ─── Precedent-review category diagrams (Session 02 reading) ─── */
+
+function DiagramNarrativeArc() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+      <text x="105" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textFaint} letterSpacing="0.08em">JUST IMAGES</text>
+      <text x="315" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.text} letterSpacing="0.08em">AN ARGUMENT</text>
+      {[0, 1, 2, 3].map((i) => (
+        <rect key={i} x={10 + i * 47} y="30" width="40" height="40" rx="2" fill="#fff" stroke={T.border} strokeWidth="1" />
+      ))}
+      <text x="105" y="82" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>No distinction between spreads</text>
+      <rect x="220" y="30" width="52" height="40" rx="2" fill="#fff" stroke={T.text} strokeWidth="1" />
+      <text x="246" y="53" textAnchor="middle" fontSize="6" fontFamily={T.sans} fontWeight="600" fill={T.text}>Hook</text>
+      <text x="288" y="53" textAnchor="middle" fontSize="10" fill={T.textFaint}>→</text>
+      <rect x="302" y="30" width="52" height="40" rx="2" fill="#fff" stroke={T.text} strokeWidth="1" />
+      <text x="328" y="53" textAnchor="middle" fontSize="6" fontFamily={T.sans} fontWeight="600" fill={T.text}>Turn</text>
+      <text x="368" y="53" textAnchor="middle" fontSize="10" fill={T.textFaint}>→</text>
+      <rect x="382" y="30" width="30" height="40" rx="2" fill={T.text} />
+      <text x="397" y="47" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fontWeight="600" fill="#fff">Reso-</text>
+      <text x="397" y="56" textAnchor="middle" fontSize="5.5" fontFamily={T.sans} fontWeight="600" fill="#fff">lution</text>
+      <text x="315" y="82" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Three beats a reader can follow</text>
+    </svg>
+  );
+}
+
+function DiagramCurationCuts() {
+  const cells = Array.from({ length: 9 });
+  return (
+    <svg aria-hidden="true" viewBox="0 0 420 110" style={{ width: "100%", height: "auto" }}>
+      <text x="105" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textFaint} letterSpacing="0.08em">EVERYTHING MADE</text>
+      <text x="315" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.text} letterSpacing="0.08em">WHAT'S SHOWN</text>
+      {cells.map((_, i) => {
+        const cx = 10 + (i % 3) * 34;
+        const cy = 26 + Math.floor(i / 3) * 30;
+        return <rect key={i} x={cx} y={cy} width="26" height="24" rx="2" fill={T.bgAlt} stroke={T.border} strokeWidth="1" />;
+      })}
+      <text x="105" y="96" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>No editorial decision visible</text>
+      {cells.map((_, i) => {
+        const cx = 220 + (i % 3) * 34;
+        const cy = 26 + Math.floor(i / 3) * 30;
+        const kept = [1, 4, 7].includes(i);
+        return kept ? (
+          <rect key={i} x={cx} y={cy} width="26" height="24" rx="2" fill={T.text} />
+        ) : (
+          <g key={i}>
+            <rect x={cx} y={cy} width="26" height="24" rx="2" fill="#fff" stroke={T.border} strokeWidth="0.75" strokeDasharray="2,2" />
+            <line x1={cx + 3} y1={cy + 3} x2={cx + 23} y2={cy + 21} stroke={T.textFaint} strokeWidth="0.75" />
+          </g>
+        );
+      })}
+      <text x="315" y="96" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Three kept, six cut on purpose</text>
+    </svg>
+  );
+}
+
+function DiagramCraftOneVoice() {
+  const strokes = ["3,2", "0", "1,3", "0"];
+  const weights = [0.5, 1.5, 0.75, 2];
+  return (
+    <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+      <text x="105" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textFaint} letterSpacing="0.08em">MIXED VOICES</text>
+      <text x="315" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.text} letterSpacing="0.08em">ONE VOICE</text>
+      {[0, 1, 2, 3].map((i) => (
+        <rect key={i} x={10 + i * 47} y="26" width="40" height="44" rx="2" fill="#fff"
+          stroke={T.textMid} strokeWidth={weights[i]} strokeDasharray={strokes[i]} />
+      ))}
+      <text x="105" y="86" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Line weight and style shift project to project</text>
+      {[0, 1, 2, 3].map((i) => (
+        <rect key={i} x={220 + i * 47} y="26" width="40" height="44" rx="2" fill="#fff" stroke={T.text} strokeWidth="1" />
+      ))}
+      <text x="315" y="86" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Same rendering rule, held throughout</text>
+    </svg>
+  );
+}
+
+function DiagramPacingRhythm() {
+  const flat = [30, 30, 30, 30, 30, 30];
+  const rhythm = [46, 16, 40, 20, 46, 16];
+  return (
+    <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
+      <text x="105" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textFaint} letterSpacing="0.08em">FLAT</text>
+      <text x="315" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.text} letterSpacing="0.08em">DENSE / OPEN</text>
+      {flat.map((h, i) => (
+        <rect key={i} x={12 + i * 30} y={70 - h} width="22" height={h} fill={T.bgAlt} stroke={T.border} strokeWidth="1" />
+      ))}
+      <line x1="10" y1="74" x2="190" y2="74" stroke={T.border} strokeWidth="1" />
+      <text x="105" y="88" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Every spread carries the same weight</text>
+      {rhythm.map((h, i) => (
+        <rect key={i} x={222 + i * 30} y={70 - h} width="22" height={h} fill={i % 2 === 0 ? T.text : "#fff"} stroke={T.text} strokeWidth="1" />
+      ))}
+      <line x1="220" y1="74" x2="400" y2="74" stroke={T.text} strokeWidth="1" />
+      <text x="315" y="88" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Compresses, then releases, on purpose</text>
+    </svg>
+  );
+}
+
+function DiagramHierarchyReadOrder() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 420 110" style={{ width: "100%", height: "auto" }}>
+      <text x="105" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textFaint} letterSpacing="0.08em">NO HIERARCHY</text>
+      <text x="315" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.text} letterSpacing="0.08em">CLEAR HIERARCHY</text>
+      <rect x="10" y="22" width="190" height="76" rx="2" fill="#fff" stroke={T.border} strokeWidth="1" />
+      {[[16, 28, 55, 30], [76, 28, 55, 30], [16, 62, 55, 30], [76, 62, 55, 30], [136, 28, 58, 64]].map(([x, y, w, h], i) => (
+        <rect key={i} x={x} y={y} width={w} height={h} fill={T.bgAlt} stroke={T.border} strokeWidth="0.75" />
+      ))}
+      <text x="105" y="106" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Everything reads at once, or not at all</text>
+      <rect x="220" y="22" width="190" height="76" rx="2" fill="#fff" stroke={T.text} strokeWidth="1" />
+      <rect x="226" y="28" width="118" height="64" fill={T.text} />
+      <circle cx="236" cy="38" r="7" fill="#fff" /><text x="236" y="41" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="700" fill={T.text}>1</text>
+      <rect x="350" y="28" width="54" height="30" fill={T.bgAlt} stroke={T.border} strokeWidth="0.75" />
+      <circle cx="358" cy="34" r="6" fill={T.text} /><text x="358" y="36.5" textAnchor="middle" fontSize="6" fontFamily={T.sans} fontWeight="700" fill="#fff">2</text>
+      <rect x="350" y="62" width="54" height="30" fill={T.bgAlt} stroke={T.border} strokeWidth="0.75" />
+      <circle cx="358" cy="68" r="6" fill={T.textMid} /><text x="358" y="70.5" textAnchor="middle" fontSize="6" fontFamily={T.sans} fontWeight="700" fill="#fff">3</text>
+      <text x="315" y="106" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Scale and position set the order</text>
     </svg>
   );
 }
@@ -1100,30 +1218,64 @@ const SESSIONS = [
         { label: "Read first: “Why We Look Before We Build”", url: "#/reading/2" },
       ],
       items: [
-        "Read the linked brief above before you touch PresidentsMedals.com. About 10 to 15 minutes. It explains what tonight is about and walks through the five categories you'll use to take notes on every project.",
+        "Read the linked brief above before you touch PresidentsMedals.com. About 10 to 15 minutes. It explains what tonight is about, and walks through the five categories, with a diagram for each, that you'll use to take notes on every project.",
         "Download the note-taking template under Activity below and fill in your name before you start browsing.",
       ],
     },
-    activityIntro: "Browse the President's Medals project winners for 2005 through 2014, using the year links in your template. Each year holds roughly ten projects; look at the Project Winners only, and skip the Dissertation Winners section on each year's page, that's written thesis work, not the exercise. For each year, skim quickly and choose the 2 projects that resonate most: relevant to your own project, or something about the story, visuals, or representation that compels you. Then go back through your choices and take real notes on each one, using the five categories from tonight's reading. Paste each project's own link into your template as you go.",
+    activityIntro: "Work through the President's Medals archive for 2010 through 2020: eleven years, one project chosen per year. The steps below cover how to find each year, what to skip, and how to choose.",
     templateFile: {
-      brief: "This is your note-taking template: one table per year, 2005 through 2014, with a column for each project you choose and a row for each of the five categories, plus a row for the project's link and one for why you picked it. Download it, fill in your name, and work directly in it as you browse.",
+      brief: "This is your note-taking template: one table per year, 2010 through 2020, with a row for the project's link, one for each of the five categories, and one for why you picked it. Download it, fill in your name, and work directly in it as you browse.",
       label: "Download the Note-Taking Template (.docx)",
       url: `${import.meta.env.BASE_URL}templates/precedent-review-notes-template.docx`,
     },
     activityItems: [
-      "10 years × 2 projects = 20 projects total. Keep each note to a sentence: a precise sentence beats a paragraph of hedging. Leave the last 5 minutes of class to finish up and submit, not to keep taking notes.",
+      {
+        text: "**Find each year.** Click Winners in the top menu of PresidentsMedals.com. A dropdown lists every year the awards have run; open 2010 first, then work forward one year at a time through 2020.",
+      },
+      {
+        text: "**Architects' projects only.** Each year's page has two sections: Project Winners, then further down, Dissertation Winners. Stop at Project Winners. Dissertation Winners are written theses, not visual work, and are not part of this exercise.",
+      },
+      {
+        text: "**How to choose your one project for the year.** Scan all roughly ten Project Winners once, fast, just looking at the images. Don't read yet.",
+        children: [
+          "Notice which project you keep coming back to on that first pass.",
+          "Ask: does it relate to my own project, does it inspire me, or does it show a way of representing work I could use?",
+          "If more than one qualifies, pick the one you can already say the most about.",
+          "Choose it and move on. Don't keep second-guessing once you've picked.",
+        ],
+      },
+      {
+        text: "Copy the project's own link into your template, then take notes using the five categories from tonight's reading. Repeat for each of the eleven years.",
+      },
+      "Keep each note to a sentence: a precise sentence beats a paragraph of hedging. Leave the last 5 minutes of class to finish up and submit, not to keep taking notes.",
     ],
-    homework: "Submit your completed Precedent Review Notes (the filled-in template, all 20 projects) to your Class 2 folder in the shared Class Google Drive by 8:00 PM Thursday.",
+    homework: "Submit your completed Precedent Review Notes (the filled-in template, all 11 projects) to your Class 2 folder in the shared Class Google Drive by 8:00 PM Thursday.",
     reading: {
       title: "Why We Look Before We Build",
-      estMinutes: 7,
+      estMinutes: 8,
       paragraphs: [
-        "Every studio culture already runs on precedent. Before a design problem is solved, it is researched: a stack of reference images gets pinned to the wall, a folder of comparable projects gets assembled, and a student learns to point at someone else's building and say, precisely, what is working in it and what is not. Portfolio-making deserves the same discipline and rarely gets it. Students tend to move straight from finishing a project to laying out its pages, without first spending real time studying how other designers have solved the same problem: how to sequence images, how to build an argument across a spread, how to make a project that took six months read clearly in six pages. Tonight's session exists to close that gap.",
-        "The purpose of tonight is not to find a portfolio to imitate. Imitation produces a worse copy of someone else's decisions. The purpose is to build a specific kind of judgment: the ability to look at a spread and say, with precision, what makes it work, rather than simply liking it or not. That judgment does not arrive on its own. It is built the same way a critic's eye is built, or a juror's: by looking at a large number of examples and being forced, each time, to name the mechanism behind the effect. A student who has reviewed twenty portfolios closely and taken real notes on each one has a working vocabulary for critique that a student who has skimmed zero portfolios simply does not have, no matter how strong the underlying project work is.",
-        "Skip this step and a particular failure mode becomes likely. A designer who has only ever evaluated their own work tends to mistake finished for good. Every choice on the page, however arbitrary, starts to feel inevitable, because it is the only version that has ever existed. Reviewing other people's portfolios interrupts that. It shows a designer a dozen different ways a project statement can open, which makes it possible to ask honestly whether their own opening is the strongest available option or simply the first one they wrote. This is the intellectual muscle a portfolio class is actually built to train: not software fluency, which is trainable in a weekend, but the discernment to tell strong work from merely completed work, in other people's projects first and eventually in your own.",
-        "Tonight's review runs through the President's Medals archive, 2005 through 2014: roughly ten project winners a year. Skim quickly, and skip the Dissertation Winners listed on each year's page; those are written theses, not visual work, and are not the exercise. For each year, choose the two projects that resonate most, whether that's relevance to your own project, or something about the story, visuals, or representation that compels you. That is twenty projects by the end of the night, which sounds like more than it is once you stop close-reading and start comparing.",
-        "Take notes on each chosen project through five specific lenses. **Storytelling and narrative arc** asks whether the project reads as an argument, not a list of finished images: where is the hook, and can you find a beginning, a turning point, and a resolution. **Image selection and curation** asks what they chose to show and, just as tellingly, what they left out: the ratio of process to final images, and whether each image functions as evidence or as decoration. **Visual craft and consistency** covers rendering style, line weight, palette, and polish, and whether the whole project reads as one hand, one voice. **Sequencing and pacing** is storyboard logic: how one spread leads into the next, where the project is dense and where it breathes, whether you could follow the order with the text covered up. **Structure and hierarchy** is grid sense before you know the word for it: what you're meant to see first, second, and third on a page, and whether that logic holds from spread to spread.",
+        "Every studio culture already runs on precedent. Before a design problem is solved, it is researched: a stack of reference images gets pinned to the wall, a folder of comparable projects gets assembled, and a student learns to point at someone else's building and say, precisely, what is working in it and what is not. Portfolio-making deserves the same discipline and rarely gets it. Students tend to move straight from finishing a project to laying out its pages, without first spending sustained time studying how other designers have solved the same problem: how to sequence images, how to build an argument across a spread, how to make a project that took six months read clearly in six pages. Tonight's session exists to close that gap.",
+        "The purpose of tonight is not to find a portfolio to imitate. Imitation produces a worse copy of someone else's decisions. The purpose is to build a specific kind of judgment: the ability to look at a spread and say, with precision, what makes it work, rather than simply liking it or not. That judgment does not arrive on its own. It is built the same way a critic's eye is built, or a juror's: by looking at a number of examples and being forced, each time, to name the mechanism behind the effect. A student who has reviewed eleven portfolios closely and taken working notes on each one has a working vocabulary for critique that a student who has skimmed zero portfolios simply does not have, no matter how strong the underlying project work is.",
+        "Skip this step and a particular failure mode becomes likely. A designer who has only ever evaluated their own work tends to mistake finished for good. Every choice on the page, however arbitrary, starts to feel inevitable, because it is the only version that has ever existed. Reviewing other people's portfolios interrupts that. It shows a designer several different ways a project statement can open, which makes it possible to ask whether their own opening is the strongest available option, or simply the first one they wrote. This is the intellectual muscle a portfolio class is actually built to train: not software fluency, which is trainable in a weekend, but the discernment to tell strong work from merely completed work, in other people's projects first and eventually in your own.",
+        "Tonight's review runs through the President's Medals archive, 2010 through 2020: roughly ten project winners a year, one chosen per year. Click Winners in the top menu, find each year in the dropdown, and look at the Project Winners only; skip the Dissertation Winners further down each year's page, that section is written thesis work, not the exercise. Full step-by-step guidance on finding each year and choosing your one project is under Activity, below. The short version: scan fast, notice what pulls your eye back, and pick the project that is relevant to your own work, that inspires you, or that shows a way of representing work you could use.",
+        "Take notes on each chosen project through five specific lenses.",
+        "**Storytelling and narrative arc** asks whether the project reads as an argument, not a list of finished images: where is the hook, and can you find a beginning, a turning point, and a resolution.",
+        "**Image selection and curation** asks what the designer chose to show and, just as tellingly, what they left out: the ratio of process to final images, and whether each image functions as evidence or as decoration.",
+        "**Visual craft and consistency** covers rendering style, line weight, palette, and polish, and whether the whole project reads as one hand, one voice.",
+        "**Sequencing and pacing** is storyboard logic: how one spread leads into the next, where the project is dense and where it breathes, whether you could follow the order with the text covered up.",
+        "**Structure and hierarchy** is grid sense before you know the word for it: what you're meant to see first, second, and third on a page, and whether that logic holds from spread to spread.",
         "Write your notes as you go, not afterward from memory. The act of writing a precise sentence about why a spread works is what converts a vague impression into something you can actually use later, at your own desk, when you are the one deciding what to cut and what to keep. Treat what you build tonight as a reference library, not a one-time assignment: the projects you study will still be useful in October, when you are laying out your own grid, choosing a typeface, or deciding what belongs on your cover. Next session returns to a normal class meeting and covers narrative structure directly; the eye you are training tonight is exactly what it will draw on.",
+      ],
+      figures: [
+        { after: 5, component: DiagramNarrativeArc, caption: "A sequence of images versus an argument. The hook draws attention, the turn complicates it, and the resolution answers what the turn raised. Ask whether you could summarize the project in those three beats." },
+        { after: 6, component: DiagramCurationCuts, caption: "Every project produced far more material than it shows. Curation is the visible edit: what stayed, and what a designer was willing to cut once it stopped earning its place." },
+        { after: 7, component: DiagramCraftOneVoice, caption: "Consistency is a rule applied without exception, not a style. A project that mixes rendering languages spread to spread reads as unfinished even when each individual image is strong." },
+        { after: 8, component: DiagramPacingRhythm, caption: "Pacing is deliberate variation, not decoration. A dense spread earns the open one that follows it; back-to-back density exhausts a reader, and back-to-back openness reads as empty." },
+        { after: 9, component: DiagramHierarchyReadOrder, caption: "Hierarchy is what a reader sees first, second, and third, set by scale and position before a single word is read. Without it, every element competes for the same attention and none of it wins." },
+      ],
+      references: [
+        "The President's Medals Student Awards. Royal Institute of British Architects (RIBA). [presidentsmedals.com](https://www.presidentsmedals.com/)",
+        "Eisenman, S. (2008). Building design portfolios: Innovative concepts for presenting your work. Rockport Publishers.",
       ],
     },
   },
@@ -3041,10 +3193,36 @@ export default function PortfolioGuide() {
               Seth Looper · Session {String(activeSession.num).padStart(2, "0")}, {activeSession.title}
             </div>
             {r.paragraphs.map((p, i) => (
-              <p key={i} style={{ fontSize: 15, lineHeight: 1.85, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em" }}>
-                {renderText(p)}
-              </p>
+              <Fragment key={i}>
+                <p style={{ fontSize: 15, lineHeight: 1.85, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em" }}>
+                  {renderText(p)}
+                </p>
+                {r.figures && r.figures.filter((f) => f.after === i).map((f, fi) => (
+                  <figure key={fi} style={{ margin: "8px 0 28px" }}>
+                    <div style={{ border: `1px solid ${T.border}`, borderRadius: 4, padding: "16px 18px" }}>
+                      <f.component />
+                    </div>
+                    <figcaption style={{ fontSize: 11.5, color: T.textMuted, fontStyle: "italic", lineHeight: 1.6, marginTop: 8 }}>
+                      {renderText(f.caption)}
+                    </figcaption>
+                  </figure>
+                ))}
+              </Fragment>
             ))}
+            {r.references && r.references.length > 0 && (
+              <div style={{ marginTop: 8, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
+                <div style={{ fontSize: 10, color: T.textFaint, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 10 }}>
+                  References
+                </div>
+                <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                  {r.references.map((ref, i) => (
+                    <li key={i} style={{ fontSize: 11.5, color: T.textMuted, lineHeight: 1.7, marginBottom: 6 }}>
+                      {renderText(ref)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div style={{ marginTop: 40, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
               <a href={`#/session/${activeSession.num}`} style={{ fontSize: 12, color: T.textMuted, letterSpacing: "0.02em" }}>
                 ← Back to Session {String(activeSession.num).padStart(2, "0")}
