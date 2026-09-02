@@ -228,13 +228,13 @@ function DiagramCurationCuts() {
       <text x="105" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textFaint} letterSpacing="0.08em">EVERYTHING MADE</text>
       <text x="315" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.text} letterSpacing="0.08em">WHAT'S SHOWN</text>
       {cells.map((_, i) => {
-        const cx = 10 + (i % 3) * 34;
+        const cx = 58 + (i % 3) * 34;
         const cy = 26 + Math.floor(i / 3) * 30;
         return <rect key={i} x={cx} y={cy} width="26" height="24" rx="2" fill={T.bgAlt} stroke={T.border} strokeWidth="1" />;
       })}
       <text x="105" y="120" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>No editorial decision visible</text>
       {cells.map((_, i) => {
-        const cx = 220 + (i % 3) * 34;
+        const cx = 268 + (i % 3) * 34;
         const cy = 26 + Math.floor(i / 3) * 30;
         const kept = [1, 4, 7].includes(i);
         return kept ? (
