@@ -1092,7 +1092,6 @@ const SESSIONS = [
     status: "proposed", date: "Thu, Sep 3, 2026",
     tagline: "Judgment comes before execution. Spend tonight building the eye that will grade your own work all semester.",
     tags: ["Lecture", "Activity", "Assignment"],
-    formatNote: "No live class this week. Seth is unavailable due to a family matter. This is a self-directed working session: complete it during your normal class time (Thursdays, 6:35–7:55 PM) and submit your notes before you log off.",
     soloWork: true,
     warmUp: {
       links: [
@@ -1532,7 +1531,7 @@ function SessionDetail({ session }) {
         <CollapsibleSection num={numDiscussion} minutes={15} title="Discussion">
           <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
             {s.soloWork
-              ? "Independent — no live class this week"
+              ? "Independent — reflect and write on your own"
               : `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
           </div>
           {s.discussionIntro && (
