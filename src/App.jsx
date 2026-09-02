@@ -962,6 +962,36 @@ function LinkPill({ href, label, color = T.text }) {
   );
 }
 
+function BulletList({ items }) {
+  if (!items || items.length === 0) return null;
+  return (
+    <ul style={{ listStyle: "none", margin: "4px 0 0" }}>
+      {items.map((it, i) => {
+        const text = typeof it === "string" ? it : it.text;
+        const children = typeof it === "string" ? null : it.children;
+        return (
+          <li key={i}>
+            <div style={{ display: "flex", gap: 10, fontSize: 12.5, color: T.text, lineHeight: 1.6, marginBottom: 6 }}>
+              <span style={{ color: T.textFaint, flexShrink: 0 }}>–</span>
+              <span>{renderText(text)}</span>
+            </div>
+            {children && children.length > 0 && (
+              <ul style={{ listStyle: "none", margin: "0 0 6px", paddingLeft: 20 }}>
+                {children.map((c, ci) => (
+                  <li key={ci} style={{ display: "flex", gap: 8, fontSize: 12, color: T.textMid, lineHeight: 1.6, marginBottom: 4 }}>
+                    <span style={{ color: T.textFaint, flexShrink: 0 }}>·</span>
+                    <span>{renderText(c)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 function CollapsibleSection({ num, minutes, title, defaultOpen, children }) {
   const [open, setOpen] = useState(!!defaultOpen);
   return (
@@ -989,7 +1019,7 @@ function CollapsibleSection({ num, minutes, title, defaultOpen, children }) {
   );
 }
 
-/* ─── Ten-Session Schedule (Fall 2026) ───
+/* ─── Eleven-Session Schedule (Fall 2026) ───
    Two cross-listed cohorts meet in the same room at the same time:
    ARCH-Portfolio 44611/002 (undergraduate) and ARCH-ST:Portfolio 56995/006 (graduate).
    Undergrad students typically don't yet have a fully resolved studio project to draw
@@ -1057,9 +1087,103 @@ const SESSIONS = [
     readingAssignment: "Read [“Every Designer Has a Story”](#/reading/1) before Session 02.",
   },
   {
-    num: 2, title: "Designing Portfolio Narratives: Organizing Visual Content as a System",
+    num: 2, title: "Precedent Review: Training Your Eye on PresidentsMedals.com",
+    moduleRefs: [],
+    status: "proposed", date: "Thu, Sep 3, 2026",
+    tagline: "Judgment comes before execution. Spend tonight building the eye that will grade your own work all semester.",
+    tags: ["Lecture", "Activity", "Assignment"],
+    formatNote: "No live class this week. Seth is unavailable due to a family matter. This is a self-directed working session: complete it during your normal class time (Thursdays, 6:35–7:55 PM) and submit your notes before you log off.",
+    soloWork: true,
+    warmUp: {
+      links: [
+        { label: "PresidentsMedals.com — RIBA President's Medals Student Awards Archive", url: "https://www.presidentsmedals.com/" },
+        { label: "Read first: “Why We Look Before We Build”", url: "#/reading/2" },
+      ],
+      items: [
+        "Read the linked brief above before you start. About 5 minutes. It explains why tonight is spent studying other people's work instead of building your own.",
+        "Keep the five categories under Lectures open in another tab while you browse. They're what turns skimming into a usable exercise.",
+      ],
+    },
+    lectures: {
+      items: [
+        {
+          text: "**1. Storytelling & Narrative Arc** — does the project read as an argument, not a list of finished images?",
+          children: [
+            "Where is the hook: the image or line that makes you want to keep looking?",
+            "Can you find a beginning, a turning point, and a resolution?",
+          ],
+        },
+        {
+          text: "**2. Image Selection & Curation** — what did they choose to show, and what did they leave out?",
+          children: [
+            "What's the ratio of process images to final images?",
+            "Do the images function as evidence for a claim, or as decoration?",
+          ],
+        },
+        {
+          text: "**3. Visual Craft & Consistency** — rendering style, line weight, palette, and polish.",
+          children: [
+            "Does the whole project read as one hand, one voice?",
+            "Where does the craft level rise or fall across the set?",
+          ],
+        },
+        {
+          text: "**4. Sequencing & Pacing (Storyboard Logic)** — how one spread leads into the next.",
+          children: [
+            "Where is the project dense (information-heavy), and where does it breathe (open, spare)?",
+            "Could you follow the order with the text covered up?",
+          ],
+        },
+        {
+          text: "**5. Structure & Hierarchy (Grid Sense)** — what you're meant to see first, second, and third on a page.",
+          children: [
+            "Is there a consistent underlying logic to margins and alignment, or does each spread feel like a new decision?",
+            "What's the biggest thing on the page, and does it deserve to be?",
+          ],
+        },
+      ],
+    },
+    activityIntro: "Spend the remaining class time in PresidentsMedals.com. Review 6 to 8 projects: skim, don't close-read. About 6 minutes each is enough to notice real patterns without stalling on any one project. Choose projects that differ from each other: different building types, different years, at least one that looks nothing like the kind of architecture you make.",
+    activityLinks: [
+      { label: "PresidentsMedals.com", url: "https://www.presidentsmedals.com/" },
+    ],
+    activityItems: [
+      {
+        text: "**Note template** — for each project, write one short block covering:",
+        children: [
+          "Project name, school (if listed), and the direct link.",
+          "Storytelling: one line naming the hook and the arc.",
+          "Curation: one line on what's shown, and what's conspicuously missing.",
+          "Craft & consistency: one line on rendering style, and whether it holds together as one voice.",
+          "Sequencing: one line on how the spreads lead into each other.",
+          "Structure & hierarchy: one line on what reads first, second, third.",
+          "Steal / avoid: one thing you'd borrow, one thing you would not repeat.",
+        ],
+      },
+      "Repeat for 6–8 projects. Keep each block short: a precise sentence beats a paragraph of hedging.",
+    ],
+    discussionIntro: "When you finish your last project, stop and write one synthesis paragraph: not per-project notes, but the patterns that showed up across everything you looked at tonight.",
+    breakout: {
+      shared: "Name three things you noticed repeating across multiple projects, good or bad, and one specific change you will make to your own portfolio because of something you saw tonight.",
+    },
+    dueToday: "Resume + Portfolio Upload (assigned Session 01)",
+    homework: "Submit your Precedent Review Notes, 6–8 projects, one document, to your Class 2 folder in the shared Class Google Drive before you log off tonight.",
+    reading: {
+      title: "Why We Look Before We Build",
+      estMinutes: 4,
+      paragraphs: [
+        "Every studio culture already runs on precedent. Before a design problem is solved, it is researched: a stack of reference images gets pinned to the wall, a folder of comparable projects gets assembled, and a student learns to point at someone else's building and say, precisely, what is working in it and what is not. Portfolio-making deserves the same discipline and rarely gets it. Students tend to move straight from finishing a project to laying out its pages, without first spending real time studying how other designers have solved the same problem: how to sequence images, how to build an argument across a spread, how to make a project that took six months read clearly in six pages. Tonight's session exists to close that gap.",
+        "The purpose of tonight is not to find a portfolio to imitate. Imitation produces a worse copy of someone else's decisions. The purpose is to build a specific kind of judgment: the ability to look at a spread and say, with precision, what makes it work, rather than simply liking it or not. That judgment does not arrive on its own. It is built the same way a critic's eye is built, or a juror's: by looking at a large number of examples and being forced, each time, to name the mechanism behind the effect. A student who has reviewed eight portfolios closely and taken real notes on each one has a working vocabulary for critique that a student who has skimmed zero portfolios simply does not have, no matter how strong the underlying project work is.",
+        "Skip this step and a particular failure mode becomes likely. A designer who has only ever evaluated their own work tends to mistake finished for good. Every choice on the page, however arbitrary, starts to feel inevitable, because it is the only version that has ever existed. Reviewing other people's portfolios interrupts that. It shows a designer six or eight different ways a project statement can open, which makes it possible to ask honestly whether their own opening is the strongest available option or simply the first one they wrote. This is the intellectual muscle a portfolio class is actually built to train: not software fluency, which is trainable in a weekend, but the discernment to tell strong work from merely completed work, in other people's projects first and eventually in your own.",
+        "To make an evening of browsing actually productive, tonight's review is structured around five specific lenses: storytelling, image curation, visual craft, sequencing, and structural hierarchy. Each one asks a different, answerable question about a project, and each is listed in full under Lectures below. Write your notes as you go, not afterward from memory. The act of writing a precise sentence about why a spread works is what converts a vague impression into something you can actually use later, at your own desk, when you are the one deciding what to cut and what to keep.",
+        "Treat what you build tonight as a reference library, not a one-time assignment. The projects you study and the notes you take will still be useful in October, when you are laying out your own grid, choosing a typeface, or deciding what belongs on your cover. Next session returns to a normal class meeting and covers narrative structure directly; the eye you are training tonight is exactly what it will draw on.",
+      ],
+    },
+  },
+  {
+    num: 3, title: "Designing Portfolio Narratives: Organizing Visual Content as a System",
     moduleRefs: [2, 3, 4, 5, 7],
-    status: "delivered", date: "Thu, Sep 3, 2026",
+    status: "proposed", date: "Thu, Sep 10, 2026",
     tagline: "Narrative is a design problem, not a writing problem.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
@@ -1073,15 +1197,15 @@ const SESSIONS = [
       undergrad: "Your project may not have been designed to have a “red thread.” Practice finding one anyway — what's the most interesting decision you made, even in an unfinished studio exercise?",
       grad: "Apply the five principles directly to your thesis or studio project. What's your Closure — the moment the project actually resolves?",
     },
-    dueToday: "Precedent Write-Up (3 President's Medal Projects)",
+    dueToday: "Precedent Review Notes (from Session 02)",
     homework: "“Narrative Foundations” — project statement, narrative outline, planned images uploaded",
     trackNote: "Undergrad: base this on your strongest available studio exercise or the provided practice project, not a fully resolved thesis. Grad: use your own current studio/thesis work.",
     references: "Case Study — Stefan DiLeo, Harvard GSD (critic: Toshiko Mori), Alpine Museum thesis — from the Portfolio as Narrative manual",
   },
   {
-    num: 3, title: "Grid Systems and Structural Logic",
+    num: 4, title: "Grid Systems and Structural Logic",
     moduleRefs: [8],
-    status: "delivered", date: "Thu, Sep 10, 2026",
+    status: "proposed", date: "Thu, Sep 17, 2026",
     tagline: "Grids are among the oldest organizing principles in architecture — now apply that logic to the page.",
     tags: ["Lecture", "Discussion"],
     agenda: [
@@ -1099,9 +1223,9 @@ const SESSIONS = [
     references: "Threshold Portfolio Guide — Grid Systems & Layout",
   },
   {
-    num: 4, title: "Building the Grid: The 12-Point System",
+    num: 5, title: "Building the Grid: The 12-Point System",
     moduleRefs: [9, 16],
-    status: "delivered", date: "Thu, Sep 17, 2026",
+    status: "proposed", date: "Thu, Sep 24, 2026",
     tagline: "The 12-point atomic unit — one measurement that governs every margin, gutter, and module.",
     tags: ["Lecture", "Assignment"],
     agenda: [
@@ -1120,9 +1244,9 @@ const SESSIONS = [
     references: "Threshold Portfolio Guide — Grid Systems & Layout (technical setup)",
   },
   {
-    num: 5, title: "Spread Composition and Grid Breaks",
+    num: 6, title: "Spread Composition and Grid Breaks",
     moduleRefs: [14, 15],
-    status: "delivered", date: "Thu, Sep 24, 2026",
+    status: "proposed", date: "Thu, Oct 1, 2026",
     tagline: "Five decisions govern every spread — and when it's earned, breaking the grid is one of them.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
@@ -1142,9 +1266,10 @@ const SESSIONS = [
     references: "Threshold Portfolio Guide — Grid Systems & Layout (composition and pacing)",
   },
   {
-    num: 6, title: "Typography as Architectural Voice",
+    num: 7, title: "Typography as Architectural Voice",
     moduleRefs: [10],
-    status: "proposed", date: "Thu, Oct 1, 2026",
+    status: "proposed", date: "Thu, Oct 15, 2026",
+    dateNote: "Skips Thu, Oct 8 — Kent State Fall Break",
     tagline: "Type is the last decision that still reads as a design decision.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
@@ -1162,10 +1287,9 @@ const SESSIONS = [
     references: "Threshold Resources — Typography & Type Foundries (Klim, Commercial Type, Colophon, Grilli Type, Pangram Pangram)",
   },
   {
-    num: 7, title: "Color, Representation & the Photographed Model",
+    num: 8, title: "Color, Representation & the Photographed Model",
     moduleRefs: [12],
-    status: "proposed", date: "Thu, Oct 15, 2026",
-    dateNote: "Skips Thu, Oct 8 — Kent State Fall Break",
+    status: "proposed", date: "Thu, Oct 22, 2026",
     tagline: "One accent color, or none. How physical work gets photographed and drawn to argue at the same level as the page around it.",
     tags: ["Lecture", "Discussion"],
     agenda: [
@@ -1183,10 +1307,10 @@ const SESSIONS = [
     references: "Threshold Resources — Graphic Design & Visual Culture",
   },
   {
-    num: 8, title: "Production Standards, Digital Presence & the Self-Editing Framework",
+    num: 9, title: "Production Standards, Digital Presence & the Self-Editing Framework",
     moduleRefs: [13],
-    status: "proposed", date: "Thu, Oct 22, 2026",
-    tagline: "File specs, where your portfolio lives online, and the checklist you'll run before Session 9.",
+    status: "proposed", date: "Thu, Oct 29, 2026",
+    tagline: "File specs, where your portfolio lives online, and the checklist you'll run before Session 10.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
       "Export Standards: Resolution, File Size, PDF Compression",
@@ -1205,9 +1329,9 @@ const SESSIONS = [
     references: "Threshold Resources — Jobs & Career Boards; Technical Standards & Production module",
   },
   {
-    num: 9, title: "Cover Typologies",
+    num: 10, title: "Cover Typologies",
     moduleRefs: [11],
-    status: "delivered", date: "Thu, Oct 29, 2026",
+    status: "proposed", date: "Thu, Nov 5, 2026",
     tagline: "Seven compositional patterns, and what each signals before anyone opens the book.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
@@ -1225,14 +1349,14 @@ const SESSIONS = [
     references: "Threshold Portfolio Guide — Portfolio Identity, Cover & Table of Contents",
   },
   {
-    num: 10, title: "Table of Contents Design & the Portfolio Checkpoint",
+    num: 11, title: "Table of Contents Design & the Portfolio Checkpoint",
     moduleRefs: [],
-    status: "delivered", date: "Thu, Nov 5, 2026",
+    status: "proposed", date: "Thu, Nov 12, 2026",
     dateNote: "Final Session",
     tagline: "The TOC is part of the narrative arc, not an index — and your first fully assembled submission.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
-      "Debrief: Session 9 Peer-Review Data Shown Directly to the Class",
+      "Debrief: Session 10 Peer-Review Data Shown Directly to the Class",
       "Six TOC Typologies: Illustrated Section Grid, Multi-Column Index, Thumbnail Gallery, Literary Chapter Index, Bold Number Cards, Narrative + List Hybrid",
       "Comparison Matrix: Image vs. Text, Density, Conventional vs. Expressive",
       "Paired Peer Cover-Review Activity",
@@ -1268,7 +1392,7 @@ function TagChip({ label }) {
 /* ─── Session Kanban Board (landing) ─── */
 function SessionBoard({ visible }) {
   return (
-    <nav aria-label="Ten-session schedule" style={{
+    <nav aria-label="Eleven-session schedule" style={{
       width: "100%", maxWidth: 1120, opacity: visible ? 1 : 0, transition: "opacity 0.22s ease",
     }}>
       <div style={{
@@ -1362,6 +1486,15 @@ function SessionDetail({ session }) {
         {s.tagline}
       </p>
 
+      {s.formatNote && (
+        <div style={{
+          fontSize: 12, color: T.textMid, lineHeight: 1.6, marginBottom: 18,
+          border: `1px solid ${T.border}`, borderRadius: 4, padding: "10px 12px",
+        }}>
+          {renderText(s.formatNote)}
+        </div>
+      )}
+
       <div style={{ marginBottom: 26 }}>
         <TeamsJoinButton />
       </div>
@@ -1372,32 +1505,7 @@ function SessionDetail({ session }) {
             {s.warmUp.links && s.warmUp.links.map((l, i) => (
               <div key={`wl${i}`}><LinkPill href={l.url} label={l.label} color={l.color} /></div>
             ))}
-            {s.warmUp.items && s.warmUp.items.length > 0 && (
-              <ul style={{ listStyle: "none", margin: "4px 0 0" }}>
-                {s.warmUp.items.map((it, i) => {
-                  const text = typeof it === "string" ? it : it.text;
-                  const children = typeof it === "string" ? null : it.children;
-                  return (
-                    <li key={i}>
-                      <div style={{ display: "flex", gap: 10, fontSize: 12.5, color: T.text, lineHeight: 1.6, marginBottom: 6 }}>
-                        <span style={{ color: T.textFaint, flexShrink: 0 }}>–</span>
-                        <span>{renderText(text)}</span>
-                      </div>
-                      {children && children.length > 0 && (
-                        <ul style={{ listStyle: "none", margin: "0 0 6px", paddingLeft: 20 }}>
-                          {children.map((c, ci) => (
-                            <li key={ci} style={{ display: "flex", gap: 8, fontSize: 12, color: T.textMid, lineHeight: 1.6, marginBottom: 4 }}>
-                              <span style={{ color: T.textFaint, flexShrink: 0 }}>·</span>
-                              <span>{renderText(c)}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
+            <BulletList items={s.warmUp.items} />
           </CollapsibleSection>
         )}
 
@@ -1405,14 +1513,7 @@ function SessionDetail({ session }) {
           {s.lectures && s.lectures.fileUrl && (
             <div><LinkPill href={s.lectures.fileUrl} label={s.lectures.fileLabel || "Lecture Slides"} /></div>
           )}
-          <ul style={{ listStyle: "none", margin: "4px 0 0" }}>
-            {(s.lectures ? s.lectures.items : s.agenda).map((a, i) => (
-              <li key={i} style={{ display: "flex", gap: 10, fontSize: 12.5, color: T.text, lineHeight: 1.6, marginBottom: 6 }}>
-                <span style={{ color: T.textFaint, flexShrink: 0 }}>–</span>
-                <span>{renderText(a)}</span>
-              </li>
-            ))}
-          </ul>
+          <BulletList items={s.lectures ? s.lectures.items : s.agenda} />
         </CollapsibleSection>
 
         {s.activityIntro && (
@@ -1420,16 +1521,19 @@ function SessionDetail({ session }) {
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
               Individual — review in advance of group discussion
             </div>
-            <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: s.activityLinks ? "0 0 10px" : 0 }}>{renderText(s.activityIntro)}</p>
+            <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: (s.activityLinks || s.activityItems) ? "0 0 10px" : 0 }}>{renderText(s.activityIntro)}</p>
             {s.activityLinks && s.activityLinks.map((l, i) => (
               <LinkPill key={i} href={l.url} label={l.label} />
             ))}
+            <BulletList items={s.activityItems} />
           </CollapsibleSection>
         )}
 
         <CollapsibleSection num={numDiscussion} minutes={15} title="Discussion">
           <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-            10 min small groups (breakout rooms){s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)
+            {s.soloWork
+              ? "Independent — no live class this week"
+              : `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
           </div>
           {s.discussionIntro && (
             <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.6, margin: "0 0 14px" }}>{renderText(s.discussionIntro)}</p>
@@ -1542,8 +1646,8 @@ const SYLLABUS_PDF_GRAD = `${import.meta.env.BASE_URL}syllabus/ARCH_ST_Portfolio
 
 const ABOUT_TEXT = [
   "Portfolio as Narrative is the companion resource for ARCH-Portfolio (44611/002) and ARCH-ST:Portfolio (56995/006), a studio-style course at Kent State University's College of Architecture and Environmental Design, taught by Seth Looper (M.Arch, Rhode Island School of Design). The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
-  "The guide covers fifteen modules across three parts, organized into the term's [ten class sessions](#/). [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/12) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
-  "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course meets once weekly for ten sessions in Fall 2026, from portfolio foundations and critical observation through narrative, grid systems, typography, and color, to final production, cover and table-of-contents design, and the portfolio checkpoint. Assignments build progressively toward a fully resolved academic portfolio.",
+  "The guide covers fifteen modules across three parts, organized into the term's [eleven class sessions](#/). [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/12) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
+  "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course meets once weekly for eleven sessions in Fall 2026, from portfolio foundations and critical observation through a precedent-review working session, narrative, grid systems, typography, and color, to final production, cover and table-of-contents design, and the portfolio checkpoint. Assignments build progressively toward a fully resolved academic portfolio.",
   "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument, and this guide shows you how to build one.",
   `For grading, attendance, and university policies, see the official course syllabus: [undergraduate, 44611](${SYLLABUS_PDF_UNDERGRAD}) (also on [SimpleSyllabus](${SYLLABUS_LINK})) or [graduate, 56995](${SYLLABUS_PDF_GRAD}).`,
 ];
@@ -2678,7 +2782,7 @@ export default function PortfolioGuide() {
               Portfolio Workshop
             </div>
             <div style={{ fontSize: 9, color: T.textFaint, marginTop: 3, letterSpacing: "0.02em" }}>
-              Fall 2026 · 10 Sessions · Thursdays 6:35–7:55 PM
+              Fall 2026 · 11 Sessions · Thursdays 6:35–7:55 PM
             </div>
           </div>
           <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
