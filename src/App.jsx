@@ -1409,18 +1409,23 @@ const SESSIONS = [
     homework: "Create a Class 2 folder inside your individual folder in the shared Class Google Drive, the same way you created Class 1 last week, and submit your completed Precedent Review Notes there (the filled-in template, all 11 projects).",
     reading: {
       title: "Why We Look Before We Build",
-      estMinutes: 7,
+      estMinutes: 9,
       paragraphs: [
         "Every studio culture already runs on precedent. Before a design problem is solved, it is researched: a stack of reference images gets pinned to the wall, a folder of comparable projects gets assembled, and a student learns to point at someone else's building and say, precisely, what is working in it and what is not. Portfolio-making deserves the same discipline and rarely gets it. Students tend to move straight from finishing a project to laying out its pages, without first spending sustained time studying how other designers have solved the same problem: how to sequence images, how to build an argument across a spread, how to make a project that took six months read clearly in six pages. Tonight's session exists to close that gap.",
         "The purpose of tonight is not to find a portfolio to imitate. Imitation produces a worse copy of someone else's decisions. The purpose is to build a specific kind of judgment: the ability to look at a spread and say, with precision, what makes it work, rather than simply liking it or not. That judgment does not arrive on its own. It is built the same way a critic's eye is built, or a juror's: by looking at a number of examples and being forced, each time, to name the mechanism behind the effect. A student who has reviewed eleven portfolios closely and taken working notes on each one has a working vocabulary for critique that a student who has skimmed zero portfolios simply does not have, no matter how strong the underlying project work is.",
         "Skip this step and a particular failure mode becomes likely. A designer who has only ever evaluated their own work tends to mistake finished for good. Every choice on the page, however arbitrary, starts to feel inevitable, because it is the only version that has ever existed. Reviewing other people's portfolios interrupts that. It shows a designer several different ways a project statement can open, which makes it possible to ask whether their own opening is the strongest available option, or simply the first one they wrote. This is the intellectual muscle a portfolio class is actually built to train: not software fluency, which is trainable in a weekend, but the discernment to tell strong work from merely completed work, in other people's projects first and eventually in your own.",
         "Tonight's review runs through the President's Medals archive, 2010 through 2020: roughly ten project winners a year, one chosen per year. Click Winners in the top menu, find each year in the dropdown, and look at the Project Winners only; skip the Dissertation Winners further down each year's page, that section is written thesis work, not the exercise. Full step-by-step guidance on finding each year and choosing your one project is under Activity, below. The short version: scan fast, notice what pulls your eye back, and pick the project that is relevant to your own work, that inspires you, or that shows a way of representing work you could use.",
         "Take notes on each chosen project through five specific lenses. Before that, look at one full portfolio start to finish: Erosion, an Alpine Museum proposal from a Harvard GSD Advanced Studio. Page through all five spreads below, once, before reading what each category asks of it.",
-        "**1. Storytelling and narrative arc** asks whether the project reads as an argument, not a list of finished images: where is the hook, and can you find a beginning, a turning point, and a resolution.",
-        "**2. Image selection and curation** asks what the designer chose to show and, just as tellingly, what they left out: the ratio of process to final images, and whether each image functions as evidence or as decoration.",
-        "**3. Visual craft and consistency** asks whether the whole project reads as one hand, one voice: is rendering style, line weight, and palette held to the same rule from spread to spread, or does the polish shift project to project.",
-        "**4. Sequencing and pacing** is storyboard logic: how one spread leads into the next, where the project is dense and where it breathes, whether you could follow the order with the text covered up.",
-        "**5. Structure and hierarchy** is grid sense before you know the word for it: what you're meant to see first, second, and third on a page, and whether that logic holds from spread to spread.",
+        "## 1. Storytelling and narrative arc",
+        "A portfolio spread is not a gallery wall. It has to work the way a piece of writing works: an opening that earns attention, a complication that raises a problem or constraint, and a close that resolves what the complication raised. Ask whether the project reads as an argument, not a list of finished images. Where is the hook, and can you point to a beginning, a turning point, and a resolution? A project that only shows outcomes, with no sense of what was at stake along the way, has no arc to follow, no matter how polished any single image is.",
+        "## 2. Image selection and curation",
+        "Every project produces far more material than a portfolio can hold: sketches, models, renderings, plans, sections, iterations that led nowhere. Curation is the visible edit, the record of what a designer judged worth keeping once it stopped simply existing and had to start earning its place on the page. Look at the ratio of process images to finished ones, and ask what each image is doing there. Is it evidence, actively proving a claim the project makes, or is it decoration, present because it looks good and nothing more? Showing everything a project produced is not curation. It is the absence of one.",
+        "## 3. Visual craft and consistency",
+        "Rendering style, line weight, palette, and level of polish are decisions, and a portfolio has to treat them as a rule held without exception rather than a preference that shifts from spread to spread. Ask whether the whole project reads as one hand, one voice. Does a diagram drawn in October look like it belongs beside a rendering finished in April, or do the two visibly come from different design sensibilities? A project can be well-crafted spread by spread and still fail this test if the craft itself is inconsistent, and that inconsistency reads as unfinished even when no single image is weak.",
+        "## 4. Sequencing and pacing",
+        "A portfolio is read in order, and that order is a decision the designer makes on the viewer's behalf: what a reader sees first shapes how they read everything that follows. Sequencing is storyboard logic, how one spread hands off to the next, and pacing is the rhythm of that hand-off, where the project compresses into dense, information-heavy spreads and where it opens up and lets a single image breathe. A useful test: cover the text on a spread and see whether you can still follow the argument from the images alone. Back-to-back density exhausts a reader, and back-to-back openness reads as empty; the alternation between the two is what holds attention across an entire project.",
+        "## 5. Structure and hierarchy",
+        "Before a viewer reads a single word, the grid has already told them what matters. Hierarchy is what gets seen first, second, and third, set by scale and position rather than by caption; it is grid sense before a student has the vocabulary for it, the same instinct that gets formalized later once the class covers grid systems directly. Ask what a spread's dominant element is, and whether that dominance looks deliberate or accidental. Does the same logic hold from spread to spread, or does a viewer have to relearn how to read the page every time it turns? Without a clear hierarchy, every element competes for the same attention, and none of it wins.",
         "Write your notes as you go, not afterward from memory. The act of writing a precise sentence about why a spread works is what converts a vague impression into something you can actually use later, at your own desk, when you are the one deciding what to cut and what to keep. Treat what you build tonight as a reference library, not a one-time assignment: the projects you study will still be useful in October, when you are laying out your own grid, choosing a typeface, or deciding what belongs on your cover. Next session returns to a normal class meeting and covers narrative structure directly; the eye you are training tonight is exactly what it will draw on.",
       ],
       carousel: {
@@ -1436,11 +1441,11 @@ const SESSIONS = [
         ],
       },
       figures: [
-        { after: 5, component: DiagramNarrativeArc, caption: "A sequence of images versus an argument. The hook draws attention, the turn complicates it, and the resolution answers what the turn raised. Ask whether you could summarize the project in those three beats." },
-        { after: 6, component: DiagramCurationCuts, caption: "Every project produced far more material than it shows. Curation is the visible edit: what stayed, and what a designer was willing to cut once it stopped earning its place." },
-        { after: 7, component: DiagramCraftOneVoice, caption: "Consistency is a rule applied without exception, not a style. A project that mixes rendering languages spread to spread reads as unfinished even when each individual image is strong." },
-        { after: 8, component: DiagramPacingRhythm, caption: "Pacing is deliberate variation, not decoration. A dense spread earns the open one that follows it; back-to-back density exhausts a reader, and back-to-back openness reads as empty." },
-        { after: 9, component: DiagramHierarchyReadOrder, caption: "Hierarchy is what a reader sees first, second, and third, set by scale and position before a single word is read. Without it, every element competes for the same attention and none of it wins." },
+        { after: 6, component: DiagramNarrativeArc, caption: "A sequence of images versus an argument. The hook draws attention, the turn complicates it, and the resolution answers what the turn raised. Ask whether you could summarize the project in those three beats." },
+        { after: 8, component: DiagramCurationCuts, caption: "Every project produced far more material than it shows. Curation is the visible edit: what stayed, and what a designer was willing to cut once it stopped earning its place." },
+        { after: 10, component: DiagramCraftOneVoice, caption: "Consistency is a rule applied without exception, not a style. A project that mixes rendering languages spread to spread reads as unfinished even when each individual image is strong." },
+        { after: 12, component: DiagramPacingRhythm, caption: "Pacing is deliberate variation, not decoration. A dense spread earns the open one that follows it; back-to-back density exhausts a reader, and back-to-back openness reads as empty." },
+        { after: 14, component: DiagramHierarchyReadOrder, caption: "Hierarchy is what a reader sees first, second, and third, set by scale and position before a single word is read. Without it, every element competes for the same attention and none of it wins." },
       ],
       references: [
         "The President's Medals Student Awards. Royal Institute of British Architects (RIBA). [presidentsmedals.com](https://www.presidentsmedals.com/)",
@@ -3379,9 +3384,15 @@ export default function PortfolioGuide() {
             </div>
             {r.paragraphs.map((p, i) => (
               <Fragment key={i}>
-                <p style={{ fontSize: 15, lineHeight: 1.85, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em" }}>
-                  {renderText(p)}
-                </p>
+                {p.startsWith("## ") ? (
+                  <h3 style={{ fontSize: 18, fontWeight: 600, color: T.text, margin: "32px 0 10px", letterSpacing: "-0.005em" }}>
+                    {p.slice(3)}
+                  </h3>
+                ) : (
+                  <p style={{ fontSize: 15, lineHeight: 1.85, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em" }}>
+                    {renderText(p)}
+                  </p>
+                )}
                 {r.carousel && r.carousel.after === i && (
                   <>
                     <div style={{ fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
