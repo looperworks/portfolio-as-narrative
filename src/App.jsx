@@ -224,7 +224,7 @@ function DiagramNarrativeArc() {
 function DiagramCurationCuts() {
   const cells = Array.from({ length: 9 });
   return (
-    <svg aria-hidden="true" viewBox="0 0 420 110" style={{ width: "100%", height: "auto" }}>
+    <svg aria-hidden="true" viewBox="0 0 420 124" style={{ width: "100%", height: "auto" }}>
       <text x="105" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textFaint} letterSpacing="0.08em">EVERYTHING MADE</text>
       <text x="315" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.text} letterSpacing="0.08em">WHAT'S SHOWN</text>
       {cells.map((_, i) => {
@@ -232,7 +232,7 @@ function DiagramCurationCuts() {
         const cy = 26 + Math.floor(i / 3) * 30;
         return <rect key={i} x={cx} y={cy} width="26" height="24" rx="2" fill={T.bgAlt} stroke={T.border} strokeWidth="1" />;
       })}
-      <text x="105" y="96" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>No editorial decision visible</text>
+      <text x="105" y="120" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>No editorial decision visible</text>
       {cells.map((_, i) => {
         const cx = 220 + (i % 3) * 34;
         const cy = 26 + Math.floor(i / 3) * 30;
@@ -246,7 +246,7 @@ function DiagramCurationCuts() {
           </g>
         );
       })}
-      <text x="315" y="96" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Three kept, six cut on purpose</text>
+      <text x="315" y="120" textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted}>Three kept, six cut on purpose</text>
     </svg>
   );
 }
