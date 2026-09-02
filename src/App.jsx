@@ -1268,14 +1268,20 @@ const SESSIONS = [
       ],
       figures: [
         { after: 5, component: DiagramNarrativeArc, caption: "A sequence of images versus an argument. The hook draws attention, the turn complicates it, and the resolution answers what the turn raised. Ask whether you could summarize the project in those three beats." },
+        { after: 5, image: "class-pdf/casestudy-spread-1.jpg", alt: "Terrain model and project abstract, Erosion portfolio", caption: "In practice: the Erosion portfolio (Harvard GSD Advanced Studio, Alpine Museum) opens with a terrain model and abstract, the hook, before any building appears. Four more spreads confront the problem and resolve it. See the full [Case Study](#/casestudy)." },
         { after: 6, component: DiagramCurationCuts, caption: "Every project produced far more material than it shows. Curation is the visible edit: what stayed, and what a designer was willing to cut once it stopped earning its place." },
+        { after: 6, image: "class-pdf/casestudy2-spread-1.jpg", alt: "Generative Housing title spread with generous empty space", caption: "In practice: this title spread commits to sparseness on purpose, one hero image and generous emptiness, most of the grid left unfilled. What is left out argues as loudly as what remains." },
         { after: 7, component: DiagramCraftOneVoice, caption: "Consistency is a rule applied without exception, not a style. A project that mixes rendering languages spread to spread reads as unfinished even when each individual image is strong." },
+        { after: 7, image: "class-pdf/casestudy2-spread-4.jpg", alt: "Facade model and building section with consistent warm tone", caption: "In practice: physical-model photographs across this portfolio's two projects share one warm-neutral color temperature. Different projects, different shoots, the same rule held without exception, so they read as one body of work." },
         { after: 8, component: DiagramPacingRhythm, caption: "Pacing is deliberate variation, not decoration. A dense spread earns the open one that follows it; back-to-back density exhausts a reader, and back-to-back openness reads as empty." },
+        { after: 8, image: "class-pdf/casestudy2-spread-7.jpg", alt: "Four axonometric model views and interior rendering, dense spread", caption: "In practice: four process models and one large rendering, every module occupied. This spread compresses on purpose, because the one after it opens back up. Pacing is the alternation, not any single spread." },
         { after: 9, component: DiagramHierarchyReadOrder, caption: "Hierarchy is what a reader sees first, second, and third, set by scale and position before a single word is read. Without it, every element competes for the same attention and none of it wins." },
+        { after: 9, image: "class-pdf/casestudy2-spread-8.jpg", alt: "Site axonometric with four small process models", caption: "In practice: one site axonometric claims more than half the spread; four small process models share the rest. The dominant element is unambiguous. A spread without one reads as a catalog, not an argument." },
       ],
       references: [
         "The President's Medals Student Awards. Royal Institute of British Architects (RIBA). [presidentsmedals.com](https://www.presidentsmedals.com/)",
         "Eisenman, S. (2008). Building design portfolios: Innovative concepts for presenting your work. Rockport Publishers.",
+        "Erosion and Generative Housing / Flexible Framework, the two worked portfolios referenced above. Full readings at [Case Study](#/casestudy).",
       ],
     },
   },
@@ -3199,8 +3205,20 @@ export default function PortfolioGuide() {
                 </p>
                 {r.figures && r.figures.filter((f) => f.after === i).map((f, fi) => (
                   <figure key={fi} style={{ margin: "8px 0 28px" }}>
-                    <div style={{ border: `1px solid ${T.border}`, borderRadius: 4, padding: "16px 18px" }}>
-                      <f.component />
+                    <div style={{
+                      border: `1px solid ${T.border}`, borderRadius: 4,
+                      padding: f.image ? 0 : "16px 18px", overflow: "hidden",
+                      background: f.image ? T.bgAlt : "transparent",
+                    }}>
+                      {f.image ? (
+                        <img
+                          src={`${import.meta.env.BASE_URL}images/${f.image}`}
+                          alt={f.alt || f.caption}
+                          style={{ display: "block", width: "100%", height: "auto" }}
+                        />
+                      ) : (
+                        <f.component />
+                      )}
                     </div>
                     <figcaption style={{ fontSize: 11.5, color: T.textMuted, fontStyle: "italic", lineHeight: 1.6, marginTop: 8 }}>
                       {renderText(f.caption)}
