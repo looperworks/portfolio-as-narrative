@@ -1663,7 +1663,13 @@ function SessionDetail({ session }) {
       )}
 
       <div style={{ marginBottom: 26 }}>
-        <TeamsJoinButton />
+        {s.noDiscussion ? (
+          <div style={{ fontSize: 11.5, color: T.textMuted, letterSpacing: "0.02em" }}>
+            No Teams call this week — work through this page on your own during class time.
+          </div>
+        ) : (
+          <TeamsJoinButton />
+        )}
       </div>
 
       <div style={{ borderTop: `1px solid ${T.border}`, marginBottom: 26 }}>
@@ -1707,9 +1713,7 @@ function SessionDetail({ session }) {
         {!s.noDiscussion && (
           <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title="Discussion" defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-              {s.soloWork
-                ? "Independent — reflect and write on your own"
-                : `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
+              {`10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
             </div>
             {s.discussionIntro && (
               <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.6, margin: "0 0 14px" }}>{renderText(s.discussionIntro)}</p>
