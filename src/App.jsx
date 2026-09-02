@@ -1110,6 +1110,53 @@ function BulletList({ items }) {
   );
 }
 
+function PortfolioCarousel({ images, projectTitle, projectMeta }) {
+  const [i, setI] = useState(0);
+  const basePath = import.meta.env.BASE_URL || "/";
+  const n = images.length;
+  const go = (delta) => setI((cur) => (cur + delta + n) % n);
+  return (
+    <div style={{ border: `1px solid ${T.border}`, borderRadius: 4, overflow: "hidden", margin: "8px 0 28px" }}>
+      <div style={{ padding: "14px 18px 0" }}>
+        <div style={{ fontSize: 13, fontWeight: 600, color: T.text }}>{projectTitle}</div>
+        <div style={{ fontSize: 11, color: T.textFaint, marginTop: 2 }}>{projectMeta}</div>
+      </div>
+      <div style={{ background: T.bgAlt, margin: "12px 0 0" }}>
+        <img
+          src={`${basePath}images/${images[i].image}`}
+          alt={images[i].alt}
+          style={{ display: "block", width: "100%", height: "auto" }}
+        />
+      </div>
+      <div style={{
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "10px 18px 14px", gap: 12,
+      }}>
+        <button
+          onClick={() => go(-1)}
+          aria-label="Previous spread"
+          style={{
+            background: "none", border: `1px solid ${T.border}`, borderRadius: 3, cursor: "pointer",
+            fontSize: 13, color: T.text, padding: "4px 10px", fontFamily: T.sans,
+          }}
+        >←</button>
+        <div style={{ textAlign: "center", flex: 1 }}>
+          <div style={{ fontSize: 11, color: T.textMuted, fontWeight: 500 }}>{images[i].label}</div>
+          <div style={{ fontSize: 10, color: T.textFaint, marginTop: 2 }}>Spread {i + 1} of {n}</div>
+        </div>
+        <button
+          onClick={() => go(1)}
+          aria-label="Next spread"
+          style={{
+            background: "none", border: `1px solid ${T.border}`, borderRadius: 3, cursor: "pointer",
+            fontSize: 13, color: T.text, padding: "4px 10px", fontFamily: T.sans,
+          }}
+        >→</button>
+      </div>
+    </div>
+  );
+}
+
 function CollapsibleSection({ num, minutes, title, defaultOpen, children }) {
   const [open, setOpen] = useState(!!defaultOpen);
   return (
@@ -1258,7 +1305,7 @@ const SESSIONS = [
         "The purpose of tonight is not to find a portfolio to imitate. Imitation produces a worse copy of someone else's decisions. The purpose is to build a specific kind of judgment: the ability to look at a spread and say, with precision, what makes it work, rather than simply liking it or not. That judgment does not arrive on its own. It is built the same way a critic's eye is built, or a juror's: by looking at a number of examples and being forced, each time, to name the mechanism behind the effect. A student who has reviewed eleven portfolios closely and taken working notes on each one has a working vocabulary for critique that a student who has skimmed zero portfolios simply does not have, no matter how strong the underlying project work is.",
         "Skip this step and a particular failure mode becomes likely. A designer who has only ever evaluated their own work tends to mistake finished for good. Every choice on the page, however arbitrary, starts to feel inevitable, because it is the only version that has ever existed. Reviewing other people's portfolios interrupts that. It shows a designer several different ways a project statement can open, which makes it possible to ask whether their own opening is the strongest available option, or simply the first one they wrote. This is the intellectual muscle a portfolio class is actually built to train: not software fluency, which is trainable in a weekend, but the discernment to tell strong work from merely completed work, in other people's projects first and eventually in your own.",
         "Tonight's review runs through the President's Medals archive, 2010 through 2020: roughly ten project winners a year, one chosen per year. Click Winners in the top menu, find each year in the dropdown, and look at the Project Winners only; skip the Dissertation Winners further down each year's page, that section is written thesis work, not the exercise. Full step-by-step guidance on finding each year and choosing your one project is under Activity, below. The short version: scan fast, notice what pulls your eye back, and pick the project that is relevant to your own work, that inspires you, or that shows a way of representing work you could use.",
-        "Take notes on each chosen project through five specific lenses.",
+        "Take notes on each chosen project through five specific lenses. Before that, look at one full portfolio start to finish: Erosion, an Alpine Museum proposal from a Harvard GSD Advanced Studio. Page through all five spreads below, once, before reading what each category asks of it.",
         "**Storytelling and narrative arc** asks whether the project reads as an argument, not a list of finished images: where is the hook, and can you find a beginning, a turning point, and a resolution.",
         "**Image selection and curation** asks what the designer chose to show and, just as tellingly, what they left out: the ratio of process to final images, and whether each image functions as evidence or as decoration.",
         "**Visual craft and consistency** covers rendering style, line weight, palette, and polish, and whether the whole project reads as one hand, one voice.",
@@ -1266,22 +1313,34 @@ const SESSIONS = [
         "**Structure and hierarchy** is grid sense before you know the word for it: what you're meant to see first, second, and third on a page, and whether that logic holds from spread to spread.",
         "Write your notes as you go, not afterward from memory. The act of writing a precise sentence about why a spread works is what converts a vague impression into something you can actually use later, at your own desk, when you are the one deciding what to cut and what to keep. Treat what you build tonight as a reference library, not a one-time assignment: the projects you study will still be useful in October, when you are laying out your own grid, choosing a typeface, or deciding what belongs on your cover. Next session returns to a normal class meeting and covers narrative structure directly; the eye you are training tonight is exactly what it will draw on.",
       ],
+      carousel: {
+        after: 4,
+        projectTitle: "Erosion: Alpine Museum, Col du Pillon",
+        projectMeta: "Stefan DiLeo · Harvard GSD Advanced Studio, Critic: Toshiko Mori · 5 spreads",
+        images: [
+          { image: "class-pdf/casestudy-spread-1.jpg", alt: "Terrain model and project abstract", label: "Spread 1: Terrain model and abstract" },
+          { image: "class-pdf/casestudy-spread-2.jpg", alt: "Aerial site map and terrain model rendering", label: "Spread 2: Site context, two full-bleed images" },
+          { image: "class-pdf/casestudy-spread-3.jpg", alt: "Winter renderings above a full-width building section", label: "Spread 3: Renderings over a full-width section" },
+          { image: "class-pdf/casestudy-spread-4.jpg", alt: "Model photo and approach rendering above a full-width section", label: "Spread 4: Model and approach over a full-width section" },
+          { image: "class-pdf/casestudy-spread-5.jpg", alt: "Interior gallery renderings and floor plans", label: "Spread 5: Interiors and floor plans" },
+        ],
+      },
       figures: [
         { after: 5, component: DiagramNarrativeArc, caption: "A sequence of images versus an argument. The hook draws attention, the turn complicates it, and the resolution answers what the turn raised. Ask whether you could summarize the project in those three beats." },
-        { after: 5, image: "class-pdf/casestudy-spread-1.jpg", alt: "Terrain model and project abstract, Erosion portfolio", caption: "In practice: the Erosion portfolio (Harvard GSD Advanced Studio, Alpine Museum) opens with a terrain model and abstract, the hook, before any building appears. Four more spreads confront the problem and resolve it. See the full [Case Study](#/casestudy)." },
+        { after: 5, image: "class-pdf/casestudy-spread-1.jpg", alt: "Terrain model and project abstract, Erosion portfolio", caption: "In practice: Spread 1 opens with a terrain model and its abstract, the hook, before any building appears. Four more spreads confront the problem and resolve it." },
         { after: 6, component: DiagramCurationCuts, caption: "Every project produced far more material than it shows. Curation is the visible edit: what stayed, and what a designer was willing to cut once it stopped earning its place." },
-        { after: 6, image: "class-pdf/casestudy2-spread-1.jpg", alt: "Generative Housing title spread with generous empty space", caption: "In practice: this title spread commits to sparseness on purpose, one hero image and generous emptiness, most of the grid left unfilled. What is left out argues as loudly as what remains." },
+        { after: 6, image: "class-pdf/casestudy-spread-5.jpg", alt: "Interior gallery renderings and floor plans, closing spread", caption: "In practice: the closing spread shows four images only, two interior views and two floor plans. No process sketches, no site photos, nothing that already made its case earlier. What made the cut is exactly what proves the design resolved." },
         { after: 7, component: DiagramCraftOneVoice, caption: "Consistency is a rule applied without exception, not a style. A project that mixes rendering languages spread to spread reads as unfinished even when each individual image is strong." },
-        { after: 7, image: "class-pdf/casestudy2-spread-4.jpg", alt: "Facade model and building section with consistent warm tone", caption: "In practice: physical-model photographs across this portfolio's two projects share one warm-neutral color temperature. Different projects, different shoots, the same rule held without exception, so they read as one body of work." },
+        { after: 7, image: "class-pdf/casestudy-spread-4.jpg", alt: "Model photo and approach rendering above a full-width section", caption: "In practice: this spread repeats the exact device from the one before it, two images above a full-width section. The same compositional rule, used twice, is what makes the two spreads read as one argument rather than two different decisions." },
         { after: 8, component: DiagramPacingRhythm, caption: "Pacing is deliberate variation, not decoration. A dense spread earns the open one that follows it; back-to-back density exhausts a reader, and back-to-back openness reads as empty." },
-        { after: 8, image: "class-pdf/casestudy2-spread-7.jpg", alt: "Four axonometric model views and interior rendering, dense spread", caption: "In practice: four process models and one large rendering, every module occupied. This spread compresses on purpose, because the one after it opens back up. Pacing is the alternation, not any single spread." },
+        { after: 8, image: "class-pdf/casestudy-spread-2.jpg", alt: "Aerial site map and terrain model rendering, two full-bleed images", caption: "In practice: two full-bleed images, no text, nothing else. This is the open beat between the dense opening spread and the dense confrontation spread that follows it. Pacing is felt in that alternation, not in any single spread." },
         { after: 9, component: DiagramHierarchyReadOrder, caption: "Hierarchy is what a reader sees first, second, and third, set by scale and position before a single word is read. Without it, every element competes for the same attention and none of it wins." },
-        { after: 9, image: "class-pdf/casestudy2-spread-8.jpg", alt: "Site axonometric with four small process models", caption: "In practice: one site axonometric claims more than half the spread; four small process models share the rest. The dominant element is unambiguous. A spread without one reads as a catalog, not an argument." },
+        { after: 9, image: "class-pdf/casestudy-spread-3.jpg", alt: "Winter renderings above a full-width building section", caption: "In practice: two renderings sit above a section that runs the full width of the spread. Scale alone makes the section dominant, the image a reader's eye settles on first, even though it appears last in the reading order." },
       ],
       references: [
         "The President's Medals Student Awards. Royal Institute of British Architects (RIBA). [presidentsmedals.com](https://www.presidentsmedals.com/)",
         "Eisenman, S. (2008). Building design portfolios: Innovative concepts for presenting your work. Rockport Publishers.",
-        "Erosion and Generative Housing / Flexible Framework, the two worked portfolios referenced above. Full readings at [Case Study](#/casestudy).",
+        "DiLeo, S. Erosion (Alpine Museum, Col du Pillon). Harvard GSD Advanced Studio, Critic: Toshiko Mori. Full reading at [Case Study](#/casestudy).",
       ],
     },
   },
@@ -3203,8 +3262,18 @@ export default function PortfolioGuide() {
                 <p style={{ fontSize: 15, lineHeight: 1.85, color: T.textMid, margin: "0 0 20px", letterSpacing: "0.01em" }}>
                   {renderText(p)}
                 </p>
+                {r.carousel && r.carousel.after === i && (
+                  <PortfolioCarousel
+                    images={r.carousel.images}
+                    projectTitle={r.carousel.projectTitle}
+                    projectMeta={r.carousel.projectMeta}
+                  />
+                )}
                 {r.figures && r.figures.filter((f) => f.after === i).map((f, fi) => (
                   <figure key={fi} style={{ margin: "8px 0 28px" }}>
+                    <div style={{ fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
+                      {f.image ? "From the case study" : "Diagram"}
+                    </div>
                     <div style={{
                       border: `1px solid ${T.border}`, borderRadius: 4,
                       padding: f.image ? 0 : "16px 18px", overflow: "hidden",
