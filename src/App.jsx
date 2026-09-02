@@ -1261,6 +1261,7 @@ const SESSIONS = [
     noDiscussion: true,
     activityMinutes: 55,
     sectionsDefaultOpen: true,
+    hideReadingTeaser: true,
     warmUp: {
       links: [
         { label: "Read first: “Why We Look Before We Build”", url: "#/reading/2" },
@@ -1758,7 +1759,7 @@ function SessionDetail({ session }) {
             )}
           </div>
 
-          {s.reading && (
+          {s.reading && !s.hideReadingTeaser && (
             <div style={{ marginTop: 18, paddingTop: 16, borderTop: `1px solid ${T.border}` }}>
               <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 8 }}>
                 ~{s.reading.estMinutes} min read · read whenever you like
