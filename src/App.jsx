@@ -1304,7 +1304,7 @@ const SESSIONS = [
       },
       "Keep each note to a sentence: a precise sentence beats a paragraph of hedging. Leave the last 5 minutes of class to finish up and submit, not to keep taking notes.",
     ],
-    homework: "Submit your completed Precedent Review Notes (the filled-in template, all 11 projects) to your Class 2 folder in the shared Class Google Drive by 8:00 PM Thursday.",
+    homework: "Create a Class 2 folder inside your individual folder in the shared Class Google Drive, the same way you created Class 1 last week, and submit your completed Precedent Review Notes (the filled-in template, all 11 projects) there by 8:00 PM Thursday.",
     reading: {
       title: "Why We Look Before We Build",
       estMinutes: 8,
