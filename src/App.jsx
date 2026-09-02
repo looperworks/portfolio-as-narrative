@@ -1112,6 +1112,7 @@ function BulletList({ items }) {
 
 function PortfolioCarousel({ images, projectTitle, projectMeta }) {
   const [i, setI] = useState(0);
+  const [lightbox, setLightbox] = useState(false);
   const basePath = import.meta.env.BASE_URL || "/";
   const n = images.length;
   const go = (delta) => setI((cur) => (cur + delta + n) % n);
@@ -1121,13 +1122,25 @@ function PortfolioCarousel({ images, projectTitle, projectMeta }) {
         <div style={{ fontSize: 13, fontWeight: 600, color: T.text }}>{projectTitle}</div>
         <div style={{ fontSize: 11, color: T.textFaint, marginTop: 2 }}>{projectMeta}</div>
       </div>
-      <div style={{ background: T.bgAlt, margin: "12px 0 0" }}>
+      <button
+        onClick={() => setLightbox(true)}
+        aria-label={`Enlarge ${images[i].label}`}
+        style={{
+          position: "relative", display: "block", width: "100%", background: T.bgAlt,
+          margin: "12px 0 0", border: "none", padding: 0, cursor: "zoom-in",
+        }}
+      >
         <img
           src={`${basePath}images/${images[i].image}`}
           alt={images[i].alt}
           style={{ display: "block", width: "100%", height: "auto" }}
         />
-      </div>
+        <span style={{
+          position: "absolute", right: 10, bottom: 10, fontSize: 10, fontWeight: 500,
+          color: "#fff", background: "rgba(0,0,0,0.55)", borderRadius: 3, padding: "4px 8px",
+          letterSpacing: "0.02em",
+        }}>⤢ Click to enlarge</span>
+      </button>
       <div style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "10px 18px 14px", gap: 12,
@@ -1152,6 +1165,93 @@ function PortfolioCarousel({ images, projectTitle, projectMeta }) {
             fontSize: 13, color: T.text, padding: "4px 10px", fontFamily: T.sans,
           }}
         >→</button>
+      </div>
+      {lightbox && (
+        <SpreadLightbox
+          images={images}
+          index={i}
+          onClose={() => setLightbox(false)}
+          onNav={go}
+        />
+      )}
+    </div>
+  );
+}
+
+function SpreadLightbox({ images, index, onClose, onNav }) {
+  const basePath = import.meta.env.BASE_URL || "/";
+  const n = images.length;
+  const img = images[index];
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      else if (e.key === "ArrowLeft") onNav(-1);
+      else if (e.key === "ArrowRight") onNav(1);
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [onClose, onNav]);
+
+  return (
+    <div
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      style={{
+        position: "fixed", inset: 0, background: "rgba(8,8,8,0.94)", zIndex: 1000,
+        display: "flex", alignItems: "center", justifyContent: "center",
+      }}
+    >
+      <button
+        onClick={onClose}
+        aria-label="Close"
+        style={{
+          position: "fixed", top: 18, right: 20, background: "none", border: "none",
+          color: "#fff", fontSize: 30, lineHeight: 1, cursor: "pointer", padding: 10, zIndex: 1002,
+        }}
+      >×</button>
+
+      <button
+        onClick={(e) => { e.stopPropagation(); onNav(-1); }}
+        aria-label="Previous spread"
+        style={{
+          position: "fixed", left: "clamp(6px, 2.5vw, 28px)", top: "50%", transform: "translateY(-50%)",
+          background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.35)", borderRadius: "50%",
+          width: 46, height: 46, color: "#fff", fontSize: 18, cursor: "pointer", zIndex: 1002,
+        }}
+      >←</button>
+      <button
+        onClick={(e) => { e.stopPropagation(); onNav(1); }}
+        aria-label="Next spread"
+        style={{
+          position: "fixed", right: "clamp(6px, 2.5vw, 28px)", top: "50%", transform: "translateY(-50%)",
+          background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.35)", borderRadius: "50%",
+          width: 46, height: 46, color: "#fff", fontSize: 18, cursor: "pointer", zIndex: 1002,
+        }}
+      >→</button>
+
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{ display: "flex", flexDirection: "column", alignItems: "center", maxWidth: "min(82vw, 1300px)" }}
+      >
+        <img
+          src={`${basePath}images/${img.hires || img.image}`}
+          alt={img.alt}
+          style={{
+            display: "block", maxWidth: "100%", maxHeight: "78vh", width: "auto", height: "auto",
+            objectFit: "contain", boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
+          }}
+        />
+        <div style={{ marginTop: 14, textAlign: "center" }}>
+          <div style={{ fontSize: 12, fontWeight: 500, color: "#fff" }}>{img.label}</div>
+          <div style={{ fontSize: 10.5, color: "rgba(255,255,255,0.55)", marginTop: 3 }}>Spread {index + 1} of {n}</div>
+        </div>
       </div>
     </div>
   );
@@ -1326,11 +1426,11 @@ const SESSIONS = [
         projectTitle: "Erosion: Alpine Museum, Col du Pillon",
         projectMeta: "Stefan DiLeo · Harvard GSD Advanced Studio, Critic: Toshiko Mori · 5 spreads",
         images: [
-          { image: "class-pdf/casestudy-spread-1.jpg", alt: "Terrain model and project abstract", label: "Spread 1: Terrain model and abstract" },
-          { image: "class-pdf/casestudy-spread-2.jpg", alt: "Aerial site map and terrain model rendering", label: "Spread 2: Site context, two full-bleed images" },
-          { image: "class-pdf/casestudy-spread-3.jpg", alt: "Winter renderings above a full-width building section", label: "Spread 3: Renderings over a full-width section" },
-          { image: "class-pdf/casestudy-spread-4.jpg", alt: "Model photo and approach rendering above a full-width section", label: "Spread 4: Model and approach over a full-width section" },
-          { image: "class-pdf/casestudy-spread-5.jpg", alt: "Interior gallery renderings and floor plans", label: "Spread 5: Interiors and floor plans" },
+          { image: "class-pdf/casestudy-spread-1.jpg", hires: "class-pdf/casestudy-spread-1-hires.jpg", alt: "Terrain model and project abstract", label: "Spread 1: Terrain model and abstract" },
+          { image: "class-pdf/casestudy-spread-2.jpg", hires: "class-pdf/casestudy-spread-2-hires.jpg", alt: "Aerial site map and terrain model rendering", label: "Spread 2: Site context, two full-bleed images" },
+          { image: "class-pdf/casestudy-spread-3.jpg", hires: "class-pdf/casestudy-spread-3-hires.jpg", alt: "Winter renderings above a full-width building section", label: "Spread 3: Renderings over a full-width section" },
+          { image: "class-pdf/casestudy-spread-4.jpg", hires: "class-pdf/casestudy-spread-4-hires.jpg", alt: "Model photo and approach rendering above a full-width section", label: "Spread 4: Model and approach over a full-width section" },
+          { image: "class-pdf/casestudy-spread-5.jpg", hires: "class-pdf/casestudy-spread-5-hires.jpg", alt: "Interior gallery renderings and floor plans", label: "Spread 5: Interiors and floor plans" },
         ],
       },
       figures: [
