@@ -1263,12 +1263,17 @@ const SESSIONS = [
     sectionsDefaultOpen: true,
     hideReadingTeaser: true,
     warmUp: {
-      links: [
-        { label: "Read first: “Why We Look Before We Build”", url: "#/reading/2" },
-        { label: "PresidentsMedals.com", url: "https://www.presidentsmedals.com/" },
+      blocks: [
+        {
+          brief: "Read this before you touch PresidentsMedals.com. About 10 to 15 minutes. It explains what tonight is about, and walks through the five categories, with a diagram for each, that you'll use to take notes on every project.",
+          link: { label: "Why We Look Before We Build", url: "#/reading/2" },
+        },
+        {
+          brief: "This is the site you'll browse tonight. The Activity section below covers exactly how to use it.",
+          link: { label: "PresidentsMedals.com", url: "https://www.presidentsmedals.com/" },
+        },
       ],
       items: [
-        "Read the linked brief above before you touch PresidentsMedals.com. About 10 to 15 minutes. It explains what tonight is about, and walks through the five categories, with a diagram for each, that you'll use to take notes on every project.",
         "Download the note-taking template under Activity below and fill in your name before you start browsing.",
       ],
     },
@@ -1675,6 +1680,12 @@ function SessionDetail({ session }) {
       <div style={{ borderTop: `1px solid ${T.border}`, marginBottom: 26 }}>
         {s.warmUp && (
           <CollapsibleSection num={numWarmUp} minutes={s.warmUpMinutes || 20} title="Warm Up" defaultOpen={s.sectionsDefaultOpen}>
+            {s.warmUp.blocks && s.warmUp.blocks.map((b, i) => (
+              <div key={`wb${i}`} style={{ marginBottom: 14 }}>
+                <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: "0 0 6px" }}>{renderText(b.brief)}</p>
+                <LinkPill href={b.link.url} label={b.link.label} color={b.link.color} />
+              </div>
+            ))}
             {s.warmUp.links && s.warmUp.links.map((l, i) => (
               <div key={`wl${i}`}><LinkPill href={l.url} label={l.label} color={l.color} /></div>
             ))}
