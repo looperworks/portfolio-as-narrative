@@ -1260,6 +1260,7 @@ const SESSIONS = [
     noLecture: true,
     noDiscussion: true,
     activityMinutes: 55,
+    sectionsDefaultOpen: true,
     warmUp: {
       links: [
         { label: "Read first: “Why We Look Before We Build”", url: "#/reading/2" },
@@ -1666,7 +1667,7 @@ function SessionDetail({ session }) {
 
       <div style={{ borderTop: `1px solid ${T.border}`, marginBottom: 26 }}>
         {s.warmUp && (
-          <CollapsibleSection num={numWarmUp} minutes={s.warmUpMinutes || 20} title="Warm Up">
+          <CollapsibleSection num={numWarmUp} minutes={s.warmUpMinutes || 20} title="Warm Up" defaultOpen={s.sectionsDefaultOpen}>
             {s.warmUp.links && s.warmUp.links.map((l, i) => (
               <div key={`wl${i}`}><LinkPill href={l.url} label={l.label} color={l.color} /></div>
             ))}
@@ -1675,7 +1676,7 @@ function SessionDetail({ session }) {
         )}
 
         {!s.noLecture && (
-          <CollapsibleSection num={numLectures} minutes={s.lecturesMinutes || 20} title="Lectures">
+          <CollapsibleSection num={numLectures} minutes={s.lecturesMinutes || 20} title="Lectures" defaultOpen={s.sectionsDefaultOpen}>
             {s.lectures && s.lectures.fileUrl && (
               <div><LinkPill href={s.lectures.fileUrl} label={s.lectures.fileLabel || "Lecture Slides"} /></div>
             )}
@@ -1684,7 +1685,7 @@ function SessionDetail({ session }) {
         )}
 
         {s.activityIntro && (
-          <CollapsibleSection num={numActivity} minutes={s.activityMinutes || 20} title="Activity">
+          <CollapsibleSection num={numActivity} minutes={s.activityMinutes || 20} title="Activity" defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
               {s.noDiscussion ? "Individual" : "Individual — review in advance of group discussion"}
             </div>
@@ -1703,7 +1704,7 @@ function SessionDetail({ session }) {
         )}
 
         {!s.noDiscussion && (
-          <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title="Discussion">
+          <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title="Discussion" defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
               {s.soloWork
                 ? "Independent — reflect and write on your own"
@@ -1733,7 +1734,7 @@ function SessionDetail({ session }) {
           </CollapsibleSection>
         )}
 
-        <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title="Assignment">
+        <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title="Assignment" defaultOpen={s.sectionsDefaultOpen}>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {s.dueToday && (
               <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
