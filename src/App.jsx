@@ -1113,7 +1113,6 @@ const SESSIONS = [
     activityItems: [
       "10 years × 2 projects = 20 projects total. Keep each note to a sentence: a precise sentence beats a paragraph of hedging. Leave the last 5 minutes of class to finish up and submit, not to keep taking notes.",
     ],
-    dueToday: "Resume + Portfolio Upload (assigned Session 01)",
     homework: "Submit your completed Precedent Review Notes (the filled-in template, all 20 projects) to your Class 2 folder in the shared Class Google Drive by 8:00 PM Thursday.",
     reading: {
       title: "Why We Look Before We Build",
@@ -1518,9 +1517,11 @@ function SessionDetail({ session }) {
 
         <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title="Assignment">
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
-              <strong style={{ color: T.text }}>Due Today: </strong>{s.dueToday}
-            </div>
+            {s.dueToday && (
+              <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
+                <strong style={{ color: T.text }}>Due Today: </strong>{s.dueToday}
+              </div>
+            )}
             {s.homework && (
               <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
                 <strong style={{ color: T.text }}>Homework: </strong>{s.homework}
