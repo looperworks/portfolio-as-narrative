@@ -1122,49 +1122,50 @@ function PortfolioCarousel({ images, projectTitle, projectMeta }) {
         <div style={{ fontSize: 13, fontWeight: 600, color: T.text }}>{projectTitle}</div>
         <div style={{ fontSize: 11, color: T.textFaint, marginTop: 2 }}>{projectMeta}</div>
       </div>
-      <button
-        onClick={() => setLightbox(true)}
-        aria-label={`Enlarge ${images[i].label}`}
-        style={{
-          position: "relative", display: "block", width: "100%", background: T.bgAlt,
-          margin: "12px 0 0", border: "none", padding: 0, cursor: "zoom-in",
-        }}
-      >
-        <img
-          src={`${basePath}images/${images[i].image}`}
-          alt={images[i].alt}
-          style={{ display: "block", width: "100%", height: "auto" }}
-        />
-        <span style={{
-          position: "absolute", right: 10, bottom: 10, fontSize: 10, fontWeight: 500,
-          color: "#fff", background: "rgba(0,0,0,0.55)", borderRadius: 3, padding: "4px 8px",
-          letterSpacing: "0.02em",
-        }}>⤢ Click to enlarge</span>
-      </button>
-      <div style={{
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "10px 18px 14px", gap: 12,
-      }}>
+      <div style={{ position: "relative", background: T.bgAlt, margin: "12px 0 0", padding: "0 46px" }}>
+        <button
+          onClick={() => setLightbox(true)}
+          aria-label={`Enlarge ${images[i].label}`}
+          style={{
+            position: "relative", display: "block", width: "100%", background: "none",
+            border: "none", padding: 0, cursor: "zoom-in",
+          }}
+        >
+          <img
+            src={`${basePath}images/${images[i].image}`}
+            alt={images[i].alt}
+            style={{ display: "block", width: "100%", height: "auto" }}
+          />
+          <span style={{
+            position: "absolute", left: 0, right: 0, bottom: 0, fontSize: 11, fontWeight: 600,
+            color: "#fff", background: "rgba(0,0,0,0.65)", padding: "8px 0",
+            letterSpacing: "0.02em", textAlign: "center",
+          }}>⤢ Click to enlarge</span>
+        </button>
         <button
           onClick={() => go(-1)}
           aria-label="Previous spread"
           style={{
-            background: "none", border: `1px solid ${T.border}`, borderRadius: 3, cursor: "pointer",
-            fontSize: 13, color: T.text, padding: "4px 10px", fontFamily: T.sans,
+            position: "absolute", left: 0, top: "50%", transform: "translateY(-50%)",
+            background: T.bg, border: `1px solid ${T.border}`, borderRadius: "50%", cursor: "pointer",
+            width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 14, color: T.text, fontFamily: T.sans,
           }}
         >←</button>
-        <div style={{ textAlign: "center", flex: 1 }}>
-          <div style={{ fontSize: 11, color: T.textMuted, fontWeight: 500 }}>{images[i].label}</div>
-          <div style={{ fontSize: 10, color: T.textFaint, marginTop: 2 }}>Spread {i + 1} of {n}</div>
-        </div>
         <button
           onClick={() => go(1)}
           aria-label="Next spread"
           style={{
-            background: "none", border: `1px solid ${T.border}`, borderRadius: 3, cursor: "pointer",
-            fontSize: 13, color: T.text, padding: "4px 10px", fontFamily: T.sans,
+            position: "absolute", right: 0, top: "50%", transform: "translateY(-50%)",
+            background: T.bg, border: `1px solid ${T.border}`, borderRadius: "50%", cursor: "pointer",
+            width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 14, color: T.text, fontFamily: T.sans,
           }}
         >→</button>
+      </div>
+      <div style={{ textAlign: "center", padding: "10px 18px 14px" }}>
+        <div style={{ fontSize: 11, color: T.textMuted, fontWeight: 500 }}>{images[i].label}</div>
+        <div style={{ fontSize: 10, color: T.textFaint, marginTop: 2 }}>Spread {i + 1} of {n}</div>
       </div>
       {lightbox && (
         <SpreadLightbox
@@ -1415,11 +1416,11 @@ const SESSIONS = [
         "Skip this step and a particular failure mode becomes likely. A designer who has only ever evaluated their own work tends to mistake finished for good. Every choice on the page, however arbitrary, starts to feel inevitable, because it is the only version that has ever existed. Reviewing other people's portfolios interrupts that. It shows a designer several different ways a project statement can open, which makes it possible to ask whether their own opening is the strongest available option, or simply the first one they wrote. This is the intellectual muscle a portfolio class is actually built to train: not software fluency, which is trainable in a weekend, but the discernment to tell strong work from merely completed work, in other people's projects first and eventually in your own.",
         "Tonight's review runs through the President's Medals archive, 2010 through 2020: roughly ten project winners a year, one chosen per year. Click Winners in the top menu, find each year in the dropdown, and look at the Project Winners only; skip the Dissertation Winners further down each year's page, that section is written thesis work, not the exercise. Full step-by-step guidance on finding each year and choosing your one project is under Activity, below. The short version: scan fast, notice what pulls your eye back, and pick the project that is relevant to your own work, that inspires you, or that shows a way of representing work you could use.",
         "Take notes on each chosen project through five specific lenses. Before that, look at one full portfolio start to finish: Erosion, an Alpine Museum proposal from a Harvard GSD Advanced Studio. Page through all five spreads below, once, before reading what each category asks of it.",
-        "**Storytelling and narrative arc** asks whether the project reads as an argument, not a list of finished images: where is the hook, and can you find a beginning, a turning point, and a resolution.",
-        "**Image selection and curation** asks what the designer chose to show and, just as tellingly, what they left out: the ratio of process to final images, and whether each image functions as evidence or as decoration.",
-        "**Visual craft and consistency** asks whether the whole project reads as one hand, one voice: is rendering style, line weight, and palette held to the same rule from spread to spread, or does the polish shift project to project.",
-        "**Sequencing and pacing** is storyboard logic: how one spread leads into the next, where the project is dense and where it breathes, whether you could follow the order with the text covered up.",
-        "**Structure and hierarchy** is grid sense before you know the word for it: what you're meant to see first, second, and third on a page, and whether that logic holds from spread to spread.",
+        "**1. Storytelling and narrative arc** asks whether the project reads as an argument, not a list of finished images: where is the hook, and can you find a beginning, a turning point, and a resolution.",
+        "**2. Image selection and curation** asks what the designer chose to show and, just as tellingly, what they left out: the ratio of process to final images, and whether each image functions as evidence or as decoration.",
+        "**3. Visual craft and consistency** asks whether the whole project reads as one hand, one voice: is rendering style, line weight, and palette held to the same rule from spread to spread, or does the polish shift project to project.",
+        "**4. Sequencing and pacing** is storyboard logic: how one spread leads into the next, where the project is dense and where it breathes, whether you could follow the order with the text covered up.",
+        "**5. Structure and hierarchy** is grid sense before you know the word for it: what you're meant to see first, second, and third on a page, and whether that logic holds from spread to spread.",
         "Write your notes as you go, not afterward from memory. The act of writing a precise sentence about why a spread works is what converts a vague impression into something you can actually use later, at your own desk, when you are the one deciding what to cut and what to keep. Treat what you build tonight as a reference library, not a one-time assignment: the projects you study will still be useful in October, when you are laying out your own grid, choosing a typeface, or deciding what belongs on your cover. Next session returns to a normal class meeting and covers narrative structure directly; the eye you are training tonight is exactly what it will draw on.",
       ],
       carousel: {
@@ -3382,11 +3383,16 @@ export default function PortfolioGuide() {
                   {renderText(p)}
                 </p>
                 {r.carousel && r.carousel.after === i && (
-                  <PortfolioCarousel
-                    images={r.carousel.images}
-                    projectTitle={r.carousel.projectTitle}
-                    projectMeta={r.carousel.projectMeta}
-                  />
+                  <>
+                    <div style={{ fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
+                      Worked Example
+                    </div>
+                    <PortfolioCarousel
+                      images={r.carousel.images}
+                      projectTitle={r.carousel.projectTitle}
+                      projectMeta={r.carousel.projectMeta}
+                    />
+                  </>
                 )}
                 {r.figures && r.figures.filter((f) => f.after === i).map((f, fi) => (
                   <figure key={fi} style={{ margin: "8px 0 28px" }}>
