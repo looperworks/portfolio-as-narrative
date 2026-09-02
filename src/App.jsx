@@ -1091,91 +1091,39 @@ const SESSIONS = [
     moduleRefs: [],
     status: "proposed", date: "Thu, Sep 3, 2026",
     tagline: "Judgment comes before execution. Spend tonight building the eye that will grade your own work all semester.",
-    tags: ["Lecture", "Activity", "Assignment"],
-    soloWork: true,
+    tags: ["Reading", "Activity", "Assignment"],
+    noLecture: true,
+    noDiscussion: true,
     warmUp: {
       links: [
-        { label: "PresidentsMedals.com — RIBA President's Medals Student Awards Archive", url: "https://www.presidentsmedals.com/" },
         { label: "Read first: “Why We Look Before We Build”", url: "#/reading/2" },
       ],
       items: [
-        "Read the linked brief above before you start. About 5 minutes. It explains why tonight is spent studying other people's work instead of building your own.",
-        "Keep the five categories under Lectures open in another tab while you browse. They're what turns skimming into a usable exercise.",
+        "Read the linked brief above before you touch PresidentsMedals.com. About 10 to 15 minutes. It explains what tonight is about and walks through the five categories you'll use to take notes on every project.",
+        "Download the note-taking template under Activity below and fill in your name before you start browsing.",
       ],
     },
-    lectures: {
-      items: [
-        {
-          text: "**1. Storytelling & Narrative Arc** — does the project read as an argument, not a list of finished images?",
-          children: [
-            "Where is the hook: the image or line that makes you want to keep looking?",
-            "Can you find a beginning, a turning point, and a resolution?",
-          ],
-        },
-        {
-          text: "**2. Image Selection & Curation** — what did they choose to show, and what did they leave out?",
-          children: [
-            "What's the ratio of process images to final images?",
-            "Do the images function as evidence for a claim, or as decoration?",
-          ],
-        },
-        {
-          text: "**3. Visual Craft & Consistency** — rendering style, line weight, palette, and polish.",
-          children: [
-            "Does the whole project read as one hand, one voice?",
-            "Where does the craft level rise or fall across the set?",
-          ],
-        },
-        {
-          text: "**4. Sequencing & Pacing (Storyboard Logic)** — how one spread leads into the next.",
-          children: [
-            "Where is the project dense (information-heavy), and where does it breathe (open, spare)?",
-            "Could you follow the order with the text covered up?",
-          ],
-        },
-        {
-          text: "**5. Structure & Hierarchy (Grid Sense)** — what you're meant to see first, second, and third on a page.",
-          children: [
-            "Is there a consistent underlying logic to margins and alignment, or does each spread feel like a new decision?",
-            "What's the biggest thing on the page, and does it deserve to be?",
-          ],
-        },
-      ],
+    activityIntro: "Browse the President's Medals project winners for 2005 through 2014, using the year links in your template. Each year holds roughly ten projects; look at the Project Winners only, and skip the Dissertation Winners section on each year's page, that's written thesis work, not the exercise. For each year, skim quickly and choose the 2 projects that resonate most: relevant to your own project, or something about the story, visuals, or representation that compels you. Then go back through your choices and take real notes on each one, using the five categories from tonight's reading. Paste each project's own link into your template as you go.",
+    templateFile: {
+      brief: "This is your note-taking template: one table per year, 2005 through 2014, with a column for each project you choose and a row for each of the five categories, plus a row for the project's link and one for why you picked it. Download it, fill in your name, and work directly in it as you browse.",
+      label: "Download the Note-Taking Template (.docx)",
+      url: `${import.meta.env.BASE_URL}templates/precedent-review-notes-template.docx`,
     },
-    activityIntro: "Spend the remaining class time in PresidentsMedals.com. Review 6 to 8 projects: skim, don't close-read. About 6 minutes each is enough to notice real patterns without stalling on any one project. Choose projects that differ from each other: different building types, different years, at least one that looks nothing like the kind of architecture you make.",
-    activityLinks: [
-      { label: "PresidentsMedals.com", url: "https://www.presidentsmedals.com/" },
-    ],
     activityItems: [
-      {
-        text: "**Note template** — for each project, write one short block covering:",
-        children: [
-          "Project name, school (if listed), and the direct link.",
-          "Storytelling: one line naming the hook and the arc.",
-          "Curation: one line on what's shown, and what's conspicuously missing.",
-          "Craft & consistency: one line on rendering style, and whether it holds together as one voice.",
-          "Sequencing: one line on how the spreads lead into each other.",
-          "Structure & hierarchy: one line on what reads first, second, third.",
-          "Steal / avoid: one thing you'd borrow, one thing you would not repeat.",
-        ],
-      },
-      "Repeat for 6–8 projects. Keep each block short: a precise sentence beats a paragraph of hedging.",
+      "10 years × 2 projects = 20 projects total by the end of class. Keep each note to a sentence: a precise sentence beats a paragraph of hedging.",
     ],
-    discussionIntro: "When you finish your last project, stop and write one synthesis paragraph: not per-project notes, but the patterns that showed up across everything you looked at tonight.",
-    breakout: {
-      shared: "Name three things you noticed repeating across multiple projects, good or bad, and one specific change you will make to your own portfolio because of something you saw tonight.",
-    },
     dueToday: "Resume + Portfolio Upload (assigned Session 01)",
-    homework: "Submit your Precedent Review Notes, 6–8 projects, one document, to your Class 2 folder in the shared Class Google Drive before you log off tonight.",
+    homework: "Submit your completed Precedent Review Notes (the filled-in template, all 20 projects) to your Class 2 folder in the shared Class Google Drive before you log off tonight.",
     reading: {
       title: "Why We Look Before We Build",
-      estMinutes: 4,
+      estMinutes: 7,
       paragraphs: [
         "Every studio culture already runs on precedent. Before a design problem is solved, it is researched: a stack of reference images gets pinned to the wall, a folder of comparable projects gets assembled, and a student learns to point at someone else's building and say, precisely, what is working in it and what is not. Portfolio-making deserves the same discipline and rarely gets it. Students tend to move straight from finishing a project to laying out its pages, without first spending real time studying how other designers have solved the same problem: how to sequence images, how to build an argument across a spread, how to make a project that took six months read clearly in six pages. Tonight's session exists to close that gap.",
-        "The purpose of tonight is not to find a portfolio to imitate. Imitation produces a worse copy of someone else's decisions. The purpose is to build a specific kind of judgment: the ability to look at a spread and say, with precision, what makes it work, rather than simply liking it or not. That judgment does not arrive on its own. It is built the same way a critic's eye is built, or a juror's: by looking at a large number of examples and being forced, each time, to name the mechanism behind the effect. A student who has reviewed eight portfolios closely and taken real notes on each one has a working vocabulary for critique that a student who has skimmed zero portfolios simply does not have, no matter how strong the underlying project work is.",
-        "Skip this step and a particular failure mode becomes likely. A designer who has only ever evaluated their own work tends to mistake finished for good. Every choice on the page, however arbitrary, starts to feel inevitable, because it is the only version that has ever existed. Reviewing other people's portfolios interrupts that. It shows a designer six or eight different ways a project statement can open, which makes it possible to ask honestly whether their own opening is the strongest available option or simply the first one they wrote. This is the intellectual muscle a portfolio class is actually built to train: not software fluency, which is trainable in a weekend, but the discernment to tell strong work from merely completed work, in other people's projects first and eventually in your own.",
-        "To make an evening of browsing actually productive, tonight's review is structured around five specific lenses: storytelling, image curation, visual craft, sequencing, and structural hierarchy. Each one asks a different, answerable question about a project, and each is listed in full under Lectures below. Write your notes as you go, not afterward from memory. The act of writing a precise sentence about why a spread works is what converts a vague impression into something you can actually use later, at your own desk, when you are the one deciding what to cut and what to keep.",
-        "Treat what you build tonight as a reference library, not a one-time assignment. The projects you study and the notes you take will still be useful in October, when you are laying out your own grid, choosing a typeface, or deciding what belongs on your cover. Next session returns to a normal class meeting and covers narrative structure directly; the eye you are training tonight is exactly what it will draw on.",
+        "The purpose of tonight is not to find a portfolio to imitate. Imitation produces a worse copy of someone else's decisions. The purpose is to build a specific kind of judgment: the ability to look at a spread and say, with precision, what makes it work, rather than simply liking it or not. That judgment does not arrive on its own. It is built the same way a critic's eye is built, or a juror's: by looking at a large number of examples and being forced, each time, to name the mechanism behind the effect. A student who has reviewed twenty portfolios closely and taken real notes on each one has a working vocabulary for critique that a student who has skimmed zero portfolios simply does not have, no matter how strong the underlying project work is.",
+        "Skip this step and a particular failure mode becomes likely. A designer who has only ever evaluated their own work tends to mistake finished for good. Every choice on the page, however arbitrary, starts to feel inevitable, because it is the only version that has ever existed. Reviewing other people's portfolios interrupts that. It shows a designer a dozen different ways a project statement can open, which makes it possible to ask honestly whether their own opening is the strongest available option or simply the first one they wrote. This is the intellectual muscle a portfolio class is actually built to train: not software fluency, which is trainable in a weekend, but the discernment to tell strong work from merely completed work, in other people's projects first and eventually in your own.",
+        "Tonight's review runs through the President's Medals archive, 2005 through 2014: roughly ten project winners a year. Skim quickly, and skip the Dissertation Winners listed on each year's page; those are written theses, not visual work, and are not the exercise. For each year, choose the two projects that resonate most, whether that's relevance to your own project, or something about the story, visuals, or representation that compels you. That is twenty projects by the end of the night, which sounds like more than it is once you stop close-reading and start comparing.",
+        "Take notes on each chosen project through five specific lenses. **Storytelling and narrative arc** asks whether the project reads as an argument, not a list of finished images: where is the hook, and can you find a beginning, a turning point, and a resolution. **Image selection and curation** asks what they chose to show and, just as tellingly, what they left out: the ratio of process to final images, and whether each image functions as evidence or as decoration. **Visual craft and consistency** covers rendering style, line weight, palette, and polish, and whether the whole project reads as one hand, one voice. **Sequencing and pacing** is storyboard logic: how one spread leads into the next, where the project is dense and where it breathes, whether you could follow the order with the text covered up. **Structure and hierarchy** is grid sense before you know the word for it: what you're meant to see first, second, and third on a page, and whether that logic holds from spread to spread.",
+        "Write your notes as you go, not afterward from memory. The act of writing a precise sentence about why a spread works is what converts a vague impression into something you can actually use later, at your own desk, when you are the one deciding what to cut and what to keep. Treat what you build tonight as a reference library, not a one-time assignment: the projects you study will still be useful in October, when you are laying out your own grid, choosing a typeface, or deciding what belongs on your cover. Next session returns to a normal class meeting and covers narrative structure directly; the eye you are training tonight is exactly what it will draw on.",
       ],
     },
   },
@@ -1458,9 +1406,9 @@ function SessionDetail({ session }) {
   let secN = 0;
   const secNum = () => String(++secN).padStart(2, "0");
   const numWarmUp = s.warmUp ? secNum() : null;
-  const numLectures = secNum();
+  const numLectures = s.noLecture ? null : secNum();
   const numActivity = s.activityIntro ? secNum() : null;
-  const numDiscussion = secNum();
+  const numDiscussion = s.noDiscussion ? null : secNum();
   const numAssignment = secNum();
   return (
     <div style={{ width: "100%", maxWidth: 640, opacity: 1 }}>
@@ -1508,54 +1456,64 @@ function SessionDetail({ session }) {
           </CollapsibleSection>
         )}
 
-        <CollapsibleSection num={numLectures} minutes={20} title="Lectures">
-          {s.lectures && s.lectures.fileUrl && (
-            <div><LinkPill href={s.lectures.fileUrl} label={s.lectures.fileLabel || "Lecture Slides"} /></div>
-          )}
-          <BulletList items={s.lectures ? s.lectures.items : s.agenda} />
-        </CollapsibleSection>
+        {!s.noLecture && (
+          <CollapsibleSection num={numLectures} minutes={20} title="Lectures">
+            {s.lectures && s.lectures.fileUrl && (
+              <div><LinkPill href={s.lectures.fileUrl} label={s.lectures.fileLabel || "Lecture Slides"} /></div>
+            )}
+            <BulletList items={s.lectures ? s.lectures.items : s.agenda} />
+          </CollapsibleSection>
+        )}
 
         {s.activityIntro && (
           <CollapsibleSection num={numActivity} minutes={20} title="Activity">
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-              Individual — review in advance of group discussion
+              {s.noDiscussion ? "Individual" : "Individual — review in advance of group discussion"}
             </div>
-            <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: (s.activityLinks || s.activityItems) ? "0 0 10px" : 0 }}>{renderText(s.activityIntro)}</p>
+            <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: (s.activityLinks || s.templateFile || s.activityItems) ? "0 0 10px" : 0 }}>{renderText(s.activityIntro)}</p>
             {s.activityLinks && s.activityLinks.map((l, i) => (
               <LinkPill key={i} href={l.url} label={l.label} />
             ))}
+            {s.templateFile && (
+              <div style={{ margin: "10px 0" }}>
+                <p style={{ fontSize: 11.5, color: T.textMid, lineHeight: 1.6, margin: "0 0 6px" }}>{renderText(s.templateFile.brief)}</p>
+                <LinkPill href={s.templateFile.url} label={s.templateFile.label} />
+              </div>
+            )}
             <BulletList items={s.activityItems} />
           </CollapsibleSection>
         )}
 
-        <CollapsibleSection num={numDiscussion} minutes={15} title="Discussion">
-          <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-            {s.soloWork
-              ? "Independent — reflect and write on your own"
-              : `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
-          </div>
-          {s.discussionIntro && (
-            <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.6, margin: "0 0 14px" }}>{renderText(s.discussionIntro)}</p>
-          )}
-          {s.breakout.shared ? (
-            <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.shared}</p>
-          ) : (
-            <div className="breakout-grid" style={{ display: "grid", gap: 16 }}>
-              <div>
-                <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
-                  Undergrad (44611)
-                </div>
-                <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.undergrad}</p>
-              </div>
-              <div>
-                <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
-                  Grad (56995)
-                </div>
-                <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.grad}</p>
-              </div>
+        {!s.noDiscussion && (
+          <CollapsibleSection num={numDiscussion} minutes={15} title="Discussion">
+            <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
+              {s.soloWork
+                ? "Independent — reflect and write on your own"
+                : `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
             </div>
-          )}
-        </CollapsibleSection>
+            {s.discussionIntro && (
+              <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.6, margin: "0 0 14px" }}>{renderText(s.discussionIntro)}</p>
+            )}
+            {s.breakout.shared ? (
+              <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.shared}</p>
+            ) : (
+              <div className="breakout-grid" style={{ display: "grid", gap: 16 }}>
+                <div>
+                  <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
+                    Undergrad (44611)
+                  </div>
+                  <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.undergrad}</p>
+                </div>
+                <div>
+                  <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
+                    Grad (56995)
+                  </div>
+                  <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.grad}</p>
+                </div>
+              </div>
+            )}
+          </CollapsibleSection>
+        )}
 
         <CollapsibleSection num={numAssignment} minutes={5} title="Assignment">
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
