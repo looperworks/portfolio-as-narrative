@@ -1970,7 +1970,7 @@ const SURVEY_RESULTS = {
       ],
     },
   ],
-  takeaway: "Students rate their confidence in verbal explanation and in receiving critique well above their confidence that a portfolio submitted today would satisfy faculty or employer expectations: no respondent placed either of the first two measures below a 3, while readiness to submit clusters at 2 to 4. This is a measurable gap between command of the work and the current state of its presentation, distinct from a lack of self-assurance. Comprehension of grid systems is strong across the cohort (22 of 25 answered the knowledge-check item correctly), though three students indicate no working understanding of the term. Session 03 should address this directly rather than assume it resolved.",
+  takeaway: "Students rate their confidence in verbal explanation and in receiving critique well above their confidence that a portfolio submitted today would satisfy faculty or employer expectations: no respondent placed either of the first two measures below a 3, while readiness to submit clusters at 2 to 4. This is a measurable gap between command of the work and the current state of its presentation, distinct from a lack of self-assurance. Comprehension of grid systems is strong across the cohort (22 of 25 answered the knowledge-check item correctly), though three students indicate no working understanding of the term. Session 04 should address this directly rather than assume it resolved.",
   response: [
     "Office hours this term will prioritize individual conversation over general review, pairing each student with direct, personal feedback aimed at closing the gap between measured portfolio strength and self-reported confidence.",
     "Course sessions will draw on an expanded set of precedent portfolios and professional reference work, developing the critical judgment required to assess one's own portfolio against an established professional standard.",
@@ -2859,8 +2859,8 @@ export default function PortfolioGuide() {
                     </a>
                   );
                 })}
-                {/* Case Study 1 + Exercise 1: narrative modules live in Session 2 */}
-                {s.num === 2 && (
+                {/* Case Study 1 + Exercise 1: narrative modules live in Session 3 */}
+                {s.num === 3 && (
                   <>
                   <a
                     href="#/casestudy"
@@ -2896,8 +2896,8 @@ export default function PortfolioGuide() {
                   </a>
                   </>
                 )}
-                {/* Exercise 2: hands-on grid construction lives in Session 4 */}
-                {s.num === 4 && (
+                {/* Exercise 2: hands-on grid construction lives in Session 5 */}
+                {s.num === 5 && (
                   <a
                     href="#/exercise2"
                     style={{
@@ -2915,8 +2915,8 @@ export default function PortfolioGuide() {
                     </span>
                   </a>
                 )}
-                {/* Case Study 2: full applied grid system lives in Session 5 */}
-                {s.num === 5 && (
+                {/* Case Study 2: full applied grid system lives in Session 6 */}
+                {s.num === 6 && (
                   <a
                     href="#/casestudy2"
                     style={{
