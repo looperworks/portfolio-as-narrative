@@ -1665,7 +1665,7 @@ function SessionDetail({ session }) {
       <div style={{ marginBottom: 26 }}>
         {s.noDiscussion ? (
           <div style={{ fontSize: 11.5, color: T.textMuted, letterSpacing: "0.02em" }}>
-            No Teams call this week — work through this page on your own during class time.
+            No Teams call this week. Work through this page on your own during class time.
           </div>
         ) : (
           <TeamsJoinButton />
