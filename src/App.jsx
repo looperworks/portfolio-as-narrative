@@ -41,7 +41,7 @@ function renderText(text) {
     const linkMatch = seg.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (linkMatch) {
       const [, label, href] = linkMatch;
-      const newTab = href === "#/resources";
+      const newTab = href === "#/resources" || href.startsWith("http");
       return (
         <a
           key={j}
@@ -1263,6 +1263,7 @@ const SESSIONS = [
     warmUp: {
       links: [
         { label: "Read first: “Why We Look Before We Build”", url: "#/reading/2" },
+        { label: "PresidentsMedals.com", url: "https://www.presidentsmedals.com/" },
       ],
       items: [
         "Read the linked brief above before you touch PresidentsMedals.com. About 10 to 15 minutes. It explains what tonight is about, and walks through the five categories, with a diagram for each, that you'll use to take notes on every project.",
@@ -1277,7 +1278,7 @@ const SESSIONS = [
     },
     activityItems: [
       {
-        text: "**Find each year.** Click Winners in the top menu of PresidentsMedals.com. A dropdown lists every year the awards have run; open 2010 first, then work forward one year at a time through 2020.",
+        text: "**Find each year.** Open [PresidentsMedals.com](https://www.presidentsmedals.com/) and click Winners in the top menu. A dropdown lists every year the awards have run; open 2010 first, then work forward one year at a time through 2020.",
       },
       {
         text: "**Architects' projects only.** Each year's page has two sections: Project Winners, then further down, Dissertation Winners. Stop at Project Winners. Dissertation Winners are written theses, not visual work, and are not part of this exercise.",
@@ -1292,7 +1293,7 @@ const SESSIONS = [
         ],
       },
       {
-        text: "Copy the project's own link into your template, then take notes using the five categories from tonight's reading. Repeat for each of the eleven years.",
+        text: "Open the project you chose, not just the year's list page, and copy its own URL from your browser's address bar into your template. Then take notes using the five categories from tonight's reading. Repeat for each of the eleven years.",
       },
       "Keep each note to a sentence: a precise sentence beats a paragraph of hedging. Leave the last 5 minutes of class to finish up and submit, not to keep taking notes.",
     ],
