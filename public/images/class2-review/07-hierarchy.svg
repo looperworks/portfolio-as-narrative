@@ -36,13 +36,14 @@
   <text x="64" y="358" font-size="15.5" fill="#333">Most of you could identify what was largest or most prominent. The</text>
   <text x="64" y="380" font-size="15.5" fill="#333">strongest notes told a grid apart from a real hierarchy.</text>
 
-  <rect x="64" y="404" width="404" height="40" fill="#f7f7f7"/>
-  <rect x="64" y="404" width="3" height="40" fill="#a15c3f"/>
-  <text x="80" y="420" font-size="13.5" fill="#444" font-style="italic">"No hierarchy present — only one</text>
-  <text x="80" y="435" font-size="13.5" fill="#444" font-style="italic">drawing on each page."</text>
+  <rect x="64" y="404" width="404" height="58" fill="#f7f7f7"/>
+  <rect x="64" y="404" width="3" height="58" fill="#a15c3f"/>
+  <text x="80" y="420" font-size="13.5" fill="#444" font-style="italic">"There is always a grab, whether that be the size</text>
+  <text x="80" y="435" font-size="13.5" fill="#444" font-style="italic">of the render or the splash of color, that draws</text>
+  <text x="80" y="450" font-size="13.5" fill="#444" font-style="italic">the eye first."</text>
 
-  <rect x="484" y="404" width="412" height="40" fill="#f7f7f7"/>
-  <rect x="484" y="404" width="3" height="40" fill="#a15c3f"/>
-  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"Large images communicate the main</text>
-  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">idea; smaller drawings provide the research."</text>
+  <rect x="484" y="404" width="412" height="58" fill="#f7f7f7"/>
+  <rect x="484" y="404" width="3" height="58" fill="#a15c3f"/>
+  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"There wasn't a very clear hierarchy and structure,</text>
+  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">each page was gridded slightly different."</text>
 </svg>

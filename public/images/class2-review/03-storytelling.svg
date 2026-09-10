@@ -25,12 +25,14 @@
   <text x="64" y="358" font-size="15.5" fill="#333">Most of you could name where a project's story started and ended. The</text>
   <text x="64" y="380" font-size="15.5" fill="#333">sharpest notes went further, naming the exact spread where the story turns.</text>
 
-  <rect x="64" y="404" width="404" height="40" fill="#f7f7f7"/>
-  <rect x="64" y="404" width="3" height="40" fill="#6b4c7a"/>
-  <text x="80" y="428" font-size="13.5" fill="#444" font-style="italic">"Zooms out, then zooms back in."</text>
+  <rect x="64" y="404" width="404" height="58" fill="#f7f7f7"/>
+  <rect x="64" y="404" width="3" height="58" fill="#6b4c7a"/>
+  <text x="80" y="420" font-size="13.5" fill="#444" font-style="italic">"This spread draws you in with a finished render, then</text>
+  <text x="80" y="435" font-size="13.5" fill="#444" font-style="italic">immediately into project development, then finishes</text>
+  <text x="80" y="450" font-size="13.5" fill="#444" font-style="italic">with outcome renders."</text>
 
-  <rect x="484" y="404" width="412" height="40" fill="#f7f7f7"/>
-  <rect x="484" y="404" width="3" height="40" fill="#6b4c7a"/>
-  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"Reads like a presentation: context,</text>
-  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">then program, then resolution."</text>
+  <rect x="484" y="404" width="412" height="58" fill="#f7f7f7"/>
+  <rect x="484" y="404" width="3" height="58" fill="#6b4c7a"/>
+  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"The submission shows many moments, but not a</text>
+  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">coherent story."</text>
 </svg>

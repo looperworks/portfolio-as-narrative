@@ -29,10 +29,11 @@
 
   <rect x="64" y="404" width="404" height="40" fill="#f7f7f7"/>
   <rect x="64" y="404" width="3" height="40" fill="#5a7a8a"/>
-  <text x="80" y="428" font-size="13.5" fill="#444" font-style="italic">"The consistency lies in the colors chosen."</text>
+  <text x="80" y="420" font-size="13.5" fill="#444" font-style="italic">"Beautifully curated color and line weight that even</text>
+  <text x="80" y="435" font-size="13.5" fill="#444" font-style="italic">flows into the detail of the model."</text>
 
   <rect x="484" y="404" width="412" height="40" fill="#f7f7f7"/>
   <rect x="484" y="404" width="3" height="40" fill="#5a7a8a"/>
-  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"I love the subtle use of the same color</text>
-  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">throughout the spread."</text>
+  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"The sketches are poorly scanned in, and the color</text>
+  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">palate jumps from B&amp;W to inconsistent colors."</text>
 </svg>

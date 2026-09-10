@@ -33,11 +33,11 @@
 
   <rect x="64" y="404" width="404" height="40" fill="#f7f7f7"/>
   <rect x="64" y="404" width="3" height="40" fill="#8a7c3d"/>
-  <text x="80" y="420" font-size="13.5" fill="#444" font-style="italic">"A good balance of full spread and</text>
-  <text x="80" y="435" font-size="13.5" fill="#444" font-style="italic">individual images."</text>
+  <text x="80" y="420" font-size="13.5" fill="#444" font-style="italic">"It is paced like an old Russian or French book,</text>
+  <text x="80" y="435" font-size="13.5" fill="#444" font-style="italic">lots of exposition and an exciting rich ending."</text>
 
   <rect x="484" y="404" width="412" height="40" fill="#f7f7f7"/>
   <rect x="484" y="404" width="3" height="40" fill="#8a7c3d"/>
-  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"Spread reads too flat — every page</text>
-  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">is filled completely."</text>
+  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"The project is extremely dense with very little</text>
+  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">breathing room."</text>
 </svg>

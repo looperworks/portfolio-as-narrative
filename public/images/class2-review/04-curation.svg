@@ -32,13 +32,14 @@
   <text x="64" y="358" font-size="15.5" fill="#333">Most of you noticed variety — renders, diagrams, and models working</text>
   <text x="64" y="380" font-size="15.5" fill="#333">together. The strongest notes noticed restraint: when a project repeated itself.</text>
 
-  <rect x="64" y="404" width="404" height="40" fill="#f7f7f7"/>
-  <rect x="64" y="404" width="3" height="40" fill="#3d7a6b"/>
-  <text x="80" y="420" font-size="13.5" fill="#444" font-style="italic">"Images appeal not only to the final</text>
-  <text x="80" y="435" font-size="13.5" fill="#444" font-style="italic">product, but also the process."</text>
+  <rect x="64" y="404" width="404" height="58" fill="#f7f7f7"/>
+  <rect x="64" y="404" width="3" height="58" fill="#3d7a6b"/>
+  <text x="80" y="420" font-size="13.5" fill="#444" font-style="italic">"The fact that the money shot is a hand sketch,</text>
+  <text x="80" y="435" font-size="13.5" fill="#444" font-style="italic">is spectacular."</text>
 
-  <rect x="484" y="404" width="412" height="40" fill="#f7f7f7"/>
-  <rect x="484" y="404" width="3" height="40" fill="#3d7a6b"/>
-  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"Too many fabrication photos that</text>
-  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">do not add any information."</text>
+  <rect x="484" y="404" width="412" height="58" fill="#f7f7f7"/>
+  <rect x="484" y="404" width="3" height="58" fill="#3d7a6b"/>
+  <text x="500" y="420" font-size="13.5" fill="#444" font-style="italic">"I struggled to understand why they had each and</text>
+  <text x="500" y="435" font-size="13.5" fill="#444" font-style="italic">every floor plan for the project instead of</text>
+  <text x="500" y="450" font-size="13.5" fill="#444" font-style="italic">picking one."</text>
 </svg>
