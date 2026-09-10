@@ -1524,6 +1524,8 @@ const SESSIONS = [
     },
     dueBy: "11:59 PM, Sunday, September 13",
     assignmentMinutes: 10,
+    assignmentSectionTitle: "Takeaway & Assignment",
+    takeawaySheet: "https://docs.google.com/spreadsheets/d/1Z_vfBiK4q9lG3J6uoxOVk652EMCxaJah/edit?usp=sharing",
     requiredMeeting: "Every student must reserve a one-on-one meeting with Seth and complete that conversation by Saturday, September 19 — this makes up for our missed session and is a chance to talk through your individual goals and status. New time slots have been added this weekend and next weekend. [Schedule your meeting →](https://calendly.com/seth-looper/kent-state-portfolio-class-office-hours-with-seth)",
     homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, and (4) lay out your own images into a storyboard following that outline.",
     finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement and outline.",
@@ -1900,11 +1902,19 @@ function SessionDetail({ session }) {
           </CollapsibleSection>
         )}
 
-        <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title="Assignment" defaultOpen={s.sectionsDefaultOpen}>
+        <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title={s.assignmentSectionTitle || "Assignment"} defaultOpen={s.sectionsDefaultOpen}>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {s.dueBy && (
               <div style={{ fontSize: 13, color: T.text, lineHeight: 1.5, fontWeight: 600 }}>
                 Due: {s.dueBy}
+              </div>
+            )}
+            {s.takeawaySheet && (
+              <div>
+                <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6, marginBottom: 4 }}>
+                  <strong style={{ color: T.text }}>Class Takeaway: </strong>Write down tonight's key takeaway on the shared class sheet.
+                </div>
+                <LinkPill href={s.takeawaySheet} label="Open Takeaway Sheet →" />
               </div>
             )}
             {s.requiredMeeting && (
