@@ -1461,11 +1461,7 @@ const SESSIONS = [
     status: "proposed", date: "Thu, Sep 10, 2026",
     tagline: "Narrative is a design problem, not a writing problem.",
     tags: ["Lecture", "Activity", "Discussion", "Assignment"],
-    warmUp: {
-      items: [
-        "Pull up your Precedent Review Notes from Session 02 before lecture starts. Skim your own notes once, and notice which of the five categories you wrote the most about, and which you barely touched.",
-      ],
-    },
+    lecturesMinutes: 20,
     lectures: {
       items: [
         "Case Study: Narrative Structure in Film, and What It Has to Do with a Portfolio Spread",
@@ -1482,6 +1478,8 @@ const SESSIONS = [
       "As you place each image, ask which sentence in the statement it is proving.",
       "30 minutes to build your sequence. Don't polish the layout, just get the order right.",
     ],
+    discussionMinutes: 10,
+    discussionFormat: "6 min in pairs, then 4 min whole group (main room)",
     discussionIntro: "Compare your sequence with a partner's. Where did you agree, and where did you make a different call?",
     breakout: {
       shared: "Then look at the real published sequence together as a class. Where did the actual designer's choices match your instinct, and where did they surprise you?",
@@ -1506,6 +1504,7 @@ const SESSIONS = [
       ],
     },
     dueBy: "11:59 PM, Sunday, September 13",
+    assignmentMinutes: 20,
     homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, and (4) lay out your own images into a storyboard following that outline.",
     finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement and outline.",
     readingAssignment: "Read [“It All Starts From the Statement”](#/reading/3) before starting this week's assignment.",
@@ -1860,7 +1859,7 @@ function SessionDetail({ session }) {
         {!s.noDiscussion && (
           <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title="Discussion" defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-              {`10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
+              {s.discussionFormat || `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
             </div>
             {s.discussionIntro && (
               <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.6, margin: "0 0 14px" }}>{renderText(s.discussionIntro)}</p>
