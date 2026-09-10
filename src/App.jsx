@@ -1463,11 +1463,17 @@ const SESSIONS = [
     tags: ["Lecture", "Activity", "Discussion", "Assignment"],
     lecturesMinutes: 20,
     lectures: {
+      fileUrl: `${import.meta.env.BASE_URL}materials/session-03-lecture-narrative-structure-in-film.pdf`,
+      fileLabel: "Session 03 Lecture Slides",
       items: [
-        "Case Study: Narrative Structure in Film, and What It Has to Do with a Portfolio Spread",
-        "Five Principles of Narrative: Focus, Structure, Curation, Lens, Closure",
-        "Project Statement Framework: Set the Scene / Explain the Idea / Show How It Comes Together",
-        "Worked Example: Flexible Framework, a Building Arts Center project by Nick McIntosh (Washington University in St. Louis)",
+        "Why We're Borrowing from Film Editing Tonight",
+        "The Editor's Real Job: Montage, Not Summary",
+        "Loewenstein's Information Gap Theory: Why Withholding Builds Curiosity",
+        "Kahneman's Peak-End Rule: We Remember the Peak and the Ending",
+        "Case Study: The Social Network (2010), Selling Mood Over Plot",
+        "Case Study: Terminator Genisys (2015), Giving Away the Twist",
+        "Where the Trailer Metaphor Breaks: Portfolios Always Show the Ending",
+        "The Turn: Your Image Sequence Is Your Trailer for the Project",
       ],
     },
     reviewCarousel: {
