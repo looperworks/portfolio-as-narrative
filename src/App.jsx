@@ -1460,22 +1460,33 @@ const SESSIONS = [
     moduleRefs: [2, 3, 4, 5, 7],
     status: "proposed", date: "Thu, Sep 10, 2026",
     tagline: "Narrative is a design problem, not a writing problem.",
-    tags: ["Lecture", "Discussion", "Assignment"],
-    agenda: [
-      "Case Study: The Shawshank Redemption as Narrative Structure",
-      "Five Principles of Narrative: Focus, Structure, Curation, Lens, Closure",
-      "Project Statement Framework: Set the Scene / Explain the Idea / Show How It Comes Together",
-      "Worked Example: Flexible Framework (National Building Arts Center)",
-      "Group Exercise: Build a 7-Spread Sequence Live in InDesign",
+    tags: ["Lecture", "Activity", "Discussion", "Assignment"],
+    warmUp: {
+      items: [
+        "Pull up your Precedent Review Notes from Session 02 before lecture starts. Skim your own notes once, and notice which of the five categories you wrote the most about, and which you barely touched.",
+      ],
+    },
+    lectures: {
+      items: [
+        "Case Study: Narrative Structure in Film, and What It Has to Do with a Portfolio Spread",
+        "Five Principles of Narrative: Focus, Structure, Curation, Lens, Closure",
+        "Project Statement Framework: Set the Scene / Explain the Idea / Show How It Comes Together",
+        "Worked Example: Flexible Framework, a Building Arts Center project by Nick McIntosh (Washington University in St. Louis)",
+      ],
+    },
+    activityIntro: "Read the project statement for Flexible Framework, a real graduate thesis project, once, all the way through. Then, without looking at the original portfolio, arrange the 21 unlabeled images into a sequence in InDesign that tells the story the statement describes. There is no single correct layout. This is a test of how closely you can read a statement for the sequencing decisions it already implies.",
+    activityItems: [
+      "Materials (the project statement and all 21 renamed images) are in your Class 3 folder in the shared Class Google Drive.",
+      "Read the statement before you open a single image. Going in blind defeats the exercise.",
+      "As you place each image, ask which sentence in the statement it is proving.",
+      "20 minutes to build your sequence. Don't polish the layout, just get the order right.",
     ],
+    discussionIntro: "Compare your sequence with a partner's. Where did you agree, and where did you make a different call?",
     breakout: {
-      undergrad: "Your project may not have been designed to have a “red thread.” Practice finding one anyway — what's the most interesting decision you made, even in an unfinished studio exercise?",
-      grad: "Apply the five principles directly to your thesis or studio project. What's your Closure — the moment the project actually resolves?",
+      shared: "Then look at the real published sequence together as a class. Where did the actual designer's choices match your instinct, and where did they surprise you?",
     },
     dueToday: "Precedent Review Notes (from Session 02)",
     homework: "“Narrative Foundations” — project statement, narrative outline, planned images uploaded",
-    trackNote: "Undergrad: base this on your strongest available studio exercise or the provided practice project, not a fully resolved thesis. Grad: use your own current studio/thesis work.",
-    references: "Case Study — Stefan DiLeo, Harvard GSD (critic: Toshiko Mori), Alpine Museum thesis — from the Portfolio as Narrative manual",
   },
   {
     num: 4, title: "Grid Systems and Structural Logic",
@@ -1675,7 +1686,7 @@ function SessionBoard({ visible }) {
       }}>
         {SESSIONS.map((s, i) => {
           const statusColor = s.status === "delivered" ? T.delivered : T.proposed;
-          const locked = s.num !== 1 && s.num !== 2;
+          const locked = s.num !== 1 && s.num !== 2 && s.num !== 3;
           const CardTag = locked ? "div" : "a";
           return (
             <CardTag
