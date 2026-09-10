@@ -1519,7 +1519,7 @@ const SESSIONS = [
     },
     dueBy: "11:59 PM, Sunday, September 13",
     assignmentMinutes: 10,
-    requiredMeeting: "Every student must book a one-on-one meeting with Seth by Sunday, September 13 — this makes up for our missed session and is a chance to talk through your individual goals and status. [Schedule your meeting →](https://calendly.com/seth-looper/kent-state-portfolio-class-office-hours-with-seth)",
+    requiredMeeting: "Every student must reserve a one-on-one meeting with Seth and complete that conversation by Saturday, September 19 — this makes up for our missed session and is a chance to talk through your individual goals and status. New time slots have been added this weekend and next weekend. [Schedule your meeting →](https://calendly.com/seth-looper/kent-state-portfolio-class-office-hours-with-seth)",
     homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, and (4) lay out your own images into a storyboard following that outline.",
     finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement and outline.",
     readingAssignment: "Read [“It All Starts From the Statement”](#/reading/3) before starting this week's assignment.",
