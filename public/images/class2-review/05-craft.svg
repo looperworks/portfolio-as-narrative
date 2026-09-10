@@ -2,36 +2,36 @@
   <rect x="0" y="0" width="960" height="540" fill="#fff"/>
   <rect x="1" y="1" width="958" height="538" fill="none" stroke="#e8e8e8" stroke-width="1"/>
 
-  <text x="64" y="60" font-size="11" font-weight="600" letter-spacing="2" fill="#5a7a8a">CATEGORY III OF V</text>
-  <text x="62" y="108" font-size="32" font-weight="700" fill="#222">Visual Craft &amp; Consistency</text>
-  <line x1="64" y1="130" x2="896" y2="130" stroke="#e8e8e8" stroke-width="1"/>
+  <text x="64" y="72" font-size="11" font-weight="600" letter-spacing="2" fill="#5a7a8a">CATEGORY III OF V</text>
+  <text x="62" y="116" font-size="32" font-weight="700" fill="#222">Visual Craft &amp; Consistency</text>
+  <line x1="64" y1="138" x2="896" y2="138" stroke="#e8e8e8" stroke-width="1"/>
 
-  <text x="64" y="164" font-size="11" font-weight="700" letter-spacing="1.5" fill="#5a7a8a">PAY ATTENTION TO</text>
-  <text x="64" y="188" font-size="16" fill="#444">Consistency in something specific — color, line weight, media —</text>
-  <text x="64" y="210" font-size="16" fill="#444">not just a general feeling that it's "put together."</text>
+  <text x="64" y="168" font-size="11" font-weight="700" letter-spacing="1.5" fill="#5a7a8a">PAY ATTENTION TO</text>
+  <text x="64" y="190" font-size="16" fill="#444">Consistency in something specific — color, line weight, media —</text>
+  <text x="64" y="212" font-size="16" fill="#444">not just a general feeling that it's "put together."</text>
 
   <!-- palette motif -->
   <g>
-    <rect x="250" y="252" width="76" height="60" fill="#3f5c6a"/>
-    <rect x="326" y="252" width="76" height="60" fill="#5a7a8a"/>
-    <rect x="402" y="252" width="76" height="60" fill="#6d8d9d"/>
-    <rect x="478" y="252" width="76" height="60" fill="#88a4b2"/>
-    <rect x="554" y="252" width="76" height="60" fill="#a5c0cc"/>
-    <rect x="630" y="252" width="76" height="60" fill="#c5dbe3"/>
-    <text x="250" y="330" font-size="11" fill="#5a7a8a" font-weight="600">ONE FAMILY</text>
-    <text x="554" y="330" font-size="11" fill="#757575" font-weight="600">SIX DIFFERENT ROLES</text>
+    <rect x="250" y="252" width="76" height="50" fill="#3f5c6a"/>
+    <rect x="326" y="252" width="76" height="50" fill="#5a7a8a"/>
+    <rect x="402" y="252" width="76" height="50" fill="#6d8d9d"/>
+    <rect x="478" y="252" width="76" height="50" fill="#88a4b2"/>
+    <rect x="554" y="252" width="76" height="50" fill="#a5c0cc"/>
+    <rect x="630" y="252" width="76" height="50" fill="#c5dbe3"/>
+    <text x="250" y="328" font-size="11" fill="#5a7a8a" font-weight="600">ONE FAMILY</text>
+    <text x="554" y="328" font-size="11" fill="#757575" font-weight="600">SIX DIFFERENT ROLES</text>
   </g>
 
-  <text x="64" y="404" font-size="11" font-weight="700" letter-spacing="1.5" fill="#5a7a8a">HOW THE CLASS RESPONDED</text>
-  <text x="64" y="428" font-size="15.5" fill="#333">Almost everyone flagged consistency as present or absent. The best notes</text>
-  <text x="64" y="450" font-size="15.5" fill="#333">named the actual mechanism holding it together.</text>
+  <text x="64" y="360" font-size="11" font-weight="700" letter-spacing="1.5" fill="#5a7a8a">HOW THE CLASS RESPONDED</text>
+  <text x="64" y="382" font-size="15.5" fill="#333">Almost everyone flagged consistency as present or absent. The best notes</text>
+  <text x="64" y="404" font-size="15.5" fill="#333">named the actual mechanism holding it together.</text>
 
-  <rect x="64" y="474" width="404" height="46" fill="#f7f7f7"/>
-  <rect x="64" y="474" width="3" height="46" fill="#5a7a8a"/>
-  <text x="80" y="500" font-size="13.5" fill="#444" font-style="italic">"The consistency lies in the colors chosen."</text>
+  <rect x="64" y="428" width="404" height="44" fill="#f7f7f7"/>
+  <rect x="64" y="428" width="3" height="44" fill="#5a7a8a"/>
+  <text x="80" y="455" font-size="13.5" fill="#444" font-style="italic">"The consistency lies in the colors chosen."</text>
 
-  <rect x="484" y="474" width="412" height="46" fill="#f7f7f7"/>
-  <rect x="484" y="474" width="3" height="46" fill="#5a7a8a"/>
-  <text x="500" y="493" font-size="13.5" fill="#444" font-style="italic">"I love the subtle use of the same color</text>
-  <text x="500" y="510" font-size="13.5" fill="#444" font-style="italic">throughout the spread."</text>
+  <rect x="484" y="428" width="412" height="44" fill="#f7f7f7"/>
+  <rect x="484" y="428" width="3" height="44" fill="#5a7a8a"/>
+  <text x="500" y="446" font-size="13.5" fill="#444" font-style="italic">"I love the subtle use of the same color</text>
+  <text x="500" y="463" font-size="13.5" fill="#444" font-style="italic">throughout the spread."</text>
 </svg>

@@ -2,42 +2,42 @@
   <rect x="0" y="0" width="960" height="540" fill="#fff"/>
   <rect x="1" y="1" width="958" height="538" fill="none" stroke="#e8e8e8" stroke-width="1"/>
 
-  <text x="64" y="60" font-size="11" font-weight="600" letter-spacing="2" fill="#8a7c3d">CATEGORY IV OF V</text>
-  <text x="62" y="108" font-size="32" font-weight="700" fill="#222">Sequencing &amp; Pacing</text>
-  <line x1="64" y1="130" x2="896" y2="130" stroke="#e8e8e8" stroke-width="1"/>
+  <text x="64" y="72" font-size="11" font-weight="600" letter-spacing="2" fill="#8a7c3d">CATEGORY IV OF V</text>
+  <text x="62" y="116" font-size="32" font-weight="700" fill="#222">Sequencing &amp; Pacing</text>
+  <line x1="64" y1="138" x2="896" y2="138" stroke="#e8e8e8" stroke-width="1"/>
 
-  <text x="64" y="164" font-size="11" font-weight="700" letter-spacing="1.5" fill="#8a7c3d">PAY ATTENTION TO</text>
-  <text x="64" y="188" font-size="16" fill="#444">The experience of moving through the project — not just the order</text>
-  <text x="64" y="210" font-size="16" fill="#444">of the content.</text>
+  <text x="64" y="168" font-size="11" font-weight="700" letter-spacing="1.5" fill="#8a7c3d">PAY ATTENTION TO</text>
+  <text x="64" y="190" font-size="16" fill="#444">The experience of moving through the project — not just the order</text>
+  <text x="64" y="212" font-size="16" fill="#444">of the content.</text>
 
   <!-- rhythm bars motif -->
   <g fill="#8a7c3d">
-    <rect x="256" y="250" width="40" height="70"/>
-    <rect x="307" y="295" width="40" height="25" opacity="0.35"/>
-    <rect x="358" y="265" width="40" height="55" opacity="0.7"/>
-    <rect x="409" y="250" width="40" height="70"/>
-    <rect x="460" y="290" width="40" height="30" opacity="0.35"/>
-    <rect x="511" y="260" width="40" height="60" opacity="0.7"/>
-    <rect x="562" y="245" width="40" height="75"/>
-    <rect x="613" y="285" width="40" height="35" opacity="0.35"/>
-    <rect x="664" y="270" width="40" height="50" opacity="0.7"/>
+    <rect x="256" y="230" width="40" height="70"/>
+    <rect x="307" y="275" width="40" height="25" opacity="0.35"/>
+    <rect x="358" y="245" width="40" height="55" opacity="0.7"/>
+    <rect x="409" y="230" width="40" height="70"/>
+    <rect x="460" y="270" width="40" height="30" opacity="0.35"/>
+    <rect x="511" y="240" width="40" height="60" opacity="0.7"/>
+    <rect x="562" y="225" width="40" height="75"/>
+    <rect x="613" y="265" width="40" height="35" opacity="0.35"/>
+    <rect x="664" y="250" width="40" height="50" opacity="0.7"/>
   </g>
-  <line x1="250" y1="320" x2="710" y2="320" stroke="#e8e8e8" stroke-width="1"/>
-  <text x="256" y="336" font-size="11" fill="#8a7c3d" font-weight="600">DENSE</text>
-  <text x="307" y="336" font-size="11" fill="#a39a6e" font-weight="600">LIGHT</text>
-  <text x="562" y="336" font-size="11" fill="#757575">A rhythm, not a flat line</text>
+  <line x1="250" y1="300" x2="710" y2="300" stroke="#e8e8e8" stroke-width="1"/>
+  <text x="256" y="328" font-size="11" fill="#8a7c3d" font-weight="600">DENSE</text>
+  <text x="307" y="328" font-size="11" fill="#a39a6e" font-weight="600">LIGHT</text>
+  <text x="562" y="328" font-size="11" fill="#757575">A rhythm, not a flat line</text>
 
-  <text x="64" y="404" font-size="11" font-weight="700" letter-spacing="1.5" fill="#8a7c3d">HOW THE CLASS RESPONDED</text>
-  <text x="64" y="428" font-size="15.5" fill="#333">Many of you picked up on rhythm: density against white space, dense</text>
-  <text x="64" y="450" font-size="15.5" fill="#333">pages followed by a breath.</text>
+  <text x="64" y="360" font-size="11" font-weight="700" letter-spacing="1.5" fill="#8a7c3d">HOW THE CLASS RESPONDED</text>
+  <text x="64" y="382" font-size="15.5" fill="#333">Many of you picked up on rhythm: density against white space, dense</text>
+  <text x="64" y="404" font-size="15.5" fill="#333">pages followed by a breath.</text>
 
-  <rect x="64" y="474" width="404" height="46" fill="#f7f7f7"/>
-  <rect x="64" y="474" width="3" height="46" fill="#8a7c3d"/>
-  <text x="80" y="493" font-size="13.5" fill="#444" font-style="italic">"A good balance of full spread and</text>
-  <text x="80" y="510" font-size="13.5" fill="#444" font-style="italic">individual images."</text>
+  <rect x="64" y="428" width="404" height="44" fill="#f7f7f7"/>
+  <rect x="64" y="428" width="3" height="44" fill="#8a7c3d"/>
+  <text x="80" y="446" font-size="13.5" fill="#444" font-style="italic">"A good balance of full spread and</text>
+  <text x="80" y="463" font-size="13.5" fill="#444" font-style="italic">individual images."</text>
 
-  <rect x="484" y="474" width="412" height="46" fill="#f7f7f7"/>
-  <rect x="484" y="474" width="3" height="46" fill="#8a7c3d"/>
-  <text x="500" y="493" font-size="13.5" fill="#444" font-style="italic">"Spread reads too flat — every page</text>
-  <text x="500" y="510" font-size="13.5" fill="#444" font-style="italic">is filled completely."</text>
+  <rect x="484" y="428" width="412" height="44" fill="#f7f7f7"/>
+  <rect x="484" y="428" width="3" height="44" fill="#8a7c3d"/>
+  <text x="500" y="446" font-size="13.5" fill="#444" font-style="italic">"Spread reads too flat — every page</text>
+  <text x="500" y="463" font-size="13.5" fill="#444" font-style="italic">is filled completely."</text>
 </svg>

@@ -2,12 +2,12 @@
   <rect x="0" y="0" width="960" height="540" fill="#fff"/>
   <rect x="1" y="1" width="958" height="538" fill="none" stroke="#e8e8e8" stroke-width="1"/>
 
-  <text x="64" y="60" font-size="11" font-weight="600" letter-spacing="2" fill="#3d7a6b">CATEGORY II OF V</text>
-  <text x="62" y="108" font-size="32" font-weight="700" fill="#222">Image Selection &amp; Curation</text>
-  <line x1="64" y1="130" x2="896" y2="130" stroke="#e8e8e8" stroke-width="1"/>
+  <text x="64" y="72" font-size="11" font-weight="600" letter-spacing="2" fill="#3d7a6b">CATEGORY II OF V</text>
+  <text x="62" y="116" font-size="32" font-weight="700" fill="#222">Image Selection &amp; Curation</text>
+  <line x1="64" y1="138" x2="896" y2="138" stroke="#e8e8e8" stroke-width="1"/>
 
-  <text x="64" y="164" font-size="11" font-weight="700" letter-spacing="1.5" fill="#3d7a6b">PAY ATTENTION TO</text>
-  <text x="64" y="188" font-size="16" fill="#444">Whether each image earns its place — or just adds volume.</text>
+  <text x="64" y="168" font-size="11" font-weight="700" letter-spacing="1.5" fill="#3d7a6b">PAY ATTENTION TO</text>
+  <text x="64" y="190" font-size="16" fill="#444">Whether each image earns its place — or just adds volume.</text>
 
   <!-- curation grid motif -->
   <g>
@@ -24,21 +24,21 @@
     </g>
     <rect x="650" y="248" width="60" height="60" fill="#eef5f3" stroke="#3d7a6b" stroke-width="1.5"/>
 
-    <text x="250" y="332" font-size="11" fill="#3d7a6b" font-weight="600">4 KEPT</text>
-    <text x="570" y="332" font-size="11" fill="#9a9a9a" font-weight="600">2 CUT — REPEATED INFORMATION</text>
+    <text x="250" y="328" font-size="11" fill="#3d7a6b" font-weight="600">4 KEPT</text>
+    <text x="570" y="328" font-size="11" fill="#9a9a9a" font-weight="600">2 CUT — REPEATED INFORMATION</text>
   </g>
 
-  <text x="64" y="404" font-size="11" font-weight="700" letter-spacing="1.5" fill="#3d7a6b">HOW THE CLASS RESPONDED</text>
-  <text x="64" y="428" font-size="15.5" fill="#333">Most of you noticed variety — renders, diagrams, and models working</text>
-  <text x="64" y="450" font-size="15.5" fill="#333">together. The strongest notes noticed restraint: when a project repeated itself.</text>
+  <text x="64" y="360" font-size="11" font-weight="700" letter-spacing="1.5" fill="#3d7a6b">HOW THE CLASS RESPONDED</text>
+  <text x="64" y="382" font-size="15.5" fill="#333">Most of you noticed variety — renders, diagrams, and models working</text>
+  <text x="64" y="404" font-size="15.5" fill="#333">together. The strongest notes noticed restraint: when a project repeated itself.</text>
 
-  <rect x="64" y="474" width="404" height="46" fill="#f7f7f7"/>
-  <rect x="64" y="474" width="3" height="46" fill="#3d7a6b"/>
-  <text x="80" y="493" font-size="13.5" fill="#444" font-style="italic">"Images appeal not only to the final</text>
-  <text x="80" y="510" font-size="13.5" fill="#444" font-style="italic">product, but also the process."</text>
+  <rect x="64" y="428" width="404" height="44" fill="#f7f7f7"/>
+  <rect x="64" y="428" width="3" height="44" fill="#3d7a6b"/>
+  <text x="80" y="446" font-size="13.5" fill="#444" font-style="italic">"Images appeal not only to the final</text>
+  <text x="80" y="463" font-size="13.5" fill="#444" font-style="italic">product, but also the process."</text>
 
-  <rect x="484" y="474" width="412" height="46" fill="#f7f7f7"/>
-  <rect x="484" y="474" width="3" height="46" fill="#3d7a6b"/>
-  <text x="500" y="493" font-size="13.5" fill="#444" font-style="italic">"Too many fabrication photos that</text>
-  <text x="500" y="510" font-size="13.5" fill="#444" font-style="italic">do not add any information."</text>
+  <rect x="484" y="428" width="412" height="44" fill="#f7f7f7"/>
+  <rect x="484" y="428" width="3" height="44" fill="#3d7a6b"/>
+  <text x="500" y="446" font-size="13.5" fill="#444" font-style="italic">"Too many fabrication photos that</text>
+  <text x="500" y="463" font-size="13.5" fill="#444" font-style="italic">do not add any information."</text>
 </svg>
