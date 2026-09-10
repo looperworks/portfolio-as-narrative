@@ -1473,7 +1473,6 @@ const SESSIONS = [
         "Case Study: The Social Network (2010), Selling Mood Over Plot",
         "Case Study: Terminator Genisys (2015), Giving Away the Twist",
         "Where the Trailer Metaphor Breaks: Portfolios Always Show the Ending",
-        "The Turn: Your Image Sequence Is Your Trailer for the Project",
       ],
     },
     reviewCarousel: {
