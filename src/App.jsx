@@ -1505,9 +1505,9 @@ const SESSIONS = [
         "Flexible Framework, the worked example referenced above. Full sequence at [Session 03 Activity](#/session/3).",
       ],
     },
-    dueToday: "Precedent Review Notes (from Session 02)",
     dueBy: "11:59 PM, Sunday, September 13",
-    homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, (4) lay out your own images into a storyboard following that outline, and (5) submit your InDesign file and a PDF of the storyboard, along with your project statement and outline written up in a Word document.",
+    homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, and (4) lay out your own images into a storyboard following that outline.",
+    finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement and outline.",
     readingAssignment: "Read [“It All Starts From the Statement”](#/reading/3) before starting this week's assignment.",
   },
   {
