@@ -1474,12 +1474,13 @@ const SESSIONS = [
         "Worked Example: Flexible Framework, a Building Arts Center project by Nick McIntosh (Washington University in St. Louis)",
       ],
     },
+    activityMinutes: 30,
     activityIntro: "Read the project statement for Flexible Framework, a real graduate thesis project, once, all the way through. Then, without looking at the original portfolio, arrange the 21 unlabeled images into a sequence in InDesign that tells the story the statement describes. There is no single correct layout. This is a test of how closely you can read a statement for the sequencing decisions it already implies.",
     activityItems: [
       "Materials (the project statement and all 21 renamed images) are in your Class 3 folder in the shared Class Google Drive.",
       "Read the statement before you open a single image. Going in blind defeats the exercise.",
       "As you place each image, ask which sentence in the statement it is proving.",
-      "20 minutes to build your sequence. Don't polish the layout, just get the order right.",
+      "30 minutes to build your sequence. Don't polish the layout, just get the order right.",
     ],
     discussionIntro: "Compare your sequence with a partner's. Where did you agree, and where did you make a different call?",
     breakout: {
