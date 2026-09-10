@@ -12,41 +12,41 @@
   <!-- five category chips -->
   <g font-size="10" font-weight="600" letter-spacing="0.5">
     <g>
-      <rect x="64" y="336" width="150" height="86" fill="#f7f7f7" stroke="#e8e8e8"/>
-      <rect x="64" y="336" width="150" height="5" fill="#6b4c7a"/>
-      <text x="78" y="368" fill="#757575">I</text>
-      <text x="78" y="392" fill="#222" font-size="12" font-weight="700">Storytelling</text>
-      <text x="78" y="408" fill="#6b6b6b" font-size="10" font-weight="400">Narrative Arc</text>
+      <rect x="64" y="300" width="150" height="80" fill="#f7f7f7" stroke="#e8e8e8"/>
+      <rect x="64" y="300" width="150" height="5" fill="#6b4c7a"/>
+      <text x="78" y="330" fill="#757575">I</text>
+      <text x="78" y="352" fill="#222" font-size="12" font-weight="700">Storytelling</text>
+      <text x="78" y="368" fill="#6b6b6b" font-size="10" font-weight="400">Narrative Arc</text>
     </g>
     <g>
-      <rect x="230" y="336" width="150" height="86" fill="#f7f7f7" stroke="#e8e8e8"/>
-      <rect x="230" y="336" width="150" height="5" fill="#3d7a6b"/>
-      <text x="244" y="368" fill="#757575">II</text>
-      <text x="244" y="392" fill="#222" font-size="12" font-weight="700">Curation</text>
-      <text x="244" y="408" fill="#6b6b6b" font-size="10" font-weight="400">Image Selection</text>
+      <rect x="230" y="300" width="150" height="80" fill="#f7f7f7" stroke="#e8e8e8"/>
+      <rect x="230" y="300" width="150" height="5" fill="#3d7a6b"/>
+      <text x="244" y="330" fill="#757575">II</text>
+      <text x="244" y="352" fill="#222" font-size="12" font-weight="700">Curation</text>
+      <text x="244" y="368" fill="#6b6b6b" font-size="10" font-weight="400">Image Selection</text>
     </g>
     <g>
-      <rect x="396" y="336" width="150" height="86" fill="#f7f7f7" stroke="#e8e8e8"/>
-      <rect x="396" y="336" width="150" height="5" fill="#5a7a8a"/>
-      <text x="410" y="368" fill="#757575">III</text>
-      <text x="410" y="392" fill="#222" font-size="12" font-weight="700">Craft</text>
-      <text x="410" y="408" fill="#6b6b6b" font-size="10" font-weight="400">Visual Consistency</text>
+      <rect x="396" y="300" width="150" height="80" fill="#f7f7f7" stroke="#e8e8e8"/>
+      <rect x="396" y="300" width="150" height="5" fill="#5a7a8a"/>
+      <text x="410" y="330" fill="#757575">III</text>
+      <text x="410" y="352" fill="#222" font-size="12" font-weight="700">Craft</text>
+      <text x="410" y="368" fill="#6b6b6b" font-size="10" font-weight="400">Visual Consistency</text>
     </g>
     <g>
-      <rect x="562" y="336" width="150" height="86" fill="#f7f7f7" stroke="#e8e8e8"/>
-      <rect x="562" y="336" width="150" height="5" fill="#8a7c3d"/>
-      <text x="576" y="368" fill="#757575">IV</text>
-      <text x="576" y="392" fill="#222" font-size="12" font-weight="700">Pacing</text>
-      <text x="576" y="408" fill="#6b6b6b" font-size="10" font-weight="400">Sequencing</text>
+      <rect x="562" y="300" width="150" height="80" fill="#f7f7f7" stroke="#e8e8e8"/>
+      <rect x="562" y="300" width="150" height="5" fill="#8a7c3d"/>
+      <text x="576" y="330" fill="#757575">IV</text>
+      <text x="576" y="352" fill="#222" font-size="12" font-weight="700">Pacing</text>
+      <text x="576" y="368" fill="#6b6b6b" font-size="10" font-weight="400">Sequencing</text>
     </g>
     <g>
-      <rect x="728" y="336" width="150" height="86" fill="#f7f7f7" stroke="#e8e8e8"/>
-      <rect x="728" y="336" width="150" height="5" fill="#a15c3f"/>
-      <text x="742" y="368" fill="#757575">V</text>
-      <text x="742" y="392" fill="#222" font-size="12" font-weight="700">Hierarchy</text>
-      <text x="742" y="408" fill="#6b6b6b" font-size="10" font-weight="400">Structure</text>
+      <rect x="728" y="300" width="150" height="80" fill="#f7f7f7" stroke="#e8e8e8"/>
+      <rect x="728" y="300" width="150" height="5" fill="#a15c3f"/>
+      <text x="742" y="330" fill="#757575">V</text>
+      <text x="742" y="352" fill="#222" font-size="12" font-weight="700">Hierarchy</text>
+      <text x="742" y="368" fill="#6b6b6b" font-size="10" font-weight="400">Structure</text>
     </g>
   </g>
 
-  <text x="64" y="464" font-size="13" fill="#757575">23 submissions · 11 years each · one shared set of eyes across all of them</text>
+  <text x="64" y="418" font-size="13" fill="#757575">23 submissions · 11 years each · one shared set of eyes across all of them</text>
 </svg>
