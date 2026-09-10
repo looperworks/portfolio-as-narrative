@@ -1470,6 +1470,20 @@ const SESSIONS = [
         "Worked Example: Flexible Framework, a Building Arts Center project by Nick McIntosh (Washington University in St. Louis)",
       ],
     },
+    reviewCarousel: {
+      projectTitle: "Precedent Review: What the Cohort Found",
+      projectMeta: "8 slides · patterns from Session 02's Precedent Review, category by category",
+      images: [
+        { image: "class2-review/01-title.svg", alt: "Title slide: Precedent Review, What the Cohort Found", label: "What the cohort found" },
+        { image: "class2-review/02-patterns.svg", alt: "Patterns across the class", label: "Patterns across the class" },
+        { image: "class2-review/03-storytelling.svg", alt: "Category I: Storytelling and Narrative Arc", label: "I — Storytelling & Narrative Arc" },
+        { image: "class2-review/04-curation.svg", alt: "Category II: Image Selection and Curation", label: "II — Image Selection & Curation" },
+        { image: "class2-review/05-craft.svg", alt: "Category III: Visual Craft and Consistency", label: "III — Visual Craft & Consistency" },
+        { image: "class2-review/06-pacing.svg", alt: "Category IV: Sequencing and Pacing", label: "IV — Sequencing & Pacing" },
+        { image: "class2-review/07-hierarchy.svg", alt: "Category V: Structure and Hierarchy", label: "V — Structure & Hierarchy" },
+        { image: "class2-review/08-transition.svg", alt: "Transition into tonight's activity", label: "Into Class 3" },
+      ],
+    },
     activityMinutes: 30,
     activityIntro: "Read the project statement for Flexible Framework, a real graduate thesis project, once, all the way through. Then, without looking at the original portfolio, arrange the 21 unlabeled images into a sequence in InDesign that tells the story the statement describes. There is no single correct layout. This is a test of how closely you can read a statement for the sequencing decisions it already implies.",
     activityItems: [
@@ -1765,6 +1779,7 @@ function SessionDetail({ session }) {
   const s = session;
   let secN = 0;
   const secNum = () => String(++secN).padStart(2, "0");
+  const numReview = s.reviewCarousel ? secNum() : null;
   const numWarmUp = s.warmUp ? secNum() : null;
   const numLectures = s.noLecture ? null : secNum();
   const numActivity = s.activityIntro ? secNum() : null;
@@ -1813,6 +1828,19 @@ function SessionDetail({ session }) {
       </div>
 
       <div style={{ borderTop: `1px solid ${T.border}`, marginBottom: 26 }}>
+        {s.reviewCarousel && (
+          <CollapsibleSection num={numReview} minutes={s.reviewMinutes || 10} title="Review" defaultOpen={s.sectionsDefaultOpen}>
+            <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: "0 0 12px" }}>
+              {renderText(s.reviewIntro || "Before we start: a quick look at what the whole class noticed in the Precedent Review, category by category.")}
+            </p>
+            <PortfolioCarousel
+              images={s.reviewCarousel.images}
+              projectTitle={s.reviewCarousel.projectTitle}
+              projectMeta={s.reviewCarousel.projectMeta}
+            />
+          </CollapsibleSection>
+        )}
+
         {s.warmUp && (
           <CollapsibleSection num={numWarmUp} minutes={s.warmUpMinutes || 20} title="Warm Up" defaultOpen={s.sectionsDefaultOpen}>
             {s.warmUp.blocks && s.warmUp.blocks.map((b, i) => (

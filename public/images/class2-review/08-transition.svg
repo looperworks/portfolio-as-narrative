@@ -1,0 +1,18 @@
+<svg width="960" height="540" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <rect x="0" y="0" width="960" height="540" fill="#1c1c1c"/>
+
+  <text x="64" y="72" font-size="11" font-weight="600" letter-spacing="2" fill="#a5c0cc">TONIGHT</text>
+  <text x="62" y="200" font-size="52" font-weight="700" fill="#fff">Turn the Same Eye</text>
+  <text x="62" y="260" font-size="52" font-weight="700" fill="#fff">Outward</text>
+
+  <line x1="64" y1="300" x2="500" y2="300" stroke="#444" stroke-width="1"/>
+
+  <text x="64" y="336" font-size="17" fill="#c9c9c9">Same five categories.</text>
+  <text x="64" y="364" font-size="17" fill="#c9c9c9">A project statement you didn't write.</text>
+  <text x="64" y="392" font-size="17" fill="#c9c9c9">A sequence you have to build yourself.</text>
+
+  <g>
+    <rect x="64" y="432" width="230" height="46" fill="none" stroke="#5a7a8a" stroke-width="1.5"/>
+    <text x="84" y="461" font-size="15" fill="#a5c0cc" font-weight="600">&#8594; Flexible Framework</text>
+  </g>
+</svg>
