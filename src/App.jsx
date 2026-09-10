@@ -1651,46 +1651,27 @@ const SESSIONS = [
     references: "Threshold Resources — Jobs & Career Boards; Technical Standards & Production module",
   },
   {
-    num: 10, title: "Cover Typologies",
+    num: 10, title: "Cover & Table of Contents Design: The Portfolio Checkpoint",
     moduleRefs: [11],
-    status: "proposed", date: "Thu, Nov 5, 2026",
-    tagline: "Seven compositional patterns, and what each signals before anyone opens the book.",
+    status: "proposed", date: "Thu, Nov 12, 2026",
+    dateNote: "Final Session",
+    tagline: "Two thresholds a reviewer crosses before the work itself — and your first fully assembled submission.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
       "Seven Cover Typologies: Pure Minimal, Dark Ground, Hero Image, Bleed + Type Band, Scattered Collage, Grid/Pattern, Abstract Line",
-      "Synthesis Matrix: Rigid ↔ Freeform, Typographic ↔ Image-Driven",
-      "Structured Peer Review (5-Minute Presentations, Scored Checklist)",
+      "Six TOC Typologies: Illustrated Section Grid, Multi-Column Index, Thumbnail Gallery, Literary Chapter Index, Bold Number Cards, Narrative + List Hybrid",
+      "Synthesis Matrix: Rigid ↔ Freeform, Typographic ↔ Image-Driven, Conventional ↔ Expressive",
+      "Structured Peer Review (5-Minute Presentations, Scored Checklist) — Cover and TOC Together",
       "Self-Evaluation: Technical Setup + Design Categories + Typography",
     ],
     breakout: {
-      undergrad: "Does your cover need to admit you're a student, or is it fine that it doesn't? Discuss what an entry-level cover should signal.",
-      grad: "Does your cover read as a working designer's, not a student's? What one change would make it read more senior?",
+      undergrad: "Does your cover need to admit you're a student, or is it fine that it doesn't? What's the minimum viable complete portfolio for someone entering the field for the first time? Peer-review each other against that bar, not a professional's.",
+      grad: "Does your cover read as a working designer's, not a student's? Is this ready to send to an employer tomorrow? If not, name the single blocking issue.",
     },
     dueToday: "Completed Self-Audit",
-    homework: "Bring 2–3 distinct cover directions built on your interior grid",
-    references: "Threshold Portfolio Guide — Portfolio Identity, Cover & Table of Contents",
-  },
-  {
-    num: 11, title: "Table of Contents Design & the Portfolio Checkpoint",
-    moduleRefs: [],
-    status: "proposed", date: "Thu, Nov 12, 2026",
-    dateNote: "Final Session",
-    tagline: "The TOC is part of the narrative arc, not an index — and your first fully assembled submission.",
-    tags: ["Lecture", "Discussion", "Assignment"],
-    agenda: [
-      "Debrief: Session 10 Peer-Review Data Shown Directly to the Class",
-      "Six TOC Typologies: Illustrated Section Grid, Multi-Column Index, Thumbnail Gallery, Literary Chapter Index, Bold Number Cards, Narrative + List Hybrid",
-      "Comparison Matrix: Image vs. Text, Density, Conventional vs. Expressive",
-      "Paired Peer Cover-Review Activity",
-    ],
-    breakout: {
-      undergrad: "What's the minimum viable complete portfolio for someone entering the field for the first time? Peer-review each other against that bar, not a professional's.",
-      grad: "Is this ready to send to an employer tomorrow? If not, name the single blocking issue.",
-    },
-    dueToday: "2–3 Cover Directions",
     homework: null,
     finalDeliverable: "Portfolio Checkpoint — final cover + chosen TOC + two fully laid-out project spreads, submitted as PDF and .indd",
-    references: "Threshold Portfolio Guide — Portfolio Identity, Cover & TOC; Threshold Resources — 10 Sites to Follow",
+    references: "Threshold Portfolio Guide — Portfolio Identity, Cover & Table of Contents; Threshold Resources — 10 Sites to Follow",
   },
 ];
 
@@ -2015,7 +1996,7 @@ const SYLLABUS_PDF_GRAD = `${import.meta.env.BASE_URL}syllabus/ARCH_ST_Portfolio
 const ABOUT_TEXT = [
   "Portfolio as Narrative is the companion resource for ARCH-Portfolio (44611/002) and ARCH-ST:Portfolio (56995/006), a studio-style course at Kent State University's College of Architecture and Environmental Design, taught by Seth Looper (M.Arch, Rhode Island School of Design). The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
   "The guide covers fifteen modules across three parts, organized into the term's [eleven class sessions](#/). [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/12) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
-  "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course meets once weekly for eleven sessions in Fall 2026, from portfolio foundations and critical observation through a precedent-review working session, narrative, grid systems, typography, and color, to final production, cover and table-of-contents design, and the portfolio checkpoint. Assignments build progressively toward a fully resolved academic portfolio.",
+  "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course meets once weekly for ten sessions in Fall 2026, from portfolio foundations and critical observation through a precedent-review working session, narrative, grid systems, typography, and color, to final production, cover and table-of-contents design, and the portfolio checkpoint. Assignments build progressively toward a fully resolved academic portfolio.",
   "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument, and this guide shows you how to build one.",
   `For grading, attendance, and university policies, see the official course syllabus: [undergraduate, 44611](${SYLLABUS_PDF_UNDERGRAD}) (also on [SimpleSyllabus](${SYLLABUS_LINK})) or [graduate, 56995](${SYLLABUS_PDF_GRAD}).`,
 ];
@@ -3150,7 +3131,7 @@ export default function PortfolioGuide() {
               Portfolio Workshop
             </div>
             <div style={{ fontSize: 9, color: T.textFaint, marginTop: 3, letterSpacing: "0.02em" }}>
-              Fall 2026 · 11 Sessions · Thursdays 6:35–7:55 PM
+              Fall 2026 · 10 Sessions · Thursdays 6:35–7:55 PM
             </div>
           </div>
           <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
