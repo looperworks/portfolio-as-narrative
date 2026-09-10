@@ -1519,6 +1519,7 @@ const SESSIONS = [
     },
     dueBy: "11:59 PM, Sunday, September 13",
     assignmentMinutes: 10,
+    requiredMeeting: "Every student must book a one-on-one meeting with Seth by Sunday, September 13 — this makes up for our missed session and is a chance to talk through your individual goals and status. [Schedule your meeting →](https://calendly.com/seth-looper/kent-state-portfolio-class-office-hours-with-seth)",
     homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, and (4) lay out your own images into a storyboard following that outline.",
     finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement and outline.",
     readingAssignment: "Read [“It All Starts From the Statement”](#/reading/3) before starting this week's assignment.",
@@ -1918,6 +1919,11 @@ function SessionDetail({ session }) {
             {s.dueBy && (
               <div style={{ fontSize: 13, color: T.text, lineHeight: 1.5, fontWeight: 600 }}>
                 Due: {s.dueBy}
+              </div>
+            )}
+            {s.requiredMeeting && (
+              <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6, background: T.accentLight, border: `1px solid ${T.border}`, borderRadius: 6, padding: "10px 12px" }}>
+                <strong style={{ color: T.tagAssignment }}>Required — </strong>{renderText(s.requiredMeeting)}
               </div>
             )}
             {s.dueToday && (
