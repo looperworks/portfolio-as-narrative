@@ -1487,7 +1487,7 @@ const SESSIONS = [
     activityMinutes: 30,
     activityIntro: "Read the project statement for Flexible Framework, a real graduate thesis project, once, all the way through. Then, without looking at the original portfolio, arrange the 21 unlabeled images into a sequence in InDesign that tells the story the statement describes. There is no single correct layout. This is a test of how closely you can read a statement for the sequencing decisions it already implies.",
     activityItems: [
-      "Materials (the project statement and all 21 renamed images) are in your Class 3 folder in the shared Class Google Drive.",
+      "Materials (the project statement and all 21 renamed images): [download the Class 3 folder →](https://drive.google.com/drive/folders/1Ok5Tp-hI2fWX5vaOxMZW1W3BSW6hM9CK?usp=sharing)",
       "Read the statement before you open a single image. Going in blind defeats the exercise.",
       "As you place each image, ask which sentence in the statement it is proving.",
       "30 minutes to build your sequence. Don't polish the layout, just get the order right.",
