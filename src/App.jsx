@@ -1496,6 +1496,7 @@ const SESSIONS = [
       "Read the statement before you open a single image. Going in blind defeats the exercise.",
       "As you place each image, ask which sentence in the statement it is proving.",
       "30 minutes to build your sequence. Don't polish the layout, just get the order right.",
+      "Answer key: [see the statement-to-spread breakdown →](https://drive.google.com/file/d/1EO8swTsZIL4fdaT6iv_UISkA_PMOg5W4/view?usp=sharing)",
     ],
     discussionMinutes: 20,
     discussionFormat: "12 min in pairs, then 8 min whole group (main room)",
