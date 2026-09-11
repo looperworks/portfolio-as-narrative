@@ -1932,14 +1932,14 @@ function SessionDetail({ session }) {
             {s.homework && (
               <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6 }}>
                 <strong style={{ color: T.text }}>Homework: </strong>{s.homework}
-              </div>
-            )}
-            {s.workedExamplePdf && (
-              <div>
-                <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6, marginBottom: 4 }}>
-                  <strong style={{ color: T.text }}>Worked Example: </strong>Read this before you start. It walks through the statement, outline, and storyboard, step by step.
-                </div>
-                <LinkPill href={s.workedExamplePdf} label="Open Worked Example PDF →" />
+                {s.workedExamplePdf && (
+                  <> Homework Guidebook: read this before you start, it walks through the statement, outline, and storyboard, step by step.</>
+                )}
+                {s.workedExamplePdf && (
+                  <div style={{ marginTop: 6 }}>
+                    <LinkPill href={s.workedExamplePdf} label="Open Homework Guidebook →" />
+                  </div>
+                )}
               </div>
             )}
             {s.readingAssignment && (
