@@ -1526,7 +1526,7 @@ const SESSIONS = [
     assignmentMinutes: 10,
     assignmentSectionTitle: "Takeaway & Assignment",
     takeawaySheet: "https://docs.google.com/spreadsheets/d/1Z_vfBiK4q9lG3J6uoxOVk652EMCxaJah/edit?usp=sharing",
-    requiredMeeting: "Every student must reserve a one-on-one meeting with Seth and complete that conversation by Saturday, September 19 — this makes up for our missed session and is a chance to talk through your individual goals and status. New time slots have been added this weekend and next weekend. [Schedule your meeting →](https://calendly.com/seth-looper/kent-state-portfolio-class-office-hours-with-seth)",
+    requiredMeeting: "Every student must reserve a one-on-one meeting with Seth and complete that conversation by Saturday, September 19 — this makes up for our missed session and is a chance to talk through your individual goals and status. New time slots have been added this weekend and next weekend. [Schedule your meeting →](https://calendly.com/slooper-kent/30min)",
     homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, and (4) lay out your own images into a storyboard following that outline.",
     finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement and outline.",
     readingAssignment: "Read [“It All Starts From the Statement”](#/reading/3) before starting this week's assignment.",
