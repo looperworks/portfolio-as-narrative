@@ -1613,7 +1613,7 @@ const SESSIONS = [
         "The grid, applied: [Module 8, Grid Types and Structural Logic](#/module/8).",
       ],
     },
-    readingAssignment: "Read [“The Cubit and the Twelve-Point Grid”](#/reading/4) before Session 05.",
+    readingAssignment: "Read [“The Cubit and the Twelve-Point Grid”](#/reading/4) and [“Five to Seven, Times Twelve”](#/reading/5) before Session 05.",
     references: "Setting Up the File (extracted and rebuilt from SP26 ARCH 66995, Lecture 04 pp. 14-15)",
   },
   {
@@ -1655,7 +1655,6 @@ const SESSIONS = [
         "The proportion, applied: [Module 09, Building the Grid: InDesign Setup](#/module/9).",
       ],
     },
-    readingAssignment: "Read [“Five to Seven, Times Twelve”](#/reading/5) before Session 06.",
   },
   {
     num: 6, title: "Spread Composition and Grid Breaks",
