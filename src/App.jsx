@@ -1546,8 +1546,8 @@ const SESSIONS = [
     },
     warmUpMinutes: 15,
     lectures: {
-      fileUrl: `${import.meta.env.BASE_URL}materials/session-04-lecture-grid-as-system.pdf`,
-      fileLabel: "Lecture Slides (pp. 14-15: Workspace & Document Setup)",
+      fileUrl: `${import.meta.env.BASE_URL}materials/session-04-lecture-setting-up-the-file.pdf`,
+      fileLabel: "Lecture Slides — Setting Up the File",
       items: [
         "Document Setup: units, page size, facing pages — the baseline conditions every file needs before anything else",
         "The Workspace Reset: clearing panel clutter to a blank, professional slate",
@@ -1569,7 +1569,7 @@ const SESSIONS = [
     dueToday: "Assignment 3: Project Statement, Outline, Storyboard, Gap Analysis",
     homework: "Set up one InDesign file properly: correct document specs, organized panels, and a saved workspace. No grid system yet, that starts next class.",
     finalDeliverable: "InDesign file (.indd) and an exported PDF, submitted together.",
-    references: "SP26 ARCH 66995 — Lecture 04: The Grid as System (Workspace & Document Setup, pp. 14-15 only)",
+    references: "Setting Up the File (extracted and rebuilt from SP26 ARCH 66995, Lecture 04 pp. 14-15)",
   },
   {
     num: 5, title: "Building the Grid: The 12-Point System",
