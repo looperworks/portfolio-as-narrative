@@ -1552,7 +1552,7 @@ const SESSIONS = [
       items: [
         "Document Setup: units, page size, facing pages — the baseline conditions every file needs before anything else",
         "The Workspace Reset: clearing panel clutter to a blank, professional slate",
-        "Activating Core Panels: Pages, Layers, Links, Align, Paragraph Styles, Properties, Control Bar",
+        "Activating Core Panels: Pages, Layers, Links, Align, Paragraph Styles, Properties",
         "Parent Page Architecture: an A-Intro splash template and a B-Project content template, so repeating elements update everywhere at once",
         "The Three-Layer System: 03_Text, 02_Images, 01_Guides — locked, non-printing, in that stacking order",
         "Organizing the Dock: grouping, docking, and collapsing panels so the workspace is actually usable",
@@ -1564,7 +1564,7 @@ const SESSIONS = [
     activityMinutes: 30,
     activityItems: [
       "Create a new document with the correct units, page size, and facing pages turned on.",
-      "Reset your workspace, then activate and organize the core panels (Pages, Layers, Links, Align, Paragraph Styles, Properties, Control Bar).",
+      "Reset your workspace, then activate and organize the core panels (Pages, Layers, Links, Align, Paragraph Styles, Properties).",
       "Build two parent pages: A-Intro for your title splash, B-Project for standard content, each with an automatic page number.",
       "Set up your three layers in order — 03_Text, 02_Images, 01_Guides — lock 01_Guides and uncheck Print Layer on it.",
       "Group and dock your panels, then save the workspace under its own name so it's ready to reload next class.",
