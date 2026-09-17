@@ -1543,11 +1543,11 @@ const SESSIONS = [
     warmUpTitle: "Review and Discussion",
     warmUp: {
       items: [
-        "Reviewing our Class 3 assignment: one student volunteers to walk the class through their project statement, outline, storyboard, and gap analysis.",
-        "Small groups: what did you notice in their process? What would you borrow for your own storyboard, and what would you do differently?",
+        "Assignment review: one student presents their project statement, outline, storyboard, and gap analysis from Class 3 for class critique.",
+        "Small-group discussion: identify the methodological choices evident in the presenter's process, then evaluate which merit adoption in your own storyboard and which call for a different approach.",
       ],
     },
-    warmUpMinutes: 25,
+    warmUpMinutes: 30,
     lectures: {
       fileUrl: `${import.meta.env.BASE_URL}materials/session-04-lecture-setting-up-the-file.pdf`,
       fileLabel: "Lecture Slides: Setting Up the File",
@@ -1566,7 +1566,7 @@ const SESSIONS = [
     },
     lecturesMinutes: 20,
     activityIntro: "Set up your own InDesign file live in class, following the steps just covered: a properly configured new document, parent pages, a locked layer system, and a saved workspace.",
-    activityMinutes: 30,
+    activityMinutes: 25,
     activityItems: [
       "Create a new document: units set to Points, page size 612 × 792 pt (8.5 × 11 in), facing pages turned on.",
       "Reset your workspace, then activate the core panels (Pages, Layers, Links, Align, Paragraph Styles, Properties, Control).",
