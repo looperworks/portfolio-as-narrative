@@ -1540,8 +1540,8 @@ const SESSIONS = [
     tags: ["Discussion", "Lecture", "Activity"],
     warmUp: {
       items: [
-        "Reviewing our Class 3 assignment: one student walks the class through their project statement, outline, storyboard, and gaps notes, one at a time.",
-        "Open discussion: what did you notice in their process? What would you borrow for your own storyboard, and what would you do differently?",
+        "Reviewing our Class 3 assignment: students walk the class through their project statement, outline, storyboard, and gaps notes, one at a time.",
+        "Small-group discussion: what did you notice in their process? What would you borrow for your own storyboard, and what would you do differently?",
       ],
     },
     warmUpMinutes: 15,
