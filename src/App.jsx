@@ -1571,13 +1571,13 @@ const SESSIONS = [
       "No grid work tonight — baseline grid, margins/columns, and modular grid are next class. Tonight is the file, the parent pages, the layers, and the workspace.",
     ],
     activityWorksheet: {
-      brief: "Use this to make sure nothing gets missed: check off each setup step as you complete it.",
+      brief: "Check off each setup step as you complete it. This isn't just for you: submit the completed checklist with your file to show how you addressed every item.",
       label: "Download the InDesign Setup Checklist (.pdf)",
       url: `${import.meta.env.BASE_URL}materials/session-04-worksheet-indesign-setup-checklist.pdf`,
     },
     noDiscussion: true,
-    homework: "Set up your InDesign file properly, using the project you chose for the Session 3 assignment: correct document specs, two parent pages (A-Intro, B-Project), a locked three-layer system, and a saved workspace. No grid system yet, that starts next class.",
-    finalDeliverable: "Your InDesign file (.indd), with all of today's setup visible when it's opened.",
+    homework: "Set up your InDesign file properly, using the project you chose for the Session 3 assignment: correct document specs, two parent pages (A-Intro, B-Project), a locked three-layer system, and a saved workspace. Fill out the Setup Checklist as you go. No grid system yet, that starts next class.",
+    finalDeliverable: "Your InDesign file (.indd) and your completed Setup Checklist (.pdf), checked off to show how you addressed every setup item.",
     reading: {
       title: "The Cubit and the Twelve-Point Grid",
       estMinutes: 7,
@@ -2021,7 +2021,7 @@ function SessionDetail({ session }) {
           {s.reading && !s.hideReadingTeaser && (
             <div style={{ marginTop: 18, paddingTop: 16, borderTop: `1px solid ${T.border}` }}>
               <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 8 }}>
-                ~{s.reading.estMinutes} min read · read whenever you like
+                ~{s.reading.estMinutes} min read · required reading
               </div>
               <a href={`#/reading/${s.num}`} style={{ fontSize: 14, fontWeight: 500, color: T.text, lineHeight: 1.4, textDecoration: "underline", textUnderlineOffset: 3 }}>
                 {s.reading.title} →
