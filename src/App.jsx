@@ -408,7 +408,7 @@ function Diagram12Point() {
     <svg aria-hidden="true" viewBox="0 0 420 100" style={{ width: "100%", height: "auto" }}>
       <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">DOCUMENT SETUP: 12-POINT SYSTEM</text>
       {[
-        { param: "Page Size", value: "600 × 840 pt" },
+        { param: "Page Size", value: "600 × 960 pt" },
         { param: "Margins (T/B/I/O)", value: "36 / 48 / 36 / 36 pt" },
         { param: "Columns", value: "6" },
         { param: "Column Gutter", value: "12 pt" },
@@ -864,13 +864,13 @@ The grid should be invisible. When it works, a reviewer reads the argument, not 
 
 Two grids work together. The modular grid divides the page into columns and rows, creating rectangular modules where content is placed. Think of it as the concrete structure of a building: it defines where walls and floors go. The baseline grid is a set of evenly spaced horizontal lines, twelve points apart, that lock text to a consistent vertical rhythm. Think of it as the rebar inside the concrete: invisible but essential for alignment. The modular grid governs placement. The baseline grid governs the internal rhythm of text. Together, they produce the alignment that separates a professional portfolio from an assembled one.
 
-The page proportion for this course is 5:7, a ratio that echoes the Golden Section without forcing it. Columns and rows subdivide that rectangle into a field of modules, the smallest rectangular units where content is placed. The more modules per page, the more layout variation the grid supports. The exact specifications (page size, column count, gutter widths, row count) are covered in [Building the Grid: InDesign Setup](#/module/9). What matters here is the concept: every measurement derives from a single value, and every element on the page resolves to a whole-number multiple of that value.
+The page proportion for this course is 5:8, a ratio that sits within about one percent of the Golden Section. Columns and rows subdivide that rectangle into a field of modules, the smallest rectangular units where content is placed. The more modules per page, the more layout variation the grid supports. The exact specifications (page size, column count, gutter widths, row count) are covered in [Building the Grid: InDesign Setup](#/module/9). What matters here is the concept: every measurement derives from a single value, and every element on the page resolves to a whole-number multiple of that value.
 
 When baseline alignment breaks, the result is subtle but cumulative. By the bottom of a spread, left-column text and right-column text sit at different vertical positions. A trained reviewer notices immediately. The twelve-point system prevents this: every spatial decision resolves as a whole-number multiple of twelve, and the math guarantees alignment.
 
 The [Case Study 02](#/casestudy2) portfolio demonstrates these concepts in practice. Unit plans, renderings, sections, and model photographs all sit within the same modular framework. Each spread is visually distinct but structurally unified. Build the grid first. Fill it after.
 
-**Try this now:** On a blank sheet, draw a rectangle at 5:7 proportion. Divide it into columns with gutters. Add rows. Sketch three different spread layouts using the same grid: one with a dominant image, one with a 50/50 split, one with generous whitespace. Same structure, three arguments.`,
+**Try this now:** On a blank sheet, draw a rectangle at 5:8 proportion. Divide it into columns with gutters. Add rows. Sketch three different spread layouts using the same grid: one with a dominant image, one with a 50/50 split, one with generous whitespace. Same structure, three arguments.`,
     keyInsight: `Two grids work together: the modular grid governs placement, the baseline grid governs rhythm.`,
   },
   {
@@ -955,7 +955,7 @@ Fifth, define paragraph styles. Create four styles that cover the full type hier
 
 Finally, memorize five keyboard shortcuts before your first production session: Preview mode (W), baseline grid visibility (Ctrl/Cmd + Alt + '), guide toggling (Ctrl/Cmd + ;), snap-to-guides (Ctrl/Cmd + Shift + ;), and fit-spread-in-window (Ctrl/Cmd + Alt + 0). These eliminate the mouse travel that slows layout work to a crawl.
 
-**Try this now:** Open InDesign and create a new document at 600×840 points. Set the baseline grid to 12 points starting at zero. Define margins (36pt top, 48pt bottom, 36pt inside, 36pt outside). Add six columns with 12pt gutters and eight rows with 12pt gutters. Toggle the baseline grid on (Ctrl/Cmd + Alt + ') and verify every guideline aligns to a 12pt increment. If any measurement does not divide evenly by 12, find the error before placing any content.`,
+**Try this now:** Open InDesign and create a new document at 600×960 points. Set the baseline grid to 12 points starting at zero. Define margins (36pt top, 48pt bottom, 36pt inside, 36pt outside). Add six columns with 12pt gutters and eight rows with 12pt gutters. Toggle the baseline grid on (Ctrl/Cmd + Alt + ') and verify every guideline aligns to a 12pt increment. If any measurement does not divide evenly by 12, find the error before placing any content.`,
     keyInsight: `Build the grid in order: baseline grid, margins, columns, rows. Each step depends on the one before it.`,
   },
   {
@@ -1613,7 +1613,7 @@ const SESSIONS = [
         "The grid, applied: [Module 8, Grid Types and Structural Logic](#/module/8).",
       ],
     },
-    readingAssignment: "Read [“The Cubit and the Twelve-Point Grid”](#/reading/4) and [“Five to Seven, Times Twelve”](#/reading/5) before Session 05.",
+    readingAssignment: "Read [“The Cubit and the Twelve-Point Grid”](#/reading/4) and [“Five to Eight, Times Twelve”](#/reading/5) before Session 05.",
     references: "Setting Up the File (extracted and rebuilt from SP26 ARCH 66995, Lecture 04 pp. 14-15)",
   },
   {
@@ -1634,24 +1634,24 @@ const SESSIONS = [
     homework: "InDesign file with 12-point baseline grid, margins, columns, rows, parent pages, and paragraph styles set up: structure only, no content yet",
     references: "Threshold Portfolio Guide: Grid Systems & Layout (technical setup)",
     reading: {
-      title: "Five to Seven, Times Twelve",
+      title: "Five to Eight, Times Twelve",
       estMinutes: 7,
       paragraphs: [
         "Every LEGO brick ever made, from a set sold in 1958 to one sold last week, shares one hidden measurement: the distance between two studs. Every brick, plate, and baseplate is built as a whole-number multiple of that single spacing. Nobody measures it when they snap two pieces together. It simply works, because the company decided, once, on the smallest unit the whole system would be built from, and never let anything disagree with it. That decision is what \"atomic unit\" means. Not the smallest thing in the universe, just the smallest thing in this one system, fixed once so everything larger can be built from copies of it.",
-        "In this class, the stud spacing is twelve points. You already know, from the reading before Session 04, why twelve: it divides cleanly by two, three, four, and six, so a spread can split any of those ways without leaving an awkward fraction behind. What that reading did not explain is a question almost everyone asks the moment they open a new document: fine, twelve points for margins and gutters, but why is the page itself 600 by 840 points? Why not just pick a normal size and move on?",
-        "The answer has two separate parts, and the first has nothing to do with the number twelve at all. Before any unit gets chosen, this class fixes the page's shape: five units wide for every seven units tall. A ratio, not a size. Five to seven is a cousin of the golden section, the proportion designers have leaned on for centuries because a rectangle in that range reads as neither a static square nor an awkwardly long strip. This class doesn't try to hit the golden section exactly. Five to seven shares its family resemblance, and it's simple enough to work with by hand.",
-        "A ratio alone doesn't tell you how big to make anything. Five to seven describes a Post-it note and a poster equally well. This is where the atomic unit comes back in, and where the second part of the answer starts: instead of picking a size off a shelf, this class scales the five-to-seven shape using the same twelve-point unit that governs everything else. Multiply both numbers by 120, itself ten copies of twelve, and the shape becomes a size. Five times 120 is 600. Seven times 120 is 840.",
-        "Check the division and the payoff shows up immediately. Six hundred points divided by twelve is exactly 50. Eight hundred forty divided by twelve is exactly 70. No remainder, no leftover fraction, on either edge of the page. The width is fifty stacked copies of the atomic unit. The height is seventy. Before a single margin gets drawn, the page you're about to build already agrees with the unit everything inside it is about to be measured in.",
-        "Here's the part worth sitting with: that clean division isn't unique to 600 by 840. An inch is seventy-two points, six copies of twelve, so almost any page size measured in whole or half inches, Letter, Tabloid, anything off a printer's menu, also lands on a clean multiple of twelve. That part of the math was never the hard problem. The real difference is where the number came from. Letter and Tabloid were sized by paper mills, for reasons that have nothing to do with a portfolio's grid. Six hundred by 840 was sized by this class's own five-to-seven shape and this class's own twelve-point unit. Every dimension on your page traces back to a decision you already understand, not a paper company's convention from a century ago.",
-        "This is the same reason a LEGO baseplate matters more than a sheet of plywood cut to the same size. You could snap bricks onto plywood, and it would loosely work, close enough to look right from across the room. A baseplate built to the exact same stud spacing as the bricks means every connection lands exactly, not approximately. Six hundred by 840 points is this course's baseplate. Everything you build for the rest of the term snaps onto it the same way, because it was built from the same spacing.",
-        "None of this math is something you need to redo by hand every time you open a file. You'll type 600 and 840 into the New Document dialog once, the same way you'd trust a LEGO baseplate without counting its studs first. What matters is understanding why those two numbers showed up in that dialog at all, instead of a page size borrowed from somewhere else. Tonight's activity builds the baseline grid, the columns, and the rows on top of the file you set up last class. Every one of those numbers, like the page itself, traces back to twelve.",
+        "In this class, the stud spacing is twelve points. You already know, from the reading before Session 04, why twelve: it divides cleanly by two, three, four, and six, so a spread can split any of those ways without leaving an awkward fraction behind. What that reading did not explain is a question almost everyone asks the moment they open a new document: fine, twelve points for margins and gutters, but why is the page itself 600 by 960 points? Why not just pick a normal size and move on?",
+        "The answer has two separate parts, and the first has nothing to do with the number twelve at all. Before any unit gets chosen, this class fixes the page's shape: five units wide for every eight units tall. A ratio, not a size. Five to eight sits close to the golden section, the proportion designers have leaned on for centuries because a rectangle in that range reads as neither a static square nor an awkwardly long strip. It isn't an exact match, the golden section is an irrational number and five to eight is a plain fraction, but the two are within about one percent of each other, closer than almost any other simple ratio gets.",
+        "A ratio alone doesn't tell you how big to make anything. Five to eight describes a Post-it note and a poster equally well. This is where the atomic unit comes back in, and where the second part of the answer starts: instead of picking a size off a shelf, this class scales the five-to-eight shape using the same twelve-point unit that governs everything else. Multiply both numbers by 120, itself ten copies of twelve, and the shape becomes a size. Five times 120 is 600. Eight times 120 is 960.",
+        "Check the division and the payoff shows up immediately. Six hundred points divided by twelve is exactly 50. Nine hundred sixty divided by twelve is exactly 80. No remainder, no leftover fraction, on either edge of the page. The width is fifty stacked copies of the atomic unit. The height is eighty. Before a single margin gets drawn, the page you're about to build already agrees with the unit everything inside it is about to be measured in.",
+        "Here's the part worth sitting with: that clean division isn't unique to 600 by 960. An inch is seventy-two points, six copies of twelve, so almost any page size measured in whole or half inches, Letter, Tabloid, anything off a printer's menu, also lands on a clean multiple of twelve. That part of the math was never the hard problem. The real difference is where the number came from. Letter and Tabloid were sized by paper mills, for reasons that have nothing to do with a portfolio's grid. Six hundred by 960 was sized by this class's own five-to-eight shape and this class's own twelve-point unit. Every dimension on your page traces back to a decision you already understand, not a paper company's convention from a century ago.",
+        "This is the same reason a LEGO baseplate matters more than a sheet of plywood cut to the same size. You could snap bricks onto plywood, and it would loosely work, close enough to look right from across the room. A baseplate built to the exact same stud spacing as the bricks means every connection lands exactly, not approximately. Six hundred by 960 points is this course's baseplate. Everything you build for the rest of the term snaps onto it the same way, because it was built from the same spacing.",
+        "None of this math is something you need to redo by hand every time you open a file. You'll type 600 and 960 into the New Document dialog once, the same way you'd trust a LEGO baseplate without counting its studs first. What matters is understanding why those two numbers showed up in that dialog at all, instead of a page size borrowed from somewhere else. Tonight's activity builds the baseline grid, the columns, and the rows on top of the file you set up last class. Every one of those numbers, like the page itself, traces back to twelve.",
       ],
       figures: [
-        { after: 4, image: "reading05-ratio-to-page-size.svg", sourceLabel: "Diagram", alt: "Diagram showing a 5:7 ratio rectangle scaled by 120 to produce a 600 by 840 point page, with both dimensions confirmed as clean multiples of 12", caption: "Five to seven is the shape. Scaling it by 120, ten copies of the twelve-point unit, turns that shape into a page size: 600 by 840 points, each dimension a whole number of twelve-point units." },
+        { after: 4, image: "reading05-ratio-to-page-size.svg", sourceLabel: "Diagram", alt: "Diagram showing a 5:8 ratio rectangle scaled by 120 to produce a 600 by 960 point page, with both dimensions confirmed as clean multiples of 12", caption: "Five to eight is the shape. Scaling it by 120, ten copies of the twelve-point unit, turns that shape into a page size: 600 by 960 points, each dimension a whole number of twelve-point units." },
         { after: 5, image: "reading04-baseline-modular-systems.png", sourceLabel: "Diagram", alt: "Diagram comparing a baseline grid of ruled lines to a modular grid of rectangular cells", caption: "The same twelve-point unit that sizes the page also sets the baseline grid and the modular grid inside it. One measurement, three different jobs." },
       ],
       references: [
-        "Portfolio as Narrative Workshop Manual, Document Setup table: source for the 600 × 840 pt page size and the twelve-point specifications used throughout this reading.",
+        "Portfolio as Narrative Workshop Manual, Document Setup table: earlier source for the atomic-unit specifications; the 5:8 page proportion used in this reading refines its 5:7 figure to sit closer to the golden section.",
         "The proportion, applied: [Module 09, Building the Grid: InDesign Setup](#/module/9).",
       ],
     },
@@ -1893,7 +1893,7 @@ function SessionDetail({ session }) {
       <div style={{ marginBottom: 26 }}>
         {s.noDiscussion ? (
           <div style={{ fontSize: 11.5, color: T.textMuted, letterSpacing: "0.02em" }}>
-            No Teams call this week. Work through this page on your own during class time.
+            Class is still on tonight, just not as a live Teams call. Work through this page on your own, during our regular class time (6:35–7:55 PM).
           </div>
         ) : (
           <TeamsJoinButton />
@@ -2841,10 +2841,10 @@ function Exercise02View({ visible, handleBack, backLabel }) {
 
         <WSection>
           <WStepHeader num={1} title="Document Setup" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Create a new document. The page proportion is 5:7, which echoes the Golden Section. All measurements derive from a single value: 12 points. See <Ref mod={8} label="Module 08: Building the Grid" />.</p>
-          <WExample label="Case Study 02"><em>600 × 840 pt.</em> Facing pages on. Intent: Print. 840 ÷ 12 = 70 baseline units per page. Every margin, gutter, and row height is a multiple of 12.</WExample>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Create a new document. The page proportion is 5:8, within about one percent of the Golden Section. All measurements derive from a single value: 12 points. See <Ref mod={8} label="Module 08: Building the Grid" />.</p>
+          <WExample label="Case Study 02"><em>600 × 960 pt.</em> Facing pages on. Intent: Print. 960 ÷ 12 = 80 baseline units per page. Every margin, gutter, and row height is a multiple of 12.</WExample>
           <div style={{ margin: "16px 0" }}>
-            <Check id="doc-size">Set page size to 600 × 840 points (or your chosen 5:7 proportion)</Check>
+            <Check id="doc-size">Set page size to 600 × 960 points (or your chosen 5:8 proportion)</Check>
             <Check id="doc-facing">Turn on Facing Pages</Check>
             <Check id="doc-baseline">Set baseline grid to start at 0 pt, increment every 12 pt (Preferences → Grids)</Check>
             <Check id="doc-units">Set document units to Points (Preferences → Units & Increments)</Check>
