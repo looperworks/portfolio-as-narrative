@@ -1528,9 +1528,9 @@ const SESSIONS = [
     assignmentSectionTitle: "Takeaway & Assignment",
     takeawaySheet: "https://docs.google.com/spreadsheets/d/1Z_vfBiK4q9lG3J6uoxOVk652EMCxaJah/edit?usp=sharing",
     requiredMeeting: "Every student must reserve a one-on-one meeting with Seth and complete that conversation by Saturday, September 19 — this makes up for our missed session and is a chance to talk through your individual goals and status. New time slots have been added this weekend and next weekend. [Schedule your meeting →](https://calendly.com/slooper-kent/30min)",
-    homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, and (4) lay out your own images into a storyboard following that outline.",
+    homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, (4) lay out your own images into a storyboard following that outline, and (5) write a short gap analysis: any claim in your statement your current images don't yet prove.",
     workedExamplePdf: `${import.meta.env.BASE_URL}materials/session-03-statement-to-storyboard-worked-example.pdf`,
-    finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement and outline.",
+    finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement, outline, and gap analysis.",
     readingAssignment: "Read [“It All Starts From the Statement”](#/reading/3) before starting this week's assignment.",
   },
   {
@@ -1541,8 +1541,8 @@ const SESSIONS = [
     warmUpTitle: "Review and Discussion",
     warmUp: {
       items: [
-        "Reviewing our Class 3 assignment: students walk the class through their project statement, outline, storyboard, and gaps notes, one at a time.",
-        "Small-group discussion: what did you notice in their process? What would you borrow for your own storyboard, and what would you do differently?",
+        "Reviewing our Class 3 assignment: one student volunteers to walk the class through their project statement, outline, storyboard, and gap analysis.",
+        "Small groups: what did you notice in their process? What would you borrow for your own storyboard, and what would you do differently?",
       ],
     },
     warmUpMinutes: 25,
@@ -1576,7 +1576,7 @@ const SESSIONS = [
       url: `${import.meta.env.BASE_URL}materials/session-04-worksheet-indesign-setup-checklist.pdf`,
     },
     noDiscussion: true,
-    homework: "Set up your InDesign file properly, using the project you chose for Assignment 3: correct document specs, two parent pages (A-Intro, B-Project), a locked three-layer system, and a saved workspace. No grid system yet, that starts next class.",
+    homework: "Set up your InDesign file properly, using the project you chose for the Session 3 assignment: correct document specs, two parent pages (A-Intro, B-Project), a locked three-layer system, and a saved workspace. No grid system yet, that starts next class.",
     finalDeliverable: "Your InDesign file (.indd), with all of today's setup visible when it's opened.",
     reading: {
       title: "The Cubit and the Twelve-Point Grid",
@@ -1590,6 +1590,18 @@ const SESSIONS = [
         "A modular grid alone still leaves one thing unresolved: what happens to the lines of text running through it. That's the job of a second, finer grid, the baseline grid, an invisible ruled sheet of evenly spaced horizontal lines that every line of body text locks to, so two columns of text sitting side by side on the same spread land on the same horizontal positions, line for line, even though they were typed independently. Think of the modular grid as the concrete, defining where the mass of the structure sits, and the baseline grid as the rebar buried inside it, invisible once the work is finished, but the reason the whole thing holds its shape instead of drifting out of alignment by the bottom of the page.",
         "This studio's baseline increment, the atomic unit everything else has to be a multiple of, is twelve points. There's nothing sacred about the number twelve. It isn't derived from anyone's forearm and it won't appear in any law of physics. It was chosen, the way the Egyptian cubit was chosen, because it's useful: twelve divides cleanly by two, three, four, and six, so a spread can split into halves, thirds, quarters, or sixths and every one of those divisions still lands on a whole number instead of a stray fraction that quietly drifts off true by the bottom of the page. The cubit wasn't correct either, in any absolute sense. It was agreed on, fixed, and checked, and that was enough to raise a pyramid. Twelve points, agreed on and checked the same way, is enough to raise a portfolio.",
         "You won't be building this alone, even though it may feel that way at two in the morning three weeks from now. A portfolio gets assembled across dozens of separate sessions, on different days, in different moods, sometimes with a full semester between the first spread and the last. Without a fixed unit, that gap shows: spread four quietly disagrees with spread nineteen, and a reviewer feels the disagreement even without being able to name it. Set the baseline once, check every spread against it the way a mason checked a working rod against the temple's master cubit, and the gap disappears. The file you set up last class, the parent pages, the layers, the saved workspace, was the temple. Next class, we cut the rod.",
+      ],
+      figures: [
+        { after: 1, image: "reading04-alexandria-grid-plan.jpg", sourceLabel: "Historical precedent", alt: "19th-century map of ancient Alexandria showing its gridded street plan", caption: "Alexandria, planned on a strict grid of city blocks under the Ptolemies. The same logic the temple builders used, applied at the scale of an entire city: one unit, checked everywhere it repeats." },
+        { after: 2, image: "reading04-precedent-lineage.png", sourceLabel: "Precedent comparison", alt: "Nine architectural plans redrawn with their governing grids highlighted, spanning Villalpando's Temple of Solomon to OMA's Très Grande Bibliothèque", caption: "Nine buildings, four centuries apart, read against the same question: where the grid comes from, and what it is allowed to do. Villalpando's reconstruction of Solomon's Temple, Palladio's Villa Capra, Le Corbusier's Villa Savoye, Hejduk's House I, and OMA's Très Grande Bibliothèque all appear in this reading; the rest carry the same argument further." },
+        { after: 2, image: "reading04-modulor-villa-savoye.png", sourceLabel: "Proportional analysis", alt: "Golden-section rectangles overlaid on the plan of Villa Savoye", caption: "Le Corbusier's own proportional analysis: golden-section rectangles locking every wall, opening, and stair in Villa Savoye's plan to a single governing ratio." },
+        { after: 2, image: "reading04-ken-module.png", sourceLabel: "Comparative precedent", alt: "Diagram of a traditional Japanese room with the ken module marked across its width", caption: "A different tradition, the same discipline. The ken, a Japanese unit of roughly six feet, governs this room's every wall and opening the way the cubit governed the temple: one measure, repeated." },
+        { after: 3, image: "reading04-durer-draughtsman.jpg", sourceLabel: "Historical precedent", alt: "Albrecht Dürer woodcut of a draughtsman ruling a grid onto paper by hand", caption: "Dürer's draughtsman, ruling a grid onto paper by hand before tracing what he sees through it square by square. The instrument changes; checking a mark against a fixed unit does not." },
+        { after: 3, image: "reading04-structural-vs-page-grid.png", sourceLabel: "Diagram", alt: "Side-by-side diagram comparing a building's structural column grid to a page's modular grid", caption: "A building's column grid and a page's modular grid run on the same logic: a bay is a module, a column line is a column, a floor is a row. Structure that carries a building's load and structure that carries a spread's content are not different ideas, only different scales." },
+        { after: 4, image: "reading04-four-grid-types.png", sourceLabel: "Diagram", alt: "Diagram comparing manuscript, column, modular, and hierarchical grid types", caption: "Four ways to divide a page. For architecture portfolios specifically, the modular grid is the one that holds up, since it is the only one built to carry plans, sections, renderings, and text within the same system." },
+        { after: 5, image: "reading04-concrete-rebar-facade.jpg", sourceLabel: "Diagram", alt: "Photograph of a concrete building bisected to reveal its structural frame, overlaid with a typographic grid diagram", caption: "A finished facade shows only its surface. The frame that actually holds the building up, drawn here alongside its alignment grid and typographic baseline, is what the surface hides. A spread works the same way: what a reader sees is the surface, not the system underneath it." },
+        { after: 5, image: "reading04-baseline-modular-systems.png", sourceLabel: "Diagram", alt: "Diagram comparing a baseline grid of ruled lines to a modular grid of rectangular cells", caption: "The baseline grid and the modular grid, side by side. Neither is sufficient alone: the baseline aligns text within a column, the modular grid organizes columns across a page. Combined, they are what let a spread built in October agree with a spread built in March." },
+        { after: 7, image: "reading04-muller-brockmann-cover.jpg", sourceLabel: "Reference", alt: "Cover of Josef Müller-Brockmann's Grid Systems in Graphic Design", caption: "Josef Müller-Brockmann's Grid Systems in Graphic Design (1981), still the standard reference for the ideas in this reading." },
       ],
       references: [
         "Müller-Brockmann, Josef. Grid Systems in Graphic Design. Niggli, 1981.",
@@ -3533,7 +3545,7 @@ export default function PortfolioGuide() {
                 {r.figures && r.figures.filter((f) => f.after === i).map((f, fi) => (
                   <figure key={fi} style={{ margin: "8px 0 28px" }}>
                     <div style={{ fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
-                      {f.image ? "From the case study" : "Diagram"}
+                      {f.sourceLabel || (f.image ? "From the case study" : "Diagram")}
                     </div>
                     <div style={{
                       border: `1px solid ${T.border}`, borderRadius: 4,
