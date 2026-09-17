@@ -1892,13 +1892,7 @@ function SessionDetail({ session }) {
       )}
 
       <div style={{ marginBottom: 26 }}>
-        {s.noDiscussion ? (
-          <div style={{ fontSize: 11.5, color: T.textMuted, letterSpacing: "0.02em" }}>
-            Class is still on tonight, just not as a live Teams call. Work through this page on your own, during our regular class time (6:35–7:55 PM).
-          </div>
-        ) : (
-          <TeamsJoinButton />
-        )}
+        <TeamsJoinButton />
       </div>
 
       <div style={{ borderTop: `1px solid ${T.border}`, marginBottom: 26 }}>
