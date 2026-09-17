@@ -554,15 +554,14 @@ function DiagramParentPages() {
       {/* A-Intro box */}
       <rect x="20" y="28" width="170" height="70" rx="3" fill="#fff" stroke={T.navy} strokeWidth="1.5" />
       <text x="105" y="48" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.navy}>A-Intro (Splash)</text>
-      <text x="105" y="63" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Title area, date/location,</text>
-      <text x="105" y="73" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>page #</text>
+      <text x="105" y="68" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Title area, date/location</text>
       {/* Arrow */}
       <text x="210" y="68" textAnchor="middle" fontSize="14" fill={T.textFaint}>→</text>
       {/* B-Project box */}
       <rect x="230" y="28" width="170" height="70" rx="3" fill="#fff" stroke={T.accent} strokeWidth="1.5" />
       <text x="315" y="48" textAnchor="middle" fontSize="8" fontFamily={T.sans} fontWeight="600" fill={T.accent}>B-Project (Content)</text>
       <text x="315" y="63" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>Header, grid guides,</text>
-      <text x="315" y="73" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>project title, page #</text>
+      <text x="315" y="73" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>project title</text>
       {/* Child pages indicator */}
       <g>
         <line x1="105" y1="106" x2="105" y2="118" stroke={T.border} strokeWidth="1" />
@@ -673,7 +672,7 @@ const DIAGRAM_MAP = {
     { image: "14-indesign-setup-steps.svg", title: "InDesign Setup Steps", alt: "Step-by-step InDesign document and grid setup procedure", caption: "Three grid-configuration steps: set the baseline grid to start at zero points relative to the top of the page with a 12-point increment; define margins as multiples of 12; create columns and rows in the Margins and Columns dialog. The order matters because each step depends on the previous one." },
 
     { image: "15-layer-setup.svg", title: "Layer Setup and Non-Printing Guides", alt: "Three-panel diagram: Layers panel with 04_Text, 03_Images, 02_Drawings, 01_Guides; Layer Options dialog with Lock Layer checked and Print Layer unchecked; composite result showing stacking order", caption: "Four layers, strict stacking order. Text sits above images and drawings; drawings and images sit above guides. Images and drawings are kept on separate layers so renderings and technical line work can be shown, hidden, or printed independently. The guides layer is locked and set to non-printing so placeholder frames and alignment aids never appear in the exported PDF. Configure this before placing any content." },
-    { image: "16-parent-pages-setup.svg", title: "Parent Page Architecture", alt: "Three-panel diagram: A-Intro parent page with title area; B-Project parent page with running header, grid guides, and binding margin; Pages panel showing child page inheritance", caption: "Two parent pages handle every layout in the portfolio. A-Intro carries the splash-page format: title area and date. B-Project carries the content-page format: running header, column grid, project title placeholder, and binding margin. Change a parent once and every child page updates automatically." },
+    { image: "16-parent-pages-setup.svg", title: "Parent Page Architecture", alt: "Four-panel diagram: a Cover page built directly with no parent; A-Intro title-page parent with a title area; B-Project project-page parent with running header, grid guides, and binding margin; Pages panel showing child page inheritance", caption: "One page in the portfolio happens exactly once: the Cover, built directly rather than from a parent. Everything else uses one of two parents. A-Intro is the title-page parent: title area and date, applied to each project's opening page. B-Project is the project-page parent: running header, column grid, project title placeholder, and binding margin. Change a parent once and every page built from it updates automatically." },
     { image: "17-paragraph-styles-setup.svg", title: "Paragraph Style Setup", alt: "Three-panel diagram: Paragraph Styles panel listing Title, Subtitle, Body Text, and Captions with size and leading; Style Options dialog showing font family, size, leading, and Align to Grid set to All Lines; live preview showing baseline-locked text aligning across columns", caption: "Four paragraph styles cover the full type hierarchy: Title (24/30), Subtitle (14/18), Body Text (10/12), Captions (8/10). The critical setting is under Indents and Spacing: Align to Grid must be set to All Lines. This locks every line of text to the twelve-point baseline, guaranteeing cross-column alignment." },
     { image: "17-leading-closeup.svg", title: "Leading Closeup", alt: "Detailed view of text leading and baseline alignment", caption: "Leading is the vertical distance from one baseline to the next. At 12 points, it matches the baseline grid increment exactly. The relationship between font size and leading, typically 10 over 12, is the typographic foundation that makes the grid system work." },
     { image: "15-shortcut-reference.svg", title: "Keyboard Shortcuts", alt: "Essential InDesign keyboard shortcuts for grid management", caption: "Preview mode, baseline grid visibility, guide toggling, snap-to-guides, and fit-spread-in-window are the five shortcuts that eliminate mouse travel during grid-based layout. Memorize these before the first production session." },
@@ -949,7 +948,7 @@ Next, build the structural grid. Set the baseline grid to start at zero points r
 
 Third, build a layer architecture. Create four layers from top to bottom: Text for all titles, descriptions, and page numbers; Images for renderings, photographs, and site photos; Drawings for plans, sections, elevations, and diagrams; and Guides for non-printing alignment aids and placeholder frames. Keeping Images and Drawings on separate layers means either one can be shown, hidden, or printed on its own, without touching the other. Lock the Guides layer and uncheck Print Layer in Layer Options so construction guides never appear in the exported PDF. This strict separation prevents accidental selection of one content type when editing another and keeps the file navigable as it grows past twenty pages.
 
-Fourth, create parent page templates. A parent page is a master layout that automatically applies to every child page assigned to it. Build two: A-Intro for splash pages (title area, date) and B-Project for content spreads (running header, column grid, project title placeholder, binding margin). When you edit a parent, every child page updates instantly. Students who skip parent pages spend the final week before deadline reformatting fifty pages by hand.
+Fourth, create parent page templates, but only for what repeats. A parent page is a master layout that automatically applies to every child page assigned to it. The Cover happens exactly once, so build it directly on the page rather than from a parent. Everything else uses one of two parents: A-Intro for title pages (title area, date) and B-Project for project pages (running header, column grid, project title placeholder, binding margin). When you edit a parent, every child page updates instantly. Students who skip parent pages spend the final week before deadline reformatting fifty pages by hand.
 
 Fifth, define paragraph styles. Create four styles that cover the full type hierarchy: Title (24/30), Subtitle (14/18), Body Text (10/12), and Captions (8/10). The critical setting is under Indents and Spacing: set Align to Grid to All Lines. This locks every line of text to the twelve-point baseline, guaranteeing that columns align across the spread. Without this setting, text drifts between baseline increments and the portfolio loses the vertical precision that distinguishes professional work.
 
@@ -1557,7 +1556,7 @@ const SESSIONS = [
         "The Workspace Reset: clearing panel clutter to a blank, professional slate",
         "Activating Core Panels: Pages, Layers, Links, Align, Paragraph Styles, Properties, and Control, and why these seven specifically, since you'll open the same set every session all term",
         "Organizing the Dock: grouping and docking those panels right away, so the workspace stays usable while you build",
-        "Parent Page Architecture: an A-Intro splash template and a B-Project content template, so repeating elements update everywhere at once. Review: [Parent Pages Tutorial](https://www.youtube.com/watch?v=Ib6TzB71rFU&t=248s)",
+        "Parent Page Architecture: a single Cover page built directly, plus two parent templates, an A-Intro for title pages and a B-Project for project pages, so repeating elements update everywhere at once. Review: [Parent Pages Tutorial](https://www.youtube.com/watch?v=Ib6TzB71rFU&t=248s)",
         "The Four-Layer System: 04_Text, 03_Images, 02_Drawings, 01_Guides, locked and non-printing, in that stacking order, and why images and drawings get separate layers",
         "Why Paragraph Styles: a saved formatting recipe you change once instead of reformatting fifty spreads by hand, defined next class but the panel opened today. Review: [Paragraph Styles Tutorial](https://www.youtube.com/watch?v=tCSPlBJMoTY)",
         "Saving a named workspace so this setup is repeatable every session",
@@ -1571,7 +1570,7 @@ const SESSIONS = [
       "Create a new document: units set to Points, page size 612 × 792 pt (8.5 × 11 in), facing pages turned on.",
       "Reset your workspace, then activate the core panels (Pages, Layers, Links, Align, Paragraph Styles, Properties, Control).",
       "Group and dock those panels right away, before you build anything else, so your screen stays usable.",
-      "Build two parent pages: A-Intro for your title splash, B-Project for standard content.",
+      "Build your Cover page directly on page one, then two parent pages: A-Intro for title pages, B-Project for project pages.",
       "Set up your four layers in order: 04_Text, 03_Images, 02_Drawings, 01_Guides. Lock 01_Guides and uncheck Print Layer on it.",
       "Save the workspace under its own name so it's ready to reload next class.",
       "No grid work tonight: baseline grid, margins/columns, and modular grid are next class. Tonight is the file, the parent pages, the layers, and the workspace.",
@@ -1582,7 +1581,7 @@ const SESSIONS = [
       url: `${import.meta.env.BASE_URL}materials/session-04-worksheet-indesign-setup-checklist.pdf`,
     },
     noDiscussion: true,
-    homework: "Set up your InDesign file properly, using the project you chose for the Session 3 assignment: correct document specs, two parent pages (A-Intro, B-Project), a locked four-layer system, and a saved workspace. Fill out the Setup Checklist as you go. No grid system yet, that starts next class.",
+    homework: "Set up your InDesign file properly, using the project you chose for the Session 3 assignment: correct document specs, a Cover page, two parent pages (A-Intro for title pages, B-Project for project pages), a locked four-layer system, and a saved workspace. Fill out the Setup Checklist as you go. No grid system yet, that starts next class.",
     finalDeliverable: "(1) Your InDesign file (.indd), and (2) your completed Setup Checklist (.pdf), checked off to show how you addressed every setup item.",
     reading: {
       title: "The Cubit and the Twelve-Point Grid",
@@ -2890,12 +2889,13 @@ function Exercise02View({ visible, handleBack, backLabel }) {
         </WSection>
 
         <WSection>
-          <WStepHeader num={5} title="Parent Pages" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>A parent page is a master layout that applies to every child page assigned to it. Build two: one for splash pages, one for content spreads. When you edit a parent, every child page updates instantly. See <Ref mod={9} label="Module 09: InDesign Setup" />.</p>
-          <WExample label="Case Study 02"><em>A-Intro:</em> title area, date. Used for project openers and section dividers.<br /><em>B-Project:</em> running header, column grid guides, project title placeholder, binding margin. Used for all content spreads.</WExample>
+          <WStepHeader num={5} title="Cover and Parent Pages" />
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Build the Cover directly on the page, it happens exactly once. Everything else that repeats gets a parent page: a master layout that applies to every child page assigned to it. Build two: one for title pages, one for project pages. When you edit a parent, every child page updates instantly. See <Ref mod={9} label="Module 09: InDesign Setup" />.</p>
+          <WExample label="Case Study 02"><em>Cover:</em> portfolio title, your name. No parent, built once.<br /><em>A-Intro:</em> title area, date. Used for project openers and section dividers.<br /><em>B-Project:</em> running header, column grid guides, project title placeholder, binding margin. Used for all content spreads.</WExample>
           <div style={{ margin: "16px 0" }}>
-            <Check id="parent-intro">Create parent page A-Intro (title area, date)</Check>
-            <Check id="parent-project">Create parent page B-Project (running header, grid guides, title placeholder)</Check>
+            <Check id="cover-build">Build the Cover page directly (portfolio title, your name), no parent</Check>
+            <Check id="parent-intro">Create parent page A-Intro, the title-page parent (title area, date)</Check>
+            <Check id="parent-project">Create parent page B-Project, the project-page parent (running header, grid guides, title placeholder)</Check>
             <Check id="parent-assign">Assign parent pages to child pages in the Pages panel</Check>
           </div>
         </WSection>
