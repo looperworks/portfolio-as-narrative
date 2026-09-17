@@ -525,23 +525,24 @@ function DiagramExportStandards() {
 
 function DiagramLayerArchitecture() {
   const layers = [
-    { num: "01_Text", desc: "Titles, descriptions, page #s", color: T.navy, y: 20 },
-    { num: "02_Images", desc: "Drawings, renders, photos", color: T.coral, y: 58 },
-    { num: "03_Guides", desc: "Non-printing, locked", color: T.textLight, y: 96 },
+    { num: "04_Text", desc: "Titles, descriptions, page #s", color: T.navy, y: 18 },
+    { num: "03_Images", desc: "Renderings, photographs, site photos", color: T.coral, y: 51 },
+    { num: "02_Drawings", desc: "Plans, sections, elevations, diagrams", color: "#2E9E6D", y: 84 },
+    { num: "01_Guides", desc: "Non-printing, locked", color: T.textLight, y: 117 },
   ];
   return (
-    <svg viewBox="0 0 420 140" style={{ width: "100%", height: "auto" }}>
-      <text x="210" y="14" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">INDESIGN LAYER STACKING</text>
+    <svg viewBox="0 0 420 165" style={{ width: "100%", height: "auto" }}>
+      <text x="210" y="12" textAnchor="middle" fontSize="7" fontFamily={T.sans} fontWeight="600" fill={T.textMid} letterSpacing="0.12em">INDESIGN LAYER STACKING</text>
       {layers.map((l, i) => (
         <g key={i}>
-          <rect x="20" y={l.y} width="340" height="30" rx="3" fill="#fff" stroke={l.color} strokeWidth="1.5" />
-          <circle cx="32" cy={l.y + 15} r="4" fill={l.color} />
-          <text x="48" y={l.y + 10} fontSize="7" fontFamily={T.sans} fontWeight="600" fill={l.color} letterSpacing="0.08em">{l.num}</text>
-          <text x="48" y={l.y + 22} fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{l.desc}</text>
-          <text x="380" y={l.y + 18} textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted} fontWeight="500">{i === 0 ? "TOP" : i === 1 ? "MIDDLE" : "BOTTOM"}</text>
+          <rect x="20" y={l.y} width="340" height="27" rx="3" fill="#fff" stroke={l.color} strokeWidth="1.5" />
+          <circle cx="32" cy={l.y + 13.5} r="4" fill={l.color} />
+          <text x="48" y={l.y + 9} fontSize="7" fontFamily={T.sans} fontWeight="600" fill={l.color} letterSpacing="0.08em">{l.num}</text>
+          <text x="48" y={l.y + 20} fontSize="6.5" fontFamily={T.sans} fill={T.textLight}>{l.desc}</text>
+          <text x="380" y={l.y + 16} textAnchor="middle" fontSize="6" fontFamily={T.sans} fill={T.textMuted} fontWeight="500">{i === 0 ? "TOP" : i === layers.length - 1 ? "BOTTOM" : "MIDDLE"}</text>
         </g>
       ))}
-      <text x="210" y="138" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Text above images · Guides hidden in export</text>
+      <text x="210" y="160" textAnchor="middle" fontSize="6.5" fontFamily={T.sans} fill={T.textMuted} fontStyle="italic">Text above images and drawings · Guides hidden in export</text>
     </svg>
   );
 }
@@ -671,7 +672,7 @@ const DIAGRAM_MAP = {
     { component: Diagram12Point, title: "Document Setup: 12-Point System", caption: "The twelve-point system in practice. Document size, baseline grid, margins, columns, and rows all derive from a single unit. Change the unit and every measurement updates. This is what 'the grid is a system' means in InDesign." },
     { image: "14-indesign-setup-steps.svg", title: "InDesign Setup Steps", alt: "Step-by-step InDesign document and grid setup procedure", caption: "Three grid-configuration steps: set the baseline grid to start at zero points relative to the top of the page with a 12-point increment; define margins as multiples of 12; create columns and rows in the Margins and Columns dialog. The order matters because each step depends on the previous one." },
 
-    { image: "15-layer-setup.svg", title: "Layer Setup and Non-Printing Guides", alt: "Three-panel diagram: Layers panel with 01_Text, 02_Images, 03_Guides; Layer Options dialog with Lock Layer checked and Print Layer unchecked; composite result showing stacking order", caption: "Three layers, strict stacking order. Text sits above images; images sit above guides. The guides layer is locked and set to non-printing so placeholder frames and alignment aids never appear in the exported PDF. Configure this before placing any content." },
+    { image: "15-layer-setup.svg", title: "Layer Setup and Non-Printing Guides", alt: "Three-panel diagram: Layers panel with 04_Text, 03_Images, 02_Drawings, 01_Guides; Layer Options dialog with Lock Layer checked and Print Layer unchecked; composite result showing stacking order", caption: "Four layers, strict stacking order. Text sits above images and drawings; drawings and images sit above guides. Images and drawings are kept on separate layers so renderings and technical line work can be shown, hidden, or printed independently. The guides layer is locked and set to non-printing so placeholder frames and alignment aids never appear in the exported PDF. Configure this before placing any content." },
     { image: "16-parent-pages-setup.svg", title: "Parent Page Architecture", alt: "Three-panel diagram: A-Intro parent page with title area and page number; B-Project parent page with running header, grid guides, and binding margin; Pages panel showing child page inheritance", caption: "Two parent pages handle every layout in the portfolio. A-Intro carries the splash-page format: title area, date, and page number. B-Project carries the content-page format: running header, column grid, project title placeholder, and binding margin. Change a parent once and every child page updates automatically." },
     { image: "17-paragraph-styles-setup.svg", title: "Paragraph Style Setup", alt: "Three-panel diagram: Paragraph Styles panel listing Title, Subtitle, Body Text, and Captions with size and leading; Style Options dialog showing font family, size, leading, and Align to Grid set to All Lines; live preview showing baseline-locked text aligning across columns", caption: "Four paragraph styles cover the full type hierarchy: Title (24/30), Subtitle (14/18), Body Text (10/12), Captions (8/10). The critical setting is under Indents and Spacing: Align to Grid must be set to All Lines. This locks every line of text to the twelve-point baseline, guaranteeing cross-column alignment." },
     { image: "17-leading-closeup.svg", title: "Leading Closeup", alt: "Detailed view of text leading and baseline alignment", caption: "Leading is the vertical distance from one baseline to the next. At 12 points, it matches the baseline grid increment exactly. The relationship between font size and leading, typically 10 over 12, is the typographic foundation that makes the grid system work." },
@@ -921,7 +922,7 @@ The diagnostic test: print the portfolio in grayscale. If the visual hierarchy s
     part: "Production",
     overview: `Before submission, audit your portfolio across six categories. Use this checklist to catch oversights and strengthen weak areas.
 
-**1. InDesign Setup.** Workspace is customized and organized for portfolio layout. Essential panels are visible and accessible (Pages, Layers, Styles, Swatches). Baseline grid is set up with appropriate increment value. Body text snaps to baseline grid consistently. Margins and columns are defined consistently across all pages. Gutters are consistent and appropriately sized. Text frames are aligned to the modular grid. Overset text is resolved (no red plus icons). Layers are organized and clearly named (Images, Text, Background). Content is placed on the correct layers. Parent pages are created for recurring layout elements. Page numbers, headers, or footers are on parent pages. Paragraph styles are created for all text types (headings, body, captions). Styles are applied consistently with no local overrides (no + indicators).
+**1. InDesign Setup.** Workspace is customized and organized for portfolio layout. Essential panels are visible and accessible (Pages, Layers, Styles, Swatches). Baseline grid is set up with appropriate increment value. Body text snaps to baseline grid consistently. Margins and columns are defined consistently across all pages. Gutters are consistent and appropriately sized. Text frames are aligned to the modular grid. Overset text is resolved (no red plus icons). Layers are organized and clearly named (Text, Images, Drawings, Guides). Content is placed on the correct layers. Parent pages are created for recurring layout elements. Page numbers, headers, or footers are on parent pages. Paragraph styles are created for all text types (headings, body, captions). Styles are applied consistently with no local overrides (no + indicators).
 
 **2. Narrative Design.** Portfolio has a clear beginning, middle, and end. Each spread communicates one specific idea or project phase. The sequence of spreads tells a logical, compelling story.
 
@@ -946,7 +947,7 @@ Start by resetting the workspace. Go to Window > Workspace > Essentials, then ac
 
 Next, build the structural grid. Set the baseline grid to start at zero points relative to the top of the page, incrementing every twelve points. In Layout > Margins and Columns, set margins as multiples of twelve (36pt top, 48pt bottom, 36pt inside, 36pt outside), then define six columns with twelve-point gutters. Add eight rows with twelve-point gutters via Layout > Create Guides. This produces forty-eight modules per page. The order matters: baseline grid first, then margins, then columns and rows, because each step depends on the previous one.
 
-Third, build a layer architecture. Create three layers from top to bottom: Text for all titles, descriptions, and page numbers; Images for placed drawings, renderings, and photographs; and Guides for non-printing alignment aids and placeholder frames. Lock the Guides layer and uncheck Print Layer in Layer Options so construction guides never appear in the exported PDF. This strict separation prevents accidental selection of images when editing text and keeps the file navigable as it grows past twenty pages.
+Third, build a layer architecture. Create four layers from top to bottom: Text for all titles, descriptions, and page numbers; Images for renderings, photographs, and site photos; Drawings for plans, sections, elevations, and diagrams; and Guides for non-printing alignment aids and placeholder frames. Keeping Images and Drawings on separate layers means either one can be shown, hidden, or printed on its own, without touching the other. Lock the Guides layer and uncheck Print Layer in Layer Options so construction guides never appear in the exported PDF. This strict separation prevents accidental selection of one content type when editing another and keeps the file navigable as it grows past twenty pages.
 
 Fourth, create parent page templates. A parent page is a master layout that automatically applies to every child page assigned to it. Build two: A-Intro for splash pages (title area, date, page number) and B-Project for content spreads (running header, column grid, project title placeholder, binding margin). Add automatic page numbering via Type > Insert Special Character > Markers > Current Page Number. When you edit a parent, every child page updates instantly. Students who skip parent pages spend the final week before deadline reformatting fifty pages by hand.
 
@@ -2303,7 +2304,7 @@ function InteractiveChecklist({ moduleId }) {
         "Gutters consistent and appropriately sized",
         "Text frames aligned to the modular grid",
         "Overset text resolved (no red plus icons)",
-        "Layers organized and clearly named (Images, Text, Background)",
+        "Layers organized and clearly named (Text, Images, Drawings, Guides)",
         "Content placed on the correct layers",
         "Parent pages created for recurring layout elements",
         "Page numbers, headers, or footers on parent pages",
@@ -2853,15 +2854,16 @@ function Exercise02View({ visible, handleBack, backLabel }) {
 
         <WSection>
           <WStepHeader num={4} title="Layer Architecture" />
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Layers separate content types. You will not accidentally select an image when editing text. Three layers, strict stacking order. See <Ref mod={9} label="Module 09: InDesign Setup" />.</p>
-          <WExample label="Case Study 02"><em>01_Text (top). 02_Images (middle). 03_Guides (bottom, locked, non-printing).</em> The guides layer holds placeholder frames and alignment aids that never appear in the exported PDF.</WExample>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Layers separate content types. You will not accidentally select an image when editing text, or a drawing when editing a photo. Four layers, strict stacking order. See <Ref mod={9} label="Module 09: InDesign Setup" />.</p>
+          <WExample label="Case Study 02"><em>04_Text (top). 03_Images. 02_Drawings. 01_Guides (bottom, locked, non-printing).</em> Images and drawings are kept on separate layers so renderings and technical line work can be shown, hidden, or printed independently. The guides layer holds placeholder frames and alignment aids that never appear in the exported PDF.</WExample>
           <div style={{ margin: "16px 0" }}>
-            <Check id="layer-text">Create layer: 01_Text (topmost)</Check>
-            <Check id="layer-images">Create layer: 02_Images (middle)</Check>
-            <Check id="layer-guides">Create layer: 03_Guides (bottom)</Check>
-            <Check id="layer-lock">Lock the 03_Guides layer</Check>
-            <Check id="layer-print">Uncheck "Print Layer" for 03_Guides (Layer Options)</Check>
-            <Check id="layer-order">Verify stacking order: Text above Images above Guides</Check>
+            <Check id="layer-text">Create layer: 04_Text (topmost)</Check>
+            <Check id="layer-images">Create layer: 03_Images</Check>
+            <Check id="layer-drawings">Create layer: 02_Drawings</Check>
+            <Check id="layer-guides">Create layer: 01_Guides (bottom)</Check>
+            <Check id="layer-lock">Lock the 01_Guides layer</Check>
+            <Check id="layer-print">Uncheck "Print Layer" for 01_Guides (Layer Options)</Check>
+            <Check id="layer-order">Verify stacking order: Text above Images above Drawings above Guides</Check>
           </div>
         </WSection>
 
