@@ -1568,7 +1568,7 @@ const SESSIONS = [
     activityIntro: "Set up your own InDesign file live in class, following the steps just covered: a properly configured new document, parent pages, a locked layer system, and a saved workspace.",
     activityMinutes: 30,
     activityItems: [
-      "Create a new document: units set to Points, page size 612 × 792 pt (8.5 × 11 in, or your chosen Letter-compatible proportion), facing pages turned on.",
+      "Create a new document: units set to Points, page size 612 × 792 pt (8.5 × 11 in), facing pages turned on.",
       "Reset your workspace, then activate the core panels (Pages, Layers, Links, Align, Paragraph Styles, Properties, Control).",
       "Group and dock those panels right away, before you build anything else, so your screen stays usable.",
       "Build two parent pages: A-Intro for your title splash, B-Project for standard content.",
@@ -2840,7 +2840,7 @@ function Exercise02View({ visible, handleBack, backLabel }) {
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Create a new document. The page proportion is 8.5:11, Letter size, chosen so it prints on real paper and pairs into a clean Tabloid spread on screen. All measurements derive from a single value: 12 points. See <Ref mod={8} label="Module 08: Building the Grid" />.</p>
           <WExample label="Case Study 02"><em>612 × 792 pt.</em> Facing pages on. Intent: Print. 792 ÷ 12 = 66 baseline units per page. Every margin, gutter, and row height is a multiple of 12.</WExample>
           <div style={{ margin: "16px 0" }}>
-            <Check id="doc-size">Set page size to 612 × 792 points (8.5 × 11 in, or your chosen Letter-compatible proportion)</Check>
+            <Check id="doc-size">Set page size to 612 × 792 points (8.5 × 11 in)</Check>
             <Check id="doc-facing">Turn on Facing Pages</Check>
             <Check id="doc-baseline">Set baseline grid to start at 0 pt, increment every 12 pt (Preferences → Grids)</Check>
             <Check id="doc-units">Set document units to Points (Preferences → Units & Increments)</Check>
