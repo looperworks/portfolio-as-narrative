@@ -20,13 +20,13 @@ const T = {
   steelLight: "#6d8d9d",
   sans: "'Inter', 'Helvetica Neue', Arial, sans-serif",
   serif: "'Inter', 'Helvetica Neue', Arial, sans-serif",
-  /* Session-board accent system — content-type tags only. Everything else stays monochrome. */
+  /* Session-board accent system: content-type tags only. Everything else stays monochrome. */
   tagLecture: "#5a7a8a",     /* steel blue */
   tagDiscussion: "#a15c3f",  /* muted terracotta */
   tagAssignment: "#8a7c3d",  /* muted olive */
   tagReading: "#6b4c7a",     /* muted plum */
   tagActivity: "#3d7a6b",    /* muted teal */
-  tagSurveyResults: "#b23a3a", /* muted red, deliberately distinct — flags new content */
+  tagSurveyResults: "#b23a3a", /* muted red, deliberately distinct: flags new content */
   delivered: "#3d6b4a",      /* muted green */
   proposed: "#a17a2e",       /* muted amber */
 };
@@ -683,7 +683,7 @@ const DIAGRAM_MAP = {
     { image: "class-pdf/casestudy2-spread-3.jpg", title: "Decision 3: Scaling", alt: "Residential floor plan filling the spread", caption: "Scale is hierarchy. The floor plan claims the entire spread. No subordinate images compete. A full-bleed drawing declares importance through size alone. The architectural grid becomes the page grid. Compare this to the 2×2 quadrant on Spread 8: same grid, opposite scaling strategy, each an argument about what matters most." },
     { image: "class-pdf/casestudy2-spread-1.jpg", title: "Decision 4: Whitespace", alt: "Generative Housing project title page with generous empty space", caption: "Whitespace is not leftover space. Title, subtitle, one hero image, and deliberate emptiness. The grid is present but mostly unfilled. What is left out argues as loudly as what remains. Compare this to Spread 8: same grid, opposite density. A spread that uses thirty percent of its modules is not wasting space. It is making a compositional argument through absence." },
     { image: "casestudy3-spread-2.png", title: "Decision 5a: Composite Across Images", alt: "Cast unit iterations, massing studies, geometric diagrams, and form generation on one spread", caption: "Four media types on one surface: cast concrete units (material evidence), massing study photographs (physical process), geometric iteration diagrams (analytical logic), and form generation sequences (design development). Each image type carries different information, but the grid unifies them into a single argument about how a cast unit becomes architecture. This is composite logic across images: the grid organizes discrete elements into a unified reading." },
-    { image: "composite-within-image.png", title: "Decision 5b: Composite Within a Drawing", alt: "Dark-ground model photograph above a cognitive plan compositing site photography, section drawing, and collage notation", caption: "Two composite zones stacked on one page. The upper half: a physical model photograph on a dark ground, proving the inhabitable building strategy as a material object. The lower half: a cognitive plan that layers site photography, sectional drawing, construction signage, and collage notation into a single hybrid image. Here the compositing happens within the drawing itself, not across separate grid modules. The viewer reads two scales of argument — object and territory — unified by the vertical stack and the shared dark palette." },
+    { image: "composite-within-image.png", title: "Decision 5b: Composite Within a Drawing", alt: "Dark-ground model photograph above a cognitive plan compositing site photography, section drawing, and collage notation", caption: "Two composite zones stacked on one page. The upper half: a physical model photograph on a dark ground, proving the inhabitable building strategy as a material object. The lower half: a cognitive plan that layers site photography, sectional drawing, construction signage, and collage notation into a single hybrid image. Here the compositing happens within the drawing itself, not across separate grid modules. The viewer reads two scales of argument, object and territory, unified by the vertical stack and the shared dark palette." },
   ],
   15: [
     { image: "class-pdf/casestudy2-spread-7.jpg", title: "Pacing: Compression", alt: "Four axonometric model views and interior rendering", caption: "A dense spread. Four process models in a 2×2 grid plus one large rendering. Every grid module is occupied. High information, high density. This spread compresses. The next spread must release. Pin thumbnails to the wall: if every spread looks like this, the pacing is flat." },
@@ -710,7 +710,7 @@ const DIAGRAM_MAP = {
   ],
   12: [
     { component: DiagramColorPalettes, title: "Three Palette Families", caption: "Three palette families. Monochrome uses one hue plus neutrals for quiet authority. Warm accent adds a single deliberate color for emphasis. Cool accent uses a cooler hue for contrast. The palette should reinforce the portfolio's Red Thread, not decorate it." },
-    { image: "diagram-color-strategy.svg", title: "Color Palette Strategies", alt: "Three strategies: Monochrome, Accent, and Project-coded", caption: "Three application strategies—distinct from the palette families above. Here, warm and cool accent merge into a single Accent strategy, and project-coded color is added as a third approach. Monochrome: one hue family plus neutrals. Accent: neutral base with one deliberate color for emphasis. Project-coded: each project gets a signature color, used consistently in headers, dividers, and diagrams. Choose based on your Red Thread." },
+    { image: "diagram-color-strategy.svg", title: "Color Palette Strategies", alt: "Three strategies: Monochrome, Accent, and Project-coded", caption: "Three application strategies, distinct from the palette families above. Here, warm and cool accent merge into a single Accent strategy, and project-coded color is added as a third approach. Monochrome: one hue family plus neutrals. Accent: neutral base with one deliberate color for emphasis. Project-coded: each project gets a signature color, used consistently in headers, dividers, and diagrams. Choose based on your Red Thread." },
     { image: "class-pdf/casestudy2-spread-4.jpg", title: "Tonal Unity: Warm-Neutral Model Photography", alt: "Facade model and building section with consistent warm tone", caption: "Physical model photographs across both Case Study 02 projects share a consistent warm-neutral tone. The timber models read as part of the same portfolio because the color temperature is unified. Consistent tonal treatment across different photo sessions is what makes disparate images cohere." },
     { image: "class-pdf/casestudy2-spread-11.jpg", title: "Tonal Unity: Model vs. Rendering", alt: "Physical model and exterior rendering side by side", caption: "Physical model on the left, digital rendering on the right. Different media, but the color temperature is managed: the rendering's palette does not fight the model photograph's warmth. When model photos and renderings sit on the same spread, unified tonal treatment prevents visual discord." },
   ],
@@ -1305,7 +1305,7 @@ const SESSIONS = [
       ],
       items: [
         {
-          text: "Introduction — go around the room, each student answers:",
+          text: "Introduction: go around the room, each student answers:",
           children: ["Name", "Year / Program", "Why Architecture", "Favorite Architectural Work You've Visited"],
         },
       ],
@@ -1481,11 +1481,11 @@ const SESSIONS = [
       images: [
         { image: "class2-review/01-title.svg", alt: "Title slide: Precedent Review, What the Cohort Found", label: "What the cohort found" },
         { image: "class2-review/02-patterns.svg", alt: "Patterns across the class", label: "Patterns across the class" },
-        { image: "class2-review/03-storytelling.svg", alt: "Category I: Storytelling and Narrative Arc", label: "I — Storytelling & Narrative Arc" },
-        { image: "class2-review/04-curation.svg", alt: "Category II: Image Selection and Curation", label: "II — Image Selection & Curation" },
-        { image: "class2-review/05-craft.svg", alt: "Category III: Visual Craft and Consistency", label: "III — Visual Craft & Consistency" },
-        { image: "class2-review/06-pacing.svg", alt: "Category IV: Sequencing and Pacing", label: "IV — Sequencing & Pacing" },
-        { image: "class2-review/07-hierarchy.svg", alt: "Category V: Structure and Hierarchy", label: "V — Structure & Hierarchy" },
+        { image: "class2-review/03-storytelling.svg", alt: "Category I: Storytelling and Narrative Arc", label: "I: Storytelling & Narrative Arc" },
+        { image: "class2-review/04-curation.svg", alt: "Category II: Image Selection and Curation", label: "II: Image Selection & Curation" },
+        { image: "class2-review/05-craft.svg", alt: "Category III: Visual Craft and Consistency", label: "III: Visual Craft & Consistency" },
+        { image: "class2-review/06-pacing.svg", alt: "Category IV: Sequencing and Pacing", label: "IV: Sequencing & Pacing" },
+        { image: "class2-review/07-hierarchy.svg", alt: "Category V: Structure and Hierarchy", label: "V: Structure & Hierarchy" },
         { image: "class2-review/08-transition.svg", alt: "Transition into tonight's activity", label: "Into Class 3" },
       ],
     },
@@ -1527,7 +1527,7 @@ const SESSIONS = [
     assignmentMinutes: 10,
     assignmentSectionTitle: "Takeaway & Assignment",
     takeawaySheet: "https://docs.google.com/spreadsheets/d/1Z_vfBiK4q9lG3J6uoxOVk652EMCxaJah/edit?usp=sharing",
-    requiredMeeting: "Every student must reserve a one-on-one meeting with Seth and complete that conversation by Saturday, September 19 — this makes up for our missed session and is a chance to talk through your individual goals and status. New time slots have been added this weekend and next weekend. [Schedule your meeting →](https://calendly.com/slooper-kent/30min)",
+    requiredMeeting: "Every student must reserve a one-on-one meeting with Seth and complete that conversation by Saturday, September 19. This makes up for our missed session and is a chance to talk through your individual goals and status. New time slots have been added this weekend and next weekend. [Schedule your meeting →](https://calendly.com/slooper-kent/30min)",
     homework: "This week: (1) choose one project of your own to build first, (2) polish your project statement using tonight's structure and the reading, (3) outline each spread with a short note on what it's meant to show, (4) lay out your own images into a storyboard following that outline, and (5) write a short gap analysis: any claim in your statement your current images don't yet prove.",
     workedExamplePdf: `${import.meta.env.BASE_URL}materials/session-03-statement-to-storyboard-worked-example.pdf`,
     finalDeliverable: "InDesign file (.indd) and a PDF of the storyboard, plus a Word document with your project statement, outline, and gap analysis.",
@@ -1615,28 +1615,25 @@ const SESSIONS = [
     num: 5, title: "Building the Grid: The 12-Point System",
     moduleRefs: [9, 16],
     status: "proposed", date: "Thu, Sep 24, 2026",
-    tagline: "The 12-point atomic unit — one measurement that governs every margin, gutter, and module.",
+    tagline: "The 12-point atomic unit: one measurement that governs every margin, gutter, and module.",
     tags: ["Lecture", "Assignment"],
     agenda: [
       "The 12-Point Atomic Unit System",
-      "InDesign Setup: Document Specs, Panels, Guides",
-      "Parent Pages Setup: Intro Splash / Project Content",
-      "Three-Layer Hierarchy: Text / Images / Guides",
       "Four Paragraph Styles: Title, Subtitle, Body, Caption",
     ],
     breakout: {
       undergrad: "Walk your neighbor through your parent-page setup. Where are you still fighting the grid instead of using it?",
-      grad: "Same exercise — then discuss: which of your four paragraph styles is doing the least work, and could be cut?",
+      grad: "Same exercise, then discuss: which of your four paragraph styles is doing the least work, and could be cut?",
     },
     dueToday: "Grid Type Annotations (2 Published Portfolios)",
-    homework: "InDesign file with 12-point baseline grid, margins, columns, rows, parent pages, and paragraph styles set up — structure only, no content yet",
-    references: "Threshold Portfolio Guide — Grid Systems & Layout (technical setup)",
+    homework: "InDesign file with 12-point baseline grid, margins, columns, rows, parent pages, and paragraph styles set up: structure only, no content yet",
+    references: "Threshold Portfolio Guide: Grid Systems & Layout (technical setup)",
   },
   {
     num: 6, title: "Spread Composition and Grid Breaks",
     moduleRefs: [14, 15],
     status: "proposed", date: "Thu, Oct 1, 2026",
-    tagline: "Five decisions govern every spread — and when it's earned, breaking the grid is one of them.",
+    tagline: "Five decisions govern every spread, and when it's earned, breaking the grid is one of them.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
       "12-Column, 6–8-Row Modular Grid at 12pt Baseline (Applied)",
@@ -1652,13 +1649,13 @@ const SESSIONS = [
     },
     dueToday: "Empty Grid Structure (.indd, No Content)",
     homework: "Submit .indd + PDF export, 7 fully grid-aligned spreads",
-    references: "Threshold Portfolio Guide — Grid Systems & Layout (composition and pacing)",
+    references: "Threshold Portfolio Guide: Grid Systems & Layout (composition and pacing)",
   },
   {
     num: 7, title: "Typography as Architectural Voice",
     moduleRefs: [10],
     status: "proposed", date: "Thu, Oct 15, 2026",
-    dateNote: "Skips Thu, Oct 8 — Kent State Fall Break",
+    dateNote: "Skips Thu, Oct 8: Kent State Fall Break",
     tagline: "Type is the last decision that still reads as a design decision.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
@@ -1668,12 +1665,12 @@ const SESSIONS = [
       "In-Class: Assign a Typeface Pairing, Test on One Spread",
     ],
     breakout: {
-      undergrad: "Test your pairing on placeholder text and a resume/CV page, not just project spreads — does the system hold up outside the project content?",
+      undergrad: "Test your pairing on placeholder text and a resume/CV page, not just project spreads: does the system hold up outside the project content?",
       grad: "Test your pairing directly on your real title and section pages. Does it match the tone of the Red Thread from Session 3?",
     },
     dueToday: "7 Grid-Aligned Spreads (.indd + PDF)",
     homework: "Typefaces applied across all spreads; bring 2 candidate title-page treatments",
-    references: "Threshold Resources — Typography & Type Foundries (Klim, Commercial Type, Colophon, Grilli Type, Pangram Pangram)",
+    references: "Threshold Resources: Typography & Type Foundries (Klim, Commercial Type, Colophon, Grilli Type, Pangram Pangram)",
   },
   {
     num: 8, title: "Color, Representation & the Photographed Model",
@@ -1693,7 +1690,7 @@ const SESSIONS = [
     },
     dueToday: "Typeface System Applied (2 Title-Page Candidates)",
     homework: "Revise/replace any inconsistent images; finalize color treatment",
-    references: "Threshold Resources — Graphic Design & Visual Culture",
+    references: "Threshold Resources: Graphic Design & Visual Culture",
   },
   {
     num: 9, title: "Production Standards, Digital Presence & the Self-Editing Framework",
@@ -1709,26 +1706,26 @@ const SESSIONS = [
       "Group Audit of One Spread",
     ],
     breakout: {
-      undergrad: "Is it okay to submit a “structure-complete, content-partial” checkpoint — real cover and grid mechanics, with a placeholder spread and a note on what's coming? Discuss what that minimum should look like.",
+      undergrad: "Is it okay to submit a “structure-complete, content-partial” checkpoint: real cover and grid mechanics, with a placeholder spread and a note on what's coming? Discuss what that minimum should look like.",
       grad: "Run the full 5-category audit on your most finished spread right now. Where does it actually fall short of job-ready?",
     },
     dueToday: "Finalized Color Treatment",
     homework: "Full self-audit of your own portfolio using the checklist",
     trackNote: "Undergrad checkpoints may mix real and placeholder spreads at this stage; grad checkpoints are held to a job-ready standard.",
-    references: "Threshold Resources — Jobs & Career Boards; Technical Standards & Production module",
+    references: "Threshold Resources: Jobs & Career Boards; Technical Standards & Production module",
   },
   {
     num: 10, title: "Cover & Table of Contents Design: The Portfolio Checkpoint",
     moduleRefs: [11],
     status: "proposed", date: "Thu, Nov 12, 2026",
     dateNote: "Final Session",
-    tagline: "Two thresholds a reviewer crosses before the work itself — and your first fully assembled submission.",
+    tagline: "Two thresholds a reviewer crosses before the work itself, and your first fully assembled submission.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
       "Seven Cover Typologies: Pure Minimal, Dark Ground, Hero Image, Bleed + Type Band, Scattered Collage, Grid/Pattern, Abstract Line",
       "Six TOC Typologies: Illustrated Section Grid, Multi-Column Index, Thumbnail Gallery, Literary Chapter Index, Bold Number Cards, Narrative + List Hybrid",
       "Synthesis Matrix: Rigid ↔ Freeform, Typographic ↔ Image-Driven, Conventional ↔ Expressive",
-      "Structured Peer Review (5-Minute Presentations, Scored Checklist) — Cover and TOC Together",
+      "Structured Peer Review (5-Minute Presentations, Scored Checklist): Cover and TOC Together",
       "Self-Evaluation: Technical Setup + Design Categories + Typography",
     ],
     breakout: {
@@ -1737,8 +1734,8 @@ const SESSIONS = [
     },
     dueToday: "Completed Self-Audit",
     homework: null,
-    finalDeliverable: "Portfolio Checkpoint — final cover + chosen TOC + two fully laid-out project spreads, submitted as PDF and .indd",
-    references: "Threshold Portfolio Guide — Portfolio Identity, Cover & Table of Contents; Threshold Resources — 10 Sites to Follow",
+    finalDeliverable: "Portfolio Checkpoint: final cover + chosen TOC + two fully laid-out project spreads, submitted as PDF and .indd",
+    references: "Threshold Portfolio Guide: Portfolio Identity, Cover & Table of Contents; Threshold Resources: 10 Sites to Follow",
   },
 ];
 
@@ -1778,7 +1775,7 @@ function SessionBoard({ visible }) {
               {...(locked ? {} : { href: `#/session/${s.num}` })}
               className="session-card"
               aria-disabled={locked || undefined}
-              title={locked ? "Locked — not yet available" : undefined}
+              title={locked ? "Locked, not yet available" : undefined}
               style={{
                 display: "flex", flexDirection: "column", gap: 10,
                 border: `1px solid ${T.border}`, borderRadius: 6, padding: "16px 16px 14px",
@@ -1851,7 +1848,7 @@ function SessionDetail({ session }) {
         {s.title}
       </h1>
       <div style={{ fontSize: 12, color: T.textFaint, marginBottom: 4 }}>
-        {s.date}{s.dateNote ? ` — ${s.dateNote}` : ""}
+        {s.date}{s.dateNote ? ` · ${s.dateNote}` : ""}
       </div>
       <p style={{ fontSize: 13, color: T.textMid, fontStyle: "italic", lineHeight: 1.5, marginBottom: 18 }}>
         {s.tagline}
@@ -1917,7 +1914,7 @@ function SessionDetail({ session }) {
         {s.activityIntro && (
           <CollapsibleSection num={numActivity} minutes={s.activityMinutes || 20} title="Activity" defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-              {s.noDiscussion ? "Individual" : "Individual — review in advance of group discussion"}
+              {s.noDiscussion ? "Individual" : "Individual: review in advance of group discussion"}
             </div>
             <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: (s.activityLinks || s.templateFile || s.activityItems) ? "0 0 10px" : 0 }}>{renderText(s.activityIntro)}</p>
             {s.activityLinks && s.activityLinks.map((l, i) => (
@@ -1985,7 +1982,7 @@ function SessionDetail({ session }) {
             )}
             {s.requiredMeeting && (
               <div style={{ fontSize: 12, color: T.text, lineHeight: 1.6, background: T.accentLight, border: `1px solid ${T.border}`, borderRadius: 6, padding: "10px 12px" }}>
-                <strong style={{ color: T.tagAssignment }}>Required — </strong>{renderText(s.requiredMeeting)}
+                <strong style={{ color: T.tagAssignment }}>Required: </strong>{renderText(s.requiredMeeting)}
               </div>
             )}
             {s.dueToday && (
@@ -2091,7 +2088,7 @@ const ABOUT_TEXT = [
 ];
 
 /* ─── Resources: sites, studios, and foundries referenced across class sessions ───
-   Grows over the term as new sessions bring in new material — currently sourced from Session 1. */
+   Grows over the term as new sessions bring in new material, currently sourced from Session 1. */
 const RESOURCES = [
   {
     group: "Architectural Representation",
@@ -2582,7 +2579,7 @@ const WStepHeader = ({ num, title }) => (
 
 const WExample = ({ label, children }) => (
   <div style={{ borderLeft: `2px solid ${T.text}`, paddingLeft: 16, margin: "20px 0" }}>
-    <div style={{ fontSize: 8, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontWeight: 600, fontFamily: T.sans, marginBottom: 6 }}>Example — {label}</div>
+    <div style={{ fontSize: 8, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontWeight: 600, fontFamily: T.sans, marginBottom: 6 }}>Example: {label}</div>
     <div style={{ fontSize: 12, lineHeight: 1.8, color: T.textMid, fontFamily: T.sans, letterSpacing: "0.01em" }}>{children}</div>
   </div>
 );
@@ -2641,8 +2638,8 @@ function WorksheetView({ visible, handleBack, backLabel }) {
       XLSX.utils.book_append_sheet(wb, ws2, "Keyword Outline");
 
       const s3 = [["STEP 5: NARRATIVE ARC"], [], ["Act", "Your Plan"],
-        ["Act I — Setup", form.actI], ["Act II — Confrontation", form.actII],
-        ["Act III — Resolution", form.actIII], ["Technical Proof", form.techProof], [],
+        ["Act I: Setup", form.actI], ["Act II: Confrontation", form.actII],
+        ["Act III: Resolution", form.actIII], ["Technical Proof", form.techProof], [],
         ["STEP 6: IMAGE TYPE AUDIT"], [], ["Image Type", "Count", "Which Images"],
         ["Concept", form.countConcept, form.listConcept], ["Context", form.countContext, form.listContext],
         ["Process", form.countProcess, form.listProcess], ["Outcome", form.countOutcome, form.listOutcome],
@@ -2687,8 +2684,8 @@ function WorksheetView({ visible, handleBack, backLabel }) {
         <WSection>
           <WStepHeader num={1} title="Choose Your Project" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>Pick one studio project you want to include in your portfolio. Name it and write 2–3 sentences describing what you designed. Need help choosing? Revisit <a href="#/module/2" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 02</a>.</p>
-          <WExample label="Case Study 01"><em>Après Ski — Alpine Museum.</em> A proposal to convert a decommissioned military bunker at Col du Pillon in the Swiss Alps into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to connect landscape above with gallery spaces below.</WExample>
-          <div style={{ marginBottom: 12 }}><span style={labelStyle}>Project title</span><input type="text" value={form.projectTitle} onChange={set("projectTitle")} placeholder="e.g., Après Ski — Alpine Museum" style={inputStyle} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
+          <WExample label="Case Study 01"><em>Après Ski: Alpine Museum.</em> A proposal to convert a decommissioned military bunker at Col du Pillon in the Swiss Alps into an Alpine Museum. The building embeds into the mountainside, using ramped circulation and carved ground planes to connect landscape above with gallery spaces below.</WExample>
+          <div style={{ marginBottom: 12 }}><span style={labelStyle}>Project title</span><input type="text" value={form.projectTitle} onChange={set("projectTitle")} placeholder="e.g., Après Ski: Alpine Museum" style={inputStyle} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
           <div><span style={labelStyle}>Brief description</span><textarea value={form.projectDesc} onChange={set("projectDesc")} placeholder="What did you design? Where? For whom?" style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>
         </WSection>
 
@@ -2714,7 +2711,7 @@ function WorksheetView({ visible, handleBack, backLabel }) {
           <WExample label="Case Study 01"><em>"embeds into eroding terrain"</em> → terrain models, site sections<br /><em>"Alpine"</em> → site context photos, aerial views<br /><em>"climate change"</em> → environmental overlays, seasonal renderings<br /><em>"spatial experience"</em> → interior renderings, circulation diagrams</WExample>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0 8px" }}>
             <thead><tr>{["Keyword", "Drawing / Image Needed", "Image Type"].map((h, i) => (<th key={i} style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>{h}</th>))}</tr></thead>
-            <tbody>{kwRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td><input type="text" value={row.kw} onChange={setKw(i, "kw")} placeholder="keyword" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><input type="text" value={row.drawing} onChange={setKw(i, "drawing")} placeholder="drawing type" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><select value={row.type} onChange={setKw(i, "type")} style={selectStyle}><option value="">—</option><option>Concept</option><option>Context</option><option>Process</option><option>Outcome</option></select></td></tr>))}</tbody>
+            <tbody>{kwRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td><input type="text" value={row.kw} onChange={setKw(i, "kw")} placeholder="keyword" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><input type="text" value={row.drawing} onChange={setKw(i, "drawing")} placeholder="drawing type" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><select value={row.type} onChange={setKw(i, "type")} style={selectStyle}><option value="">-</option><option>Concept</option><option>Context</option><option>Process</option><option>Outcome</option></select></td></tr>))}</tbody>
           </table>
           <button onClick={() => setKwRows(r => [...r, { kw: "", drawing: "", type: "" }])} style={{ background: "none", border: `1px dashed ${T.border}`, fontSize: 10, color: T.textMuted, fontFamily: T.sans, padding: "6px 14px", borderRadius: 2, cursor: "pointer", letterSpacing: "0.04em" }}>+ Add row</button>
         </WSection>
@@ -2728,7 +2725,7 @@ function WorksheetView({ visible, handleBack, backLabel }) {
             <tbody>{["Concept", "Context", "Process", "Outcome"].map(t => (<tr key={t} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontWeight: 500, fontFamily: T.sans, width: 90 }}>{t}</td><td style={{ width: 50 }}><input type="text" value={form[`count${t}`]} onChange={set(`count${t}`)} placeholder="0" style={{ ...cellInput, textAlign: "center" }} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td><td><input type="text" value={form[`list${t}`]} onChange={set(`list${t}`)} placeholder={`e.g., ${t === "Concept" ? "site model, diagram" : t === "Context" ? "aerial, site plan" : t === "Process" ? "section, iteration models" : "rendering, final plan"}`} style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
           </table>
           <span style={labelStyle}>What's missing?</span>
-          <textarea value={form.missingImages} onChange={set("missingImages")} placeholder="e.g., I have no Process images — need to add iteration models." style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
+          <textarea value={form.missingImages} onChange={set("missingImages")} placeholder="e.g., I have no Process images: need to add iteration models." style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} />
           <p style={{ fontSize: 11, lineHeight: 1.7, color: T.textLight, margin: "12px 0 0", letterSpacing: "0.01em" }}>If a type is missing, return to Step 4 and add a keyword row for it.</p>
         </WSection>
 
@@ -2736,9 +2733,9 @@ function WorksheetView({ visible, handleBack, backLabel }) {
           <WStepHeader num={6} title="Sequence the Narrative Arc" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>The arc tells you what order. Step 7 will tell you what fits on each page. For now, assign your images to acts based on what they argue, not where they were produced. See <a href="#/module/6" style={{ color: T.text, textDecoration: "underline", textUnderlineOffset: 2 }}>Module 06</a>.</p>
           <WExample label="Case Study 01"><strong style={{ color: T.text, fontWeight: 600 }}>Act I:</strong> Terrain model (Concept). Landscape as raw material.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act II:</strong> Aerial (Context) + erosion detail + winter rendering + section. Tension builds.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Act III:</strong> Summer rendering (Outcome) + plan (Process). Building inhabits landscape.<br /><strong style={{ color: T.text, fontWeight: 600 }}>Technical Proof:</strong> Details, material specs, structural logic.</WExample>
-          {[["Act I — Setup", "actI", "What images open your project? What world are you establishing?"],
-            ["Act II — Confrontation", "actII", "What makes the problem feel real? Where does tension build?"],
-            ["Act III — Resolution", "actIII", "How does the design respond? What's the payoff?"],
+          {[["Act I: Setup", "actI", "What images open your project? What world are you establishing?"],
+            ["Act II: Confrontation", "actII", "What makes the problem feel real? Where does tension build?"],
+            ["Act III: Resolution", "actIII", "How does the design respond? What's the payoff?"],
             ["Technical Proof", "techProof", "What proves feasibility? Details, materials, systems?"]
           ].map(([label, key, ph]) => (<div key={key} style={{ marginBottom: 16 }}><span style={{ ...labelStyle, color: T.textLight }}>{label}</span><textarea value={form[key]} onChange={set(key)} placeholder={ph} style={taShort} onFocus={e => e.target.style.borderColor = T.navy} onBlur={e => e.target.style.borderColor = T.border} /></div>))}
         </WSection>
@@ -2746,10 +2743,10 @@ function WorksheetView({ visible, handleBack, backLabel }) {
         <WSection last>
           <WStepHeader num={7} title="Seven-Spread Outline" />
           <p style={{ fontSize: 13, lineHeight: 1.8, color: T.textMid, margin: "0 0 16px", letterSpacing: "0.01em" }}>The arc from Step 6 set the narrative order. Now assign images to physical pages. Each spread does one job.</p>
-          <WExample label="Case Study 01"><strong style={{ color: T.text, fontWeight: 600 }}>1 (Setup):</strong> Terrain model — landscape as raw material<br /><strong style={{ color: T.text, fontWeight: 600 }}>2:</strong> Site map + erosion detail — alpine erosion at scale<br /><strong style={{ color: T.text, fontWeight: 600 }}>3 (Confrontation):</strong> Section + winter photo + rendering — building carves in<br /><strong style={{ color: T.text, fontWeight: 600 }}>4:</strong> Full-width embedded section — erosion made accessible<br /><strong style={{ color: T.text, fontWeight: 600 }}>5 (Resolution):</strong> Interior gallery + floor plans — erosion made inhabitable</WExample>
+          <WExample label="Case Study 01"><strong style={{ color: T.text, fontWeight: 600 }}>1 (Setup):</strong> Terrain model, landscape as raw material<br /><strong style={{ color: T.text, fontWeight: 600 }}>2:</strong> Site map + erosion detail, alpine erosion at scale<br /><strong style={{ color: T.text, fontWeight: 600 }}>3 (Confrontation):</strong> Section + winter photo + rendering, building carves in<br /><strong style={{ color: T.text, fontWeight: 600 }}>4:</strong> Full-width embedded section, erosion made accessible<br /><strong style={{ color: T.text, fontWeight: 600 }}>5 (Resolution):</strong> Interior gallery + floor plans, erosion made inhabitable</WExample>
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "16px 0" }}>
             <thead><tr><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "center", borderBottom: `1px solid ${T.text}`, width: 36 }}>#</th><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}`, width: 110 }}>Arc Beat</th><th style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textMuted, fontFamily: T.sans, padding: "8px 8px", textAlign: "left", borderBottom: `1px solid ${T.text}` }}>Images + Narrative Job</th></tr></thead>
-            <tbody>{spreadRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontFamily: T.sans, textAlign: "center", color: T.textLight }}>{row.num}</td><td><select value={row.beat} onChange={setSpread(i, "beat")} style={selectStyle}><option value="">—</option><option>Setup</option><option>Confrontation</option><option>Turning Point</option><option>Resolution</option><option>Technical Proof</option></select></td><td><input type="text" value={row.content} onChange={setSpread(i, "content")} placeholder="What images? What story beat?" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
+            <tbody>{spreadRows.map((row, i) => (<tr key={i} style={{ borderBottom: `1px solid ${T.border}` }}><td style={{ padding: "9px 8px", fontSize: 12, fontFamily: T.sans, textAlign: "center", color: T.textLight }}>{row.num}</td><td><select value={row.beat} onChange={setSpread(i, "beat")} style={selectStyle}><option value="">-</option><option>Setup</option><option>Confrontation</option><option>Turning Point</option><option>Resolution</option><option>Technical Proof</option></select></td><td><input type="text" value={row.content} onChange={setSpread(i, "content")} placeholder="What images? What story beat?" style={cellInput} onFocus={e => e.target.style.background = T.bgAlt} onBlur={e => e.target.style.background = "transparent"} /></td></tr>))}</tbody>
           </table>
         </WSection>
 
@@ -3000,18 +2997,18 @@ export default function PortfolioGuide() {
   useEffect(() => {
     const base = "Portfolio as Narrative";
     let title = base;
-    if (view === "module" && activeModule) title = `${activeModule.title} — ${base}`;
-    else if (view === "session" && activeSession) title = `Session ${String(activeSession.num).padStart(2, "0")}: ${activeSession.title} — ${base}`;
-    else if (view === "reading" && activeSession) title = `${activeSession.reading.title} — ${base}`;
-    else if (view === "modules") title = `All Modules — ${base}`;
-    else if (view === "casestudy") title = `Case Study 01: Erosion — ${base}`;
-    else if (view === "casestudy2") title = `Case Study 02: Grid Systems in Practice — ${base}`;
-    else if (view === "exercise") title = `Exercise 01: From Thread to Spread — ${base}`;
-    else if (view === "exercise2") title = `Exercise 02: Build Your Grid — ${base}`;
-    else if (view === "about") title = `About — ${base}`;
-    else if (view === "resources") title = `Resources — ${base}`;
-    else if (view === "survey-results") title = `Session 01 Survey Results — ${base}`;
-    else if (view === "diagrams") title = `Diagrams — ${base}`;
+    if (view === "module" && activeModule) title = `${activeModule.title} · ${base}`;
+    else if (view === "session" && activeSession) title = `Session ${String(activeSession.num).padStart(2, "0")}: ${activeSession.title} · ${base}`;
+    else if (view === "reading" && activeSession) title = `${activeSession.reading.title} · ${base}`;
+    else if (view === "modules") title = `All Modules · ${base}`;
+    else if (view === "casestudy") title = `Case Study 01: Erosion · ${base}`;
+    else if (view === "casestudy2") title = `Case Study 02: Grid Systems in Practice · ${base}`;
+    else if (view === "exercise") title = `Exercise 01: From Thread to Spread · ${base}`;
+    else if (view === "exercise2") title = `Exercise 02: Build Your Grid · ${base}`;
+    else if (view === "about") title = `About · ${base}`;
+    else if (view === "resources") title = `Resources · ${base}`;
+    else if (view === "survey-results") title = `Session 01 Survey Results · ${base}`;
+    else if (view === "diagrams") title = `Diagrams · ${base}`;
     document.title = title;
   }, [route, view, activeModule, activeSession]);
 
@@ -3093,7 +3090,7 @@ export default function PortfolioGuide() {
                 </h2>
                 {s.moduleRefs.length === 0 && (
                   <div style={{ fontSize: 11, color: T.textFaint, fontStyle: "italic", padding: "9px 0", borderBottom: `1px solid ${T.border}` }}>
-                    No standalone module — see Session {String(s.num).padStart(2, "0")} for lecture content.
+                    No standalone module. See Session {String(s.num).padStart(2, "0")} for lecture content.
                   </div>
                 )}
                 {s.moduleRefs.map((modId) => {
@@ -3392,7 +3389,7 @@ export default function PortfolioGuide() {
                       >
                         {item.name}
                       </a>
-                      {item.note ? <span> — {item.note}</span> : null}
+                      {item.note ? <span>: {item.note}</span> : null}
                     </li>
                   ))}
                 </ul>
@@ -3691,7 +3688,7 @@ export default function PortfolioGuide() {
             </button>
           </div>
 
-          {/* Return to Exercise — shown when user navigated here from an exercise */}
+          {/* Return to Exercise: shown when user navigated here from an exercise */}
           {cameFromExercise && (
             <div style={{ textAlign: "center", marginTop: 32, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
               <button onClick={handleBack} style={{
@@ -3807,7 +3804,7 @@ export default function PortfolioGuide() {
             </button>
           </div>
 
-          {/* Return to Exercise — shown when user navigated here from an exercise */}
+          {/* Return to Exercise: shown when user navigated here from an exercise */}
           {cameFromExercise && (
             <div style={{ textAlign: "center", marginTop: 32, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
               <button onClick={handleBack} style={{
@@ -3973,7 +3970,7 @@ export default function PortfolioGuide() {
           );
         })()}
 
-        {/* Return to Exercise — shown when user navigated here from an exercise */}
+        {/* Return to Exercise: shown when user navigated here from an exercise */}
         {cameFromExercise && (
           <div style={{ textAlign: "center", marginTop: 32, paddingTop: 20, borderTop: `1px solid ${T.border}` }}>
             <button onClick={handleBack} style={{
