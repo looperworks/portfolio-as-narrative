@@ -1569,6 +1569,11 @@ const SESSIONS = [
       "Group and dock your panels, then save the workspace under its own name so it's ready to reload next class.",
       "No grid work tonight — baseline grid, margins/columns, and modular grid are next class. Tonight is the file, the parent pages, the layers, and the workspace.",
     ],
+    activityWorksheet: {
+      brief: "Use this to make sure nothing gets missed: check off each setup step as you complete it.",
+      label: "Download the InDesign Setup Checklist (.pdf)",
+      url: `${import.meta.env.BASE_URL}materials/session-04-worksheet-indesign-setup-checklist.pdf`,
+    },
     noDiscussion: true,
     dueToday: "Assignment 3: Project Statement, Outline, Storyboard, Gap Analysis",
     homework: "Set up one InDesign file properly: correct document specs, two parent pages (A-Intro, B-Project), a locked three-layer system, and a saved workspace. No grid system yet, that starts next class.",
@@ -1894,6 +1899,12 @@ function SessionDetail({ session }) {
               </div>
             )}
             <BulletList items={s.activityItems} />
+            {s.activityWorksheet && (
+              <div style={{ margin: "14px 0 0" }}>
+                <p style={{ fontSize: 11.5, color: T.textMid, lineHeight: 1.6, margin: "0 0 6px" }}>{renderText(s.activityWorksheet.brief)}</p>
+                <LinkPill href={s.activityWorksheet.url} label={s.activityWorksheet.label} />
+              </div>
+            )}
           </CollapsibleSection>
         )}
 
