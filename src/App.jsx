@@ -1577,7 +1577,7 @@ const SESSIONS = [
     },
     noDiscussion: true,
     homework: "Set up your InDesign file properly, using the project you chose for the Session 3 assignment: correct document specs, two parent pages (A-Intro, B-Project), a locked three-layer system, and a saved workspace. Fill out the Setup Checklist as you go. No grid system yet, that starts next class.",
-    finalDeliverable: "Your InDesign file (.indd) and your completed Setup Checklist (.pdf), checked off to show how you addressed every setup item.",
+    finalDeliverable: "(1) Your InDesign file (.indd), and (2) your completed Setup Checklist (.pdf), checked off to show how you addressed every setup item.",
     reading: {
       title: "The Cubit and the Twelve-Point Grid",
       estMinutes: 7,
