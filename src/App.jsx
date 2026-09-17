@@ -1538,13 +1538,14 @@ const SESSIONS = [
     status: "proposed", date: "Thu, Sep 17, 2026",
     tagline: "Before you can build a grid, InDesign itself has to be set up like a professional environment.",
     tags: ["Discussion", "Lecture", "Activity"],
+    warmUpTitle: "Review and Discussion",
     warmUp: {
       items: [
         "Reviewing our Class 3 assignment: students walk the class through their project statement, outline, storyboard, and gaps notes, one at a time.",
         "Small-group discussion: what did you notice in their process? What would you borrow for your own storyboard, and what would you do differently?",
       ],
     },
-    warmUpMinutes: 15,
+    warmUpMinutes: 20,
     lectures: {
       fileUrl: `${import.meta.env.BASE_URL}materials/session-04-lecture-setting-up-the-file.pdf`,
       fileLabel: "Lecture Slides — Setting Up the File",
@@ -1558,7 +1559,7 @@ const SESSIONS = [
         "Saving a named workspace so this setup is repeatable every session",
       ],
     },
-    lecturesMinutes: 25,
+    lecturesMinutes: 20,
     activityIntro: "Set up your own InDesign file live in class, following the steps just covered: a properly configured new document, parent pages, a locked layer system, and a saved workspace.",
     activityMinutes: 30,
     activityItems: [
@@ -1860,7 +1861,7 @@ function SessionDetail({ session }) {
         )}
 
         {s.warmUp && (
-          <CollapsibleSection num={numWarmUp} minutes={s.warmUpMinutes || 20} title="Warm Up" defaultOpen={s.sectionsDefaultOpen}>
+          <CollapsibleSection num={numWarmUp} minutes={s.warmUpMinutes || 20} title={s.warmUpTitle || "Warm Up"} defaultOpen={s.sectionsDefaultOpen}>
             {s.warmUp.blocks && s.warmUp.blocks.map((b, i) => (
               <div key={`wb${i}`} style={{ marginBottom: 14 }}>
                 <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: "0 0 6px" }}>{renderText(b.brief)}</p>
