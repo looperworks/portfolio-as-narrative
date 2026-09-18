@@ -1559,7 +1559,7 @@ const SESSIONS = [
         "Parent Page Architecture: a single Cover page built directly, plus two parent templates, an A-Intro for title pages and a B-Project for project pages, so repeating elements update everywhere at once. Review: [Parent Pages Tutorial](https://www.youtube.com/watch?v=Ib6TzB71rFU&t=248s)",
         "The Four-Layer System: 04_Text, 03_Images, 02_Drawings, 01_Guides, locked and non-printing, in that stacking order, and why images and drawings get separate layers",
         "Why Paragraph Styles: a saved formatting recipe you change once instead of reformatting fifty spreads by hand, defined next class but the panel opened today. Review: [Paragraph Styles Tutorial](https://www.youtube.com/watch?v=tCSPlBJMoTY)",
-        "Saving a named workspace so this setup is repeatable every session",
+        "Saving a named workspace so this setup is repeatable every session, and how to update that same saved workspace later instead of creating a new one each time",
         "A final review of every setup step before you're cleared to start laying out real content",
       ],
     },
@@ -1572,7 +1572,7 @@ const SESSIONS = [
       "Group and dock those panels right away, before you build anything else, so your screen stays usable.",
       "Build your Cover page directly on page one, then two parent pages: A-Intro for title pages, B-Project for project pages. Apply them to your actual pages, don't just leave them built and unused.",
       "Set up your four layers in order: 04_Text, 03_Images, 02_Drawings, 01_Guides. Lock 01_Guides and uncheck Print Layer on it.",
-      "Save the workspace under its own name so it's ready to reload next class.",
+      "Save the workspace under its own name so it's ready to reload next class. Coming back to add more later (say, after watching the parent pages video)? Reselect your workspace, make the changes, then Workspace Switcher > New Workspace with the same name again, choose Yes to overwrite. You don't need a new workspace each time.",
       "No grid work tonight: baseline grid, margins/columns, and modular grid are next class. Tonight is the file, the parent pages, the layers, and the workspace.",
     ],
     activityWorksheet: {
