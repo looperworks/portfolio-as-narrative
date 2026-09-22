@@ -1624,6 +1624,8 @@ const SESSIONS = [
     tagline: "The 12-point atomic unit: one measurement that governs every margin, gutter, and module.",
     tags: ["Lecture", "Activity", "Discussion", "Assignment"],
     lectures: {
+      fileUrl: `${import.meta.env.BASE_URL}materials/session-05-lecture-building-the-grid.pdf`,
+      fileLabel: "Lecture Slides: Building the Grid",
       items: [
         "The File You Already Built: last week's parent pages, layers, and paragraph styles are the foundation everything tonight adds to, not a fresh start",
         "Baseline Grid: a 12-point ruled sheet across the whole page, the horizontal datum every line of body text locks to, so two columns typed independently still land on the same lines",
