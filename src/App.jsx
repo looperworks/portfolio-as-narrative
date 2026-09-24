@@ -1646,6 +1646,11 @@ const SESSIONS = [
       "Arrange the project images and text already in your file into the grid you just built, snapping them to real columns and rows instead of eyeballing position.",
       "Nothing floating between modules: every element you place should resolve to the grid, not sit between its lines.",
     ],
+    activityWorksheet: {
+      brief: "Check off each item as you set up the grid. Submit the completed checklist with your file to show how you got there.",
+      label: "Download the Grid Setup Checklist (.pdf)",
+      url: `${import.meta.env.BASE_URL}materials/session-05-worksheet-grid-setup-checklist.pdf`,
+    },
     discussionMinutes: 20,
     discussionFormat: "20 min small groups (breakout rooms), cohorts meet separately",
     breakout: {
