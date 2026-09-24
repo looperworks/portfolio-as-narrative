@@ -1636,32 +1636,32 @@ const SESSIONS = [
       ],
     },
     lecturesMinutes: 20,
-    activityIntro: "Build the baseline and modular grid on a blank page, confirm every line and column resolves to twelve points, then bring your own project into it.",
+    activityIntro: "Two files tonight, in order: a clean test file to prove you can build the grid on its own, then the same grid built into your real project file. Follow the checklist for both.",
     activityMinutes: 35,
     activityItems: [
-      "Set your baseline grid to start at 0 pt, 12 pt increments (Preferences > Grids).",
-      "Set up 6 columns, 8 rows, 12 pt gutters both ways (Layout > Margins and Columns, then Layout > Create Guides). That's 48 modules per page.",
-      "Toggle the baseline grid on (Cmd/Ctrl + Option + ') and check every column edge and row line against a 12-point increment before moving on.",
-      "Open Paragraph Styles and set Body Text to Align to Grid: All Lines.",
-      "Arrange the project images and text already in your file into the grid you just built, snapping them to real columns and rows instead of eyeballing position.",
-      "Nothing floating between modules: every element you place should resolve to the grid, not sit between its lines.",
+      "First, a clean test file: create a new, blank InDesign document following tonight's checklist all the way through, 600 x 840 pt, margins, baseline grid, 6 columns and 8 rows. Nothing else goes in this file, it exists to show the grid by itself.",
+      "Toggle the baseline grid on (Cmd/Ctrl + Option + ') and confirm every row line lands on a baseline rule before moving on.",
+      "Save that test file. It gets reviewed and submitted on its own tonight.",
+      "Then, your real project file: open your Class 3/4 InDesign file, the one with your Cover, parent pages, four layers, and saved workspace already built.",
+      "Change that file's document size to 600 x 840 pt (File > Document Setup), and confirm the margins carried over correctly.",
+      "Build the same baseline grid and modular grid inside this file, on top of everything already there. Don't start a new file for this part, the grid has to live inside your existing workspace, alongside your parent pages and layers, not somewhere separate.",
+      "Confirm the grid is visible and aligned here too. This is the file your group reviews, and the one you submit tonight.",
     ],
     activityWorksheet: {
-      brief: "Check off each item as you set up the grid. Submit the completed checklist with your file to show how you got there.",
+      brief: "Check off each item as you set up the grid, in both files. Submit the completed checklist with your files to show how you got there.",
       label: "Download the Grid Setup Checklist (.pdf)",
       url: `${import.meta.env.BASE_URL}materials/session-05-worksheet-grid-setup-checklist.pdf`,
     },
+    discussionTitle: "Group Review",
     discussionMinutes: 20,
-    discussionFormat: "20 min small groups (breakout rooms), cohorts meet separately",
+    discussionFormat: "20 min small groups, reviewing everyone's files together, no separate discussion topic tonight",
     breakout: {
-      undergrad: "Walk your neighbor through the grid you just built. Where did your content still want to fight the grid instead of sit inside it?",
-      grad: "Same exercise, then discuss: which of your four paragraph styles is doing the least work now that Body Text is locked to the baseline, and could it be cut?",
+      shared: "In your small group, open each person's test file and project file in turn. Confirm the baseline grid and modular grid are visible and aligned in both. Say out loud anything that doesn't resolve to the grid before moving to the next person's screen.",
     },
     assignmentMinutes: 5,
     dueToday: "Grid Type Annotations (2 published reference portfolios, not your own project)",
-    dueBy: "11:59 PM, Sunday, September 27 (end of day Monday if Sunday isn't possible)",
-    homework: "Upload the one project you selected, with your Class 4 workspace (parent pages applied, four layers, paragraph styles) and tonight's grid (baseline grid, modular grid, Body Text aligned) both laid out in the same file. One project, that's the whole assignment.",
-    finalDeliverable: "Your InDesign file (.indd) for the project you selected: Class 4's workspace (parent pages applied, four layers, paragraph styles) and tonight's grid (12-point baseline grid, 6-column / 8-row modular grid, Body Text set to Align to Grid: All Lines), all in the same file.",
+    dueBy: "Before you leave tonight's class",
+    finalDeliverable: "Two InDesign files (.indd), submitted before you leave tonight: (1) your clean test file, 600 x 840 pt with nothing but the baseline grid and 6-column / 8-row modular grid, and (2) your real project file, Class 4's workspace (parent pages applied, four layers, paragraph styles) with that same grid built into it. Nothing further is due after class.",
     references: "Building the Grid (extracted and rebuilt from Class_05_Architectural_Grid_Style_Systems.docx, Section 04: Baseline & Modular Grids)",
     supplementaryReading: {
       title: "Two Page Sizes, One Discipline: A Comparative Analysis",
@@ -1971,7 +1971,7 @@ function SessionDetail({ session }) {
         {s.activityIntro && (
           <CollapsibleSection num={numActivity} minutes={s.activityMinutes || 20} title="Activity" defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-              {s.noDiscussion ? "Individual" : "Individual: review in advance of group discussion"}
+              {s.noDiscussion ? "Individual" : s.discussionTitle ? `Individual: review in advance of ${s.discussionTitle.toLowerCase()}` : "Individual: review in advance of group discussion"}
             </div>
             <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: (s.activityLinks || s.templateFile || s.activityItems) ? "0 0 10px" : 0 }}>{renderText(s.activityIntro)}</p>
             {s.activityLinks && s.activityLinks.map((l, i) => (
@@ -1994,7 +1994,7 @@ function SessionDetail({ session }) {
         )}
 
         {!s.noDiscussion && (
-          <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title="Discussion" defaultOpen={s.sectionsDefaultOpen}>
+          <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title={s.discussionTitle || "Discussion"} defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
               {s.discussionFormat || `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
             </div>
