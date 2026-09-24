@@ -1658,6 +1658,11 @@ const SESSIONS = [
     homework: "Upload the one project you selected, with your Class 4 workspace (parent pages applied, four layers, paragraph styles) and tonight's grid (baseline grid, modular grid, Body Text aligned) both laid out in the same file. One project, that's the whole assignment.",
     finalDeliverable: "Your InDesign file (.indd) for the project you selected: Class 4's workspace (parent pages applied, four layers, paragraph styles) and tonight's grid (12-point baseline grid, 6-column / 8-row modular grid, Body Text set to Align to Grid: All Lines), all in the same file.",
     references: "Building the Grid (extracted and rebuilt from Class_05_Architectural_Grid_Style_Systems.docx, Section 04: Baseline & Modular Grids)",
+    supplementaryReading: {
+      title: "Two Page Sizes, One Discipline: A Comparative Analysis",
+      url: `${import.meta.env.BASE_URL}materials/session-05-reading-two-page-sizes.pdf`,
+      estMinutes: 8,
+    },
     reading: {
       title: "The Inch Was Already Twelve",
       estMinutes: 7,
@@ -2070,6 +2075,15 @@ function SessionDetail({ session }) {
               <a href={`#/reading/${s.num}`} style={{ fontSize: 14, fontWeight: 500, color: T.text, lineHeight: 1.4, textDecoration: "underline", textUnderlineOffset: 3 }}>
                 {s.reading.title} →
               </a>
+            </div>
+          )}
+
+          {s.supplementaryReading && (
+            <div style={{ marginTop: 18, paddingTop: 16, borderTop: `1px solid ${T.border}` }}>
+              <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 8 }}>
+                ~{s.supplementaryReading.estMinutes} min read · supplementary reading
+              </div>
+              <LinkPill href={s.supplementaryReading.url} label={`${s.supplementaryReading.title} →`} />
             </div>
           )}
         </CollapsibleSection>
