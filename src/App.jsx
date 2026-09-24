@@ -1667,7 +1667,6 @@ const SESSIONS = [
     dueToday: "Grid Type Annotations (2 published reference portfolios, not your own project)",
     dueBy: "Before you leave tonight's class",
     finalDeliverable: "Two InDesign files (.indd), submitted before you leave tonight: (1) your clean test file, 600 x 840 pt with nothing but the baseline grid and 6-column / 8-row modular grid, and (2) your real project file, Class 4's workspace (parent pages applied, four layers, paragraph styles) with that same grid built into it and Body Text set to Align to Grid: All Lines. Nothing further is due after class.",
-    references: "Building the Grid (extracted and rebuilt from Class_05_Architectural_Grid_Style_Systems.docx, Section 04: Baseline & Modular Grids)",
     reading: {
       title: "Every Number in the Grid",
       estMinutes: 10,
