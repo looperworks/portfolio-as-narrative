@@ -1635,6 +1635,7 @@ const SESSIONS = [
         "Turn On the Baseline Grid: Preferences > Grids, and the view-threshold setting almost everyone misses, the reason the grid can be on but invisible",
         "The Row Math, By Hand: confirming 756 / 12 = 63 and how that splits across 8 rows, before touching Create Guides, not after",
         "Create the Guides: 6 columns, 8 rows, 12-point gutters both ways, 48 modules per page, and why every row lands exactly on a baseline line",
+        "Close the Loop on Paragraph Styles: Body Text finally gets Align to Grid set to All Lines tonight, the one setting that was waiting on the baseline grid to exist",
         "If You're Printing: the true-Letter alternative, 612 x 792pt, what changes, and the one margin adjustment that keeps it fully aligned",
       ],
     },
@@ -1648,6 +1649,7 @@ const SESSIONS = [
       "Then, your real project file: open your Class 3/4 InDesign file, the one with your Cover, parent pages, four layers, and saved workspace already built.",
       "Change that file's document size to 600 x 840 pt (File > Document Setup), and confirm the margins carried over correctly.",
       "Build the same baseline grid and modular grid inside this file, on top of everything already there. Don't start a new file for this part, the grid has to live inside your existing workspace, alongside your parent pages and layers, not somewhere separate.",
+      "Open Paragraph Styles and set Body Text to Align to Grid: All Lines, the setting that was waiting on tonight's baseline grid to exist.",
       "Confirm the grid is visible and aligned here too. This is the file your group reviews, and the one you submit tonight.",
     ],
     activityWorksheet: {
@@ -1664,7 +1666,7 @@ const SESSIONS = [
     assignmentMinutes: 5,
     dueToday: "Grid Type Annotations (2 published reference portfolios, not your own project)",
     dueBy: "Before you leave tonight's class",
-    finalDeliverable: "Two InDesign files (.indd), submitted before you leave tonight: (1) your clean test file, 600 x 840 pt with nothing but the baseline grid and 6-column / 8-row modular grid, and (2) your real project file, Class 4's workspace (parent pages applied, four layers, paragraph styles) with that same grid built into it. Nothing further is due after class.",
+    finalDeliverable: "Two InDesign files (.indd), submitted before you leave tonight: (1) your clean test file, 600 x 840 pt with nothing but the baseline grid and 6-column / 8-row modular grid, and (2) your real project file, Class 4's workspace (parent pages applied, four layers, paragraph styles) with that same grid built into it and Body Text set to Align to Grid: All Lines. Nothing further is due after class.",
     references: "Building the Grid (extracted and rebuilt from Class_05_Architectural_Grid_Style_Systems.docx, Section 04: Baseline & Modular Grids)",
     reading: {
       title: "Every Number in the Grid",
