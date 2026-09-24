@@ -1664,9 +1664,9 @@ const SESSIONS = [
     finalDeliverable: "Two InDesign files (.indd), submitted before you leave tonight: (1) your clean test file, 600 x 840 pt with nothing but the baseline grid and 6-column / 8-row modular grid, and (2) your real project file, Class 4's workspace (parent pages applied, four layers, paragraph styles) with that same grid built into it. Nothing further is due after class.",
     references: "Building the Grid (extracted and rebuilt from Class_05_Architectural_Grid_Style_Systems.docx, Section 04: Baseline & Modular Grids)",
     supplementaryReading: {
-      title: "Two Page Sizes, One Discipline: A Comparative Analysis",
-      url: `${import.meta.env.BASE_URL}materials/session-05-reading-two-page-sizes.pdf`,
-      estMinutes: 8,
+      title: "Every Number in the Grid: An Optional Deeper Pass, With a Project to Match",
+      url: `${import.meta.env.BASE_URL}materials/session-05-reading-every-number-in-the-grid.pdf`,
+      estMinutes: 10,
     },
     reading: {
       title: "The Inch Was Already Twelve",
