@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      .label { font-size: 11px; fill: #777; }
+      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
+      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      .num { font-size: 13px; fill: #2A2D3E; font-weight: 700; }
+      .tick { font-size: 9px; fill: #999; }
+      .dot { fill: #2A2D3E; }
+      .dotnum { font-size: 9px; fill: #fff; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect width="2000" height="2000" fill="white"/>
+
+  <text x="400" y="34" text-anchor="middle" class="title">Two Scanning Paths, Same Spread</text>
+  <line x1="30" y1="46" x2="770" y2="46" stroke="#D8D6CC" stroke-width="0.5"/>
+
+  <!-- LEFT: F-pattern, text-heavy -->
+  <text x="200" y="75" text-anchor="middle" class="label-bold">F-PATTERN: TEXT-HEAVY PAGES</text>
+  <rect x="90" y="95" width="220" height="200" fill="#F5F3ED" stroke="#DEDBD0" stroke-width="1.5" rx="2"/>
+
+  <circle cx="115" cy="120" r="9" class="dot"/><text x="115" y="123" text-anchor="middle" class="dotnum">1</text>
+  <circle cx="270" cy="120" r="9" class="dot"/><text x="270" y="123" text-anchor="middle" class="dotnum">2</text>
+  <line x1="124" y1="120" x2="261" y2="120" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <circle cx="115" cy="148" r="9" class="dot"/><text x="115" y="151" text-anchor="middle" class="dotnum">3</text>
+  <circle cx="230" cy="148" r="9" class="dot"/><text x="230" y="151" text-anchor="middle" class="dotnum">4</text>
+  <line x1="124" y1="148" x2="221" y2="148" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <line x1="115" y1="129" x2="115" y2="139" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="115" y1="157" x2="115" y2="185" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <circle cx="115" cy="195" r="9" class="dot"/><text x="115" y="198" text-anchor="middle" class="dotnum">5</text>
+  <circle cx="195" cy="195" r="9" class="dot"/><text x="195" y="198" text-anchor="middle" class="dotnum">6</text>
+  <line x1="124" y1="195" x2="186" y2="195" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <line x1="115" y1="204" x2="115" y2="232" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <circle cx="115" cy="242" r="9" class="dot"/><text x="115" y="245" text-anchor="middle" class="dotnum">7</text>
+
+  <line x1="115" y1="251" x2="115" y2="270" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <circle cx="115" cy="280" r="9" class="dot"/><text x="115" y="283" text-anchor="middle" class="dotnum">8</text>
+
+  <text x="200" y="318" text-anchor="middle" class="tick">Across the top, shorter across again, then down the left edge</text>
+  <text x="200" y="332" text-anchor="middle" class="tick">scanning for anchor points. Nielsen, 2006.</text>
+
+  <!-- RIGHT: Z-pattern, visual-dominant -->
+  <text x="600" y="75" text-anchor="middle" class="label-bold">Z-PATTERN: VISUAL-DOMINANT SPREADS</text>
+  <rect x="490" y="95" width="220" height="200" fill="#F5F3ED" stroke="#2A2D3E" stroke-width="1.5"/>
+
+  <circle cx="515" cy="120" r="9" class="dot"/><text x="515" y="123" text-anchor="middle" class="dotnum">1</text>
+  <circle cx="685" cy="120" r="9" class="dot"/><text x="685" y="123" text-anchor="middle" class="dotnum">2</text>
+  <line x1="524" y1="120" x2="676" y2="120" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <line x1="676" y1="129" x2="524" y2="256" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <circle cx="515" cy="265" r="9" class="dot"/><text x="515" y="268" text-anchor="middle" class="dotnum">3</text>
+  <circle cx="685" cy="265" r="9" class="dot"/><text x="685" y="268" text-anchor="middle" class="dotnum">4</text>
+  <line x1="524" y1="265" x2="676" y2="265" stroke="#B45C6A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="600" y="318" text-anchor="middle" class="tick">Upper left to upper right, diagonally down,</text>
+  <text x="600" y="332" text-anchor="middle" class="tick">then across to lower right. The dominant-image path.</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B45C6A"/>
+    </marker>
+  </defs>
+
+  <line x1="30" y1="350" x2="770" y2="350" stroke="#D8D6CC" stroke-width="0.5"/>
+  <text x="400" y="371" text-anchor="middle" class="label" font-style="italic">
+    Neither path is a rule to obey. Both are predictions about where the eye goes first, whether or not you designed for it.
+  </text>
+</svg>
