@@ -1721,6 +1721,7 @@ const SESSIONS = [
         "Scanning Patterns: the F-path and Z-path readers actually follow, and why your dominant image belongs on one of those lines, not wherever there was room",
         "Information Scent: consistent labels, section markers, and page numbers as the difference between a portfolio a reviewer can navigate and one they have to decode",
         "Whitespace: why the margin and gutter space you built in Session 05 is doing real work tonight, not standing empty",
+        "Principles in Practice: four real student portfolio spreads, two that read clearly and two that don't, evaluated against tonight's eight principles before you evaluate each other's",
         "From Principles to Decisions: connecting tonight's eight principles to the five spread decisions, dominance, left-right, scaling, whitespace, composite logic",
         "Grid Breaks, Earned: the full-bleed, the oversized element, the deliberate void, and the one test every break has to pass",
       ],
