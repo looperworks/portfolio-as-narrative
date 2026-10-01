@@ -1738,7 +1738,7 @@ const SESSIONS = [
     },
     lecturesMinutes: 20,
     activityIntro: "Tonight you open the same real project file from Session 05, the one with your grid, baseline, and paragraph styles already built, and start placing real content into it. At least two spreads, applying tonight's principles, not placeholder boxes.",
-    activityMinutes: 35,
+    activityMinutes: 30,
     activityItems: [
       "Open your real project file from Session 05: the one with the 6-column, 8-row modular grid, baseline grid, and Body Text set to Align to Grid already built into it.",
       "Choose two spreads to build out with real content: your own drawings, renderings, or images, not placeholder rectangles.",
