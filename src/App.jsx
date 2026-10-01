@@ -1822,7 +1822,6 @@ const SESSIONS = [
         "[Pirolli, P., & Card, S. (1999). Information foraging. Psychological Review, 106(4), 643–675.](https://en.wikipedia.org/wiki/Information_foraging)",
         "[Tufte, E. R. (1983). The Visual Display of Quantitative Information. Graphics Press.](https://en.wikipedia.org/wiki/Edward_Tufte)",
         "[Tufte, E. R. (1990). Envisioning Information. Graphics Press.](https://www.edwardtufte.com/)",
-        "The decisions, applied: [Spread Composition](#/module/10).",
       ],
     },
   },
