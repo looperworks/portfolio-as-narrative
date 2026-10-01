@@ -1710,6 +1710,16 @@ const SESSIONS = [
     status: "proposed", date: "Thu, Oct 1, 2026",
     tagline: "Five decisions govern every spread, and when it's earned, breaking the grid is one of them.",
     tags: ["Lecture", "Activity", "Discussion", "Assignment"],
+    warmUpTitle: "Survey",
+    warmUpMinutes: 5,
+    warmUp: {
+      items: [
+        "Before we start: a short check-in on how Sessions 01 through 05 have gone, the pace, where you're at, and how clear each session's core idea still feels. Mostly anonymous, not graded, and it shapes what we cover tonight.",
+      ],
+      links: [
+        { label: "Mid-Course Check-In Survey", url: "https://docs.google.com/forms/d/e/1FAIpQLSeyBpcDSiHps90hEKqyDK2rgdWpryNFAQZdPgsvK5uGpKX4JA/viewform" },
+      ],
+    },
     lectures: {
       fileUrl: `${import.meta.env.BASE_URL}materials/session-06-lecture-spread-composition.pdf`,
       fileLabel: "Lecture Slides: Spread Composition and Grid Breaks",
