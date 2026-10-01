@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="'Circular Std','Inter','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      .label { font-size: 11px; fill: #777; }
+      .label-bold { font-size: 11px; fill: #1A1A1A; font-weight: 600; }
+      .title { font-size: 16px; fill: #1A1A1A; font-weight: 600; }
+      .num { font-size: 13px; fill: #2A2D3E; font-weight: 700; }
+      .tick { font-size: 9.5px; fill: #999; }
+      .seg { font-size: 11.5px; fill: #fff; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect width="2000" height="2000" fill="white"/>
+
+  <text x="400" y="34" text-anchor="middle" class="title">Three Kinds of Cognitive Load</text>
+  <line x1="30" y1="46" x2="770" y2="46" stroke="#D8D6CC" stroke-width="0.5"/>
+
+  <text x="400" y="75" text-anchor="middle" class="label-bold">WORKING MEMORY CAPACITY, ONE SPREAD</text>
+
+  <!-- capacity bracket -->
+  <line x1="100" y1="90" x2="700" y2="90" stroke="#999" stroke-width="1"/>
+  <line x1="100" y1="86" x2="100" y2="94" stroke="#999" stroke-width="1"/>
+  <line x1="700" y1="86" x2="700" y2="94" stroke="#999" stroke-width="1"/>
+  <text x="400" y="105" text-anchor="middle" class="tick">roughly four items held at once (Cowan, 2001)</text>
+
+  <!-- stacked bar: intrinsic (fixed, gray), extraneous (rose, the lever), germane (navy, desirable) -->
+  <rect x="100" y="130" width="220" height="60" fill="#8A8D99"/>
+  <rect x="320" y="130" width="160" height="60" fill="#B45C6A"/>
+  <rect x="480" y="130" width="220" height="60" fill="#2A2D3E"/>
+  <rect x="100" y="130" width="600" height="60" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="320" y1="130" x2="320" y2="190" stroke="white" stroke-width="2"/>
+  <line x1="480" y1="130" x2="480" y2="190" stroke="white" stroke-width="2"/>
+
+  <text x="210" y="165" text-anchor="middle" class="seg">INTRINSIC</text>
+  <text x="400" y="165" text-anchor="middle" class="seg">EXTRANEOUS</text>
+  <text x="590" y="165" text-anchor="middle" class="seg">GERMANE</text>
+
+  <!-- callouts -->
+  <text x="210" y="225" text-anchor="middle" class="label-bold">Fixed by the content</text>
+  <text x="210" y="241" text-anchor="middle" class="tick" font-style="italic">set by how complex</text>
+  <text x="210" y="254" text-anchor="middle" class="tick" font-style="italic">your project actually is</text>
+
+  <text x="400" y="225" text-anchor="middle" class="label-bold">The only lever you control</text>
+  <text x="400" y="241" text-anchor="middle" class="tick" font-style="italic">caused by how it's presented,</text>
+  <text x="400" y="254" text-anchor="middle" class="tick" font-style="italic">not by what it shows</text>
+
+  <text x="590" y="225" text-anchor="middle" class="label-bold">Desirable, not a cost</text>
+  <text x="590" y="241" text-anchor="middle" class="tick" font-style="italic">the real work of understanding</text>
+  <text x="590" y="254" text-anchor="middle" class="tick" font-style="italic">your architecture</text>
+
+  <line x1="30" y1="285" x2="770" y2="285" stroke="#D8D6CC" stroke-width="0.5"/>
+  <text x="400" y="306" text-anchor="middle" class="label" font-style="italic">
+    Reducing load never means reducing difficulty. It means refusing to add difficulty the content didn't ask for.
+  </text>
+  <text x="400" y="324" text-anchor="middle" class="tick">Sweller, van Merriënboer, &amp; Paas, 1998</text>
+</svg>
