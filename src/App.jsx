@@ -1749,6 +1749,11 @@ const SESSIONS = [
       "Label each spread consistently: a section marker, a project title, or a page number, whatever signals to a reviewer where they are in your sequence.",
       "If a spread earns a grid break, a full-bleed image, an oversized element, or a deliberate void, take it. If nothing earns one yet, leave the grid intact. A break without a reason is a mistake, not a choice.",
     ],
+    activityWorksheet: {
+      brief: "Check off each item as you build out your two spreads. Every item ties to one of tonight's eight principles, so you can work straight from this instead of re-reading the lecture.",
+      label: "Download the Spread Layout Checklist (.pdf)",
+      url: `${import.meta.env.BASE_URL}materials/session-06-worksheet-spread-layout-checklist.pdf`,
+    },
     discussionTitle: "Peer Review",
     discussionMinutes: 20,
     discussionFormat: "20 min small groups, reviewing the two spreads everyone just built, using tonight's evaluation questions",
