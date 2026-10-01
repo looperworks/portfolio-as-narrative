@@ -1559,7 +1559,7 @@ const SESSIONS = [
         "Parent Page Architecture: a single Cover page built directly, plus two parent templates, an A-Intro for title pages and a B-Project for project pages, so repeating elements update everywhere at once. Review: [Parent Pages Tutorial](https://www.youtube.com/watch?v=Ib6TzB71rFU&t=248s)",
         "The Four-Layer System: 04_Text, 03_Images, 02_Drawings, 01_Guides, locked and non-printing, in that stacking order, and why images and drawings get separate layers",
         "Why Paragraph Styles: a saved formatting recipe you change once instead of reformatting fifty spreads by hand, defined next class but the panel opened today. Review: [Paragraph Styles Tutorial](https://www.youtube.com/watch?v=tCSPlBJMoTY)",
-        "Saving a named workspace so this setup is repeatable every session, and how to update that same saved workspace later instead of creating a new one each time",
+        "Saving a named workspace so every file for the rest of the term can open into this same layout, with next class previewed: the twelve-point baseline and modular grid, built on top of today's file",
         "A final review of every setup step before you're cleared to start laying out real content",
       ],
     },
