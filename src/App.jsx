@@ -1761,7 +1761,7 @@ const SESSIONS = [
       shared: "In your small group, look at each person's two new spreads in turn. For each one: what's your overall impression, clear, cluttered, or confusing? Is the dominant element obvious? Does your eye move naturally across the spread, or does it jump around? Name one specific thing that isn't working before moving to the next person's screen.",
     },
     assignmentMinutes: 5,
-    dueToday: "Two Grid-Aligned Spreads with Real Content (applying tonight's layout principles)",
+    dueToday: "Two Spreads Built with Real Content (applying tonight's composition principles, grid breaks taken where earned)",
     dueBy: "Before you leave tonight's class",
     finalDeliverable: "Your real project file (.indd), submitted before you leave tonight, with at least two spreads built out with real content: a clear dominant element on each, captions placed by spatial contiguity, consistent labeling, and grid breaks only where earned.",
     reading: {
