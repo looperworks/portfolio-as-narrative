@@ -1917,69 +1917,55 @@ const SESSIONS = [
     references: "Threshold Resources: Typography & Type Foundries (Klim, Commercial Type, Colophon, Grilli Type, Pangram Pangram)",
   },
   {
-    num: 8, title: "Color, Representation & the Photographed Model",
-    moduleRefs: [12],
-    status: "proposed", date: "Thu, Oct 22, 2026",
-    tagline: "One accent color, or none. How physical work gets photographed and drawn to argue at the same level as the page around it.",
-    tags: ["Lecture", "Discussion"],
-    agenda: [
-      "The One-Accent-Color Rule (Or None)",
-      "Renders vs. Drawings vs. Photography of Physical Models",
-      "Non-Destructive Photo Editing: Lighting, Cropping, Batch Consistency",
-      "In-Class Color Audit of Your Own Spreads",
-    ],
-    breakout: {
-      undergrad: "You likely have hand drawings or pinned-up physical models rather than polished renders. How do you photograph and represent that work with confidence, not apology?",
-      grad: "Your studio work spans multiple original media across projects. How do you keep color and representation consistent across all of them?",
-    },
-    dueToday: "Typeface System Applied (2 Title-Page Candidates)",
-    homework: "Revise/replace any inconsistent images; finalize color treatment",
-    references: "Threshold Resources: Graphic Design & Visual Culture",
-  },
-  {
-    num: 9, title: "Production Standards, Digital Presence & the Self-Editing Framework",
-    moduleRefs: [13],
-    status: "proposed", date: "Thu, Oct 29, 2026",
-    tagline: "File specs, where your portfolio lives online, and the checklist you'll run before Session 10.",
-    tags: ["Lecture", "Discussion", "Assignment"],
-    agenda: [
-      "Export Standards: Resolution, File Size, PDF Compression",
-      "Print vs. Digital Delivery; Where Your Portfolio Lives Online",
-      "Appropriate Use of AI Tools in Production",
-      "Introduce 5-Category Self-Editing Audit: Narrative, Grid, Hierarchy, Typography, Technical Setup",
-      "Group Audit of One Spread",
-    ],
-    breakout: {
-      undergrad: "Is it okay to submit a “structure-complete, content-partial” checkpoint: real cover and grid mechanics, with a placeholder spread and a note on what's coming? Discuss what that minimum should look like.",
-      grad: "Run the full 5-category audit on your most finished spread right now. Where does it actually fall short of job-ready?",
-    },
-    dueToday: "Finalized Color Treatment",
-    homework: "Full self-audit of your own portfolio using the checklist",
-    trackNote: "Undergrad checkpoints may mix real and placeholder spreads at this stage; grad checkpoints are held to a job-ready standard.",
-    references: "Threshold Resources: Jobs & Career Boards; Technical Standards & Production module",
-  },
-  {
-    num: 10, title: "Cover & Table of Contents Design: The Portfolio Checkpoint",
+    num: 8, title: "Cover and Table of Contents",
     moduleRefs: [11],
-    status: "proposed", date: "Thu, Nov 12, 2026",
-    dateNote: "Final Session",
-    tagline: "Two thresholds a reviewer crosses before the work itself, and your first fully assembled submission.",
+    status: "proposed", date: "Thu, Oct 22, 2026",
+    tagline: "Two thresholds a reviewer crosses before the work itself.",
     tags: ["Lecture", "Discussion", "Assignment"],
     agenda: [
       "Seven Cover Typologies: Pure Minimal, Dark Ground, Hero Image, Bleed + Type Band, Scattered Collage, Grid/Pattern, Abstract Line",
       "Six TOC Typologies: Illustrated Section Grid, Multi-Column Index, Thumbnail Gallery, Literary Chapter Index, Bold Number Cards, Narrative + List Hybrid",
       "Synthesis Matrix: Rigid ↔ Freeform, Typographic ↔ Image-Driven, Conventional ↔ Expressive",
-      "Structured Peer Review (5-Minute Presentations, Scored Checklist): Cover and TOC Together",
-      "Self-Evaluation: Technical Setup + Design Categories + Typography",
     ],
     breakout: {
-      undergrad: "Does your cover need to admit you're a student, or is it fine that it doesn't? What's the minimum viable complete portfolio for someone entering the field for the first time? Peer-review each other against that bar, not a professional's.",
+      undergrad: "Does your cover need to admit you're a student, or is it fine that it doesn't? What's the minimum viable complete portfolio for someone entering the field for the first time?",
       grad: "Does your cover read as a working designer's, not a student's? Is this ready to send to an employer tomorrow? If not, name the single blocking issue.",
     },
-    dueToday: "Completed Self-Audit",
-    homework: null,
-    finalDeliverable: "Portfolio Checkpoint: final cover + chosen TOC + two fully laid-out project spreads, submitted as PDF and .indd",
+    homework: "Draft your cover and table of contents in your project file, ready to show in the review sessions.",
     references: "Threshold Portfolio Guide: Portfolio Identity, Cover & Table of Contents; Threshold Resources: 10 Sites to Follow",
+  },
+  {
+    num: 9, title: "Portfolio Reviews",
+    moduleRefs: [12],
+    status: "proposed", date: "Thu, Oct 29, 2026",
+    tagline: "Students show their current InDesign file, and each portfolio gets a review.",
+    tags: ["Portfolio Review"],
+    noLecture: true,
+    noAssignment: true,
+    discussionTitle: "Portfolio Review",
+    discussionMinutes: 80,
+    discussionFormat: "80 min, instructor-led: students show their current InDesign file on screen",
+    discussionIntro: "Reviews run across Sessions 9 and 10. Students present in the order announced by email, while Seth gives feedback. Have your current InDesign file open, with your cover and table of contents in place.",
+    breakout: {
+      shared: "Everyone else takes notes. A takeaway is something you notice in a classmate's portfolio, or in the feedback they get, that you can adapt to your own portfolio. These are notes to yourself, not answers to a set of questions.",
+    },
+  },
+  {
+    num: 10, title: "Final Portfolio Reviews",
+    moduleRefs: [13],
+    status: "proposed", date: "Thu, Nov 12, 2026",
+    dateNote: "Final Session",
+    tagline: "The last round of reviews, with each portfolio as it stands.",
+    tags: ["Portfolio Review"],
+    noLecture: true,
+    noAssignment: true,
+    discussionTitle: "Portfolio Review",
+    discussionMinutes: 80,
+    discussionFormat: "80 min, instructor-led: students show their portfolio on screen",
+    discussionIntro: "The final round. Students present their portfolio as it stands, in the order announced by email, while Seth gives feedback.",
+    breakout: {
+      shared: "Everyone else takes notes. A takeaway is something you notice in a classmate's portfolio, or in the feedback they get, that you can adapt to your own portfolio. These are notes to yourself, not answers to a set of questions.",
+    },
   },
 ];
 
@@ -2075,7 +2061,7 @@ function SessionDetail({ session }) {
   const numLectures = s.noLecture ? null : secNum();
   const numActivity = s.activityIntro ? secNum() : null;
   const numDiscussion = s.noDiscussion ? null : (s.discussionFirst ? numDiscussionEarly : secNum());
-  const numAssignment = secNum();
+  const numAssignment = s.noAssignment ? null : secNum();
   const discussionSection = !s.noDiscussion && (
           <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title={s.discussionTitle || "Discussion"} defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
@@ -2225,6 +2211,7 @@ function SessionDetail({ session }) {
 
         {!s.discussionFirst && discussionSection}
 
+        {!s.noAssignment && (
         <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title={s.assignmentSectionTitle || "Assignment"} defaultOpen={s.sectionsDefaultOpen}>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {s.dueBy && (
@@ -2295,6 +2282,7 @@ function SessionDetail({ session }) {
             </div>
           )}
         </CollapsibleSection>
+        )}
       </div>
 
       {s.trackNote && (
@@ -2351,7 +2339,7 @@ const SYLLABUS_PDF_GRAD = `${import.meta.env.BASE_URL}syllabus/ARCH_ST_Portfolio
 const ABOUT_TEXT = [
   "Portfolio as Narrative is the companion resource for ARCH-Portfolio (44611/002) and ARCH-ST:Portfolio (56995/006), a studio-style course at Kent State University's College of Architecture and Environmental Design, taught by Seth Looper (M.Arch, Rhode Island School of Design). The course guides architecture students in developing academic portfolios that synthesize design concepts and communicate architectural thinking to faculty and professional audiences.",
   "The guide covers fifteen modules across three parts, organized into the term's [eleven class sessions](#/). [Part I (Narrative)](#/module/1) teaches position statements, keyword-driven graphic outlines, the three-act narrative arc (setup, confrontation, resolution), four image types as evidence (concept, context, process, outcome), and storyboarding. [Part II (Grid)](#/module/7) covers grid systems, the twelve-point modular grid, InDesign setup, spread composition, and variation and pacing. [Part III (Production)](#/module/12) addresses typographic systems, color and tonal unity, cover and table of contents design, and a six-category self-editing audit. [Two case studies](#/casestudy) (one tracing a Harvard GSD project through all Part I principles, another analyzing a twelve-spread portfolio through Part II's grid and composition framework) provide extended worked examples.",
-  "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course meets once weekly for ten sessions in Fall 2026, from portfolio foundations and critical observation through a precedent-review working session, narrative, grid systems, typography, and color, to final production, cover and table-of-contents design, and the portfolio checkpoint. Assignments build progressively toward a fully resolved academic portfolio.",
+  "Every module pairs instructional prose with captioned reference diagrams and concludes with a hands-on activity prompt. The course meets once weekly for ten sessions in Fall 2026, from portfolio foundations and critical observation through a precedent-review working session, narrative, grid systems, and typography, to cover and table-of-contents design and two sessions of portfolio review. Assignments build progressively toward a fully resolved academic portfolio.",
   "Whether you are preparing for graduate school applications, professional interviews, or scholarship reviews, the framework here applies. A portfolio is not a binder. It is an argument, and this guide shows you how to build one.",
   `For grading, attendance, and university policies, see the official course syllabus: [undergraduate, 44611](${SYLLABUS_PDF_UNDERGRAD}) (also on [SimpleSyllabus](${SYLLABUS_LINK})) or [graduate, 56995](${SYLLABUS_PDF_GRAD}).`,
 ];
