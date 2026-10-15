@@ -1879,9 +1879,19 @@ const SESSIONS = [
     discussionLinks: [
       { label: "Takeaways Worksheet", url: "https://docs.google.com/spreadsheets/d/14gwHEImh0mz_FQRLyQN0d5ubL_NKsYDZ/edit?usp=sharing&ouid=112629692034766988042&rtpof=true&sd=true" },
     ],
+    discussionIntro: "Selected students were emailed in advance. Each one shows their current InDesign file on screen, in the order sent, while Seth gives feedback. Everyone else takes notes.",
     breakout: {
-      shared: "Selected students were emailed in advance and show their current InDesign file on screen, in the order sent. Everyone writes five takeaways on the shared Takeaways Worksheet below while the portfolios are reviewed, and watches for these things in their own file: Can you read the hierarchy from across the room, or do title and body look alike? Do the two faces contrast enough to look intentional? Does the pairing match the tone of what the project argues (grads: the Red Thread from Session 03)? Does body text sit on the baseline grid with no drift between lines? What is the one change you would make to your own file after watching? Other students are reviewed in the following classes.",
+      shared: "Write five takeaways. A takeaway is something you notice in a classmate's portfolio, or in the feedback they get, that you can adapt to your own portfolio. Write each one as a note to yourself, in your own words. These are not answers to the questions below, and you do not need one for each question.",
     },
+    discussionItemsLabel: "Things to look for",
+    discussionItems: [
+      "**Story (Session 03):** Does the order of the spreads follow the outline and prove what the statement claims? Grads: where does the Red Thread show up?",
+      "**Grid (Session 05):** Do images and text land on the 6-column, 8-row grid, and does body text sit on the 12 pt baseline?",
+      "**Composition (Session 06):** Is there one clear dominant element on each spread? Do captions sit against what they describe?",
+      "**Grid breaks (Session 06):** Where the grid breaks, does the break look earned?",
+      "**Type (Session 07):** Can you read the hierarchy from across the room, and does the typeface suit what the project argues?",
+      "**Your own file:** What is one thing you would change or try after watching?",
+    ],
     assignmentMinutes: 5,
     dueToday: "Typeface System Applied Across Every Spread (via paragraph styles) + 2 Candidate Title-Page Treatments",
     dueBy: "Thursday, Oct 22, before class",
@@ -2103,6 +2113,16 @@ function SessionDetail({ session }) {
                   </div>
                   <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.grad}</p>
                 </div>
+              </div>
+            )}
+            {s.discussionItems && (
+              <div style={{ marginTop: 14 }}>
+                {s.discussionItemsLabel && (
+                  <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 4 }}>
+                    {s.discussionItemsLabel}
+                  </div>
+                )}
+                <BulletList items={s.discussionItems} />
               </div>
             )}
             {s.discussionLinks && (
