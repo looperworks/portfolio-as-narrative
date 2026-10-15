@@ -1874,8 +1874,11 @@ const SESSIONS = [
     discussionTitle: "Portfolio Review",
     discussionMinutes: 20,
     discussionFormat: "20 min, instructor-led: selected students show their current InDesign file on screen",
+    discussionLinks: [
+      { label: "Takeaways Worksheet", url: "https://docs.google.com/spreadsheets/d/14gwHEImh0mz_FQRLyQN0d5ubL_NKsYDZ/edit?usp=sharing&ouid=112629692034766988042&rtpof=true&sd=true" },
+    ],
     breakout: {
-      shared: "Selected students were emailed in advance and show their current InDesign file on screen, in the order sent. Everyone watches for the same five things in their own file: Can you read the hierarchy from across the room, or do title and body look alike? Do the two faces contrast enough to look intentional? Does the pairing match the tone of what the project argues (grads: the Red Thread from Session 03)? Does body text sit on the baseline grid with no drift between lines? What is the one change you would make to your own file after watching? Other students are reviewed in the following classes.",
+      shared: "Selected students were emailed in advance and show their current InDesign file on screen, in the order sent. Everyone writes five takeaways on the shared Takeaways Worksheet below while the portfolios are reviewed, and watches for these things in their own file: Can you read the hierarchy from across the room, or do title and body look alike? Do the two faces contrast enough to look intentional? Does the pairing match the tone of what the project argues (grads: the Red Thread from Session 03)? Does body text sit on the baseline grid with no drift between lines? What is the one change you would make to your own file after watching? Other students are reviewed in the following classes.",
     },
     assignmentMinutes: 5,
     dueToday: "Typeface System Applied Across Every Spread (via paragraph styles) + 2 Candidate Title-Page Treatments",
@@ -2196,6 +2199,13 @@ function SessionDetail({ session }) {
                   </div>
                   <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.grad}</p>
                 </div>
+              </div>
+            )}
+            {s.discussionLinks && (
+              <div style={{ marginTop: 12 }}>
+                {s.discussionLinks.map((l, i) => (
+                  <LinkPill key={i} href={l.url} label={l.label} />
+                ))}
               </div>
             )}
           </CollapsibleSection>
