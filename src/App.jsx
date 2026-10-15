@@ -1831,7 +1831,7 @@ const SESSIONS = [
     status: "proposed", date: "Thu, Oct 15, 2026",
     dateNote: "Skips Thu, Oct 8: Kent State Fall Break",
     tagline: "Type is the last decision that still reads as a design decision.",
-    tags: ["Discussion", "Lecture", "Activity", "Assignment"],
+    tags: ["Portfolio Review", "Lecture", "Activity", "Assignment"],
     discussionFirst: true,
     lectures: {
       fileUrl: `${import.meta.env.BASE_URL}materials/session-07-lecture-typography-as-architectural-voice.pdf`,
@@ -1994,7 +1994,7 @@ const SESSIONS = [
 ];
 
 const SESSION_STATUS_LABEL = { delivered: "Delivered", proposed: "Proposed" };
-const TAG_COLOR = { Lecture: T.tagLecture, Discussion: T.tagDiscussion, Assignment: T.tagAssignment, Reading: T.tagReading, Activity: T.tagActivity };
+const TAG_COLOR = { Lecture: T.tagLecture, Discussion: T.tagDiscussion, "Portfolio Review": T.tagDiscussion, Assignment: T.tagAssignment, Reading: T.tagReading, Activity: T.tagActivity };
 
 function TagChip({ label }) {
   const color = TAG_COLOR[label] || T.textFaint;
