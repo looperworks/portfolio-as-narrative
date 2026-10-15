@@ -1831,7 +1831,8 @@ const SESSIONS = [
     status: "proposed", date: "Thu, Oct 15, 2026",
     dateNote: "Skips Thu, Oct 8: Kent State Fall Break",
     tagline: "Type is the last decision that still reads as a design decision.",
-    tags: ["Lecture", "Activity", "Discussion", "Assignment"],
+    tags: ["Discussion", "Lecture", "Activity", "Assignment"],
+    discussionFirst: true,
     lectures: {
       fileUrl: `${import.meta.env.BASE_URL}materials/session-07-lecture-typography-as-architectural-voice.pdf`,
       fileLabel: "Lecture Slides: Typography as Architectural Voice",
@@ -1848,9 +1849,10 @@ const SESSIONS = [
         "Common Mistakes, Quick Fixes, and the five roles a pairing has to cover: display title, section marker, body, caption, and labels",
       ],
     },
-    lecturesMinutes: 25,
-    activityIntro: "Tonight you choose a typeface pairing for your whole project, put it into the four paragraph styles you built in Session 04, and test it on one spread of your project. The Typeface Guide has the categories, the pairings, and the free alternatives, so keep it open while you work.",
-    activityMinutes: 30,
+    lecturesMinutes: 15,
+    activityIntro: "A short walk-through, not a work session. These are the steps for choosing a typeface pairing, putting it into the four paragraph styles you built in Session 04, and testing it on one spread of your project. Do them after class if time runs out. The Typeface Guide has the categories, the pairings, and the free alternatives, so keep it open while you work.",
+    activityMinutes: 10,
+    activityFormat: "Walk-through: do the steps in class if there is time, otherwise after class",
     activityLinks: [
       { label: "Architecture Portfolio Typeface Guide (.pdf)", url: `${import.meta.env.BASE_URL}materials/session-07-architecture-portfolio-typeface-guide.pdf` },
       { label: "Adobe Fonts", url: "https://fonts.adobe.com" },
@@ -1872,8 +1874,8 @@ const SESSIONS = [
       url: `${import.meta.env.BASE_URL}materials/session-07-worksheet-typeface-setup-checklist.pdf`,
     },
     discussionTitle: "Portfolio Review",
-    discussionMinutes: 20,
-    discussionFormat: "20 min, instructor-led: selected students show their current InDesign file on screen",
+    discussionMinutes: 50,
+    discussionFormat: "50 min, instructor-led: selected students show their current InDesign file on screen",
     discussionLinks: [
       { label: "Takeaways Worksheet", url: "https://docs.google.com/spreadsheets/d/14gwHEImh0mz_FQRLyQN0d5ubL_NKsYDZ/edit?usp=sharing&ouid=112629692034766988042&rtpof=true&sd=true" },
     ],
@@ -2072,10 +2074,47 @@ function SessionDetail({ session }) {
   const secNum = () => String(++secN).padStart(2, "0");
   const numReview = s.reviewCarousel ? secNum() : null;
   const numWarmUp = s.warmUp ? secNum() : null;
+  const numDiscussionEarly = (s.discussionFirst && !s.noDiscussion) ? secNum() : null;
   const numLectures = s.noLecture ? null : secNum();
   const numActivity = s.activityIntro ? secNum() : null;
-  const numDiscussion = s.noDiscussion ? null : secNum();
+  const numDiscussion = s.noDiscussion ? null : (s.discussionFirst ? numDiscussionEarly : secNum());
   const numAssignment = secNum();
+  const discussionSection = !s.noDiscussion && (
+          <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title={s.discussionTitle || "Discussion"} defaultOpen={s.sectionsDefaultOpen}>
+            <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
+              {s.discussionFormat || `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
+            </div>
+            {s.discussionIntro && (
+              <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.6, margin: "0 0 14px" }}>{renderText(s.discussionIntro)}</p>
+            )}
+            {s.breakout.shared ? (
+              <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.shared}</p>
+            ) : (
+              <div className="breakout-grid" style={{ display: "grid", gap: 16 }}>
+                <div>
+                  <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
+                    Undergrad (44611)
+                  </div>
+                  <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.undergrad}</p>
+                </div>
+                <div>
+                  <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
+                    Grad (56995)
+                  </div>
+                  <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.grad}</p>
+                </div>
+              </div>
+            )}
+            {s.discussionLinks && (
+              <div style={{ marginTop: 12 }}>
+                {s.discussionLinks.map((l, i) => (
+                  <LinkPill key={i} href={l.url} label={l.label} />
+                ))}
+              </div>
+            )}
+          </CollapsibleSection>
+  );
+
   return (
     <div style={{ width: "100%", maxWidth: 640, opacity: 1 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
@@ -2141,6 +2180,8 @@ function SessionDetail({ session }) {
           </CollapsibleSection>
         )}
 
+        {s.discussionFirst && discussionSection}
+
         {!s.noLecture && (
           <CollapsibleSection num={numLectures} minutes={s.lecturesMinutes || 20} title="Lectures" defaultOpen={s.sectionsDefaultOpen}>
             {s.lectures && s.lectures.fileUrl && (
@@ -2153,7 +2194,7 @@ function SessionDetail({ session }) {
         {s.activityIntro && (
           <CollapsibleSection num={numActivity} minutes={s.activityMinutes || 20} title="Activity" defaultOpen={s.sectionsDefaultOpen}>
             <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-              {s.noDiscussion ? "Individual" : s.discussionTitle ? `Individual: review in advance of ${s.discussionTitle.toLowerCase()}` : "Individual: review in advance of group discussion"}
+              {s.activityFormat ? s.activityFormat : s.noDiscussion ? "Individual" : s.discussionTitle ? `Individual: review in advance of ${s.discussionTitle.toLowerCase()}` : "Individual: review in advance of group discussion"}
             </div>
             <p style={{ fontSize: 11.5, color: T.text, lineHeight: 1.6, margin: (s.activityLinks || s.templateFile || s.activityItems) ? "0 0 10px" : 0 }}>{renderText(s.activityIntro)}</p>
             {s.activityLinks && s.activityLinks.map((l, i) => (
@@ -2175,41 +2216,7 @@ function SessionDetail({ session }) {
           </CollapsibleSection>
         )}
 
-        {!s.noDiscussion && (
-          <CollapsibleSection num={numDiscussion} minutes={s.discussionMinutes || 15} title={s.discussionTitle || "Discussion"} defaultOpen={s.sectionsDefaultOpen}>
-            <div style={{ fontSize: 10.5, color: T.textMuted, letterSpacing: "0.02em", marginBottom: 12 }}>
-              {s.discussionFormat || `10 min small groups (breakout rooms)${s.breakout.shared ? "" : ", cohorts meet separately"} + 5 min whole group (main room)`}
-            </div>
-            {s.discussionIntro && (
-              <p style={{ fontSize: 12, color: T.textMid, lineHeight: 1.6, margin: "0 0 14px" }}>{renderText(s.discussionIntro)}</p>
-            )}
-            {s.breakout.shared ? (
-              <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.shared}</p>
-            ) : (
-              <div className="breakout-grid" style={{ display: "grid", gap: 16 }}>
-                <div>
-                  <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
-                    Undergrad (44611)
-                  </div>
-                  <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.undergrad}</p>
-                </div>
-                <div>
-                  <div style={{ fontSize: 9.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.textFaint, marginBottom: 6 }}>
-                    Grad (56995)
-                  </div>
-                  <p style={{ fontSize: 12, color: T.text, lineHeight: 1.55 }}>{s.breakout.grad}</p>
-                </div>
-              </div>
-            )}
-            {s.discussionLinks && (
-              <div style={{ marginTop: 12 }}>
-                {s.discussionLinks.map((l, i) => (
-                  <LinkPill key={i} href={l.url} label={l.label} />
-                ))}
-              </div>
-            )}
-          </CollapsibleSection>
-        )}
+        {!s.discussionFirst && discussionSection}
 
         <CollapsibleSection num={numAssignment} minutes={s.assignmentMinutes || 5} title={s.assignmentSectionTitle || "Assignment"} defaultOpen={s.sectionsDefaultOpen}>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
