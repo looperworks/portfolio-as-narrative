@@ -1850,23 +1850,13 @@ const SESSIONS = [
       ],
     },
     lecturesMinutes: 15,
-    activityIntro: "A short walk-through, not a work session. These are the steps for choosing a typeface pairing, putting it into the four paragraph styles you built in Session 04, and testing it on one spread of your project. Do them after class if time runs out. The Typeface Guide has the categories, the pairings, and the free alternatives, so keep it open while you work.",
+    activityIntro: "A short walk-through, not a work session. The Typeface Setup Checklist below has the steps for choosing a typeface pairing, putting it into the four paragraph styles you built in Session 04, and testing it on one spread of your project. Do them after class if time runs out. The Typeface Guide has the categories, the pairings, and the free alternatives, so keep it open while you work.",
     activityMinutes: 10,
     activityFormat: "Walk-through: do the steps in class if there is time, otherwise after class",
     activityLinks: [
       { label: "Architecture Portfolio Typeface Guide (.pdf)", url: `${import.meta.env.BASE_URL}materials/session-07-architecture-portfolio-typeface-guide.pdf` },
       { label: "Adobe Fonts", url: "https://fonts.adobe.com" },
       { label: "Google Fonts", url: "https://fonts.google.com" },
-    ],
-    activityItems: [
-      "Open your project file from Session 06, the one with your whole project built out and your four paragraph styles already in place. If you never built the styles, create the four from Session 04 first.",
-      "Name your category and why. What does your project argue, and which of the four categories fits that argument?",
-      "Pick one heading face and one body face. Three families at most. Use the free route from the guide if you do not have the commercial face.",
-      "Install the fonts through Adobe Fonts or Google Fonts, then restart InDesign, before you open the Paragraph Styles panel.",
-      "Update Title, Subtitle, Body Text, and Caption with the pairing. Do not hand-format any single text frame.",
-      "Keep Body Text at 10 pt on 12 pt leading with Align to Grid set to All Lines, so the pairing still sits on the baseline.",
-      "Set Body Text flush left, ragged right, with hyphenation off in Title, Subtitle, and Caption. Check that body lines run about 45 to 75 characters, which is three or four columns on the course grid.",
-      "Test the pairing on one spread of your project, then in a second context. Undergrads: a resume or CV page and placeholder text. Grads: your title and section pages.",
     ],
     activityWorksheet: {
       brief: "Check off each item as you set up your typeface system. The list follows the order of the work, from choosing a category to the wrap-up, so you can work straight from it instead of re-reading the lecture.",
@@ -2223,7 +2213,7 @@ function SessionDetail({ session }) {
                 <LinkPill href={s.templateFile.url} label={s.templateFile.label} />
               </div>
             )}
-            <BulletList items={s.activityItems} />
+            {s.activityItems && <BulletList items={s.activityItems} />}
             {s.activityWorksheet && (
               <div style={{ margin: "14px 0 0" }}>
                 <p style={{ fontSize: 11.5, color: T.textMid, lineHeight: 1.6, margin: "0 0 6px" }}>{renderText(s.activityWorksheet.brief)}</p>
