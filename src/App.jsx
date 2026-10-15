@@ -1880,9 +1880,9 @@ const SESSIONS = [
       "**Composition (Session 06):** Is there one clear dominant element on each spread? Do captions sit against what they describe? Where the grid breaks, does the break look earned?",
     ],
     assignmentMinutes: 5,
-    dueToday: "Typeface System Applied Across Every Spread (via paragraph styles) + 2 Candidate Title-Page Treatments",
-    dueBy: "Thursday, Oct 22, before class",
-    finalDeliverable: "Your project file (.indd) and a PDF, submitted before Session 08: your typeface pairing applied across every spread through the Title, Subtitle, Body Text, and Caption paragraph styles with Body Text still on the 12 pt baseline, plus two candidate title-page treatments, and a list of the fonts you used. Check your work against the Typeface Setup Checklist before you submit.",
+    dueToday: "One Project with All Text in the Paragraph Styles + 2 Candidate Title-Page Treatments",
+    dueBy: "11:59 PM, Sunday, October 18",
+    finalDeliverable: "Your project file (.indd) and a PDF, plus a list of the fonts you used. The minimum is one project with all of its text laid out properly in the Title, Subtitle, Body Text, and Caption paragraph styles, with Body Text on the 12 pt baseline. Seth also wants to see that you played with the typeface on purpose, so include two candidate title-page treatments and keep the pairing that fits your project. If you are further along, apply the type system to all three projects. Check your work against the Typeface Setup Checklist before you submit.",
     reading: {
       title: "How a Typeface Takes a Position",
       estMinutes: 6,
