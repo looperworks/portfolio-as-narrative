@@ -3258,7 +3258,7 @@ export default function PortfolioGuide() {
     if (view === "module" && activeModule) title = `${activeModule.title} · ${base}`;
     else if (view === "session" && activeSession) title = `Session ${String(activeSession.num).padStart(2, "0")}: ${activeSession.title} · ${base}`;
     else if (view === "reading" && activeSession) title = `${activeSession.reading.title} · ${base}`;
-    else if (view === "modules") title = `All Modules · ${base}`;
+    else if (view === "modules") title = `Reference Modules · ${base}`;
     else if (view === "casestudy") title = `Case Study 01: Erosion · ${base}`;
     else if (view === "casestudy2") title = `Case Study 02: Grid Systems in Practice · ${base}`;
     else if (view === "exercise") title = `Exercise 01: From Thread to Spread · ${base}`;
@@ -3299,7 +3299,7 @@ export default function PortfolioGuide() {
       const num = src.replace("#/session/", "");
       return { hash: src, label: `Session ${num.padStart(2, "0")}` };
     }
-    if (src.startsWith("#/modules")) return { hash: "#/modules", label: "All Modules" };
+    if (src.startsWith("#/modules")) return { hash: "#/modules", label: "Reference Modules" };
     if (src.startsWith("#/about")) return { hash: "#/about", label: "About" };
     if (src.startsWith("#/resources")) return { hash: "#/resources", label: "Resources" };
     if (src.startsWith("#/survey-results")) return { hash: "#/survey-results", label: "Survey Results" };
@@ -3331,6 +3331,9 @@ export default function PortfolioGuide() {
         </header>
 
         <main id="main-content" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 clamp(16px, 6vw, 40px)" }}>
+          <p style={{ width: "100%", maxWidth: 440, fontSize: 11, color: T.textMuted, fontStyle: "italic", lineHeight: 1.6, margin: "0 0 22px" }}>
+            Reference material from the original workshop. The sessions this semester draw on it, but the class follows the Session pages, not this order.
+          </p>
           <nav aria-label="Modules by session" style={{ width: "100%", maxWidth: 440, opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
             {SESSIONS.map((s) => (
               <div key={s.num}>
@@ -3469,7 +3472,7 @@ export default function PortfolioGuide() {
     return (
       <div style={{ minHeight: "100vh", background: T.bg, fontFamily: T.sans, display: "flex", flexDirection: "column" }}>
         <a href="#main-content" className="skip-link">Skip to content</a>
-        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+        <header style={{ padding: "28px clamp(16px, 6vw, 40px)", display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: 14 }}>
           <div>
             <div style={{ fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase", color: T.textMuted, fontWeight: 400 }}>
               Portfolio Workshop
@@ -3477,21 +3480,23 @@ export default function PortfolioGuide() {
             <div style={{ fontSize: 9, color: T.textFaint, marginTop: 3, letterSpacing: "0.02em" }}>
               Fall 2026 · 10 Sessions · Thursdays 6:35–7:55 PM
             </div>
+            <div style={{ marginTop: 10 }}>
+              <TeamsJoinButton compact />
+            </div>
           </div>
-          <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-            <TeamsJoinButton compact />
-            <button onClick={() => navigate("#/modules")} style={{
-              background: "none", border: "none", fontSize: 10, color: T.textMuted,
-              cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
-            }}>All Modules</button>
-            <button onClick={() => navigate("#/resources")} style={{
-              background: "none", border: "none", fontSize: 10, color: T.textMuted,
-              cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
-            }}>Resources</button>
+          <div style={{ display: "flex", gap: 18, alignItems: "center", whiteSpace: "nowrap" }}>
             <button onClick={() => navigate("#/about")} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted,
               cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
             }}>About</button>
+            <button onClick={() => navigate("#/resources")} style={{
+              background: "none", border: "none", fontSize: 10, color: T.textMuted,
+              cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
+            }}>Resources</button>
+            <button onClick={() => navigate("#/modules")} style={{
+              background: "none", border: "none", fontSize: 10, color: T.textMuted,
+              cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
+            }}>Reference Modules</button>
           </div>
         </header>
 
