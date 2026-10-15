@@ -1866,10 +1866,10 @@ const SESSIONS = [
       "Update Title, Subtitle, Body Text, and Caption with the pairing. Do not hand-format any single text frame.",
       "Keep Body Text at 10 pt on 12 pt leading with Align to Grid set to All Lines, so the pairing still sits on the baseline.",
       "Set Body Text flush left, ragged right, with hyphenation off in Title, Subtitle, and Caption. Check that body lines run about 45 to 75 characters, which is three or four columns on the course grid.",
-      "Test the pairing on one spread of your project, then in a second context. Undergrads: a resume or CV page. Grads: your title and section pages.",
+      "Test the pairing on one spread of your project, then in a second context. Undergrads: a resume or CV page and placeholder text. Grads: your title and section pages.",
     ],
     activityWorksheet: {
-      brief: "Check off each item as you set up your typeface system. The list follows the order of the work, from choosing a category to testing on a second context, so you can work straight from it instead of re-reading the lecture.",
+      brief: "Check off each item as you set up your typeface system. The list follows the order of the work, from choosing a category to the wrap-up, so you can work straight from it instead of re-reading the lecture.",
       label: "Download the Typeface Setup Checklist (.pdf)",
       url: `${import.meta.env.BASE_URL}materials/session-07-worksheet-typeface-setup-checklist.pdf`,
     },
