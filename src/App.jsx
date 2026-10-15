@@ -3258,7 +3258,7 @@ export default function PortfolioGuide() {
     if (view === "module" && activeModule) title = `${activeModule.title} · ${base}`;
     else if (view === "session" && activeSession) title = `Session ${String(activeSession.num).padStart(2, "0")}: ${activeSession.title} · ${base}`;
     else if (view === "reading" && activeSession) title = `${activeSession.reading.title} · ${base}`;
-    else if (view === "modules") title = `Reference Modules · ${base}`;
+    else if (view === "modules") title = `Full Modules · ${base}`;
     else if (view === "casestudy") title = `Case Study 01: Erosion · ${base}`;
     else if (view === "casestudy2") title = `Case Study 02: Grid Systems in Practice · ${base}`;
     else if (view === "exercise") title = `Exercise 01: From Thread to Spread · ${base}`;
@@ -3299,7 +3299,7 @@ export default function PortfolioGuide() {
       const num = src.replace("#/session/", "");
       return { hash: src, label: `Session ${num.padStart(2, "0")}` };
     }
-    if (src.startsWith("#/modules")) return { hash: "#/modules", label: "Reference Modules" };
+    if (src.startsWith("#/modules")) return { hash: "#/modules", label: "Full Modules" };
     if (src.startsWith("#/about")) return { hash: "#/about", label: "About" };
     if (src.startsWith("#/resources")) return { hash: "#/resources", label: "Resources" };
     if (src.startsWith("#/survey-results")) return { hash: "#/survey-results", label: "Survey Results" };
@@ -3332,7 +3332,7 @@ export default function PortfolioGuide() {
 
         <main id="main-content" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 clamp(16px, 6vw, 40px)" }}>
           <p style={{ width: "100%", maxWidth: 440, fontSize: 11, color: T.textMuted, fontStyle: "italic", lineHeight: 1.6, margin: "0 0 22px" }}>
-            Reference material from the original workshop. The sessions this semester draw on it, but the class follows the Session pages, not this order.
+            The full modules from the original workshop. The sessions this semester draw on them, but the class follows the Session pages, not this order.
           </p>
           <nav aria-label="Modules by session" style={{ width: "100%", maxWidth: 440, opacity: visible ? 1 : 0, transition: "opacity 0.22s ease" }}>
             {SESSIONS.map((s) => (
@@ -3496,7 +3496,7 @@ export default function PortfolioGuide() {
             <button onClick={() => navigate("#/modules")} style={{
               background: "none", border: "none", fontSize: 10, color: T.textMuted,
               cursor: "pointer", fontFamily: T.sans, letterSpacing: "0.04em", padding: 0,
-            }}>Reference Modules</button>
+            }}>Full Modules</button>
           </div>
         </header>
 
