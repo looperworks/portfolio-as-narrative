@@ -1887,10 +1887,7 @@ const SESSIONS = [
     discussionItems: [
       "**Story (Session 03):** Does the order of the spreads follow the outline and prove what the statement claims? Grads: where does the Red Thread show up?",
       "**Grid (Session 05):** Do images and text land on the 6-column, 8-row grid, and does body text sit on the 12 pt baseline?",
-      "**Composition (Session 06):** Is there one clear dominant element on each spread? Do captions sit against what they describe?",
-      "**Grid breaks (Session 06):** Where the grid breaks, does the break look earned?",
-      "**Type (Session 07):** Can you read the hierarchy from across the room, and does the typeface suit what the project argues?",
-      "**Your own file:** What is one thing you would change or try after watching?",
+      "**Composition (Session 06):** Is there one clear dominant element on each spread? Do captions sit against what they describe? Where the grid breaks, does the break look earned?",
     ],
     assignmentMinutes: 5,
     dueToday: "Typeface System Applied Across Every Spread (via paragraph styles) + 2 Candidate Title-Page Treatments",
