@@ -1955,6 +1955,7 @@ const SESSIONS = [
       "**Composition (Session 06):** Is there one clear dominant element on each spread? Do captions sit against what they describe? Where the grid breaks, does the break look earned?",
       "**Type (Session 07):** Does the pairing suit what the project argues, and can you read the hierarchy from across the room?",
     ],
+    dueBy: "11:59 PM, Sunday, October 25",
     dueToday: "One Portfolio File with a Cover, a Table of Contents, and Two Projects Laid Out",
     finalDeliverable: "Your portfolio file (.indd) and a PDF with a cover, a table of contents, and two projects fully laid out.",
     references: "Threshold Portfolio Guide: Portfolio Identity, Cover & Table of Contents; Threshold Resources: 10 Sites to Follow",
