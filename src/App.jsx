@@ -2011,7 +2011,7 @@ function SessionBoard({ visible }) {
       }}>
         {SESSIONS.map((s, i) => {
           const statusColor = s.status === "delivered" ? T.delivered : T.proposed;
-          const locked = s.num > 7;
+          const locked = s.num > 8;
           const CardTag = locked ? "div" : "a";
           return (
             <CardTag
