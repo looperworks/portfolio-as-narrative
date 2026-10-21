@@ -1886,6 +1886,7 @@ const SESSIONS = [
     reading: {
       title: "How a Typeface Takes a Position",
       estMinutes: 6,
+      optional: true,
       paragraphs: [
         "The lecture sorted sixteen typefaces into four categories. This reading covers where some of those faces came from and why an architect should care which one gets picked. If you have ever wondered why so many portfolios are set in Helvetica, part of the answer is in here.",
         "## Where the Modernist Faces Came From",
