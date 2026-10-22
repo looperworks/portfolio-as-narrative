@@ -1947,8 +1947,11 @@ const SESSIONS = [
     discussionFormat: "40 min, instructor-led: selected students show their current InDesign file on screen",
     discussionIntro: "Selected students were emailed in advance. Each one shows their current InDesign file on screen, in the order sent, while Seth gives feedback. Everyone else takes notes.",
     breakout: {
-      shared: "A takeaway is something you notice in a classmate's portfolio, or in the feedback they get, that you can adapt to your own portfolio. These are notes to yourself, not answers to a set of questions.",
+      shared: "Write five takeaways on the shared Takeaways Worksheet below. A takeaway is something you notice in a classmate's portfolio, or in the feedback they get, that you can adapt to your own portfolio. These are notes to yourself, not answers to a set of questions.",
     },
+    discussionLinks: [
+      { label: "Takeaways Worksheet", url: "https://docs.google.com/spreadsheets/d/1mFY4q4CNyW8aVKa8LdLdm4ZnghEkVuaj/edit?usp=sharing&ouid=112629692034766988042&rtpof=true&sd=true" },
+    ],
     discussionItemsLabel: "Things to look for",
     discussionItems: [
       "**Story (Session 03):** Does the order of the spreads follow the outline and prove what the statement claims? Grads: where does the Red Thread show up?",
