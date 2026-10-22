@@ -1936,6 +1936,7 @@ const SESSIONS = [
         "What the Contents Page Does: structure overview, navigation, what goes on the page, and design considerations",
         "Six Contents Typologies: Illustrated Section Grid, Multi-Column Text Index, Thumbnail Gallery Row, Literary Chapter Index, Bold Number Column Cards, and Narrative + List Hybrid, each with a reference spread",
         "The Typology Matrix and Design Spectrums: which type fits how many projects, and how loudly you want the page to speak",
+        "One System from Cover to Project: the Case Study 02 cover, contents page, and a project title page",
         "One System Across Projects: the Case Study 02 title pages, what a repeated format tells the reviewer, and a link to Nick McIntosh's full portfolio",
       ],
     },
